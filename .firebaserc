@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "igis-test-web"
-  }
+    "default": "igis-test-web",
+    "staging": "igis-test-web"
+  },
+  "targets": {},
+  "etags": {}
 }
