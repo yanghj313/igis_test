@@ -1,0 +1,234 @@
+.hero {
+	position: relative;
+	overflow: hidden;
+	height: 100vh;
+}
+
+.hero-frame {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.hero-video {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	z-index: 1;
+}
+
+.hero-frame::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 40%, rgba(0, 0, 0, 0.6) 100%);
+	z-index: 2;
+}
+
+.hero-info {
+	position: absolute;
+	z-index: 3;
+	bottom: 346px;
+	right: 10%;
+	color: #fff;
+	text-align: right;
+}
+
+.hero-sub-message {
+	font-weight: 600;
+	font-size: 30px;
+	margin-bottom: 40px;
+	display: block;
+	text-align: right;
+}
+
+.hero-message {
+	font-weight: 800;
+	font-size: 66px;
+	line-height: 1;
+	white-space: pre-line;
+	font-family: 'Montserrat';
+	text-align: right;
+}
+
+.masking {
+	display: inline-block;
+	overflow: hidden;
+}
+
+.hero-control {
+	position: absolute;
+	bottom: 220px;
+	right: 10%;
+	display: flex;
+	align-items: center;
+	gap: 40px;
+	z-index: 3;
+}
+
+.hero-control-button {
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	background: url('/assets/images/icon-60-pause-white.svg') center/60px no-repeat;
+	border: none;
+	cursor: pointer;
+}
+
+.hero-control-button.pause {
+	background-image: url('/assets/images/icon-60-play-white.svg');
+}
+
+.highlight {
+	color: #0efcfe;
+}
+
+/* 하단 인디케이터 */
+.hero-list {
+	display: flex;
+	gap: 30px;
+}
+
+.hero-item button {
+	background: none;
+	border: none;
+	cursor: pointer;
+	display: flex;
+}
+
+.hero-indicator-text {
+	color: rgba(255, 255, 255, 0.6);
+	font-weight: 700;
+	font-size: 14px;
+	transition: color 0.2s;
+}
+
+.hero-item.active .hero-indicator-text {
+	color: #fff;
+}
+
+.hero-item.active .hero-progress-bar {
+	display: block;
+	width: 100%;
+}
+.hero-item:not(.active) .hero-progress-track {
+	width: 0%;
+	display: none;
+}
+.hero-item.active .hero-progress-track {
+	display: inline-block;
+}
+/* Progress track */
+.hero-progress-track {
+	width: 90px;
+	height: 2px;
+	margin-left: 10px;
+	background: rgba(255, 255, 255, 0.2);
+	overflow: hidden;
+	position: relative;
+}
+
+/* Progress bar */
+.hero-progress-bar {
+	display: none; /* 기본 숨김 */
+	width: 0%;
+	height: 100%;
+	background: #fff;
+	transition: width 5s linear;
+}
+
+/* 접근성용 텍스트 숨김 */
+[aria-label] {
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	border: 0;
+}
+
+.scroll-down {
+	position: absolute;
+	bottom: 60px;
+	left: 40px;
+	z-index: 3;
+	transform: rotate(-90deg);
+	transform-origin: left bottom;
+	color: #fff;
+	font-weight: 500;
+	letter-spacing: 2px;
+	font-size: 12px;
+	opacity: 0.9;
+	display: flex;
+	align-items: flex-end;
+	gap: 6px;
+}
+
+.scroll-down span {
+	animation: scrollBlinkText 2s infinite ease-in-out;
+	font-family: 'Montserrat';
+	margin-left: 9px;
+	font-size: 16px;
+}
+
+/* 텍스트 약간의 깜빡임 */
+@keyframes scrollBlinkText {
+	0%,
+	100% {
+		opacity: 0.6;
+	}
+	50% {
+		opacity: 1;
+	}
+}
+
+/* 🔺 삼각형 3개 */
+.scroll-arrows {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	margin-left: 6px;
+	transform: rotate(90deg);
+}
+
+.scroll-arrows span {
+	width: 0;
+	height: 0;
+	border-left: 4px solid transparent;
+	border-right: 4px solid transparent;
+	border-top: 6px solid #fff;
+	opacity: 0.2;
+	animation: scrollArrowAnim 1.2s infinite;
+}
+
+.scroll-arrows span:nth-child(1) {
+	animation-delay: 0s;
+	opacity: 0.3;
+}
+.scroll-arrows span:nth-child(2) {
+	animation-delay: 0.2s;
+	opacity: 0.6;
+}
+.scroll-arrows span:nth-child(3) {
+	animation-delay: 0.4s;
+	opacity: 1;
+}
+
+@keyframes scrollArrowAnim {
+	0% {
+		transform: translateY(0);
+		opacity: 0.2;
+	}
+	50% {
+		transform: translateY(4px);
+		opacity: 1;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 0.2;
+	}
+}

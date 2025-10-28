@@ -1,20 +1,26 @@
-import { useState } from 'react';
-import './App.css';
+import React, { useEffect, useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Header from './components/Header/Header';
+import MainSection from './components/MainSection/MainSection';
+import CompanyRoutes from './routes/CompanyRoutes';
 
 function App() {
-	const [count, setCount] = useState(0);
+	const [userAgent, setUserAgent] = useState<'pc' | 'tablet' | 'mb'>('pc');
+
+	useEffect(() => {
+		const ua = navigator.userAgent.toLowerCase();
+		if (/mobile|iphone|android/.test(ua)) setUserAgent('mb');
+		else if (/ipad|tablet/.test(ua)) setUserAgent('tablet');
+		else setUserAgent('pc');
+	}, []);
 
 	return (
 		<>
-			<h1>Vite + React</h1>
-			<div className="card">
-				<button onClick={() => setCount(count => count + 1)}>count is {count}</button>
-				<p>
-					Edit <code>src/App.tsx</code> and save to test HMR
-				</p>
-			</div>
-			<h2>🔥 Firebase 테스트 서버 자동 배포 완료</h2>
-			<p className="read-the-docs">Click on the Vite and React logos to learn more</p>
+			<Header />
+			<Routes>
+				<Route path="/" element={<MainSection />} />
+				<Route path="/company/*" element={<CompanyRoutes userAgent={userAgent} />} />
+			</Routes>
 		</>
 	);
 }
