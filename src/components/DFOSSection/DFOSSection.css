@@ -55,7 +55,7 @@
 
 /* 오른쪽 콘텐츠 */
 .cont_area {
-	width: 65%;
+	max-width: 1040px;
 }
 
 .dfos_list {
