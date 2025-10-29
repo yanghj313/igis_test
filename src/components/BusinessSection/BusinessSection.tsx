@@ -43,7 +43,7 @@ const BusinessSection: React.FC = () => {
 						<span>
 							<span className="point_color">B</span>USINESS
 						</span>
-						<span className="dot point_color">.</span>
+						<span className="point_color">.</span>
 					</h3>
 					<p className="desc">
 						IT 분야의 전문 기술력과 산업에 대한 통찰력을 기반으로 <br />
