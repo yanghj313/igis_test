@@ -122,6 +122,7 @@
 	text-decoration: none;
 	font-weight: 500;
 	transition: 0.3s;
+	font-family: 'Montserrat', sans-serif;
 }
 
 .more-btn:hover {
