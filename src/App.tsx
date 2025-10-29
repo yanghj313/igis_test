@@ -5,6 +5,7 @@ import MainSection from './components/MainSection/MainSection';
 import DFOSSection from './components/DFOSSection/DFOSSection';
 import BusinessSection from './components/BusinessSection/BusinessSection';
 import PartnerSection from './components/PartnerSection/PartnerSection';
+import Footer from './components/Footer/Footer';
 import CompanyRoutes from './routes/CompanyRoutes';
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
 							<DFOSSection />
 							<BusinessSection />
 							<PartnerSection />
+							<Footer />
 						</>
 					}
 				/>

@@ -1,0 +1,81 @@
+.footer {
+	background-color: #00387a;
+	padding: 72px 0;
+	color: #fff;
+	border-radius: 20px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-sizing: border-box;
+	max-width: 1720px;
+	margin: 0 auto 100px;
+}
+
+.footer-inner {
+	max-width: 1600px;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 16px;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.footer-left {
+	flex: 1;
+}
+
+.footer-logo {
+	width: 140px;
+	height: auto;
+	display: block;
+}
+
+.footer-center {
+	flex: 3;
+	font-size: 15px;
+	line-height: 1.8;
+	color: #fff;
+	text-align: left;
+}
+
+.footer-center .copy {
+	margin-top: 8px;
+	font-size: 14px;
+	color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-right {
+	flex: 1;
+	display: flex;
+	justify-content: flex-end;
+	gap: 20px;
+}
+
+.sns-icon {
+	width: 64px;
+	height: 59px;
+	object-fit: contain;
+	transition: all 0.3s ease;
+	background: transparent;
+}
+
+.sns-icon:hover {
+	background: rgba(255, 255, 255, 0.1);
+	transform: scale(1.05);
+}
+
+/* 반응형 */
+@media (max-width: 1024px) {
+	.footer-inner {
+		flex-direction: column;
+		text-align: center;
+		gap: 20px;
+	}
+
+	.footer-center {
+		text-align: center;
+	}
+}
