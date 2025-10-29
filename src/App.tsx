@@ -3,6 +3,8 @@ import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header/Header';
 import MainSection from './components/MainSection/MainSection';
 import DFOSSection from './components/DFOSSection/DFOSSection';
+import BusinessSection from './components/BusinessSection/BusinessSection';
+import PartnerSection from './components/PartnerSection/PartnerSection';
 import CompanyRoutes from './routes/CompanyRoutes';
 
 function App() {
@@ -26,7 +28,9 @@ function App() {
 					element={
 						<>
 							<MainSection />
-							<DFOSSection /> {/* ✅ 메인 밑에 고정 */}
+							<DFOSSection />
+							<BusinessSection />
+							<PartnerSection />
 						</>
 					}
 				/>

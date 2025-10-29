@@ -40,7 +40,7 @@ const DFOSSection: React.FC = () => {
 				start: 'top top',
 				end: 'bottom bottom',
 				pin: titleRef.current,
-				pinSpacing: false,
+				pinSpacing: true,
 			});
 
 			// 🔹 각 카드 독립적으로 등장 (한 개씩)
@@ -74,14 +74,22 @@ const DFOSSection: React.FC = () => {
 				<div className="tit_area" ref={titleRef}>
 					<h3 className="sec_tit">
 						<span className="txt_anim_wrap">
-							<span className="txt_anim">DFOS</span>
+							<span className="txt_anim">
+								<span className="point_color">D</span>FOS
+							</span>
 						</span>
 						<br />
 						<span className="txt_anim_wrap">
-							<span className="txt_anim">SOLUTION</span>
+							<span className="txt_anim">
+								SOLUTION<span className="point_color">.</span>
+							</span>
 						</span>
 					</h3>
-					<p className="desc">드론 기술의 노하우를 바탕으로 다양한 분야에 적용이 가능한 협업 솔루션을 제공합니다.</p>
+					<p className="desc">
+						드론 기술의 노하우를 바탕으로 다양한 분야에 적용이 가능한
+						<br />
+						협업 솔루션을 제공합니다.
+					</p>
 					<div className="dfos-lottie">
 						<DotLottiePlayer src="/assets/lottie/circle.lottie" autoplay loop style={{ width: '476px', height: '461px' }} />
 					</div>

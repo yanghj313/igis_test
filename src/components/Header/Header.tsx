@@ -45,7 +45,7 @@ const Header = () => {
 				{/* 로고 */}
 				<div className="logo">
 					<Link to="/">
-						<img src={isScrolled ? '/assets/images/logo.svg' : '/assets/images/logo_wh.png'} alt="iGiS logo" />
+						<img src={isScrolled ? '/assets/images/logo_bk.png' : '/assets/images/logo_wh.png'} alt="iGiS logo" />
 					</Link>
 				</div>
 
@@ -68,7 +68,7 @@ const Header = () => {
 				{/* 오른쪽 영역 */}
 				<div className="header-right">
 					<button className="lang-btn">
-						<img src="/assets/icons/earth.png" alt="lang" />
+						<img src={isScrolled ? '/assets/icons/earth_bg.png' : '/assets/icons/earth.png'} alt="iGiS language" />
 						<span>KOR</span>
 					</button>
 

@@ -1,0 +1,97 @@
+.section.partners {
+	background: #fff;
+	padding: 0 0 200px;
+	overflow: hidden;
+}
+
+.partners .inner {
+	max-width: 100%;
+	margin: 0 auto;
+	padding: 0;
+}
+
+.partners-header {
+	margin: 0 auto 100px;
+	max-width: 1720px;
+}
+
+.sec-title {
+	font-size: 66px;
+	font-weight: 800;
+	color: #031f61;
+	line-height: 1.1;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.sec-title .dot {
+	color: #1e3c72;
+}
+
+.partners-header .desc {
+	color: #777;
+	font-size: 18px;
+	margin-top: 20px;
+}
+
+/* ================== 마키 기본 구조 ================== */
+.logo-marquee {
+	width: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+	display: flex;
+	align-items: center;
+	margin: 100px 0;
+	position: relative;
+}
+
+.logo-track {
+	display: inline-flex;
+	align-items: center;
+	gap: 80px;
+	animation: scroll-left 60s linear infinite;
+}
+
+.logo-marquee.marquee-right .logo-track {
+	animation: scroll-right 60s linear infinite;
+}
+
+.logo-track img {
+	max-height: 90px;
+	object-fit: contain;
+	filter: grayscale(0);
+	width: 200px;
+	transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.logo-track img:hover {
+	transform: scale(1.05);
+	filter: grayscale(0);
+	opacity: 1;
+}
+
+/* ================== 방향별 애니메이션 ================== */
+@keyframes scroll-left {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-50%);
+	}
+}
+
+@keyframes scroll-right {
+	from {
+		transform: translateX(-50%);
+	}
+	to {
+		transform: translateX(0);
+	}
+}
+
+/* ================== 반응형 ================== */
+@media (max-width: 1024px) {
+	.logo-track img {
+		height: 40px;
+		gap: 40px;
+	}
+}

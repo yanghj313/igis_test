@@ -10,6 +10,7 @@
 	transition: background 0.3s ease, backdrop-filter 0.3s ease;
 	background: rgba(0, 0, 0, 0.5);
 	backdrop-filter: blur(6px);
+	box-sizing: border-box;
 }
 
 .main-header.bg-white {
@@ -19,7 +20,7 @@
 
 .header-inner {
 	width: 100%;
-	max-width: 1440px;
+	max-width: 1620px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;

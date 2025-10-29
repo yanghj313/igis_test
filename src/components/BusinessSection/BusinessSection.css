@@ -1,0 +1,147 @@
+.section.business {
+	background: #fff;
+	padding: 0 0 200px;
+	color: #fff;
+}
+
+.business .inner {
+	max-width: 1720px;
+	margin: 0 auto;
+	padding: 0 40px;
+}
+
+.business-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	margin-bottom: 80px;
+	flex-direction: column;
+}
+
+.sec-title .point_color {
+	color: #008efb;
+}
+
+.sec-title {
+	font-size: 66px;
+	font-weight: 800;
+	color: #031f61;
+	line-height: 1.1;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.business-header .desc {
+	color: #777;
+	font-size: 18px;
+	line-height: 1.6;
+	text-align: right;
+	margin-top: 20px;
+}
+
+/* ======================== 카드 레이아웃 ========================= */
+.business-wrap {
+	display: flex;
+	justify-content: space-between;
+	align-items: stretch;
+	gap: 20px;
+	height: 600px;
+}
+
+.business-item {
+	position: relative;
+	flex: 1;
+	border-radius: 20px;
+	overflow: hidden;
+	background-size: cover;
+	background-position: center;
+	transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+
+.business-item .overlay {
+	position: absolute;
+	inset: 0;
+	background: rgba(18, 18, 18, 0.5);
+	transition: background 0.5s ease;
+	z-index: 1;
+}
+
+.business-item.active {
+	flex: 3;
+}
+
+.business-item.active .overlay {
+	background: rgba(36, 64, 121, 0.7);
+}
+
+/* ======================== 텍스트 ========================= */
+.business-content {
+	position: relative;
+	z-index: 2;
+	text-align: center;
+	width: 80%;
+	margin: 0 auto;
+	color: #fff;
+}
+
+.title {
+	font-size: 26px;
+	font-weight: 700;
+	transition: opacity 0.4s ease;
+}
+
+/* 설명과 버튼은 기본 숨김 */
+.desc-wrap {
+	opacity: 0;
+	transform: translateY(30px);
+	transition: opacity 0.6s ease, transform 0.6s ease;
+	margin-top: 20px;
+}
+
+/* 호버 시 내용 표시 */
+.business-item.active .desc-wrap {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.business-content p {
+	font-size: 16px;
+	line-height: 1.6;
+	margin-bottom: 20px;
+}
+
+.more-btn {
+	display: inline-block;
+	padding: 12px 28px;
+	border-radius: 30px;
+	background: #fff;
+	color: #0033a0;
+	text-decoration: none;
+	font-weight: 500;
+	transition: 0.3s;
+}
+
+.more-btn:hover {
+	background: #0033a0;
+	color: #fff;
+}
+
+/* ======================== 반응형 ========================= */
+@media (max-width: 1024px) {
+	.business-wrap {
+		flex-direction: column;
+		height: auto;
+	}
+
+	.business-item {
+		height: 400px;
+		flex: unset;
+	}
+
+	.business-item.active {
+		width: 100%;
+	}
+}
