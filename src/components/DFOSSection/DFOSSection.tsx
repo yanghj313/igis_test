@@ -11,19 +11,19 @@ const dfosData = [
 	{
 		title: 'STATION',
 		desc: '고정형, 이동형으로 유연하게 배치 다양한 상황 환경에서 효과적으로 대응',
-		img: '/src/assets/img/dfos_01.png',
+		img: '/assets/images/dfos_01.png',
 		tags: ['DJI DOCK', 'DJI Matrice'],
 	},
 	{
 		title: 'PANORAMA',
 		desc: '드론으로 촬영한 사진을 360° 파노라마로 변환',
-		img: '/src/assets/img/dfos_02.png',
+		img: '/assets/images/dfos_02.png',
 		tags: ['영상 자동 제작', '영상관리 및 표출', '공간정보관리'],
 	},
 	{
 		title: 'PILOT',
 		desc: '누구나 쉽고 편리하게 사용할 수 있는 드론 비행 APP',
-		img: '/src/assets/img/dfos_03.png',
+		img: '/assets/images/dfos_03.png',
 		tags: ['비행 컨트롤', '자동 미션 비행 지원'],
 	},
 ];
