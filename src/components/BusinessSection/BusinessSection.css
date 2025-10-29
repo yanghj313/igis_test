@@ -93,7 +93,6 @@
 	transition: opacity 0.4s ease;
 }
 
-/* 설명과 버튼은 기본 숨김 */
 .desc-wrap {
 	opacity: 0;
 	transform: translateY(30px);
@@ -101,7 +100,6 @@
 	margin-top: 20px;
 }
 
-/* 호버 시 내용 표시 */
 .business-item.active .desc-wrap {
 	opacity: 1;
 	transform: translateY(0);
@@ -111,6 +109,8 @@
 	font-size: 16px;
 	line-height: 1.6;
 	margin-bottom: 20px;
+	word-break: keep-all;
+	overflow-wrap: break-word;
 }
 
 .more-btn {
