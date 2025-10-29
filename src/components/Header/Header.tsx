@@ -1,20 +1,29 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
 
 const Header = () => {
 	const [isScrolled, setIsScrolled] = useState(false);
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
+	const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+	const hoverTimeout = useRef<NodeJS.Timeout | null>(null);
 
-	const handleScroll = () => {
-		if (window.scrollY > 50) setIsScrolled(true);
-		else setIsScrolled(false);
-	};
-
+	// 스크롤 시 헤더 스타일 변경
 	useEffect(() => {
+		const handleScroll = () => setIsScrolled(window.scrollY > 50);
 		window.addEventListener('scroll', handleScroll);
 		return () => window.removeEventListener('scroll', handleScroll);
 	}, []);
+
+	// 드롭다운 hover 제어
+	const handleMouseEnter = (i: number) => {
+		if (hoverTimeout.current) clearTimeout(hoverTimeout.current);
+		setHoveredIndex(i);
+	};
+
+	const handleMouseLeave = () => {
+		hoverTimeout.current = setTimeout(() => setHoveredIndex(null), 300);
+	};
 
 	const navItems = [
 		{
@@ -52,9 +61,9 @@ const Header = () => {
 				{/* 네비게이션 */}
 				<nav className={`nav ${isMenuOpen ? 'open' : ''}`}>
 					{navItems.map((item, i) => (
-						<div key={i} className="nav-item">
+						<div key={i} className="nav-item" onMouseEnter={() => handleMouseEnter(i)} onMouseLeave={handleMouseLeave}>
 							<span className="nav-title">{item.title}</span>
-							<ul className="dropdown">
+							<ul className={`dropdown ${hoveredIndex === i ? 'show' : ''}`}>
 								{item.sub.map((s, j) => (
 									<li key={j}>
 										<Link to={item.links[j]}>{s}</Link>

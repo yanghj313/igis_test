@@ -1,16 +1,25 @@
 .main-header {
 	position: fixed;
 	top: 0;
-	left: 0;
+	left: 50%;
+	transform: translateX(-50%);
 	width: 100%;
-	padding: 20px 60px;
+	max-width: 1720px;
+	padding: 24px 50px;
+	margin: 40px auto 0;
+	border-radius: 20px;
 	z-index: 100;
 	display: flex;
 	justify-content: center;
-	transition: background 0.3s ease, backdrop-filter 0.3s ease;
-	background: rgba(0, 0, 0, 0.5);
-	backdrop-filter: blur(6px);
 	box-sizing: border-box;
+
+	/* 글래스모피즘 */
+	backdrop-filter: blur(12px) saturate(180%);
+	-webkit-backdrop-filter: blur(12px) saturate(180%);
+	background: rgba(0, 0, 0, 0.35);
+	border: 1px solid rgba(255, 255, 255, 0.15);
+	box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25);
+	transition: all 0.3s ease;
 }
 
 .main-header.bg-white {
@@ -31,6 +40,7 @@
 	transition: all 0.3s;
 }
 
+/* 네비게이션 */
 .nav {
 	display: flex;
 	gap: 60px;
@@ -43,8 +53,8 @@
 
 .nav-title {
 	color: #fff;
-	font-weight: 600;
-	font-size: 18px;
+	font-weight: 300;
+	font-size: 20px;
 	cursor: pointer;
 	transition: color 0.3s;
 }
@@ -57,29 +67,42 @@
 	opacity: 0.7;
 }
 
+/* 드롭다운 */
 .dropdown {
-	display: none;
 	position: absolute;
-	top: 40px;
+	top: 48px;
 	left: 0;
 	background: rgba(0, 0, 0, 0.85);
 	padding: 12px 20px;
 	border-radius: 6px;
 	list-style: none;
+	width: 180px;
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(8px);
+	transition: all 0.25s ease;
+	pointer-events: none;
 }
 
-.nav-item:hover .dropdown {
-	display: block;
+.dropdown.show {
+	opacity: 1;
+	visibility: visible;
+	transform: translateY(0);
+	pointer-events: auto;
 }
 
 .dropdown li {
-	margin-bottom: 8px;
+	margin: 12px auto;
 }
 
 .dropdown li a {
 	color: #fff;
 	font-size: 15px;
 	text-decoration: none;
+}
+
+.dropdown li a:hover {
+	color: #0efcfe;
 }
 
 .header-right {
@@ -153,6 +176,9 @@
 		display: block;
 		background: none;
 		padding: 0;
+		opacity: 1;
+		visibility: visible;
+		transform: none;
 	}
 
 	.dropdown li a {

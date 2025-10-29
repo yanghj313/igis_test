@@ -1,4 +1,7 @@
-import React, { useEffect, useState, useRef, useCallback } from 'react';
+import React, { useEffect, useState, useRef, useCallback, useLayoutEffect } from 'react';
+import gsap from 'gsap';
+import Splitting from 'splitting';
+import 'splitting/dist/splitting.css';
 import './MainSection.css';
 
 const slides = [
@@ -16,11 +19,12 @@ const slides = [
 	},
 ];
 
-const MainSection = () => {
+const MainSection: React.FC = () => {
 	const [current, setCurrent] = useState(0);
 	const [isPlaying, setIsPlaying] = useState(true);
 	const progressRefs = useRef<Array<HTMLSpanElement | null>>([]);
 
+	/** ✅ Progress Bar Ref */
 	const setProgressRef = useCallback(
 		(index: number) => (el: HTMLSpanElement | null) => {
 			progressRefs.current[index] = el;
@@ -28,20 +32,22 @@ const MainSection = () => {
 		[]
 	);
 
-	// 자동 슬라이드 전환
+	/** ✅ 자동 슬라이드 전환 */
 	useEffect(() => {
-		let timer: NodeJS.Timeout | null = null;
+		let timer: ReturnType<typeof setInterval> | undefined;
+
 		if (isPlaying) {
 			timer = setInterval(() => {
 				setCurrent(prev => (prev + 1) % slides.length);
-			}, 5000);
+			}, 6000);
 		}
+
 		return () => {
 			if (timer) clearInterval(timer);
 		};
 	}, [isPlaying]);
 
-	// 프로그레스바 애니메이션
+	/** ✅ 프로그레스바 */
 	useEffect(() => {
 		progressRefs.current.forEach((bar, idx) => {
 			if (!bar) return;
@@ -51,7 +57,7 @@ const MainSection = () => {
 				bar.style.transition = 'none';
 				bar.style.width = '0%';
 				requestAnimationFrame(() => {
-					bar.style.transition = 'width 5s linear';
+					bar.style.transition = 'width 6s linear';
 					bar.style.width = '100%';
 				});
 			} else {
@@ -62,18 +68,46 @@ const MainSection = () => {
 		});
 	}, [current]);
 
+	useLayoutEffect(() => {
+		const results = Splitting({ target: '.hero-message', by: 'chars' });
+		const chars = results[0]?.chars;
+
+		// sub-message (위 텍스트)
+		gsap.fromTo('.hero-sub-message', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' });
+
+		// message (큰 글자)
+		if (chars && chars.length > 0) {
+			gsap.fromTo(
+				chars,
+				{ opacity: 0, y: 60, rotateX: 45 },
+				{
+					opacity: 1,
+					y: 0,
+					rotateX: 0,
+					duration: 1.2,
+					ease: 'power4.out',
+					stagger: 0.03,
+					delay: 0.2,
+				}
+			);
+		}
+
+		return () => {
+			gsap.killTweensOf('.hero-sub-message');
+			if (chars) gsap.killTweensOf(chars);
+		};
+	}, [current]);
+
+	/** ✅ 하이라이트 */
 	const highlightMessage = (text: string, isFirstLine: boolean, isLastLine: boolean) => {
 		const firstChar = text.charAt(0);
 		const lastDotIndex = text.lastIndexOf('.');
 		const beforeDot = text.slice(1, lastDotIndex);
 		const afterDot = text.slice(lastDotIndex);
-
 		return (
 			<>
-				{/* ✅ 첫 번째 줄일 때만 첫 글자 하이라이트 */}
 				{isFirstLine ? <span className="highlight">{firstChar}</span> : firstChar}
 				{beforeDot}
-				{/* ✅ 마지막 줄에만 마지막 온점 하이라이트 */}
 				{isLastLine && afterDot ? <span className="highlight">.</span> : afterDot}
 			</>
 		);
@@ -84,10 +118,11 @@ const MainSection = () => {
 			<div className="hero-frame">
 				<video className="hero-video" src="/assets/videos/igis_video.mp4" autoPlay muted loop playsInline />
 
+				{/* ✅ 텍스트 */}
 				<div className="hero-info">
 					<p className="hero-text">
 						<span className="hero-sub-message">{slides[current].subtitle}</span>
-						<span className="hero-message">
+						<span className="hero-message" data-splitting>
 							{slides[current].message.split('\n').map((line, i, arr) => (
 								<span key={i} className="masking">
 									{highlightMessage(line, i === 0, i === arr.length - 1)}
@@ -98,14 +133,9 @@ const MainSection = () => {
 					</p>
 				</div>
 
+				{/* ✅ 컨트롤 */}
 				<div className="hero-control">
-					{/* ▶️ / ⏸ 아이콘 버튼 (텍스트 없음) */}
-					<button
-						type="button"
-						className={`hero-control-button ${!isPlaying ? 'pause' : ''}`}
-						onClick={() => setIsPlaying(p => !p)}
-						aria-label={isPlaying ? '정지' : '재생'} // 스크린리더 전용
-					/>
+					<button type="button" className={`hero-control-button ${!isPlaying ? 'pause' : ''}`} onClick={() => setIsPlaying(p => !p)} aria-label={isPlaying ? '정지' : '재생'} />
 
 					<ul className="hero-list">
 						{slides.map((_, idx) => (
@@ -122,6 +152,8 @@ const MainSection = () => {
 						))}
 					</ul>
 				</div>
+
+				{/* ✅ Scroll Down */}
 				<div className="scroll-down">
 					<div className="scroll-arrows">
 						<span></span>

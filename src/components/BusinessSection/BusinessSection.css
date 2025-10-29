@@ -54,7 +54,7 @@
 	overflow: hidden;
 	background-size: cover;
 	background-position: center;
-	transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+	transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1) !important;
 	display: flex;
 	align-items: center;
 	justify-content: center;

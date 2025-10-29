@@ -31,9 +31,19 @@
 	z-index: 2;
 }
 
+[data-splitting] .char {
+	display: inline-block;
+	transform-origin: center bottom;
+	will-change: transform, opacity;
+}
+.hero-sub-message,
+.hero-message {
+	opacity: 1;
+	transform: none;
+}
 .hero-info {
 	position: absolute;
-	z-index: 3;
+	z-index: 5;
 	bottom: 346px;
 	right: 10%;
 	color: #fff;
@@ -47,7 +57,10 @@
 	display: block;
 	text-align: right;
 }
-
+.hero-message .char {
+	opacity: 1;
+	transform: translateY(0);
+}
 .hero-message {
 	font-weight: 800;
 	font-size: 66px;
@@ -154,7 +167,7 @@
 .scroll-down {
 	position: absolute;
 	bottom: 60px;
-	left: 40px;
+	left: 100px;
 	z-index: 3;
 	transform: rotate(-90deg);
 	transform-origin: left bottom;

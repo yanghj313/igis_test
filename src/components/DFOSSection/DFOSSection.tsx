@@ -1,7 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { DotLottiePlayer } from '@dotlottie/react-player';
+import Lottie from 'lottie-react';
+import loaderAnimation from '../../../public/assets/lottie/loader.json';
 import './DFOSSection.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -91,7 +92,7 @@ const DFOSSection: React.FC = () => {
 						협업 솔루션을 제공합니다.
 					</p>
 					<div className="dfos-lottie">
-						<DotLottiePlayer src="/assets/lottie/circle.lottie" autoplay loop style={{ width: '476px', height: '461px' }} />
+						<Lottie animationData={loaderAnimation} loop autoplay style={{ width: '476px', height: '461px' }} />
 					</div>
 				</div>
 
