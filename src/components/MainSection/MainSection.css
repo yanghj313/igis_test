@@ -102,7 +102,6 @@
 	color: #0efcfe;
 }
 
-/* 하단 인디케이터 */
 .hero-list {
 	display: flex;
 	gap: 30px;
@@ -137,7 +136,6 @@
 .hero-item.active .hero-progress-track {
 	display: inline-block;
 }
-/* Progress track */
 .hero-progress-track {
 	width: 90px;
 	height: 2px;
@@ -147,7 +145,6 @@
 	position: relative;
 }
 
-/* Progress bar */
 .hero-progress-bar {
 	display: none; /* 기본 숨김 */
 	width: 0%;
@@ -156,7 +153,6 @@
 	transition: width 5s linear;
 }
 
-/* 접근성용 텍스트 숨김 */
 [aria-label] {
 	padding: 0;
 	margin: -1px;
@@ -188,7 +184,6 @@
 	font-size: 16px;
 }
 
-/* 텍스트 약간의 깜빡임 */
 @keyframes scrollBlinkText {
 	0%,
 	100% {
@@ -199,7 +194,6 @@
 	}
 }
 
-/* 🔺 삼각형 3개 */
 .scroll-arrows {
 	display: flex;
 	flex-direction: column;

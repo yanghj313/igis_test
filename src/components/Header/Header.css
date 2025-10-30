@@ -38,7 +38,6 @@
 	transition: all 0.3s;
 }
 
-/* 네비게이션 */
 .nav {
 	display: flex;
 	gap: 60px;
@@ -65,7 +64,6 @@
 	opacity: 0.7;
 }
 
-/* 드롭다운 */
 .dropdown {
 	position: absolute;
 	top: 48px;
@@ -152,7 +150,7 @@
 	}
 }
 
-/* 📱 반응형 */
+/* 반응형 */
 @media (max-width: 1024px) {
 	.main-header {
 		margin: 0;

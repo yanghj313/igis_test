@@ -294,9 +294,6 @@
 		justify-content: center;
 	}
 
-	.dfos_swiper .box {
-	}
-
 	.swiper-pagination {
 		bottom: -20px !important;
 		z-index: 10;
