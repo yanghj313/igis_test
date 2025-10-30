@@ -269,8 +269,11 @@
 		align-items: flex-start;
 		gap: 20px;
 		flex-direction: column;
+		right: 5%;
 	}
-
+	.hero-list {
+		gap: 15px;
+	}
 	.scroll-down {
 		bottom: 20px;
 		left: 40px;
