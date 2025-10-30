@@ -245,3 +245,39 @@
 		opacity: 0.2;
 	}
 }
+
+@media (max-width: 1024px) {
+	.hero-sub-message {
+		font-size: 18px;
+		margin-bottom: 20px;
+	}
+
+	.hero-message {
+		font-size: 48px;
+	}
+}
+@media (max-width: 580px) {
+	.hero-sub-message {
+		font-size: 16px;
+		margin-bottom: 16px;
+	}
+
+	.hero-message {
+		font-size: 32px;
+	}
+	.hero-control {
+		align-items: flex-start;
+		gap: 20px;
+		flex-direction: column;
+	}
+
+	.scroll-down {
+		bottom: 20px;
+		left: 40px;
+	}
+
+	.scroll-down span {
+		margin-left: 9px;
+		font-size: 12px;
+	}
+}

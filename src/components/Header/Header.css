@@ -146,6 +146,11 @@
 .bg-white .menu-toggle img {
 	filter: none;
 }
+@media (max-width: 1400px) {
+	.main-header {
+		max-width: 1280px;
+	}
+}
 
 /* 📱 반응형 */
 @media (max-width: 1024px) {
@@ -192,5 +197,15 @@
 
 	.menu-toggle {
 		display: block;
+	}
+}
+
+@media (max-width: 580px) {
+	.main-header {
+		padding: 12px 20px;
+	}
+
+	.logo img {
+		height: 28px;
 	}
 }

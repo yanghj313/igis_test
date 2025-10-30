@@ -181,3 +181,186 @@
 	align-items: center;
 	justify-content: center;
 }
+
+@media (max-width: 1400px) {
+	.sec_dfos {
+		padding: 150px 0;
+	}
+
+	.sec_dfos .inner {
+		max-width: 1280px;
+		gap: 80px;
+	}
+	.sec_dfos .sec_tit {
+		font-size: 48px;
+	}
+	.sec_dfos .desc {
+		font-size: 16px;
+	}
+
+	.cont_area {
+		max-width: 770px;
+	}
+
+	.dfos_list {
+		gap: 40px;
+	}
+	.dfos-item .box {
+		max-width: 280px;
+		padding: 18px;
+	}
+	.dfos_list li:nth-child(2) {
+		margin: -360px 0 0 440px;
+	}
+
+	.dfos-item .txt_area {
+		margin-top: -50px;
+	}
+
+	.dfos-item .tit {
+		font-size: 28px;
+	}
+
+	.dfos-item .desc {
+		font-size: 16px;
+	}
+
+	.tag {
+		padding: 10px 16px;
+	}
+}
+
+@media (max-width: 1024px) {
+	.sec_dfos {
+		padding: 120px 0;
+		overflow: visible;
+	}
+
+	.sec_dfos .inner {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		max-width: 980px;
+		gap: 40px;
+	}
+
+	.sec_dfos .desc {
+		margin-top: 10px;
+	}
+
+	.tit_area {
+		width: 220px;
+		position: sticky;
+		left: 0;
+		height: fit-content;
+	}
+
+	.sec_tit {
+		font-size: 42px;
+		line-height: 1.2;
+	}
+
+	.cont_area {
+		flex: 1;
+		overflow: hidden;
+		width: 50%;
+		height: 710px;
+		max-width: 50%;
+	}
+
+	.dfos-item .txt_area {
+		margin-top: -50px;
+	}
+
+	.dfos-item .tit {
+		font-size: 28px;
+	}
+
+	.dfos-item .desc {
+		font-size: 16px;
+	}
+
+	.tag {
+		padding: 10px 16px;
+	}
+
+	.dfos_swiper {
+		width: 100%;
+		padding-right: 20px;
+	}
+
+	.dfos_swiper .swiper-slide {
+		display: flex;
+		justify-content: center;
+	}
+
+	.dfos_swiper .box {
+	}
+
+	.swiper-pagination {
+		bottom: -20px !important;
+		z-index: 10;
+	}
+
+	.swiper-pagination-bullet {
+		background: #008efb;
+		opacity: 0.5;
+	}
+
+	.swiper-pagination-bullet-active {
+		opacity: 1;
+	}
+	.dfos_list li:nth-child(2) {
+		margin: 0;
+	}
+	.dfos_list li:nth-child(3) {
+		margin: 0;
+	}
+}
+
+@media (max-width: 769px) {
+	.sec_dfos .inner {
+		max-width: 700px;
+	}
+
+	.dfos-lottie {
+		width: 280px !important;
+		height: 320px !important;
+	}
+}
+
+@media (max-width: 580px) {
+	.sec_dfos {
+		padding: 60px 0 0;
+	}
+
+	.sec_dfos .inner {
+		max-width: 90%;
+		flex-direction: column;
+		gap: 0;
+	}
+
+	.dfos-lottie {
+		display: none;
+	}
+	.sec_dfos .tit_area {
+		width: 100%;
+	}
+	.sec_dfos .sec_tit {
+		font-size: 32px;
+	}
+
+	.sec_dfos .desc {
+		font-size: 14px;
+		line-height: 1.4;
+	}
+	.cont_area {
+		max-width: 100%;
+		width: 100%;
+	}
+	.dfos_swiper {
+		width: 100%;
+		padding: 20px 10px 50px;
+		box-sizing: border-box;
+	}
+}

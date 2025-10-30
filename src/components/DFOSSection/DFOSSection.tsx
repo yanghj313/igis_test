@@ -1,7 +1,11 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Lottie from 'lottie-react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
 import loaderAnimation from '../../../public/assets/lottie/loader.json';
 import './DFOSSection.css';
 
@@ -31,60 +35,68 @@ const dfosData = [
 const DFOSSection: React.FC = () => {
 	const sectionRef = useRef<HTMLDivElement>(null);
 	const titleRef = useRef<HTMLDivElement>(null);
-	const listRef = useRef<HTMLUListElement>(null);
+	const [isMobile, setIsMobile] = useState(window.innerWidth <= 1024);
 
 	useEffect(() => {
+		const handleResize = () => setIsMobile(window.innerWidth <= 1024);
+		window.addEventListener('resize', handleResize);
+
 		const ctx = gsap.context(() => {
-			// 🔹 왼쪽 타이틀 고정
-			ScrollTrigger.create({
-				trigger: sectionRef.current,
-				start: 'top top',
-				end: 'bottom bottom',
-				pin: titleRef.current,
-				pinSpacing: true,
+			const mm = gsap.matchMedia();
+
+			// ✅ PC: 타이틀 pin 고정
+			mm.add('(min-width: 1025px)', () => {
+				ScrollTrigger.create({
+					trigger: sectionRef.current,
+					start: 'top top',
+					end: 'bottom bottom',
+					pin: titleRef.current,
+					pinSpacing: true,
+				});
+
+				// 카드 fade-up
+				gsap.utils.toArray<HTMLElement>('.dfos-item').forEach((item, i) => {
+					gsap.fromTo(
+						item,
+						{ opacity: 0, y: 80 },
+						{
+							opacity: 1,
+							y: 0,
+							duration: 1.2,
+							delay: i * 0.2,
+							ease: 'power3.out',
+							scrollTrigger: {
+								trigger: item,
+								start: 'top 90%',
+								end: 'bottom 80%',
+								toggleActions: 'play none none reverse',
+							},
+						}
+					);
+				});
 			});
 
-			// 🔹 각 카드 독립적으로 등장 (한 개씩)
-			gsap.utils.toArray<HTMLElement>('.dfos-item').forEach(item => {
-				gsap.fromTo(
-					item,
-					{ opacity: 0, y: 80 },
-					{
-						opacity: 1,
-						y: 0,
-						duration: 1.2,
-						ease: 'power3.out',
-						scrollTrigger: {
-							trigger: item,
-							start: 'top 90%',
-							end: 'bottom 80%',
-							toggleActions: 'play none none reverse',
-						},
-					}
-				);
+			// ✅ 모바일: pin 제거
+			mm.add('(max-width: 1024px)', () => {
+				ScrollTrigger.getAll().forEach(trigger => trigger.kill());
 			});
 		}, sectionRef);
 
-		return () => ctx.revert();
+		return () => {
+			window.removeEventListener('resize', handleResize);
+			ctx.revert();
+		};
 	}, []);
 
 	return (
 		<section className="section sec_dfos" ref={sectionRef}>
-			<div className="inner scroll_fix_wrap">
-				{/* 왼쪽 타이틀 */}
+			<div className="inner">
+				{/* 좌측 타이틀 — 항상 고정 */}
 				<div className="tit_area" ref={titleRef}>
 					<h3 className="sec_tit">
-						<span className="txt_anim_wrap">
-							<span className="txt_anim">
-								<span className="point_color">D</span>FOS
-							</span>
-						</span>
+						<span className="point_color">D</span>FOS
 						<br />
-						<span className="txt_anim_wrap">
-							<span className="txt_anim">
-								SOLUTION<span className="point_color">.</span>
-							</span>
-						</span>
+						SOLUTION<span className="point_color">.</span>
 					</h3>
 					<p className="desc">
 						드론 기술의 노하우를 바탕으로 다양한 분야에 적용이 가능한
@@ -92,34 +104,61 @@ const DFOSSection: React.FC = () => {
 						협업 솔루션을 제공합니다.
 					</p>
 					<div className="dfos-lottie">
-						<Lottie animationData={loaderAnimation} loop autoplay style={{ width: '476px', height: '461px' }} />
+						<Lottie animationData={loaderAnimation} loop autoplay style={{ width: '400px', height: '400px' }} />
 					</div>
 				</div>
 
-				{/* 오른쪽 카드 리스트 */}
+				{/* ✅ 우측 콘텐츠 */}
 				<div className="cont_area">
-					<ul className="dfos_list" ref={listRef}>
-						{dfosData.map((item, idx) => (
-							<li key={idx} className="dfos-item">
-								<div className="box">
-									<figure className="thumb">
-										<img src={item.img} alt={item.title} />
-									</figure>
-									<div className="txt_area">
-										<h4 className="tit">{item.title}</h4>
-										<p className="desc">{item.desc}</p>
-										<div className="tag_wrap">
-											{item.tags.map((tag, i) => (
-												<span key={i} className="tag">
-													{tag}
-												</span>
-											))}
+					{!isMobile ? (
+						// --- PC: 세로 카드 ---
+						<ul className="dfos_list">
+							{dfosData.map((item, idx) => (
+								<li key={idx} className="dfos-item">
+									<div className="box">
+										<figure className="thumb">
+											<img src={item.img} alt={item.title} />
+										</figure>
+										<div className="txt_area">
+											<h4 className="tit">{item.title}</h4>
+											<p className="desc">{item.desc}</p>
+											<div className="tag_wrap">
+												{item.tags.map((tag, i) => (
+													<span key={i} className="tag">
+														{tag}
+													</span>
+												))}
+											</div>
 										</div>
 									</div>
-								</div>
-							</li>
-						))}
-					</ul>
+								</li>
+							))}
+						</ul>
+					) : (
+						// --- 모바일: Swiper 슬라이드 ---
+						<Swiper className="dfos_swiper" modules={[Pagination]} slidesPerView={1} pagination={{ clickable: true }} spaceBetween={40}>
+							{dfosData.map((item, idx) => (
+								<SwiperSlide key={idx} className="dfos-item">
+									<div className="box">
+										<figure className="thumb">
+											<img src={item.img} alt={item.title} />
+										</figure>
+										<div className="txt_area">
+											<h4 className="tit">{item.title}</h4>
+											<p className="desc">{item.desc}</p>
+											<div className="tag_wrap">
+												{item.tags.map((tag, i) => (
+													<span key={i} className="tag">
+														{tag}
+													</span>
+												))}
+											</div>
+										</div>
+									</div>
+								</SwiperSlide>
+							))}
+						</Swiper>
+					)}
 				</div>
 			</div>
 		</section>
