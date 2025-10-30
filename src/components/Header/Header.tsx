@@ -33,13 +33,13 @@ const Header = () => {
 		},
 		{
 			title: 'Business',
-			sub: ['GIS 시스템', '드론', 'FMS', 'R&D 및 용역'],
-			links: ['/business/gis', '/business/dron', '/business/fms', '/business/rnd'],
+			sub: ['드론', 'GIS 시스템', 'FMS', 'R&D 및 용역'],
+			links: ['/business/dron', '/business/gis', '/business/fms', '/business/rnd'],
 		},
 		{
 			title: 'Solution',
-			sub: ['GIS 솔루션', '드론 솔루션'],
-			links: ['/solution/gis', '/solution/dron'],
+			sub: ['드론 솔루션', 'GIS 솔루션'],
+			links: ['/solution/dron', '/solution/gis'],
 		},
 		{
 			title: 'Community',

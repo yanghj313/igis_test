@@ -7,7 +7,7 @@ const logos = [
 	'/assets/images/logo_03.png',
 	'/assets/images/logo_04.jpg',
 	'/assets/images/logo_05.png',
-	'/assets/images/logo_06.gif',
+	'/assets/images/logo_06.png',
 	'/assets/images/logo_07.png',
 	'/assets/images/logo_08.png',
 	'/assets/images/logo_09.png',
