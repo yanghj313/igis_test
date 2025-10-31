@@ -6,36 +6,38 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import loaderAnimation from '../../../public/assets/lottie/loader.json';
+import { useTranslation } from 'react-i18next';
+import loaderAnimation from '../../../src/assets/lottie/loader.json';
 import './DFOSSection.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const dfosData = [
-	{
-		title: 'STATION',
-		desc: '고정형, 이동형으로 유연하게 배치 다양한 상황 환경에서 효과적으로 대응',
-		img: '/assets/images/dfos_01.png',
-		tags: ['DJI DOCK', 'DJI Matrice'],
-	},
-	{
-		title: 'PANORAMA',
-		desc: '드론으로 촬영한 사진을 360° 파노라마로 변환',
-		img: '/assets/images/dfos_02.png',
-		tags: ['영상 자동 제작', '영상관리 및 표출', '공간정보관리'],
-	},
-	{
-		title: 'PILOT',
-		desc: '누구나 쉽고 편리하게 사용할 수 있는 드론 비행 APP',
-		img: '/assets/images/dfos_03.png',
-		tags: ['비행 컨트롤', '자동 미션 비행 지원'],
-	},
-];
-
 const DFOSSection: React.FC = () => {
+	const { t } = useTranslation();
 	const sectionRef = useRef<HTMLDivElement>(null);
 	const titleRef = useRef<HTMLDivElement>(null);
 	const [isMobile, setIsMobile] = useState(window.innerWidth <= 1024);
+
+	const dfosData = [
+		{
+			title: 'STATION',
+			desc: t('dfos_station_desc'),
+			img: '/assets/images/dfos_01.png',
+			tags: [t('dfos_tag_station_1'), t('dfos_tag_station_2')],
+		},
+		{
+			title: 'PANORAMA',
+			desc: t('dfos_panorama_desc'),
+			img: '/assets/images/dfos_02.png',
+			tags: [t('dfos_tag_panorama_1'), t('dfos_tag_panorama_2'), t('dfos_tag_panorama_3')],
+		},
+		{
+			title: 'PILOT',
+			desc: t('dfos_pilot_desc'),
+			img: '/assets/images/dfos_03.png',
+			tags: [t('dfos_tag_pilot_1'), t('dfos_tag_pilot_2')],
+		},
+	];
 
 	useEffect(() => {
 		const handleResize = () => setIsMobile(window.innerWidth <= 1024);
@@ -98,11 +100,7 @@ const DFOSSection: React.FC = () => {
 						<br />
 						SOLUTION<span className="point_color">.</span>
 					</h3>
-					<p className="desc">
-						드론 기술의 노하우를 바탕으로 다양한 분야에 적용이 가능한
-						<br />
-						협업 솔루션을 제공합니다.
-					</p>
+					<p className="desc">{t('dfos_desc')}</p>
 					<div className="dfos-lottie">
 						<Lottie animationData={loaderAnimation} loop autoplay style={{ width: '400px', height: '400px' }} />
 					</div>

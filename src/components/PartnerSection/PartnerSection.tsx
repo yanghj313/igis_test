@@ -1,5 +1,6 @@
 import React from 'react';
 import './PartnerSection.css';
+import { useTranslation } from 'react-i18next';
 
 const logos = [
 	'/assets/images/logo_01.png',
@@ -23,6 +24,7 @@ const logos = [
 ];
 
 const PartnerSection: React.FC = () => {
+	const { t } = useTranslation();
 	return (
 		<section className="section partners">
 			<div className="inner">
@@ -33,7 +35,7 @@ const PartnerSection: React.FC = () => {
 						</span>
 						<span className="point_color">.</span>
 					</h3>
-					<p className="desc">iGiS와 함께하는 파트너를 소개합니다.</p>
+					<p className="desc">{t('partner_desc')}</p>
 				</div>
 
 				{/* 첫 번째 마키 */}

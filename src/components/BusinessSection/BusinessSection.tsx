@@ -1,39 +1,77 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import './BusinessSection.css';
-
-const businessData = [
-	{
-		id: 1,
-		title: 'DFOS 드론 플랫폼',
-		desc: '보유 중인 기술과 솔루션을 용역 및 제안 사업에 적용하여 고객의 전문성과 역량 강화를 제시합니다.',
-		img: '/assets/images/busi_01.png',
-		link: '#',
-	},
-	{
-		id: 2,
-		title: 'GIS 시스템',
-		desc: '고객의 니즈를 이해하고 최적의 GIS 시스템 판매를 목표로 하고 있습니다.',
-		img: '/assets/images/busi_02.png',
-		link: '#',
-	},
-	{
-		id: 3,
-		title: 'FMS 시스템',
-		desc: '고객에 맞춤형 지리정보 시스템을 구축하여 최적의 솔루션 및 서비스를 제공합니다.',
-		img: '/assets/images/busi_03.png',
-		link: '#',
-	},
-	{
-		id: 4,
-		title: 'R&D 및 운영 시스템',
-		desc: '첨단 기술 기반 연구개발과 운영 시스템 통합 지원하며 보유 중인 기술과 솔루션을 용역 및 제안 사업에 적용하여 고객의 전문성과 역량 강화를 제시합니다.',
-		img: '/assets/images/busi_04.png',
-		link: '#',
-	},
-];
+import { useTranslation } from 'react-i18next';
+import i18n from '../../i18n';
 
 const BusinessSection: React.FC = () => {
-	const [activeIndex, setActiveIndex] = useState<number>(0);
+	const [activeIndex, setActiveIndex] = useState<number>(0); // ✅ 첫 번째 카드 오픈
+	const { t } = useTranslation();
+	const [isMobile, setIsMobile] = useState(window.innerWidth <= 1024);
+
+	// ✅ 반응형 체크
+	useEffect(() => {
+		const handleResize = () => setIsMobile(window.innerWidth <= 1024);
+		window.addEventListener('resize', handleResize);
+		return () => window.removeEventListener('resize', handleResize);
+	}, []);
+
+	// ✅ 번역 데이터 캐싱
+	const businessData = useMemo(
+		() => [
+			{
+				id: 1,
+				title: t('busi_1_title'),
+				desc: t('busi_1_desc'),
+				img: '/assets/images/busi_01.png',
+				link: '/business/dfos',
+			},
+			{
+				id: 2,
+				title: t('busi_2_title'),
+				desc: t('busi_2_desc'),
+				img: '/assets/images/busi_02.png',
+				link: '/business/gis',
+			},
+			{
+				id: 3,
+				title: t('busi_3_title'),
+				desc: t('busi_3_desc'),
+				img: '/assets/images/busi_03.png',
+				link: '/business/drone',
+			},
+			{
+				id: 4,
+				title: t('busi_4_title'),
+				desc: t('busi_4_desc'),
+				img: '/assets/images/busi_04.png',
+				link: '/business/rd',
+			},
+		],
+		[t]
+	);
+
+	// ✅ 언어 바뀌어도 상태 유지
+	useEffect(() => {
+		const handleLangChange = () => setActiveIndex(prev => prev);
+		i18n.on('languageChanged', handleLangChange);
+		return () => i18n.off('languageChanged', handleLangChange);
+	}, []);
+
+	// ✅ hover / click 이벤트
+	const handleActivate = (idx: number) => {
+		if (isMobile) {
+			setActiveIndex(prev => (prev === idx ? -1 : idx));
+		} else {
+			setActiveIndex(idx);
+		}
+	};
+
+	const handleLeave = () => {
+		if (!isMobile) {
+			// PC에서는 hover 해제 시 첫 번째 카드로 복귀
+			setActiveIndex(0);
+		}
+	};
 
 	return (
 		<section className="section business">
@@ -45,22 +83,26 @@ const BusinessSection: React.FC = () => {
 						</span>
 						<span className="point_color">.</span>
 					</h3>
-					<p className="desc">
-						IT 분야의 전문 기술력과 산업에 대한 통찰력을 기반으로 <br />
-						글로벌 선도기업으로 도약해 나가겠습니다.
-					</p>
+					<p className="desc">{t('business_desc')}</p>
 				</div>
 
 				<div className="business-wrap">
 					{businessData.map((item, idx) => (
-						<div key={item.id} className={`business-item ${activeIndex === idx ? 'active' : ''}`} style={{ backgroundImage: `url(${item.img})` }} onMouseEnter={() => setActiveIndex(idx)}>
+						<div
+							key={item.id}
+							className={`business-item ${activeIndex === idx ? 'active' : ''}`}
+							style={{ backgroundImage: `url(${item.img})` }}
+							onMouseEnter={() => handleActivate(idx)}
+							onMouseLeave={handleLeave}
+							onClick={() => handleActivate(idx)}
+						>
 							<div className="overlay" />
 							<div className="business-content">
 								<h4 className="title">{item.title}</h4>
 								<div className="desc-wrap">
 									<p>{item.desc}</p>
 									<a href={item.link} className="more-btn">
-										MORE VIEW +
+										{t('more_view')}
 									</a>
 								</div>
 							</div>

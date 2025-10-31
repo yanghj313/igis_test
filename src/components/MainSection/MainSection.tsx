@@ -3,26 +3,28 @@ import gsap from 'gsap';
 import Splitting from 'splitting';
 import 'splitting/dist/splitting.css';
 import './MainSection.css';
-
-const slides = [
-	{
-		subtitle: '변화와 혁신을 선도하는 기업, iGiS 입니다.',
-		message: 'SPATIALLY INFORMED\nDRONE SOLUTIONS SPECIALIST.',
-	},
-	{
-		subtitle: '스마트 기술로 공간정보를 연결합니다.',
-		message: 'CREATING THE FUTURE\nWITH SMART GIS SYSTEMS.',
-	},
-	{
-		subtitle: '공간과 데이터를 잇는 혁신적 플랫폼',
-		message: 'INTEGRATED SOLUTIONS\nFOR A CONNECTED WORLD.',
-	},
-];
+import { useTranslation } from 'react-i18next';
 
 const MainSection: React.FC = () => {
 	const [current, setCurrent] = useState(0);
 	const [isPlaying, setIsPlaying] = useState(true);
 	const progressRefs = useRef<Array<HTMLSpanElement | null>>([]);
+	const { t } = useTranslation();
+
+	const slides = [
+		{
+			subtitle: t('subtitle_1'),
+			message: 'SPATIALLY INFORMED\nDRONE SOLUTIONS SPECIALIST.',
+		},
+		{
+			subtitle: t('subtitle_2'),
+			message: 'CREATING THE FUTURE\nWITH SMART GIS SYSTEMS.',
+		},
+		{
+			subtitle: t('subtitle_3'),
+			message: 'INTEGRATED SOLUTIONS\nFOR A CONNECTED WORLD.',
+		},
+	];
 
 	/** ✅ Progress Bar Ref */
 	const setProgressRef = useCallback(
