@@ -1,0 +1,20 @@
+/* 예: src/styles/media-tabs.css */
+.media-tabs .tabs {
+	display: flex;
+	gap: 12px;
+	border-bottom: 1px solid #e5e7eb;
+	margin-bottom: 16px;
+}
+.media-tabs .tab {
+	padding: 10px 14px;
+	border-radius: 8px 8px 0 0;
+	text-decoration: none;
+	color: #555;
+}
+.media-tabs .tab.active {
+	background: #111827;
+	color: #fff;
+}
+.media-tabs .tab-panel {
+	padding: 8px 0;
+}

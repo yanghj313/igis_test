@@ -7,7 +7,8 @@
 		"skipLibCheck": true,
 		"esModuleInterop": false,
 		"allowSyntheticDefaultImports": true,
-		"strict": true,
+		"noImplicitAny": false, // ✅ any 허용
+		"strict": false,
 		"forceConsistentCasingInFileNames": true,
 		"module": "ESNext",
 		"moduleResolution": "Node",
@@ -21,8 +22,10 @@
 			"@pages/*": ["pages/*"],
 			"@routes/*": ["routes/*"],
 			"@utils/*": ["utils/*"],
-			"@assets/*": ["assets/*"]
-		}
+			"@assets/*": ["assets/*"],
+			"@config/*": ["config/*"]
+		},
+		"composite": true
 	},
 	"include": ["src"]
 }

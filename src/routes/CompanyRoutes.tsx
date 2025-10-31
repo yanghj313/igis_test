@@ -1,14 +1,27 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
-import Company from '../../src/pages/Company/Company';
-import Award from '../../src/pages/Company/Award';
-import News from '../../src/pages/Company/News';
+import { Routes, Route } from 'react-router-dom';
+import CompanyLayout from '@pages/Company/CompanyLayout';
+import About from '@pages/Company/About';
+import Vision from '@pages/Company/Vision';
+import Organization from '@pages/Company/Organization';
+import History from '@pages/Company/History';
+import Location from '@pages/Company/Location';
+import Award from '@pages/Company/Award';
+import Certificate from '@pages/Company/Certificate';
+import Patent from '@pages/Company/Patent';
 
-const CompanyRoutes = ({ userAgent }: { userAgent: 'pc' | 'tablet' | 'mb' }) => (
+const CompanyRoutes: React.FC = () => (
 	<Routes>
-		<Route path="/" element={<Company userAgent={userAgent} />} />
-		<Route path="/award" element={<Award userAgent={userAgent} />} />
-		<Route path="/news" element={<News userAgent={userAgent} />} />
+		<Route path="/" element={<CompanyLayout />}>
+			<Route path="about" element={<About />} />
+			<Route path="vision" element={<Vision />} />
+			<Route path="organization" element={<Organization />} />
+			<Route path="history" element={<History />} />
+			<Route path="location" element={<Location />} />
+			<Route path="award" element={<Award />} />
+			<Route path="certificate" element={<Certificate />} />
+			<Route path="patent" element={<Patent />} />
+		</Route>
 	</Routes>
 );
 

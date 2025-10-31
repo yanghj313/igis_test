@@ -1,0 +1,8 @@
+{
+    "lang_kor": "KOR",
+    "lang_eng": "ENG",
+    "submenu_company": ["About Us", "Awards & Certificates"],
+    "submenu_business": ["Drone", "GIS System", "FMS", "R&D and Operation"],
+    "submenu_solution": ["Drone Solution", "GIS Solution"],
+    "submenu_community": ["Contact", "Recruit", "News", "Media"]
+  }
