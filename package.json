@@ -19,6 +19,7 @@
     "lottie-react": "^2.4.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-helmet-async": "^2.0.5",
     "react-i18next": "^16.2.3",
     "react-router-dom": "^7.9.4",
     "splitting": "^1.1.0",

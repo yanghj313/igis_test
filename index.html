@@ -1,11 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 	<head>
 		<meta charset="UTF-8" />
-		<link rel="icon" href="/favicon.ico" />
-		<link rel="stylesheet" href="./src/reset.css" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
 		<title>IGIS</title>
+		<meta name="description" content="IGIS | 회사 소개와 솔루션 소식" />
+		<meta name="robots" content="noindex, nofollow" />
+		<meta name="theme-color" content="#111827" />
+
+		<!-- Canonical (홈 기준, 라우트별은 Helmet에서 설정) -->
+		<link rel="canonical" href="https://your-domain.com/" />
+
+		<!-- Open Graph 기본값 (라우트별로 Helmet에서 덮어씀) -->
+		<meta property="og:site_name" content="IGIS" />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="IGIS" />
+		<meta property="og:description" content="IGIS | 회사 소개와 솔루션 소식" />
+		<meta property="og:url" content="https://your-domain.com/" />
+		<meta property="og:image" content="/og-default.jpg" />
+
+		<!-- 아이콘/매니페스트(선택) -->
+		<link rel="icon" href="/favicon.ico" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		<link rel="manifest" href="/site.webmanifest" />
 	</head>
 	<body>
 		<div id="root"></div>

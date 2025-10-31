@@ -15,7 +15,7 @@ dist
 dist-ssr
 *.local
 
-# Editor directories and files
+# Editor
 .vscode/*
 !.vscode/extensions.json
 .idea
@@ -28,11 +28,12 @@ dist-ssr
 
 # Firebase
 .firebase/
-.firebaserc
 firebase-debug.log
-firebase.json
+# ⬇️ 설정 파일은 커밋해야 함 (무시 해제)
+!.firebaserc
+!firebase.json
 
-# Environment variables
+# Environment variables (비밀값은 절대 커밋하지 않기)
 .env
 .env.*.local
 
