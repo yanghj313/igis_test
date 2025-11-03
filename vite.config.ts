@@ -4,6 +4,7 @@ import path from 'path';
 
 export default defineConfig({
 	plugins: [react()],
+	base: '/',
 	resolve: {
 		alias: {
 			'@': path.resolve(__dirname, 'src'),
@@ -12,7 +13,7 @@ export default defineConfig({
 			'@routes': path.resolve(__dirname, 'src/routes'),
 			'@utils': path.resolve(__dirname, 'src/utils'),
 			'@assets': path.resolve(__dirname, 'src/assets'),
-			'@config': path.resolve(__dirname, 'src/config'), // ← 이 줄이 있어야 @config/firebase가 동작
+			'@config': path.resolve(__dirname, 'src/config'),
 		},
 	},
 });

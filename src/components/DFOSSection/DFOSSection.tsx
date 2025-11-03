@@ -47,7 +47,7 @@ const DFOSSection: React.FC = () => {
 			const mm = gsap.matchMedia();
 
 			// ✅ PC: 타이틀 pin 고정
-			mm.add('(min-width: 1025px)', () => {
+			mm.add('(min-width: 1280px)', () => {
 				ScrollTrigger.create({
 					trigger: sectionRef.current,
 					start: 'top top',
