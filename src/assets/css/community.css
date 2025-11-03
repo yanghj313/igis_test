@@ -1,0 +1,67 @@
+/* community.css or 해당 섹션 CSS */
+
+/* 헤더가 fixed라면 헤더 높이만큼 여백 (필요에 맞게 숫자 조정) */
+.community-layout {
+	--header-h: 150px; /* 헤더 높이 */
+	padding-top: var(--header-h);
+}
+
+/* 탭 바 */
+.media-tabs {
+	position: sticky; /* 스크롤해도 상단 고정 */
+	top: var(--header-h);
+	z-index: 50;
+	display: flex;
+	gap: 8px;
+	background: #fff; /* 헤더와 겹칠 때 가려짐 방지 */
+	border-bottom: 1px solid #eee;
+	padding: 0 16px;
+}
+
+/* 기본 링크 스타일 덮어쓰기 (보라색/밑줄 방지) */
+.media-tabs .tab,
+.media-tabs .tab:link,
+.media-tabs .tab:visited {
+	text-decoration: none !important;
+	color: #666 !important;
+}
+
+/* 탭 버튼 스타일 */
+.media-tabs .tab {
+	display: inline-flex;
+	align-items: center;
+	height: 44px;
+	padding: 0 16px;
+	font-weight: 600;
+	border-bottom: 2px solid transparent;
+	transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.media-tabs .tab:hover,
+.media-tabs .tab:focus-visible {
+	color: #111;
+}
+
+/* 활성 탭 */
+.media-tabs .tab.active {
+	color: #111 !important;
+	border-bottom-color: #111;
+}
+
+/* 모바일: 가로 스크롤 탭 */
+@media (max-width: 768px) {
+	.media-tabs {
+		overflow-x: auto;
+		white-space: nowrap;
+		gap: 4px;
+		scrollbar-width: none; /* Firefox */
+	}
+	.media-tabs::-webkit-scrollbar {
+		display: none;
+	} /* WebKit */
+	.media-tabs .tab {
+		height: 42px;
+		padding: 0 12px;
+		font-size: 14px;
+	}
+}

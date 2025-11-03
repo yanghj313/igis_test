@@ -34,11 +34,13 @@ const Header: React.FC = () => {
 	};
 
 	/** ✅ 메뉴 구조 (언어별로 자동 로드) */
+	// 바꿀 부분만 발췌
 	const navItems = [
 		{
 			key: 'company',
 			sub: t('submenu_company', { returnObjects: true }) as string[],
-			links: ['/company', '/award'],
+			// ✅ 절대경로로 통일
+			links: ['/company', '/company/award'],
 		},
 		{
 			key: 'business',
@@ -53,7 +55,7 @@ const Header: React.FC = () => {
 		{
 			key: 'community',
 			sub: t('submenu_community', { returnObjects: true }) as string[],
-			links: ['/contact', '/recruit', '/news'],
+			links: ['/community/contact', '/community/recruitment', '/community/news', '/community/video'],
 		},
 	];
 

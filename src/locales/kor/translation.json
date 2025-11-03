@@ -1,0 +1,11 @@
+{
+	"nav": {
+		"news": "뉴스",
+		"video": "영상",
+		"recruit": "채용",
+		"contact": "문의하기"
+	},
+	"contact": {
+		"intro": "홍보/영상/채용 문의 Tel. 070-8740-5534 | Mail. ceo@igis.co.kr"
+	}
+}
