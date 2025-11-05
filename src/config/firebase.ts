@@ -3,7 +3,6 @@ import { initializeApp, getApps, getApp, type FirebaseApp, type FirebaseOptions 
 import { getFirestore } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';
 
-// ✅ 필수 ENV 확인 (없으면 바로 콘솔에 찍혀서 원인 파악 쉬움)
 const REQUIRED = {
 	VITE_FIREBASE_API_KEY: import.meta.env.VITE_FIREBASE_API_KEY,
 	VITE_FIREBASE_AUTH_DOMAIN: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
@@ -36,9 +35,7 @@ function ensureApp(): FirebaseApp {
 }
 
 const app = ensureApp();
-
 export const db = getFirestore(app);
 export const storage = getStorage(app);
 
-// 디버그
 console.log('[firebase] projectId =', app.options.projectId);
