@@ -127,3 +127,27 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+/* 모든 링크 공통 */
+a,
+a:link,
+a:visited {
+	text-decoration: none;
+	color: inherit;
+}
+
+a:hover,
+a:active,
+a:focus {
+	text-decoration: none;
+	color: inherit;
+}
+
+a.fixed {
+	color: #111;
+}
+a.fixed:visited {
+	color: #111;
+}
+a.fixed:hover {
+	color: #111;
+}

@@ -6,29 +6,34 @@
 
 		<title>IGIS</title>
 		<meta name="description" content="IGIS | 회사 소개와 솔루션 소식" />
-		<!--실서버 적용할 때, 링크랑 일괄 수정-->
-		<meta name="robots" content="noindex, nofollow" />
+		<!-- 삭제: <meta name="robots" content="noindex, nofollow" /> -->
 		<meta name="author" content="IGIS" />
 		<meta name="keywords" content="IGIS, GIS, 공간정보, 솔루션, 지도 플랫폼" />
 		<meta name="theme-color" content="#111827" />
 
-		<!-- Canonical (홈 기준, 라우트별은 Helmet에서 설정) -->
 		<link rel="canonical" href="https://igis-test-web.web.app/" />
 
-		<!-- Open Graph 기본값 (라우트별로 Helmet에서 덮어씀) -->
+		<!-- Open Graph 기본값 (라우트별 Helmet으로 덮어쓰기) -->
 		<meta property="og:site_name" content="IGIS" />
 		<meta property="og:type" content="website" />
 		<meta property="og:title" content="IGIS" />
 		<meta property="og:description" content="IGIS | 회사 소개와 솔루션 소식" />
 		<meta property="og:url" content="https://igis-test-web.web.app/" />
 		<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/igis-web.appspot.com/o/%5Bigis%5D%20favicon.png?alt=media&token=34f8aad7-8f58-4e6d-8d4a-bf10399c1428" />
+		<meta property="og:image:secure_url" content="https://firebasestorage.googleapis.com/v0/b/igis-web.appspot.com/o/%5Bigis%5D%20favicon.png?alt=media&token=34f8aad7-8f58-4e6d-8d4a-bf10399c1428" />
 		<meta property="og:image:width" content="1200" />
 		<meta property="og:image:height" content="630" />
+		<meta property="og:locale" content="ko_KR" />
 
-		<!-- 아이콘/매니페스트(선택) -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="IGIS" />
+		<meta name="twitter:description" content="IGIS | 회사 소개와 솔루션 소식" />
+		<meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/igis-web.appspot.com/o/%5Bigis%5D%20favicon.png?alt=media&token=34f8aad7-8f58-4e6d-8d4a-bf10399c1428" />
+
 		<link rel="icon" href="/favicon.ico" />
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-		<link rel="manifest" href="/site.webmanifest" />
+		<!-- manifest가 깨져 있으면 주석 처리하거나 올바른 파일 배치 -->
+		<!-- <link rel="manifest" href="/site.webmanifest" /> -->
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
 	</head>
