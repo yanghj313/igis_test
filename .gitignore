@@ -39,3 +39,5 @@ firebase-debug.log
 
 # Build backups
 backup_hosting/
+
+tsconfig.tsbuildinfo
