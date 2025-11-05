@@ -13,7 +13,7 @@ const REQUIRED = {
 };
 
 for (const [k, v] of Object.entries(REQUIRED)) {
-	if (!v) console.error(`[firebase] Missing env: ${k}`);
+	if (!v) console.error('[firebase] Missing env:', k);
 }
 
 const options: FirebaseOptions = {
@@ -28,9 +28,7 @@ const options: FirebaseOptions = {
 function ensureApp(): FirebaseApp {
 	const apps = getApps();
 	if (apps.length) return getApp();
-	if (!options.projectId) {
-		throw new Error('[firebase] projectId is empty. Check your VITE_* env & build step.');
-	}
+	if (!options.projectId) throw new Error('[firebase] projectId is empty. Check your VITE_* env & build step.');
 	return initializeApp(options);
 }
 
@@ -38,4 +36,5 @@ const app = ensureApp();
 export const db = getFirestore(app);
 export const storage = getStorage(app);
 
+// 런타임 확인 로그
 console.log('[firebase] projectId =', app.options.projectId);
