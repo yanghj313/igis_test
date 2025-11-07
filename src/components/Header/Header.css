@@ -5,7 +5,7 @@
 	transform: translateX(-50%);
 	width: 100%;
 	max-width: 1720px;
-	padding: 24px 50px;
+	padding: 14px 50px;
 	margin: 40px auto 0;
 	border-radius: 20px;
 	z-index: 100;
@@ -193,7 +193,7 @@
 		width: 78%;
 		max-width: 420px;
 		height: 100vh;
-		padding: 84px 28px 24px;
+		padding: 74px 28px 24px;
 		background: rgba(0, 0, 0, 0.95);
 		transition: right 0.3s ease;
 		overflow-y: auto;
