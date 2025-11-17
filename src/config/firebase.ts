@@ -3,38 +3,45 @@ import { initializeApp, getApps, getApp, type FirebaseApp, type FirebaseOptions 
 import { getFirestore } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';
 
-const REQUIRED = {
-	VITE_FIREBASE_API_KEY: import.meta.env.VITE_FIREBASE_API_KEY,
-	VITE_FIREBASE_AUTH_DOMAIN: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
-	VITE_FIREBASE_PROJECT_ID: import.meta.env.VITE_FIREBASE_PROJECT_ID,
-	VITE_FIREBASE_STORAGE_BUCKET: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
-	VITE_FIREBASE_MESSAGING_SENDER_ID: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
-	VITE_FIREBASE_APP_ID: import.meta.env.VITE_FIREBASE_APP_ID,
-};
+let firebaseApp: FirebaseApp | null = null;
 
-for (const [k, v] of Object.entries(REQUIRED)) {
-	if (!v) console.error('[firebase] Missing env:', k);
+export function getFirebaseApp(): FirebaseApp {
+	if (firebaseApp) return firebaseApp;
+
+	const required = {
+		apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+		authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+		projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+		storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+		messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+		appId: import.meta.env.VITE_FIREBASE_APP_ID,
+	};
+
+	// 누락된 env 체크
+	Object.entries(required).forEach(([key, value]) => {
+		if (!value) console.error('[firebase] Missing env:', key);
+	});
+
+	const options: FirebaseOptions = {
+		apiKey: required.apiKey,
+		authDomain: required.authDomain,
+		projectId: required.projectId,
+		storageBucket: required.storageBucket,
+		messagingSenderId: required.messagingSenderId,
+		appId: required.appId,
+	};
+
+	if (!options.projectId) {
+		throw new Error('[firebase] projectId is empty. Check .env variables.');
+	}
+
+	firebaseApp = getApps().length ? getApp() : initializeApp(options);
+
+	console.log('[firebase] initialized projectId =', firebaseApp.options.projectId);
+
+	return firebaseApp;
 }
 
-const options: FirebaseOptions = {
-	apiKey: REQUIRED.VITE_FIREBASE_API_KEY || '',
-	authDomain: REQUIRED.VITE_FIREBASE_AUTH_DOMAIN || '',
-	projectId: REQUIRED.VITE_FIREBASE_PROJECT_ID || '',
-	storageBucket: REQUIRED.VITE_FIREBASE_STORAGE_BUCKET || '',
-	messagingSenderId: REQUIRED.VITE_FIREBASE_MESSAGING_SENDER_ID || '',
-	appId: REQUIRED.VITE_FIREBASE_APP_ID || '',
-};
-
-function ensureApp(): FirebaseApp {
-	const apps = getApps();
-	if (apps.length) return getApp();
-	if (!options.projectId) throw new Error('[firebase] projectId is empty. Check your VITE_* env & build step.');
-	return initializeApp(options);
-}
-
-const app = ensureApp();
-export const db = getFirestore(app);
-export const storage = getStorage(app);
-
-// 런타임 확인 로그
-console.log('[firebase] projectId =', app.options.projectId);
+// Firestore & Storage export (지연 초기화)
+export const db = () => getFirestore(getFirebaseApp());
+export const storage = () => getStorage(getFirebaseApp());
