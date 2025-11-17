@@ -62,6 +62,7 @@ function App() {
 		</>
 	);
 }
-console.log('API KEY:', import.meta.env.VITE_FIREBASE_API_KEY);
+console.log('🔥 ENV TEST:', import.meta.env);
+console.log('🔥 API KEY:', import.meta.env.VITE_FIREBASE_API_KEY);
 
 export default App;
