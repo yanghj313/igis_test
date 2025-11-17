@@ -1,9 +1,9 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-const Dron = () => {
+const Station = () => {
 	const { t } = useTranslation();
-	return <div>{t('dron')} 페이지입니다.</div>;
+	return <div>{t('station')} 페이지입니다.</div>;
 };
 
-export default Dron;
+export default Station;

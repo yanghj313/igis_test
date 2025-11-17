@@ -1,16 +1,39 @@
-// src/routes/SolutionRoutes.tsx
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import SolutionLayout from '@pages/Solution/SolutionLayout';
-import DronSolution from '@pages/Solution/DronSolution';
-import GISSolution from '@pages/Solution/GISSolution';
+import { Routes, Route, Navigate } from 'react-router-dom';
+
+import DroneSolutionLayout from '@/pages/Solution/DroneSolutionLayout';
+import GISSolutionLayout from '@/pages/Solution/GISSolutionLayout';
+
+import Station from '@/pages/Solution/Station';
+import Panorama from '@/pages/Solution/Panorama';
+import Pilot from '@/pages/Solution/Pilot';
+import Ims from '@/pages/Solution/Ims';
+import Viewer from '@/pages/Solution/Viewer';
+import Stream from '@/pages/Solution/Stream';
+
+import Igis from '@/pages/Solution/Igis';
+import Forest from '@/pages/Solution/Forest';
+import Fms from '@/pages/Solution/Fms';
 
 const SolutionRoutes: React.FC = () => (
 	<Routes>
-		<Route path="/" element={<SolutionLayout />}>
-			<Route index element={<DronSolution />} />
-			<Route path="dron" element={<DronSolution />} />
-			<Route path="gis" element={<GISSolution />} />
+		{/* 드론 솔루션 */}
+		<Route path="drone" element={<DroneSolutionLayout />}>
+			<Route index element={<Navigate to="station" replace />} />
+			<Route path="station" element={<Station />} />
+			<Route path="panorama" element={<Panorama />} />
+			<Route path="pilot" element={<Pilot />} />
+			<Route path="ims" element={<Ims />} />
+			<Route path="viewer" element={<Viewer />} />
+			<Route path="stream" element={<Stream />} />
+		</Route>
+
+		{/* GIS 솔루션 */}
+		<Route path="gis" element={<GISSolutionLayout />}>
+			<Route index element={<Navigate to="igis" replace />} />
+			<Route path="igis" element={<Igis />} />
+			<Route path="forest" element={<Forest />} />
+			<Route path="fms" element={<Fms />} />
 		</Route>
 	</Routes>
 );

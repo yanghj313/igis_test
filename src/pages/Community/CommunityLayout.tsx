@@ -1,44 +1,43 @@
 // src/pages/Community/CommunityLayout.tsx
 import React from 'react';
-import { NavLink, Outlet, useLocation } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
-import '../../assets/css/community.css';
+import { Outlet, useLocation } from 'react-router-dom';
+import SubLayout from '@/components/layout/SubLayout';
 
 const CommunityLayout: React.FC = () => {
-	const { t } = useTranslation();
 	const { pathname } = useLocation();
 
-	const inRoot = pathname === '/community' || pathname === '/community/';
-	const inContact = pathname.startsWith('/community/contact');
-	const inRecruit = pathname.startsWith('/community/recruitment');
-	const inNews = pathname.startsWith('/community/news');
-	const inVideo = pathname.startsWith('/community/video');
+	const segments = pathname.split('/').filter(Boolean);
+	// /community/news → ["community","news"]
+	const detail = segments[1]; // contact, recruitment, news, video
 
-	// 상세(/community/recruitment/detail/...)에서는 탭 숨김
-	const inRecruitDetail = pathname.startsWith('/community/recruitment/detail/');
-	const showTabs = (inRoot || inContact || inRecruit || inNews || inVideo) && !inRecruitDetail;
+	const titleMap: Record<string, string> = {
+		contact: 'CONTACT',
+		recruitment: 'RECRUIT',
+		news: 'NEWS',
+		video: 'VIDEO',
+	};
 
-	const tabs = [
-		{ to: 'contact', label: t('nav.contact') },
-		{ to: 'recruitment', label: t('nav.recruit') },
-		{ to: 'news', label: t('nav.news') },
-		{ to: 'video', label: t('nav.video') },
+	const title = titleMap[detail] || 'COMMUNITY';
 
-		// ✅ 라벨 전용 키
+	const groups = [
+		{
+			groupLabel: '커뮤니티',
+			items: [
+				{ to: 'contact', label: '문의하기' },
+				{ to: 'recruitment', label: '채용정보' },
+				{ to: 'news', label: '뉴스' },
+				{ to: 'video', label: '홍보영상' },
+			],
+		},
 	];
+
+	// 상세 페이지(탭 숨김)
+	const hideTabs = pathname.includes('/recruitment/detail') || pathname.includes('/news/') || pathname.includes('/video/');
+
 	return (
-		<section className="community-layout">
-			{showTabs && (
-				<nav className="media-tabs" aria-label="Community tabs">
-					{tabs.map(tab => (
-						<NavLink key={tab.to} to={tab.to} className={({ isActive }) => 'tab' + (isActive ? ' active' : '')}>
-							{tab.label}
-						</NavLink>
-					))}
-				</nav>
-			)}
+		<SubLayout category="Community" locationLabel="커뮤니티" title={title} groups={!hideTabs ? groups : []} bgImage="/assets/images/sub_04.png">
 			<Outlet />
-		</section>
+		</SubLayout>
 	);
 };
 

@@ -9,10 +9,11 @@ import BusinessSection from './components/BusinessSection/BusinessSection';
 import PartnerSection from './components/PartnerSection/PartnerSection';
 import Footer from './components/Footer/Footer';
 
-import CompanyRoutes from '@routes/CompanyRoutes';
-import CommunityRoutes from '@routes/CommunityRoutes';
-import SolutionRoutes from '@routes/SolutionRoutes';
-import BusinessRoutes from '@routes/BusinessRoutes';
+// 라우트 묶음
+import CompanyRoutes from '@/routes/CompanyRoutes';
+import CommunityRoutes from '@/routes/CommunityRoutes';
+import SolutionRoutes from '@/routes/SolutionRoutes';
+import BusinessRoutes from '@/routes/BusinessRoutes';
 
 function App() {
 	return (
@@ -20,7 +21,9 @@ function App() {
 			<Header />
 
 			<Routes>
-				{/* 메인 섹션 묶음 */}
+				{/* -------------------------------- */}
+				{/*               MAIN               */}
+				{/* -------------------------------- */}
 				<Route
 					path="/"
 					element={
@@ -29,24 +32,33 @@ function App() {
 							<DFOSSection />
 							<BusinessSection />
 							<PartnerSection />
-							<Footer />
 						</>
 					}
 				/>
 
-				{/* 서브 라우팅 */}
+				{/* -------------------------------- */}
+				{/*            SUB ROUTES            */}
+				{/* -------------------------------- */}
+
+				{/* Company 전체 라우트 */}
 				<Route path="/company/*" element={<CompanyRoutes />} />
-				<Route path="/community/*" element={<CommunityRoutes />} />
-				<Route path="/solution/*" element={<SolutionRoutes />} />
+
+				{/* Business 라우트 */}
 				<Route path="/business/*" element={<BusinessRoutes />} />
 
-				{/* 단축 경로 → 커뮤니티 탭으로 리다이렉트 (헤더는 그대로) */}
-				<Route path="/news" element={<Navigate to="/community/news" replace />} />
-				<Route path="/video" element={<Navigate to="/community/video" replace />} />
+				{/* Solution 라우트 */}
+				<Route path="/solution/*" element={<SolutionRoutes />} />
 
-				{/* 404 */}
+				{/* Community 라우트 */}
+				<Route path="/community/*" element={<CommunityRoutes />} />
+
+				{/* ❌ 단축 경로 제거됨 */}
+
+				{/* 404 → 메인 */}
 				<Route path="*" element={<Navigate to="/" replace />} />
 			</Routes>
+
+			<Footer />
 		</>
 	);
 }

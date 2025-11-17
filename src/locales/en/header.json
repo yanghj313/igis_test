@@ -9,5 +9,5 @@
 	"submenu_company": ["About Us", "Certifications & Awards"],
 	"submenu_business": ["Drone", "GIS System", "FMS", "R&D & Services"],
 	"submenu_solution": ["Drone Solutions", "GIS Solutions"],
-	"submenu_community": ["Contact", "Recruit", "News & Media"]
+	"submenu_community": ["Contact", "Recruit", "News", "Media"]
 }
