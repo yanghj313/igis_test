@@ -1,33 +1,60 @@
+// src/pages/Solution/SolutionLayout.tsx
 import React from 'react';
-import { useLocation, Navigate } from 'react-router-dom';
-import SubLayout from '../../components/layout/SubLayout';
+import { Outlet, useLocation, Navigate } from 'react-router-dom';
+import SubLayout from '@/components/layout/SubLayout';
 
-const SolutionLayout = () => {
+const SolutionLayout: React.FC = () => {
 	const { pathname } = useLocation();
+
+	// /solution/drone/station → ['solution', 'drone', 'station']
 	const segments = pathname.split('/').filter(Boolean);
 
-	const current = segments[1] || 'dron';
+	const category = segments[1] || 'drone'; // drone | gis
+	const detail = segments[2] || '';
 
-	// 대제목 매핑 (시안 기준)
+	// 🔵 대제목
 	const titleMap: Record<string, string> = {
-		dron: 'DFOS STATION',
+		drone: 'DRONE SOLUTION',
 		gis: 'GIS SOLUTION',
 	};
 
-	const title = titleMap[current] || 'DFOS STATION';
+	// 🔵 좌측 메뉴 그룹
+	const groups =
+		category === 'drone'
+			? [
+					{
+						groupLabel: '드론 솔루션',
+						items: [
+							{ to: 'station', label: 'DFOS STATION' },
+							{ to: 'panorama', label: 'Panorama' },
+							{ to: 'pilot', label: 'DFOS PILOT PRO' },
+							{ to: 'ims', label: 'DFOS IMS' },
+							{ to: 'viewer', label: 'DFOS Viewer' },
+							{ to: 'stream', label: 'DFOS Streaming Viewer' },
+						],
+					},
+			  ]
+			: [
+					{
+						groupLabel: 'GIS 솔루션',
+						items: [
+							{ to: 'igis', label: 'IGIS' },
+							{ to: 'forest', label: 'IGIS 산림 시스템' },
+							{ to: 'fms', label: 'FMS' },
+						],
+					},
+			  ];
 
-	// 탭 구성
-	const tabs = [
-		{ to: 'dron', label: '드론 솔루션' },
-		{ to: 'gis', label: 'GIS 솔루션' },
-	];
-
-	// 기본 이동
-	if (!segments[1]) {
-		return <Navigate to="dron" replace />;
+	// 기본 경로 정리
+	if (!detail) {
+		return <Navigate to={category === 'drone' ? 'station' : 'igis'} replace />;
 	}
 
-	return <SubLayout category="Solution" subTitle="솔루션" title={title} tabs={tabs} bgImage="/assets/images/sub_03.png" />;
+	return (
+		<SubLayout category="Solution" locationLabel={category === 'drone' ? '드론 솔루션' : 'GIS 솔루션'} title={titleMap[category]} groups={groups} bgImage="/assets/images/sub_03.png">
+			<Outlet />
+		</SubLayout>
+	);
 };
 
 export default SolutionLayout;
