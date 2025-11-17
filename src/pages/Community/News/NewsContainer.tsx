@@ -10,10 +10,10 @@ interface NewsRow {
 	eng_title?: string;
 	text?: string;
 	eng_text?: string;
-	img?: string; // ✅ Firestore에 존재
-	thumbnailURL?: string; // ✅ Firestore에 존재
-	timestamp?: number; // ✅ number 타입 (ms)
-	isBlind?: boolean | number; // ✅ 0 or 1
+	img?: string;
+	thumbnailURL?: string;
+	timestamp?: number;
+	isBlind?: boolean | number;
 }
 
 interface NewsData extends NewsRow {
@@ -30,14 +30,25 @@ const NewsContainer: React.FC = () => {
 	useEffect(() => {
 		const fetchNews = async (): Promise<void> => {
 			setLoading(true);
+
 			try {
-				const colRef = collection(db, 'news') as CollectionReference<NewsRow>;
+				/** ✅ Firestore 인스턴스 생성 (db() 호출 필수) */
+				const firestore = db();
+
+				/** Firestore collection 참조 */
+				const colRef = collection(firestore, 'news') as CollectionReference<NewsRow>;
 				const q = query(colRef, orderBy('timestamp', 'desc'));
 				const snapshot = await getDocs(q);
 
-				const rows: NewsData[] = snapshot.docs.map((d: QueryDocumentSnapshot<DocumentData>) => ({ id: d.id, ...(d.data() as NewsRow) } as NewsData));
+				const rows: NewsData[] = snapshot.docs.map(
+					(d: QueryDocumentSnapshot<DocumentData>) =>
+						({
+							id: d.id,
+							...(d.data() as NewsRow),
+						} as NewsData)
+				);
 
-				// ✅ isBlind이 1(true)인 항목만 제외 (0은 표시)
+				/** isBlind == true(1) 은 제외 */
 				const visible = rows.filter(r => !r.isBlind);
 
 				setNews(visible);
@@ -52,7 +63,7 @@ const NewsContainer: React.FC = () => {
 		fetchNews().catch(console.error);
 	}, []);
 
-	// ✅ JS timestamp (number) → YYYY.MM.DD 포맷
+	/** 날짜 formatting */
 	const formatDate = (ts?: number): string => {
 		if (!ts) return '';
 		const date = new Date(ts);
@@ -71,8 +82,8 @@ const NewsContainer: React.FC = () => {
 				{news.map(n => {
 					const displayTitle = isEnglish ? n.eng_title || n.title : n.title;
 
-					// ✅ Firestore 구조 기반 썸네일 결정
-					const thumbnail = n.thumbnailURL && n.thumbnailURL.trim() !== '' ? n.thumbnailURL : n.img && n.img.trim() !== '' ? n.img : '/assets/images/no-image.jpg'; // 기본 이미지
+					/** Firestore 기반 썸네일 결정 */
+					const thumbnail = n.thumbnailURL && n.thumbnailURL.trim() !== '' ? n.thumbnailURL : n.img && n.img.trim() !== '' ? n.img : '/assets/images/no-image.jpg';
 
 					return (
 						<li key={n.id} className="news-item">
@@ -85,7 +96,6 @@ const NewsContainer: React.FC = () => {
 									<h4 className="news-title">{displayTitle}</h4>
 									<p className="news-date">{formatDate(n.timestamp)}</p>
 
-									{/* 🔹 본문 미리보기 (텍스트 일부만 표시) */}
 									{n.text && <p className="news-preview">{n.text.slice(0, 80)}...</p>}
 								</div>
 							</Link>

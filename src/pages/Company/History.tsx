@@ -24,7 +24,7 @@ const History: React.FC = () => {
 		(async () => {
 			try {
 				// history 컬렉션에서 첫 문서의 list 배열을 사용 (콘솔 스샷 구조와 동일)
-				const snap = await getDocs(collection(db, 'history'));
+				const snap = await getDocs(collection(db(), 'history'));
 				const first = snap.docs[0]?.data() as HistoryDoc | undefined;
 
 				const list: HistoryRow[] = Array.isArray(first?.list) ? first!.list : [];

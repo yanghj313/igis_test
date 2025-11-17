@@ -22,7 +22,7 @@ const VideoContainer: React.FC = () => {
 	useEffect(() => {
 		const fetchVideos = async (): Promise<void> => {
 			try {
-				const q = query(collection(db, 'video'), orderBy('timestamp', 'desc'));
+				const q = query(collection(db(), 'video'), orderBy('timestamp', 'desc'));
 				const snapshot = await getDocs(q);
 
 				const rows: VideoData[] = snapshot.docs.map((d: QueryDocumentSnapshot<DocumentData>) => ({

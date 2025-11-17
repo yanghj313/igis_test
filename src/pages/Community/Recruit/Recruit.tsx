@@ -15,7 +15,7 @@ const Recruit: React.FC = () => {
 	useEffect(() => {
 		(async () => {
 			try {
-				const q = query(collection(db, 'recruit'), orderBy('fixtime', 'desc'));
+				const q = query(collection(db(), 'recruit'), orderBy('fixtime', 'desc'));
 				const snap = await getDocs(q);
 				const rows = snap.docs.map(d => ({ id: d.id, ...(d.data() as Omit<RecruitDoc, 'id'>) }));
 				setJobs(rows);

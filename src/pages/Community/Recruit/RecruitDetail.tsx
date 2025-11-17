@@ -17,7 +17,7 @@ const RecruitDetail: React.FC = () => {
 		if (!id) return;
 		(async () => {
 			try {
-				const snap = await getDoc(doc(db, 'recruit', id));
+				const snap = await getDoc(doc(db(), 'recruit', id));
 				setJob(snap.exists() ? { id: snap.id, ...(snap.data() as Omit<RecruitDoc, 'id'>) } : null);
 			} catch (e) {
 				setErr(e instanceof Error ? e.message : String(e));

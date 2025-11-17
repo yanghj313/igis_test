@@ -16,9 +16,12 @@ const Contact: React.FC = () => {
 
 	useEffect(() => {
 		const fetchData = async () => {
-			const snapshot = await getDocs(collection(db, 'contact'));
+			const firestore = db();
+
+			const snapshot = await getDocs(collection(firestore, 'contact'));
 			setData(snapshot.docs.map(doc => ({ id: doc.id, ...(doc.data() as Omit<ContactData, 'id'>) })));
 		};
+
 		fetchData();
 	}, []);
 

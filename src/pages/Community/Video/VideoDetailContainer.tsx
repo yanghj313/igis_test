@@ -25,7 +25,7 @@ const VideoDetailContainer: React.FC = () => {
 			if (!id) return;
 			setLoading(true);
 			try {
-				const docRef = doc(db, 'video', id);
+				const docRef = doc(db(), 'video', id);
 				const snapshot = await getDoc(docRef);
 				if (snapshot.exists()) {
 					const data = snapshot.data() as VideoData;
