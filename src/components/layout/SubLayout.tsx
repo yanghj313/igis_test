@@ -45,13 +45,15 @@ const SubLayout: React.FC<SubLayoutProps> = ({
 				<h1 className="sub-title">{title}</h1>
 
 				{/* Tabs */}
-				<nav className="sub-tabs">
-					{groups[0].items.map(item => (
-						<NavLink key={item.to} to={item.to} className={({ isActive }) => 'sub-tab' + (isActive ? ' active' : '')}>
-							{item.label}
-						</NavLink>
-					))}
-				</nav>
+				{groups?.[0]?.items?.length > 0 && (
+					<nav className="sub-tabs">
+						{groups[0].items.map(item => (
+							<NavLink key={item.to} to={item.to} className={({ isActive }) => 'sub-tab' + (isActive ? ' active' : '')}>
+								{item.label}
+							</NavLink>
+						))}
+					</nav>
+				)}
 			</div>
 			{/* page content */}
 			<div className="sub-content">{children}</div>

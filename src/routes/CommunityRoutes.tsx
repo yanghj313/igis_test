@@ -18,7 +18,7 @@ import VideoDetailContainer from '@/pages/Community/Video/VideoDetailContainer';
 const CommunityRoutes: React.FC = () => (
 	<Routes>
 		<Route path="/" element={<CommunityLayout />}>
-			{/* 기본 이동 */}
+			{/* 기본 페이지 */}
 			<Route index element={<Navigate to="contact" replace />} />
 
 			{/* 문의 */}
@@ -28,17 +28,17 @@ const CommunityRoutes: React.FC = () => (
 			<Route path="recruitment" element={<Recruit />} />
 			<Route path="recruitment/detail/:id" element={<RecruitDetail />} />
 
-			{/* Media (뉴스 + 홍보영상) */}
+			{/* 뉴스 / 홍보영상 */}
+			<Route path="media" element={<MediaTabsLayout />}>
+				<Route path="news" element={<NewsContainer />} />
+				<Route path="news/:id" element={<NewsDetailContainer />} />
 
-			{/* 잘못된 옛 경로 리다이렉트 */}
+				<Route path="video" element={<VideoContainer />} />
+				<Route path="video/:id" element={<VideoDetailContainer />} />
+			</Route>
+
+			{/* 잘못된 옛 경로 */}
 			<Route path="recruit/*" element={<Navigate to="/community/recruitment" replace />} />
-		</Route>
-		<Route path="media" element={<MediaTabsLayout />}>
-			<Route path="news" element={<NewsContainer />} />
-			<Route path="news/:id" element={<NewsDetailContainer />} />
-
-			<Route path="video" element={<VideoContainer />} />
-			<Route path="video/:id" element={<VideoDetailContainer />} />
 		</Route>
 	</Routes>
 );
