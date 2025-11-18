@@ -27,7 +27,9 @@ const SubLayout: React.FC<SubLayoutProps> = ({ category, locationLabel, title, g
 			{/* Hero */}
 			<div className="sub-hero" style={{ backgroundImage: `url(${bgImage})` }}>
 				<p className="breadcrumb">
-					{category} · {locationLabel}
+					{category}
+					<span> · </span>
+					{locationLabel}
 				</p>
 				<h1 className="sub-title">{title}</h1>
 				{/* Tabs */}

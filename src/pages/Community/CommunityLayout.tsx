@@ -13,8 +13,6 @@ const CommunityLayout: React.FC = () => {
 	const titleMap: Record<string, string> = {
 		contact: 'CONTACT',
 		recruitment: 'RECRUIT',
-		news: 'NEWS',
-		video: 'VIDEO',
 	};
 
 	const title = titleMap[detail] || 'COMMUNITY';
@@ -25,8 +23,6 @@ const CommunityLayout: React.FC = () => {
 			items: [
 				{ to: 'contact', label: '문의하기' },
 				{ to: 'recruitment', label: '채용정보' },
-				{ to: 'news', label: '뉴스' },
-				{ to: 'video', label: '홍보영상' },
 			],
 		},
 	];

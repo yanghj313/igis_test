@@ -1,25 +1,38 @@
 import React from 'react';
-import { NavLink, Outlet } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
-import '../../assets/css/media-tabs.css';
+import { Outlet, useLocation } from 'react-router-dom';
+import SubLayout from '@/components/layout/SubLayout';
 
-const MediaTabsLayout: React.FC = () => {
-	const { t } = useTranslation(); // common.json에 "news","video" 키 존재 가정
+const MediaTabsLayout = () => {
+	const { pathname } = useLocation();
+
+	const last = pathname.split('/').pop();
+	const valid = ['news', 'video'];
+
+	const current = valid.includes(last!) ? last : 'news';
+
+	const titleMap: Record<string, string> = {
+		news: 'NEWS',
+		video: 'MEDIA',
+	};
 
 	return (
-		<section className="media-tabs">
-			<div className="tabs">
-				<NavLink to="/community/news" className={({ isActive }) => 'tab' + (isActive ? ' active' : '')}>
-					{t('news')}
-				</NavLink>
-				<NavLink to="/community/video" className={({ isActive }) => 'tab' + (isActive ? ' active' : '')}>
-					{t('video')}
-				</NavLink>
-			</div>
-			<div className="tab-panel">
-				<Outlet />
-			</div>
-		</section>
+		<SubLayout
+			category="Community"
+			locationLabel="뉴스 및 홍보영상"
+			title={titleMap[current]}
+			groups={[
+				{
+					groupLabel: '뉴스 및 홍보영상',
+					items: [
+						{ to: 'news', label: '뉴스' },
+						{ to: 'video', label: '홍보영상' },
+					],
+				},
+			]}
+			bgImage="/assets/images/sub_04.png"
+		>
+			<Outlet />
+		</SubLayout>
 	);
 };
 

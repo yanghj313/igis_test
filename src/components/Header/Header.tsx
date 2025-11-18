@@ -84,7 +84,7 @@ const Header: React.FC = () => {
 		{
 			key: 'community',
 			sub: t('submenu_community', { returnObjects: true }) as string[],
-			links: ['/community/contact', '/community/recruitment', '/community/news', '/community/video'],
+			links: ['/community/contact', '/community/recruitment', '/community/media/news'],
 		},
 	];
 
