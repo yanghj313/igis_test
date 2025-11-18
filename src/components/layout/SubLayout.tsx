@@ -19,11 +19,22 @@ interface SubLayoutProps {
 	groups: SubGroup[];
 	bgImage: string;
 	children: React.ReactNode;
+	className?: string; // already exists
 }
 
-const SubLayout: React.FC<SubLayoutProps> = ({ category, locationLabel, title, groups, bgImage, children }) => {
+const SubLayout: React.FC<SubLayoutProps> = ({
+	category,
+	locationLabel,
+	title,
+	groups,
+	bgImage,
+	children,
+	className = '', // 👉 추가: 기본값 구성
+}) => {
 	return (
-		<section className="sub-layout">
+		<section className={`sub-layout ${className}`}>
+			{' '}
+			{/* 👉 드디어 적용됨 */}
 			{/* Hero */}
 			<div className="sub-hero" style={{ backgroundImage: `url(${bgImage})` }}>
 				<p className="breadcrumb">
@@ -32,6 +43,7 @@ const SubLayout: React.FC<SubLayoutProps> = ({ category, locationLabel, title, g
 					{locationLabel}
 				</p>
 				<h1 className="sub-title">{title}</h1>
+
 				{/* Tabs */}
 				<nav className="sub-tabs">
 					{groups[0].items.map(item => (
@@ -41,7 +53,6 @@ const SubLayout: React.FC<SubLayoutProps> = ({ category, locationLabel, title, g
 					))}
 				</nav>
 			</div>
-
 			{/* page content */}
 			<div className="sub-content">{children}</div>
 		</section>

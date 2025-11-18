@@ -42,7 +42,7 @@ const DroneSolutionLayout: React.FC = () => {
 	if (!detail) return <Navigate to="station" replace />;
 
 	return (
-		<SubLayout category="Solution" locationLabel="드론 솔루션" title={title} groups={groups} bgImage="/assets/images/sub_03.png">
+		<SubLayout category="Solution" locationLabel="드론 솔루션" title={title} groups={groups} bgImage="/assets/images/sub_03.png" className="drone-solution-layout">
 			<Outlet />
 		</SubLayout>
 	);
