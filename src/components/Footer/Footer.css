@@ -128,7 +128,9 @@
 	.footer-center {
 		font-size: 12px;
 	}
-
+	.footer-center p {
+		word-break: keep-all;
+	}
 	.footer-logo {
 		height: 28px;
 	}
