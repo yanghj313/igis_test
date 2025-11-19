@@ -7,9 +7,16 @@ const CommunityLayout: React.FC = () => {
 	const { pathname } = useLocation();
 
 	const segments = pathname.split('/').filter(Boolean);
-	// /community/news → ["community","news"]
 	const detail = segments[1]; // contact, recruitment, news, video
 
+	// 🟦 news, video는 여기서 SubLayout 안 씌움 → MediaTabsLayout에서 씌움
+	if (detail === 'news' || detail === 'video') {
+		return <Outlet />;
+	}
+
+	// -----------------------------------------
+	// 기존 Community pages (contact, recruitment)
+	// -----------------------------------------
 	const titleMap: Record<string, string> = {
 		contact: 'CONTACT',
 		recruitment: 'RECRUIT',
@@ -27,8 +34,7 @@ const CommunityLayout: React.FC = () => {
 		},
 	];
 
-	// 상세 페이지(탭 숨김)
-	const hideTabs = pathname.includes('/recruitment/detail') || pathname.includes('/news/') || pathname.includes('/video/');
+	const hideTabs = pathname.includes('/recruitment/detail');
 
 	return (
 		<SubLayout category="Community" locationLabel="커뮤니티" title={title} groups={!hideTabs ? groups : []} bgImage="/assets/images/sub_04.png">
