@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { addDoc, collection } from 'firebase/firestore';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { db, storage } from '@config/firebase';
+import '../../../assets/css/contact.css';
 
 type FileMeta = { name: string; url: string; size: number; type: string };
 
@@ -38,7 +39,7 @@ const initialForm: FormState = {
 };
 
 const ContactForm: React.FC = () => {
-	const [form, setForm] = useState(initialForm);
+	const [form, setForm] = useState<FormState>(initialForm);
 	const [submitting, setSubmitting] = useState(false);
 	const [done, setDone] = useState(false);
 	const [err, setErr] = useState<string | null>(null);
@@ -46,16 +47,19 @@ const ContactForm: React.FC = () => {
 	const onFieldChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
 		const el = e.currentTarget;
 
+		// 체크박스 처리
 		if ('type' in el && (el as HTMLInputElement).type === 'checkbox') {
 			setForm(prev => ({ ...prev, [el.name]: (el as HTMLInputElement).checked }));
 			return;
 		}
 
+		// 셀렉트 박스(숫자 인덱스) 처리
 		if (el.tagName === 'SELECT') {
 			setForm(prev => ({ ...prev, [el.name]: Number((el as HTMLSelectElement).value) }));
 			return;
 		}
 
+		// 나머지 텍스트/이메일/전화 등
 		setForm(prev => ({ ...prev, [el.name]: el.value }));
 	};
 
@@ -79,8 +83,11 @@ const ContactForm: React.FC = () => {
 		const folder = `contact/${Date.now()}`;
 		const result: FileMeta[] = [];
 
+		// ✅ 함수 호출해서 진짜 인스턴스를 꺼냄
+		const storageInstance = storage();
+
 		for (const f of form.files) {
-			const fileRef = ref(storage(), `${folder}/${encodeURIComponent(f.name)}`);
+			const fileRef = ref(storageInstance, `${folder}/${encodeURIComponent(f.name)}`);
 			await uploadBytes(fileRef, f);
 			const url = await getDownloadURL(fileRef);
 			result.push({ name: f.name, url, size: f.size, type: f.type });
@@ -101,65 +108,83 @@ const ContactForm: React.FC = () => {
 		setErr(null);
 
 		try {
-			const firestore = db();
 			const fileData = await uploadAll();
 
+			// files만 빼고 필요한 필드만 골라서 저장
+			const { company, email, manager, phone, rank, selectedButton, selectedProductButton, text, use, isAgree } = form;
+
+			const firestore = db(); // ✅ 인스턴스 꺼내기
+
 			await addDoc(collection(firestore, 'contact'), {
-				...form,
+				company,
+				email,
+				manager,
+				phone,
+				rank,
+				selectedButton,
+				selectedProductButton,
+				text,
+				use,
+				isAgree,
 				fileData,
 				timestamp: Date.now(),
 			});
 
 			setDone(true);
 			setForm(initialForm);
-		} catch (err) {
-			setErr(err instanceof Error ? err.message : String(err));
+		} catch (error) {
+			setErr(error instanceof Error ? error.message : String(error));
 		} finally {
 			setSubmitting(false);
 		}
 	};
 
 	return (
-		<section className="contact-section">
-			<h3>문의하기</h3>
+		<section className="contact-section content-box">
+			<h2>더 나은 서비스를 위해 고객님의 의견을 기다립니다.</h2>
 
 			{done ? (
 				<div>
 					<h4>문의가 정상적으로 접수되었습니다.</h4>
-					<button onClick={() => setDone(false)}>새 문의 작성</button>
+					<button type="button" onClick={() => setDone(false)}>
+						새 문의 작성
+					</button>
 				</div>
 			) : (
 				<form onSubmit={onSubmit} className="contact-form">
 					<div className="row">
-						<label>제목 *</label>
+						<label>
+							제목 <span className="essential">*</span>
+						</label>
 						<input name="use" value={form.use} onChange={onFieldChange} placeholder="ex) 로고 사용 문의" />
 					</div>
 
 					<div className="row two">
 						<div>
-							<label>회사 *</label>
-							<input name="company" value={form.company} onChange={onFieldChange} />
+							<label>
+								회사 <span className="essential">*</span>
+							</label>
+							<input name="company" value={form.company} onChange={onFieldChange} placeholder="회사명" />
 						</div>
 						<div>
-							<label>담당자 *</label>
-							<input name="manager" value={form.manager} onChange={onFieldChange} />
+							<label>
+								담당자 <span className="essential">*</span>
+							</label>
+							<input name="manager" value={form.manager} onChange={onFieldChange} placeholder="담당자명" />
 						</div>
 					</div>
 
 					<div className="row two">
 						<div>
-							<label>직책</label>
-							<input name="rank" value={form.rank} onChange={onFieldChange} />
+							<label>
+								이메일 <span className="essential">*</span>
+							</label>
+							<input type="email" name="email" value={form.email} onChange={onFieldChange} placeholder="example@domain.com" />
 						</div>
 						<div>
 							<label>전화번호</label>
-							<input name="phone" value={form.phone} onChange={onFieldChange} />
+							<input name="phone" value={form.phone} onChange={onFieldChange} placeholder="숫자만 입력" />
 						</div>
-					</div>
-
-					<div className="row">
-						<label>이메일 *</label>
-						<input type="email" name="email" value={form.email} onChange={onFieldChange} />
 					</div>
 
 					<div className="row two">
@@ -175,7 +200,9 @@ const ContactForm: React.FC = () => {
 						</div>
 
 						<div>
-							<label>제품 분류</label>
+							<label>
+								제품 분류<span className="essential">*</span>
+							</label>
 							<select name="selectedProductButton" value={form.selectedProductButton} onChange={onFieldChange}>
 								{PRODUCT_TYPES.map((t, i) => (
 									<option key={i} value={i}>
@@ -186,9 +213,11 @@ const ContactForm: React.FC = () => {
 						</div>
 					</div>
 
-					<div className="row">
-						<label>내용 *</label>
-						<textarea name="text" rows={7} value={form.text} onChange={onFieldChange} />
+					<div className="row last">
+						<label>
+							문의내용<span className="essential">*</span>
+						</label>
+						<textarea name="text" rows={7} value={form.text} onChange={onFieldChange} placeholder="문의 내용을 입력하세요" />
 					</div>
 
 					<div className="row">

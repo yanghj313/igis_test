@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { db } from '@config/firebase';
 import { doc, getDoc } from 'firebase/firestore';
 import NewsDetail from './NewsDetail';
+import '../../../assets/css/newsdetails.css';
 
 interface NewsData {
 	title: string;
@@ -46,8 +47,8 @@ const NewsDetailContainer: React.FC = () => {
 		fetchNews();
 	}, [id]);
 
-	if (!data) return <p>뉴스를 불러오는 중입니다...</p>;
-	if (data.isBlind) return <p>비공개 기사입니다.</p>;
+	if (!data) return <p className="loading">뉴스를 불러오는 중입니다...</p>;
+	if (data.isBlind) return <p className="blind_text">비공개 기사입니다.</p>;
 
 	return <NewsDetail data={data} content={content} EngContent={engContent} />;
 };

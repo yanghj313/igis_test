@@ -1,0 +1,194 @@
+.content-box {
+	padding-top: 150px;
+	padding-bottom: 220px;
+	margin: 0 auto;
+	box-sizing: border-box;
+	max-width: 1720px;
+}
+
+.content-box h2 {
+	font-size: 50px;
+	font-weight: 700;
+	text-align: left;
+	padding-bottom: 100px;
+	color: #244079;
+	padding-left: 50px;
+}
+
+.essential {
+	color: #008efb;
+}
+
+.content-box label {
+	font-size: 18px;
+	font-weight: 500;
+	color: #999999;
+	width: 100px;
+	display: inline-block;
+}
+
+.content-box input,
+.content-box select,
+.content-box textarea {
+	border-radius: 10px;
+	background: #f4f4f4;
+	border: none;
+	padding: 8px 10px;
+}
+.content-box input:focus,
+.content-box select:focus,
+.content-box textarea:focus {
+	outline: none;
+	border-color: #999; /* 혹은 포인트 컬러 */
+}
+
+.content-box .row {
+	margin-bottom: 40px;
+	display: inline-flex;
+	width: 100%;
+	align-items: center;
+}
+.content-box .row input,
+.content-box .row select {
+	width: calc(100% - 100px);
+	padding: 20px;
+}
+.content-box .row.two {
+	display: inline-flex;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.content-box .row.two div {
+	width: 48%;
+	display: inline-flex;
+	align-items: center;
+}
+
+.content-box .row.last {
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+	align-items: flex-start;
+	width: 100%;
+}
+.content-box .row.last textarea {
+	width: 100%;
+	text-align: left;
+	margin-top: 20px;
+	padding: 20px;
+	box-sizing: border-box;
+}
+.content-box input::placeholder,
+.content-box textarea::placeholder {
+	color: #999999;
+}
+.content-box input[type='file'] {
+	padding: 5px 10px;
+	background: none;
+}
+.content-box input[type='file']::file-selector-button,
+.content-box input[type='file']::-webkit-file-upload-button {
+	padding: 10px 20px;
+	border-radius: 10px;
+	color: #fff;
+	background: #999999;
+	border: none;
+	cursor: pointer;
+	font-size: 18px;
+}
+.content-box select::-ms-expand {
+	display: none;
+}
+.content-box select {
+	color: #999;
+}
+.content-box .agree {
+	width: 100%;
+}
+.content-box select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background-image: url("data:image/svg+xml;utf8,\<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'>\<path d='M1 1 L5 5 L9 1 Z' fill='%23008efb' />\</svg>");
+	background-repeat: no-repeat;
+	background-position: right 12px center;
+	background-size: 10px 6px;
+}
+
+.content-box button {
+	background: #008efb;
+	border: none;
+	color: #fff;
+	padding: 15px 0;
+	width: 200px;
+	border-radius: 10px;
+	font-size: 18px;
+	cursor: pointer;
+	margin-top: 20px;
+	margin: 70px auto;
+	display: block;
+}
+
+.content-box h4 {
+	font-size: 16px;
+	color: #999999;
+	margin-top: 10px;
+	text-align: center;
+}
+
+@media (max-width: 1400px) {
+	.content-box {
+		padding: 100px 20px 150px 20px;
+		margin: 0 auto;
+		box-sizing: border-box;
+		max-width: 1280px;
+	}
+}
+
+@media (max-width: 1024px) {
+	.content-box {
+		padding: 90px 20px 110px 20px;
+		max-width: 100%;
+	}
+
+	.content-box h2 {
+		font-size: 36px;
+		line-height: 140%;
+		padding-bottom: 75px;
+		padding-left: 30px;
+		word-break: keep-all;
+	}
+}
+@media (max-width: 580px) {
+	.content-box {
+		padding: 70px 20px 100px 20px;
+	}
+	.content-box h2 {
+		font-size: 25px;
+		padding-bottom: 50px;
+		padding-left: 25px;
+	}
+	.content-box .row {
+		margin-bottom: 10px;
+	}
+	.content-box .row.two {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 10px;
+	}
+
+	.content-box .row.two div {
+		width: 100%;
+	}
+
+	.content-box label {
+		font-size: 16px;
+	}
+
+	.content-box input[type='file']::file-selector-button,
+	.content-box input[type='file']::-webkit-file-upload-button {
+		padding: 8px 15px;
+		font-size: 16px;
+	}
+}

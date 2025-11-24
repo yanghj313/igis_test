@@ -1,0 +1,128 @@
+.content-box.recruit-list {
+	padding-top: 150px;
+	padding-bottom: 220px;
+	margin: 0 auto;
+	box-sizing: border-box;
+	max-width: 1620px;
+}
+
+.content-box.recruit-list h2 {
+	font-size: 50px;
+	font-weight: 700;
+	text-align: left;
+	padding-bottom: 100px;
+	color: #244079;
+	padding-left: 0;
+	word-break: keep-all;
+}
+.recruit-total {
+	font-size: 18px;
+	color: #999999;
+	font-weight: 700;
+	margin-bottom: 40px;
+}
+.recruit-total span {
+	color: #008efb;
+}
+.recruit-grid {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 30px;
+}
+.recruit-grid .recruit-card {
+	border: 1px solid #e5e5e5;
+	display: inline-block;
+	border-radius: 10px;
+	padding: 50px;
+	width: 48%;
+	box-sizing: border-box;
+}
+.recruit-status {
+	margin-bottom: 20px;
+	display: inline-block;
+	font-size: 16px;
+	font-weight: 500;
+}
+.recruit-status.open {
+	color: #008efb;
+}
+.recruit-status.closed {
+	color: #999;
+}
+.recruit-title {
+	font-size: 18px;
+	font-weight: 700;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #e5e5e5;
+	display: block;
+	color: #333;
+}
+.recruit-title.close {
+	color: #999999;
+}
+
+.recruit-period {
+	font-size: 16px;
+	color: #666666;
+	margin-top: 20px;
+	display: block;
+}
+
+.recruit-period.close {
+	color: #999999;
+}
+
+@media (max-width: 1400px) {
+	.content-box.recruit-list {
+		padding: 100px 20px 150px 20px;
+		margin: 0 auto;
+		box-sizing: border-box;
+		max-width: 1280px;
+	}
+}
+
+@media (max-width: 1024px) {
+	.content-box.recruit-list {
+		padding: 90px 20px 110px 20px;
+		max-width: 100%;
+	}
+
+	.content-box.recruit-list h2 {
+		font-size: 36px;
+		line-height: 140%;
+		padding-bottom: 75px;
+		word-break: keep-all;
+	}
+}
+@media (max-width: 580px) {
+	.content-box.recruit-list {
+		padding: 70px 20px 100px 20px;
+		max-width: 90%;
+	}
+	.content-box.recruit-list h2 {
+		font-size: 25px;
+		padding-bottom: 50px;
+	}
+	.recruit-grid .recruit-card {
+		width: 100%;
+		padding: 30px;
+	}
+
+	.recruit-total {
+		font-size: 16px;
+		margin-bottom: 20px;
+	}
+
+	.recruit-status {
+		font-size: 14px;
+	}
+
+	.recruit-title {
+		font-size: 16px;
+	}
+
+	.recruit-period {
+		font-size: 14px;
+	}
+}
