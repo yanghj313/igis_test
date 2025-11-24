@@ -8,8 +8,8 @@ const MOBILE_BP = 1024; // CSS와 동일 분기
 const Header: React.FC = () => {
 	const [isScrolled, setIsScrolled] = useState(false);
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
-	const [hoveredIndex, setHoveredIndex] = useState<number | null>(null); // 데스크톱 hover용
-	const [expandedIndex, setExpandedIndex] = useState<number | null>(null); // 모바일 accordion용
+	const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+	const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 	const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth <= MOBILE_BP);
 	const hoverTimeout = useRef<NodeJS.Timeout | null>(null);
 	const { t, i18n } = useTranslation();
