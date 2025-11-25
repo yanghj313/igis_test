@@ -21,14 +21,12 @@ type ParsedEvent = {
 	text: string;
 };
 
-// "2025.05 내용" 한 줄을 {year, month, text}로 파싱
 const parseLines = (raw: string, fallbackYear?: number): ParsedEvent[] => {
 	return raw
 		.split(/\r?\n/)
 		.map(line => line.trim())
 		.filter(Boolean)
 		.map(line => {
-			// 예: "2025.05 내용", "· 2025.5 내용"
 			const m = line.match(/^[·•-]?\s*(\d{4})\.(\d{1,2})\s*(.+)$/);
 
 			if (m) {
@@ -46,7 +44,6 @@ const parseLines = (raw: string, fallbackYear?: number): ParsedEvent[] => {
 				};
 			}
 
-			// 형식 안 맞으면 월 없이 전체 텍스트만
 			return {
 				year: fallbackYear ?? 0,
 				text: line,
@@ -60,7 +57,6 @@ const History: React.FC = () => {
 	const [loading, setLoading] = useState(true);
 	const [err, setErr] = useState<string | null>(null);
 
-	// 1) Firestore에서 연혁 데이터 가져오기
 	useEffect(() => {
 		(async () => {
 			try {
@@ -76,7 +72,6 @@ const History: React.FC = () => {
 		})();
 	}, []);
 
-	// 2) 언어에 맞게 "2025.05 내용" → ParsedEvent로 파싱해서 연도별로 묶기
 	const grouped = useMemo(() => {
 		const map: Record<number, ParsedEvent[]> = {};
 
@@ -94,7 +89,6 @@ const History: React.FC = () => {
 			}
 		}
 
-		// 각 연도 안에서는 월 오름차순 정렬
 		Object.keys(map).forEach(key => {
 			const y = Number(key);
 			map[y].sort((a, b) => {
@@ -107,7 +101,6 @@ const History: React.FC = () => {
 		return map;
 	}, [rows, i18n.language]);
 
-	// 3) 최신 연도부터 내림차순
 	const years = useMemo(
 		() =>
 			Object.keys(grouped)
@@ -117,7 +110,6 @@ const History: React.FC = () => {
 		[grouped]
 	);
 
-	// 왼쪽에서 활성화된 연도 index
 	const [activeIndex, setActiveIndex] = useState(0);
 
 	useEffect(() => {
@@ -126,11 +118,10 @@ const History: React.FC = () => {
 
 	const activeYear = years[activeIndex];
 
-	// 4) 특정 연도 섹션으로 스크롤
 	const scrollToYear = (year: number) => {
 		const el = document.getElementById(`history-year-${year}`);
 		if (!el) return;
-		const offset = 150; // 헤더 높이만큼 위 여백
+		const offset = 150;
 		const top = window.scrollY + el.getBoundingClientRect().top - offset;
 
 		window.scrollTo({
@@ -139,7 +130,6 @@ const History: React.FC = () => {
 		});
 	};
 
-	// 5) 스크롤에 따라 오른쪽 contBox 기준으로 왼쪽 활성 연도 변경
 	useEffect(() => {
 		if (!years.length) return;
 
@@ -212,7 +202,6 @@ const History: React.FC = () => {
 	return (
 		<section className="subPage history_page" id="content">
 			<div className="inner">
-				{/* 왼쪽 연도 리스트 (한컴 스타일 느낌) */}
 				<div className="leftBox">
 					<div className="historySlideWrap">
 						<button type="button" className="arrowBtn prevBtn" onClick={goPrev}>
@@ -233,7 +222,6 @@ const History: React.FC = () => {
 					</div>
 				</div>
 
-				{/* 오른쪽 연혁 리스트 */}
 				<ul className="rightBox">
 					{years.map(year => (
 						<li key={year} id={`history-year-${year}`} className={`contBox year_${year} ${year === activeYear ? 'on' : ''}`}>
