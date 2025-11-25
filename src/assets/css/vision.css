@@ -1,0 +1,303 @@
+.vision-section {
+	padding: 150px 0 220px;
+	background: #ffffff;
+}
+
+.vision-inner {
+	max-width: 1530px;
+	margin: 0 auto;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.vision-head {
+	margin-bottom: 48px;
+}
+
+.vision-kicker {
+	font-size: 50px;
+	font-weight: 400;
+	text-align: left;
+	color: #244079;
+	padding-left: 50px;
+	padding-bottom: 10px;
+	word-break: keep-all;
+}
+
+.vision-title-main {
+	font-size: 50px;
+	font-weight: 700;
+	text-align: left;
+	padding-bottom: 30px;
+	color: #244079;
+	padding-left: 50px;
+}
+
+.vision-intro {
+	font-size: 18px;
+	line-height: 140%;
+	color: #666;
+	padding-bottom: 80px;
+	padding-left: 50px;
+	word-break: keep-all;
+}
+
+/* 리스트 레이아웃 */
+
+.vision-list {
+	display: flex;
+	justify-content: space-between;
+	gap: 24px;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.vision-item {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	opacity: 0;
+	transform: translateY(40px);
+	animation: vision-float-in 0.8s ease-out forwards;
+}
+
+/* 카드 기본 형태 (타원형) */
+
+.vision-card {
+	position: relative;
+	max-width: 360px;
+	max-height: 600px;
+	width: 100%;
+	height: 100%;
+	border-radius: 180px;
+	overflow: hidden;
+	cursor: default;
+	display: block;
+}
+.vision-item:nth-child(even) .vision-card {
+	margin-top: 100px;
+}
+/* 이미지 + 기본 딤 (검정) */
+
+.vision-img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+
+.vision-card::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.2); /* 기본 검정 딤 */
+	transition: background 0.35s ease;
+}
+
+/* hover 시 딤 컬러 변경 (#244079) */
+
+.vision-card:hover::before {
+	background: rgba(36, 64, 121, 0.4);
+}
+
+/* 텍스트 영역 */
+
+.vision-content {
+	position: absolute;
+	inset: 0;
+	padding: 20px 16px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	color: #ffffff;
+	transition: transform 0.35s ease;
+	top: 5%;
+}
+
+.vision-content:hover {
+	padding-top: 70%;
+}
+
+/* 가운데 있던 문구가 아래로 살짝 내려가는 효과 */
+
+.vision-card:hover .vision-content {
+	transform: translateY(10px);
+}
+
+/* 메인 단어 (INNOVATE / GRIT 등) */
+
+.vision-word {
+	font-size: 45px;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	margin-bottom: 8px;
+	position: relative;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.vision-first {
+	display: inline-block;
+	transition: color 0.35s ease;
+}
+
+.vision-card:hover .vision-first {
+	color: #84e8fa;
+}
+
+.vision-desc {
+	font-size: 16px;
+	line-height: 1.5;
+	word-break: keep-all;
+	max-width: 90%;
+	opacity: 0;
+	transform: translateY(8px);
+	transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+/* hover 시 설명 노출 */
+
+.vision-card:hover .vision-desc {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* 추가 설명이 없는 카드(추후 쓸 수도 있어서) */
+.vision-card:not(:hover) .vision-desc:empty {
+	display: none;
+}
+
+/* 처음 등장할 때 순서대로 플로팅되며 올라오는 애니메이션 */
+
+@keyframes vision-float-in {
+	0% {
+		opacity: 0;
+		transform: translateY(40px);
+	}
+	60% {
+		opacity: 1;
+		transform: translateY(-6px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* 반응형 */
+@media (max-width: 1400px) {
+	.vision-section {
+		padding: 100px 20px 150px 20px;
+		box-sizing: border-box;
+	}
+
+	.vision-inner {
+		max-width: 1000px;
+	}
+
+	.vision-head {
+		margin-bottom: 20px;
+	}
+
+	.vision-kicker {
+		font-size: 36px;
+		padding-left: 25px;
+		padding-bottom: 10px;
+	}
+
+	.vision-kicker {
+		font-size: 36px;
+		padding-left: 25px;
+	}
+
+	.vision-title-main {
+		font-size: 36px;
+		padding-bottom: 30px;
+		padding-left: 25px;
+	}
+
+	.vision-intro {
+		font-size: 16px;
+		padding-left: 25px;
+	}
+
+	/* 리스트 레이아웃 */
+
+	.vision-list {
+		gap: 20px;
+	}
+
+	/* 카드 기본 형태 (타원형) */
+
+	.vision-card {
+		max-width: 280px;
+		max-height: 467px;
+		border-radius: 180px;
+	}
+	.vision-item:nth-child(even) .vision-card {
+		margin-top: 50px;
+	}
+	/* 이미지 + 기본 딤 (검정) */
+
+	.vision-word {
+		font-size: 30px;
+	}
+
+	.vision-desc {
+		font-size: 14px;
+	}
+}
+@media (max-width: 1024px) {
+	.vision-list {
+		gap: 16px;
+	}
+}
+
+@media (max-width: 768px) {
+	.vision-section {
+		padding: 56px 0 80px;
+	}
+
+	.vision-list {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.vision-item {
+		flex: 0 1 calc(50% - 16px);
+		margin-bottom: 24px;
+	}
+
+	.vision-card {
+		aspect-ratio: 2.4 / 3.4;
+	}
+}
+
+@media (max-width: 580px) {
+	.vision-kicker {
+		font-size: 30px;
+	}
+
+	.vision-kicker {
+		font-size: 30px;
+	}
+
+	.vision-title-main {
+		font-size: 30px;
+		padding-bottom: 20px;
+	}
+
+	.vision-intro {
+		font-size: 14px;
+	}
+	.vision-item {
+		flex: 0 1 100%;
+		margin-bottom: 20px;
+	}
+
+	.vision-item:nth-child(even) .vision-card {
+		margin-top: 0;
+	}
+}

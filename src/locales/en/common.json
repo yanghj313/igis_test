@@ -56,5 +56,23 @@
 	"footer_addr1": "[HQ] 3F, 232, Alphacity 2-ro, Suseong-gu, Daegu, Korea",
 	"footer_addr2": "[Changwon] 3F, Dongjin Building, 11-31, Yongji-ro 169beon-gil, Seongsan-gu, Changwon, Gyeongsangnam-do",
 	"footer_contact": "Tel. +82-70-8740-5534 | Mail. ceo@igis.co.kr",
-	"footer_copy": "Copyright © iGiS. All Rights Reserved"
+	"footer_copy": "Copyright © iGiS. All Rights Reserved",
+	"vision_page": {
+		"kicker": "Through intelligent drone platforms",
+		"main": "Realizing sustainable innovation and happiness",
+		"intro1": "We advance drone & AI R&D and safety services to drive industrial innovation and create jobs.",
+		"intro2": "By expanding domestically and globally, we enhance the value of drones and help solve social issues and improve quality of life.",
+		"items": {
+			"innovate": "A leading innovator transforming national high-tech industries",
+			"grit": "Persistent passion, challenge, and rapid innovation",
+			"integrity": "A new standard of openness and trust-first transparency",
+			"serve": "Commitment to the prosperity and growth of regions and the nation"
+		}
+	},
+	"organization_page": {
+		"titleLine1": "Solid organization and differentiated technology,",
+		"titleLine2": "IGIS grows together.",
+		"description": "Systematic management support and overseas marketing, the corporate research institute’s R&D, GIS·WEB·Mobile solution development, drone surveying, and design teams work organically together to deliver customized spatial information solutions for each client.",
+		"chartAlt": "IGIS organization chart"
+	}
 }

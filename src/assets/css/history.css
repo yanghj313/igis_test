@@ -1,0 +1,242 @@
+/* =========================
+   연혁 공통 레이아웃
+   ========================= */
+
+.history_page .inner {
+	padding: 150px 0 200px;
+	display: flex;
+	gap: 10%;
+}
+
+/* 왼쪽 박스 (연도 리스트 고정) */
+.history_page .leftBox {
+	width: 24%;
+	height: fit-content;
+	position: sticky;
+	top: 150px;
+	animation: history_upBox 1s 0.5s ease both;
+	z-index: 4;
+}
+
+@keyframes history_upBox {
+	0% {
+		transform: translateY(-20%);
+		opacity: 0;
+	}
+	100% {
+		transform: none;
+		opacity: 1;
+	}
+}
+
+.history_page .leftBox .historySlideWrap {
+	position: relative;
+	padding: 45px 0 20px;
+}
+
+/* 위/아래 화살표 버튼 */
+.history_page .leftBox .arrowBtn {
+	color: #b5b5b5;
+	font-size: 30px;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	cursor: pointer;
+	background: none;
+	border: none;
+	padding: 0;
+}
+
+.history_page .leftBox .arrowBtn.prevBtn {
+	top: 0;
+}
+
+.history_page .leftBox .arrowBtn.nextBtn {
+	bottom: -30px;
+}
+
+.history_page .leftBox .arrowBtn img {
+	width: 100%;
+	height: 20px;
+}
+
+.history_page .leftBox .arrowBtn .arrow-down {
+	transform: rotate(180deg);
+}
+
+/* =========================
+   왼쪽 연도 리스트 (React용)
+   ========================= */
+
+.history_page .historyYearList {
+	list-style: none;
+	margin: 0;
+	max-height: 600px;
+	padding: 20px 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+}
+
+.history_page .historyYearItem {
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 50px;
+}
+
+.history_page .historyYearItem p {
+	font-size: 36px;
+	color: #cbcbcb;
+	font-weight: 800;
+	margin: 20px 0;
+	transition: all 0.3s ease;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.history_page .historyYearItem.active p {
+	font-size: 100px;
+	color: #008efb;
+	font-weight: 800;
+}
+
+/* =========================
+   오른쪽 연혁 박스
+   ========================= */
+
+.history_page .rightBox {
+	width: 66%;
+	padding-bottom: 20%;
+}
+
+.history_page .rightBox .contBox {
+	padding: 50px 0;
+	border-bottom: 1px solid #e5e5e5;
+	position: relative;
+}
+
+.history_page .rightBox .contBox:after {
+	content: '';
+	width: 100%;
+	position: absolute;
+	height: 100%;
+	border-top: 1px solid var(--pointColor);
+	border-bottom: 1px solid var(--pointColor);
+	bottom: 0;
+	left: 0;
+	opacity: 0;
+	transition: 0.5s ease;
+}
+
+.history_page .rightBox .contBox.on:before {
+	opacity: 1;
+	transform: rotate(45deg);
+}
+
+.history_page .rightBox .contBox.on:after {
+	opacity: 1;
+}
+
+.history_page .rightBox .contBox:last-child {
+	margin-bottom: 0;
+	border: none;
+}
+
+/* 텍스트 박스 */
+.history_page .rightBox .contBox .textBox {
+	letter-spacing: -0.7px;
+}
+
+.history_page .rightBox .contBox .textBox h3 {
+	font-size: 30px;
+	font-weight: 800;
+	margin-bottom: 35px;
+	line-height: 1.5;
+}
+
+.history_page .rightBox .contBox .textBox h3 span {
+	background-image: linear-gradient(rgba(26, 117, 186, 0.2), rgba(26, 117, 186, 0.2));
+	background-repeat: no-repeat;
+	background-position: left bottom 0;
+	background-size: 0 30%;
+	transition: 1s ease;
+	-webkit-box-sizing: border-box;
+	display: initial;
+	opacity: 0.5;
+}
+
+.history_page .rightBox .contBox.on .textBox h3 span {
+	background-size: 100% 30%;
+	opacity: 1;
+}
+
+.history_page .history-line {
+	font-size: 20px;
+	line-height: 1.6;
+	margin-bottom: 5px;
+	color: #636363;
+	display: flex;
+	gap: 12px;
+}
+
+.history_page .rightBox .contBox.on .history-line {
+	opacity: 1;
+	transform: none;
+}
+.history_page .rightBox .contBox .history-line {
+	opacity: 0.5;
+}
+.history_page .history-month {
+	min-width: 36px;
+	font-weight: 700;
+	color: #121212;
+}
+
+.history_page .history-text {
+	flex: 1;
+}
+
+.history_page .rightBox .contBox .textBox p:last-child {
+	margin-bottom: 0;
+}
+
+/* =========================
+   간단 반응형
+   ========================= */
+
+@media (max-width: 900px) {
+	.history_page .inner {
+		flex-direction: column;
+		gap: 40px;
+	}
+
+	.history_page .leftBox {
+		position: static;
+		width: 100%;
+		order: 1;
+	}
+
+	.history_page .rightBox {
+		width: 100%;
+		order: 2;
+		padding-bottom: 60px;
+	}
+
+	.history_page .historyYearItem p {
+		font-size: 28px;
+	}
+
+	.history_page .historyYearItem.active p {
+		font-size: 60px;
+	}
+
+	.history_page .rightBox .contBox .textBox h3 {
+		font-size: 24px;
+	}
+
+	.history_page .history-line {
+		font-size: 16px;
+	}
+}

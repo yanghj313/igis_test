@@ -56,5 +56,23 @@
 	"footer_addr1": "[본사] 대구광역시 수성구 알파시티2로 232, 3층 (대흥동)",
 	"footer_addr2": "[창원] 경상남도 창원시 성산구 용지로169번길 11-31, 제3층(동진빌딩) (용호동)",
 	"footer_contact": "Tel. 070-8740-5534 | Mail. ceo@igis.co.kr",
-	"footer_copy": "Copyright © iGiS. All Rights Reserved"
+	"footer_copy": "Copyright © iGiS. All Rights Reserved",
+	"vision_page": {
+		"kicker": "지능형 드론 플랫폼을 통한",
+		"main": "지속가능한 혁신과 행복 실현",
+		"intro1": "드론·AI R&D와 안전·보안 서비스를 고도화해 산업 혁신과 일자리를 창출하겠습니다.",
+		"intro2": "국내외 확장을 통해 드론 가치를 높여 사회 문제 해결과 삶의 질 향상에 보탬이 되겠습니다.",
+		"items": {
+			"innovate": "미래가치를 바라보는 국가 첨단산업 변혁 리더",
+			"grit": "끈기있는 열정과 도전, 빠른 혁신",
+			"integrity": "신뢰를 최우선으로 한 투명하고 열린 새로운 표준",
+			"serve": "지역사회, 국가의 번영과 발전을 위한 노력"
+		}
+	},
+	"organization_page": {
+		"titleLine1": "단단한 조직력, 차별화된 기술,",
+		"titleLine2": "IGIS는 함께 만들어 갑니다.",
+		"description": "체계적인 경영지원과 해외 마케팅, 기업부설연구소의 R&D, GIS·WEB·Mobile 솔루션 개발과 드론측량, 디자인 조직이 유기적으로 협력해 고객별 맞춤형 공간정보 솔루션을 완성합니다.",
+		"chartAlt": "IGIS 조직도"
+	}
 }
