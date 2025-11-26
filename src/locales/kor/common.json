@@ -74,5 +74,116 @@
 		"titleLine2": "IGIS는 함께 만들어 갑니다.",
 		"description": "체계적인 경영지원과 해외 마케팅, 기업부설연구소의 R&D, GIS·WEB·Mobile 솔루션 개발과 드론측량, 디자인 조직이 유기적으로 협력해 고객별 맞춤형 공간정보 솔루션을 완성합니다.",
 		"chartAlt": "IGIS 조직도"
+	},
+	"history_text": "사업 영역을 확장해나가는, <strong>IGIS</strong>",
+	"location_detail": {
+		"title": "오시는 길",
+		"hqTab": "본사",
+		"changwonTab": "창원 지사",
+		"label": {
+			"address": "Address",
+			"email": "E-mail",
+			"phone": "Phone",
+			"fax": "Fax"
+		},
+		"hq": {
+			"address": "대구광역시 수성구 알파시티1로 232, 3층 (대흥동)",
+			"email": "ceo@igis.co.kr",
+			"phone": "070-8740-5534",
+			"fax": "070-8740-1730"
+		},
+		"changwon": {
+			"address": "경상남도 창원시 성산구 용지로169번길 11-31 제 3층 (동진빌딩) (용호동)",
+			"email": "ceo@igis.co.kr",
+			"phone": "070-8740-5534",
+			"fax": "070-8740-1730"
+		}
+	},
+	"certificate_page": {
+		"titleLine1": "IGIS는 믿을 수 있는",
+		"titleLine2": "전문 인증 기업입니다.",
+		"description": "IGIS의 기술과 서비스는 국내외 각종 인증으로 그 가치를 인정받고 있습니다.\n공공기관과 민간 고객이 안심하고 선택할 수 있는 파트너가 되기 위해 품질 관리와 기술 혁신을 지속하고 있습니다.",
+		"items": {
+			"01": {
+				"title": "GS인증 1등급",
+				"subTitle": "Control System v1.0.0"
+			},
+			"02": {
+				"title": "GS인증 1등급",
+				"subTitle": "DFOS Pilot v2.2.7"
+			},
+			"03": {
+				"title": "가족친화 인증서"
+			},
+			"04": {
+				"title": "일자리창출 우수기업 인증"
+			},
+			"05": {
+				"title": "조달청 벤처나라 지정증서",
+				"subTitle": "DFOS Station 외 3종"
+			},
+			"06": {
+				"title": "조달청 벤처나라 지정증서",
+				"subTitle": "DFOS Station SUT 외 2종"
+			},
+			"07": {
+				"title": "조달청 벤처나라 지정증서",
+				"subTitle": "DFOS Panorama"
+			},
+			"08": {
+				"title": "ISO9001"
+			},
+			"09": {
+				"title": "이노비즈(INNO-BIZ) 확인서(국문)"
+			},
+			"10": {
+				"title": "이노비즈(INNO-BIZ) 확인서(영문)"
+			},
+			"11": {
+				"title": "메인비즈 경영혁신형 중소기업(Main-Biz) 확인서"
+			},
+			"12": {
+				"title": "해외조달시장 진출 유망기업",
+				"subTitle": "G-PASS 기업"
+			},
+			"13": {
+				"title": "Pre-스타기업 지정서(국문)"
+			},
+			"14": {
+				"title": "Pre-스타기업 지정서(영문)"
+			},
+			"15": {
+				"title": "기업부설연구소 인정서"
+			},
+			"16": {
+				"title": "벤처기업확인서"
+			},
+			"17": {
+				"title": "전문연구사업자 신고증"
+			},
+			"18": {
+				"title": "GS인증 1등급",
+				"subTitle": "DFOS Station v1.0.0"
+			}
+		}
+	},
+	"award_page": {
+		"titleLine1": "자체 연구개발로 확보한 다수의 특허",
+		"description": "IGIS는 스마트 드론, 지리정보시스템 등 다양한 분야에서 기술력을 인정받아 다수의 특허와 상표권을 보유하고 있습니다.",
+		"items": {
+			"01": { "title": "스마트 드론 관제시스템" },
+			"02": { "title": "드론기체세팅 및 자동운항을 통한 관제시스템 및 방법" },
+			"03": { "title": "파노라마 영상 제공시스템 ", "subTitle": "국내특허" },
+			"04": { "title": "파노라마 영상 제공시스템", "subTitle": "미국특허" },
+			"05": { "title": "파노라마 영상 제공시스템", "subTitle": "PCT" },
+			"06": { "title": "드론 영상 관리 시스템" },
+			"07": { "title": "무인항공기를 이용한 산림병해충 의심목 선별시스템" },
+			"08": { "title": "드론을 활용한 상수도관로 관리시스템" },
+			"09": { "title": "드론 및 GIS를 이용한 실감형 골프 컨텐츠 제공 시스템" },
+			"10": { "title": "지리정보시스템을 이용한 공동 프로젝트 운영방법" },
+			"11": { "title": "지리정보시스템을 이용한 현장관리시스템 및 방법" },
+			"12": { "title": "U-의료센터를 이용한 원격의료시스템" },
+			"13": { "title": "DFOS Solution 상표등록" }
+		}
 	}
 }

@@ -74,5 +74,116 @@
 		"titleLine2": "IGIS grows together.",
 		"description": "Systematic management support and overseas marketing, the corporate research institute’s R&D, GIS·WEB·Mobile solution development, drone surveying, and design teams work organically together to deliver customized spatial information solutions for each client.",
 		"chartAlt": "IGIS organization chart"
+	},
+	"history_text": "Expanding business areas, <strong>IGIS</strong>",
+	"location_detail": {
+		"title": "Location",
+		"hqTab": "Head Office",
+		"changwonTab": "Changwon Branch",
+		"label": {
+			"address": "Address",
+			"email": "E-mail",
+			"phone": "Phone",
+			"fax": "Fax"
+		},
+		"hq": {
+			"address": "3F, 232, Alphacity 1-ro, Suseong-gu, Daegu, Korea",
+			"email": "ceo@igis.co.kr",
+			"phone": "+82-70-8740-5534",
+			"fax": "+82-70-8740-1730"
+		},
+		"changwon": {
+			"address": "3F, Dongjin Bldg., 11-31, Yongji-ro 169beon-gil, Seongsan-gu, Changwon-si, Gyeongsangnam-do",
+			"email": "ceo@igis.co.kr",
+			"phone": "+82-70-8740-5534",
+			"fax": "+82-70-8740-1730"
+		}
+	},
+	"certificate_page": {
+		"titleLine1": "IGIS is a trusted",
+		"titleLine2": "certified specialist.",
+		"description": "IGIS has been officially recognized by various domestic and overseas certification bodies.\nWe continuously innovate our technology and quality management so that public institutions and private clients can choose us with confidence.",
+		"items": {
+			"01": {
+				"title": "GS Certification Grade 1",
+				"subTitle": "Control System v1.0.0"
+			},
+			"02": {
+				"title": "GS Certification Grade 1",
+				"subTitle": "DFOS Pilot v2.2.7"
+			},
+			"03": {
+				"title": "Family-friendly Company Certification"
+			},
+			"04": {
+				"title": "Excellent Job-creation Company Certification"
+			},
+			"05": {
+				"title": "Korea ON-line E-Procurement Venture-nara Listing",
+				"subTitle": "DFOS Station and 3 others"
+			},
+			"06": {
+				"title": "Korea ON-line E-Procurement Venture-nara Listing",
+				"subTitle": "DFOS Station SUT and 2 others"
+			},
+			"07": {
+				"title": "Korea ON-line E-Procurement Venture-nara Listing",
+				"subTitle": "DFOS Panorama"
+			},
+			"08": {
+				"title": "ISO9001"
+			},
+			"09": {
+				"title": "INNO-BIZ Certification (Korean)"
+			},
+			"10": {
+				"title": "INNO-BIZ Certification (English)"
+			},
+			"11": {
+				"title": "Main-Biz Certification for Management Innovation Small and Medium Enterprises"
+			},
+			"12": {
+				"title": "Promising Company for Overseas Procurement Market",
+				"subTitle": "G-PASS Company"
+			},
+			"13": {
+				"title": "Pre-Star Company Designation (Korean)"
+			},
+			"14": {
+				"title": "Pre-Star Company Designation (English)"
+			},
+			"15": {
+				"title": "Corporate Research Institute Certification"
+			},
+			"16": {
+				"title": "Venture Business Certification"
+			},
+			"17": {
+				"title": "Professional Research Business Registration Certificate"
+			},
+			"18": {
+				"title": "GS Certification Grade 1",
+				"subTitle": "DFOS Station v1.0.0"
+			}
+		}
+	},
+	"award_page": {
+		"titleLine1": "Numerous patents secured through in-house R&D",
+		"description": "IGIS has been recognized for its technological expertise in various fields such as smart drones and geographic information systems,\nholding numerous patents and trademarks.",
+		"items": {
+			"01": { "title": "Smart Drone Control System" },
+			"02": { "title": "Control system and method using drone configuration and autonomous flight" },
+			"03": { "title": "Panoramic video delivery system ", "subTitle": "Domestic Patent" },
+			"04": { "title": "Panoramic video delivery system", "subTitle": "US Patent" },
+			"05": { "title": "Panoramic video delivery system", "subTitle": "PCT" },
+			"06": { "title": "Drone video management system" },
+			"07": { "title": "Forest pest detection system using unmanned aerial vehicles" },
+			"08": { "title": "Water pipeline management system using drones" },
+			"09": { "title": "Immersive golf content service using drones and GIS" },
+			"10": { "title": "Method of operating collaborative projects using GIS" },
+			"11": { "title": "On-site management system and method using GIS" },
+			"12": { "title": "Telemedicine system using a U-healthcare center" },
+			"13": { "title": "DFOS Solution trademark registration" }
+		}
 	}
 }

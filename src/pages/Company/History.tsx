@@ -1,6 +1,6 @@
 // src/pages/Company/History.tsx
 import React, { useEffect, useMemo, useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation, Trans } from 'react-i18next';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '@config/firebase';
 import '../../assets/css/history.css';
@@ -161,6 +161,28 @@ const History: React.FC = () => {
 		return () => window.removeEventListener('scroll', onScroll);
 	}, [years, activeIndex]);
 
+	useEffect(() => {
+		if (typeof window === 'undefined') return;
+
+		if (window.innerWidth > 1024) return;
+
+		const selector = `.historyYearItem[data-year="${activeYear}"]`;
+		const el = document.querySelector<HTMLLIElement>(selector);
+		if (!el || !el.parentElement) return;
+
+		const container = el.parentElement; // ul.historyYearList
+
+		const containerRect = container.getBoundingClientRect();
+		const elRect = el.getBoundingClientRect();
+
+		const offset = elRect.left - containerRect.left - containerRect.width / 2 + elRect.width / 2;
+
+		container.scrollTo({
+			left: container.scrollLeft + offset,
+			behavior: 'smooth',
+		});
+	}, [activeYear]);
+
 	const goPrev = () => {
 		setActiveIndex(prev => {
 			const next = prev > 0 ? prev - 1 : prev;
@@ -201,6 +223,9 @@ const History: React.FC = () => {
 
 	return (
 		<section className="subPage history_page" id="content">
+			<h2 className="history-title">
+				<Trans i18nKey="history_text" components={{ strong: <span className="history-title-igis" /> }} />
+			</h2>
 			<div className="inner">
 				<div className="leftBox">
 					<div className="historySlideWrap">
@@ -210,7 +235,7 @@ const History: React.FC = () => {
 
 						<ul className="historyYearList">
 							{years.map((year, idx) => (
-								<li key={year} className={`historyYearItem ${idx === activeIndex ? 'active' : ''}`} onClick={() => scrollToYear(year)}>
+								<li key={year} className={`historyYearItem ${idx === activeIndex ? 'active' : ''}`} data-year={year} onClick={() => scrollToYear(year)}>
 									<p>{year}</p>
 								</li>
 							))}
@@ -219,6 +244,10 @@ const History: React.FC = () => {
 						<button type="button" className="arrowBtn nextBtn" onClick={goNext}>
 							<img src="/assets/images/company/arrow.png" alt="next" className="arrow-down" />
 						</button>
+					</div>
+					<div className="history-scroll-hint">
+						<img src="/assets/images/company/mouse.png" alt="scroll down" className="history-scroll-mouse" />
+						<span className="history-scroll-text">SCROLL DOWN</span>
 					</div>
 				</div>
 

@@ -1,9 +1,25 @@
 /* =========================
    연혁 공통 레이아웃
    ========================= */
+.history_page {
+	padding: 150px 0 200px;
+}
+.history_page h2 {
+	font-size: 50px;
+	font-weight: 400;
+	text-align: left;
+	padding-bottom: 100px;
+	color: #244079;
+	padding-left: 50px;
+	line-height: 140%;
+	word-break: keep-all;
+}
+
+.history_page h2 span {
+	font-weight: 700;
+}
 
 .history_page .inner {
-	padding: 150px 0 200px;
 	display: flex;
 	gap: 10%;
 }
@@ -16,6 +32,63 @@
 	top: 150px;
 	animation: history_upBox 1s 0.5s ease both;
 	z-index: 4;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+/* 스크롤 힌트 */
+.history_page .history-scroll-hint {
+	margin-top: 90px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 8px;
+	font-size: 18px;
+	letter-spacing: 0.12em;
+	color: #999;
+	text-transform: uppercase;
+	font-family: 'Montserrat', sans-serif;
+}
+
+/* 마우스 아이콘 */
+.history_page .history-scroll-mouse {
+	width: 26px;
+	height: auto;
+	animation: historyMouseBounce 1.5s ease-in-out infinite;
+	opacity: 0.9;
+}
+
+/* 텍스트 살짝 깜빡이는 느낌 */
+.history_page .history-scroll-text {
+	animation: historyScrollText 1.5s ease-in-out infinite;
+	margin-top: 10px;
+}
+
+/* 마우스 안에 내용이 움직이는 느낌의 바운스 애니메이션 */
+@keyframes historyMouseBounce {
+	0% {
+		transform: translateY(0);
+		opacity: 0.9;
+	}
+	50% {
+		transform: translateY(8px);
+		opacity: 0.5;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 0.9;
+	}
+}
+
+@keyframes historyScrollText {
+	0%,
+	100% {
+		opacity: 0.9;
+	}
+	50% {
+		opacity: 0.4;
+	}
 }
 
 @keyframes history_upBox {
@@ -163,6 +236,8 @@
 	background-size: 0 30%;
 	transition: 1s ease;
 	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 	display: initial;
 	opacity: 0.5;
 }
@@ -196,6 +271,7 @@
 
 .history_page .history-text {
 	flex: 1;
+	word-break: keep-all;
 }
 
 .history_page .rightBox .contBox .textBox p:last-child {
@@ -203,40 +279,246 @@
 }
 
 /* =========================
-   간단 반응형
+   반응형
    ========================= */
 
-@media (max-width: 900px) {
-	.history_page .inner {
-		flex-direction: column;
-		gap: 40px;
+@media screen and (max-width: 1200px) {
+	.history_page {
+		padding: 100px 0 150px;
+	}
+	.history_page h2 {
+		font-size: 48px;
+		padding-bottom: 80px;
+		padding-left: 25px;
 	}
 
+	.history_page .leftBox .historyYearItem p {
+		font-size: 30px;
+	}
+
+	.history_page .leftBox .historyYearItem.active p {
+		font-size: 75px;
+	}
+
+	.history_page .rightBox {
+		padding-bottom: 15%;
+	}
+
+	.history_page .rightBox .contBox .textBox h3 {
+		font-size: 27px;
+		margin-bottom: 28px;
+	}
+
+	.history_page .history-line {
+		font-size: 18px;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.history_page {
+		padding: 90px 20px 110px;
+	}
+	.history_page h2 {
+		font-size: 36px;
+		padding-bottom: 60px;
+		padding-left: 25px;
+	}
+	.history_page {
+		max-width: 900px;
+		margin: 0 auto;
+		box-sizing: border-box;
+	}
+
+	.history_page .inner {
+		flex-direction: column;
+	}
+
+	/* 왼쪽 박스가 상단 고정 바가 됨 */
 	.history_page .leftBox {
-		position: static;
 		width: 100%;
-		order: 1;
+		background: #fff;
+		top: 75px;
+		position: sticky;
+		z-index: 10;
+	}
+
+	.history_page .history-scroll-hint {
+		display: none;
+	}
+
+	.history_page .leftBox .historySlideWrap {
+		padding: 15px 50px;
+		width: 100%;
+		box-sizing: border-box;
+	}
+
+	/* 좌우 화살표 버튼 */
+	.history_page .leftBox .arrowBtn {
+		z-index: 5;
+		left: auto;
+	}
+
+	.history_page .leftBox .arrowBtn.prevBtn {
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%) rotate(270deg);
+	}
+
+	.history_page .leftBox .arrowBtn.nextBtn {
+		top: 50%;
+		right: 0;
+		bottom: auto;
+		transform: translateY(-50%) rotate(270deg);
+	}
+
+	.history_page .historyYearList {
+		max-height: none;
+		flex-direction: row;
+		align-items: center;
+		justify-content: flex-start;
+		gap: 0;
+		overflow-x: auto;
+		padding: 0 10px;
+		scrollbar-width: none; /* FF */
+	}
+
+	.history_page .historyYearList::-webkit-scrollbar {
+		display: none;
+	}
+
+	.history_page .historyYearItem {
+		height: auto;
+		margin: 0 1%;
+	}
+
+	.history_page .historyYearItem p {
+		font-size: 18px;
+	}
+
+	.history_page .leftBox .historyYearItem.active p {
+		font-size: 40px;
+		transform: none;
+	}
+
+	.history_page .historyYearItem:first-child {
+		margin-left: 5px;
+	}
+	.history_page .historyYearItem:last-child {
+		margin-right: 5px;
 	}
 
 	.history_page .rightBox {
 		width: 100%;
-		order: 2;
-		padding-bottom: 60px;
+		padding-bottom: 0;
 	}
 
-	.history_page .historyYearItem p {
-		font-size: 28px;
+	.history_page .rightBox .contBox {
+		padding: 40px 0;
 	}
 
-	.history_page .historyYearItem.active p {
-		font-size: 60px;
+	.history_page .rightBox .contBox .imgBox {
+		height: 35vw;
+		margin-bottom: 30px;
 	}
 
 	.history_page .rightBox .contBox .textBox h3 {
-		font-size: 24px;
+		font-size: 23px;
+		margin-bottom: 20px;
 	}
 
 	.history_page .history-line {
 		font-size: 16px;
+	}
+
+	/* 모바일에선 테두리 아이콘 안 보이게 */
+	.history_page .rightBox .contBox:before {
+		display: none;
+	}
+}
+
+/* =========================
+   768 이하 : 더 작게
+   ========================= */
+
+@media screen and (max-width: 768px) {
+	.history_page .leftBox .historySlideWrap {
+		padding: 10px 30px;
+	}
+
+	.history_page .historyYearItem {
+		margin: 0 1.1%;
+	}
+	.history_page .historyYearItem p {
+		font-size: 15px;
+	}
+	.history_page .historyYearItem.active p {
+		font-size: 34px;
+	}
+
+	.history_page .rightBox .contBox .textBox h3 {
+		font-size: 21px;
+		margin-bottom: 20px;
+	}
+
+	.history_page .history-line {
+		font-size: 14px;
+	}
+}
+
+/* 640 이하 */
+@media screen and (max-width: 640px) {
+	.history_page .historyYearItem {
+		margin: 0 3%;
+	}
+
+	.history_page .historyYearItem p {
+		font-size: 18px;
+	}
+
+	.history_page .historyYearItem.active p {
+		font-size: 38px;
+	}
+}
+
+/* 512 이하 : 상단 바 살짝 위로 */
+@media screen and (max-width: 580px) {
+	.history_page {
+		padding: 70px 20px 100px;
+	}
+	.history_page h2 {
+		font-size: 25px;
+		padding-bottom: 25px;
+		padding-left: 25px;
+	}
+	.history_page .leftBox {
+		top: 56px;
+	}
+}
+
+/* 360 이하 : 글자 더 축소 */
+@media screen and (max-width: 360px) {
+	.history_page .historyYearItem {
+		margin: 0 2.5%;
+	}
+
+	.history_page .historyYearItem p {
+		font-size: 16px;
+	}
+
+	.history_page .historyYearItem.active p {
+		font-size: 30px;
+	}
+
+	.history_page .rightBox .contBox .imgBox {
+		margin-bottom: 25px;
+	}
+
+	.history_page .rightBox .contBox .textBox h3 {
+		font-size: 19px;
+		margin-bottom: 20px;
+	}
+
+	.history_page .history-line {
+		font-size: 13px;
 	}
 }

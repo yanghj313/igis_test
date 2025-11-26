@@ -1,0 +1,161 @@
+/* 전체 레이아웃 */
+.location-section {
+	padding: 140px 0 200px;
+}
+
+.location-inner {
+	max-width: 1400px;
+	margin: 0 auto;
+	padding: 0 20px;
+	box-sizing: border-box;
+}
+
+/* 제목 */
+.location-title {
+	font-size: 32px;
+	font-weight: 800;
+	margin-bottom: 24px;
+}
+
+/* 지도 영역 */
+.location-map-wrap {
+	box-shadow: 0 18px 40px rgba(0, 0, 0, 0.06);
+	background: #f5f7fb;
+	position: relative;
+	height: 480px;
+	width: 100% !important;
+	margin-bottom: 40px;
+	overflow: hidden;
+	border: 1px solid #ccc;
+}
+
+.location-map-wrap .root_daum_roughmap {
+	width: 100% !important;
+	height: 100% !important;
+}
+
+/* 두 지도를 겹쳐 놓고, 투명도로만 토글 */
+.location-map-panel {
+	position: absolute;
+	inset: 0;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.3s ease;
+}
+
+.location-map-panel.active {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+/* 카드 레이아웃 */
+.location-card-wrap {
+	display: flex;
+	gap: 24px;
+	flex-wrap: wrap;
+}
+
+.location-card {
+	flex: 1 1 0;
+	min-width: 260px;
+	background: #fff;
+	border-radius: 20px;
+	padding: 24px 28px;
+	box-shadow: 0 14px 35px rgba(0, 0, 0, 0.2);
+	border: 2px solid transparent;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.location-card.active {
+	border-color: #008efb;
+	box-shadow: 0 18px 45px rgba(0, 142, 251, 0.25);
+}
+
+.location-card-title {
+	font-size: 18px;
+	font-weight: 700;
+	margin-bottom: 16px;
+	color: #555;
+}
+
+.location-card-icon {
+	display: inline-block;
+	height: 16px;
+	margin-right: 8px;
+	vertical-align: middle;
+}
+
+.location-card-icon img {
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+/* 카드 안의 정보 */
+.location-card dl {
+	margin: 0;
+}
+
+.location-card dt {
+	font-weight: 700;
+	font-size: 16px;
+	color: #444;
+	margin-top: 4px;
+	display: inline-block;
+	width: 100px;
+	margin-right: 10px;
+}
+
+.location-card dd {
+	margin: 0 0 6px 0;
+	font-size: 16px;
+	color: #555;
+	display: inline-block;
+	word-break: keep-all;
+}
+
+/* 반응형 */
+@media (max-width: 900px) {
+	.location-map-wrap {
+		height: 360px;
+		margin-bottom: 20px;
+	}
+	.location-section {
+		padding: 70px 0 100px;
+	}
+
+	.location-card-wrap {
+		flex-direction: row;
+		gap: 16px;
+		padding: 0;
+	}
+	.location-card h3.location-card-title {
+		font-size: 16px;
+		margin-bottom: 8px;
+	}
+	.location-card-icon {
+		height: 14px;
+		margin-right: 6px;
+	}
+
+	.location-card {
+		min-width: unset;
+	}
+
+	.location-card dl {
+		line-height: 1.2;
+	}
+	.location-card br {
+		display: none;
+	}
+	.location-card dt {
+		font-size: 12px;
+		width: 50px;
+	}
+	.location-card dd {
+		margin: 2px 0 8px;
+		font-size: 14px;
+		display: block;
+	}
+}

@@ -1,0 +1,251 @@
+/* src/assets/css/certificate.css */
+
+.cert_page {
+	padding: 150px 0 200px;
+	background: #fff;
+}
+
+.cert-inner {
+	max-width: 1400px;
+	margin: 0 auto;
+	box-sizing: border-box;
+}
+
+/* 상단 타이틀 영역 */
+.cert-header {
+	margin-bottom: 70px;
+}
+
+.cert-title {
+	font-size: 40px;
+	line-height: 1.3;
+	font-weight: 800;
+	color: #111;
+	margin-bottom: 20px;
+}
+
+.cert-title span {
+	font-size: 50px;
+	font-weight: 400;
+	text-align: left;
+	color: #244079;
+	padding-bottom: 10px;
+	word-break: keep-all;
+}
+
+.cert-title strong {
+	display: block;
+	font-size: 50px;
+	font-weight: 700;
+	text-align: left;
+	padding-bottom: 30px;
+	color: #244079;
+}
+
+.cert-desc {
+	font-size: 18px;
+	line-height: 140%;
+	color: #666;
+	word-break: keep-all;
+	white-space: pre-line;
+}
+
+/* 그리드 */
+.cert-grid {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 40px 32px;
+}
+
+/* 개별 카드 */
+.cert-item {
+	position: relative;
+	padding: 16px 16px 24px;
+	overflow: hidden;
+	width: 100%;
+	max-width: 250px;
+}
+
+.cert-thumb::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	border: 2px solid #62b6ff;
+	pointer-events: none;
+	opacity: 0;
+	transform-origin: center;
+	transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.cert-thumb:hover::before,
+.cert-thumb:focus-within::before {
+	opacity: 1;
+	transform: scale(1);
+}
+
+.cert-thumb {
+	position: relative;
+	width: 100%;
+	max-width: 250px;
+	height: 300px;
+	overflow: hidden;
+	border: 1px solid #e3e3e3;
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.04);
+	transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.cert-thumb img {
+	display: block;
+	width: 100%;
+	max-width: 250px;
+	height: 300px;
+	object-fit: contain;
+	background: #fff;
+}
+
+.cert-item:hover .cert-thumb {
+	transform: translateY(-6px);
+	box-shadow: 0 14px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* 텍스트 영역 */
+.cert-text {
+	position: relative;
+	margin-top: 12px;
+	padding-left: 18px;
+	word-break: keep-all;
+}
+
+.cert-bar {
+	position: absolute;
+	left: 0;
+	top: 3px;
+	bottom: 3px;
+	width: 2px;
+	background: #008efb; /* 항상 보이는 파란 세로선 */
+}
+
+.cert-name {
+	font-size: 16px;
+	font-weight: 700;
+	color: #222;
+	margin-bottom: 4px;
+	line-height: 140%;
+	word-break: keep-all;
+}
+
+.cert-sub {
+	font-size: 13px;
+	color: #777;
+}
+
+/* ===================== */
+/*   반응형          */
+/* ===================== */
+
+@media (max-width: 1400px) {
+	.cert_page {
+		padding: 100px 20px 150px 20px;
+		box-sizing: border-box;
+	}
+
+	.cert-title {
+		font-size: 36px;
+		margin-bottom: 20px;
+	}
+
+	.cert-title span {
+		font-size: 36px;
+	}
+
+	.cert-title strong {
+		font-size: 36px;
+	}
+
+	.cert-desc {
+		font-size: 16px;
+	}
+
+	.cert-grid {
+		gap: 30px 24px;
+	}
+	.cert-item {
+		max-width: 200px;
+	}
+	.cert-thumb {
+		height: 240px;
+	}
+	.cert-thumb img {
+		height: 240px;
+	}
+}
+
+@media (max-width: 1024px) {
+	.cert-grid {
+		gap: 24px 10px;
+		justify-content: center;
+	}
+
+	.cert-item {
+		max-width: 180px;
+	}
+
+	.cert-thumb {
+		height: 216px;
+	}
+	.cert-thumb img {
+		height: 216px;
+	}
+}
+
+@media (max-width: 768px) {
+	.cert_page {
+		padding: 56px 20px 80px;
+	}
+	.cert-header {
+		margin-bottom: 35px;
+	}
+	.cert-title {
+		margin-bottom: 0;
+	}
+	.cert-title strong {
+		padding-bottom: 20px;
+	}
+	.cert-grid {
+		gap: 20px 8px;
+	}
+	.cert-item {
+		padding: 10px 10px 16px;
+	}
+}
+
+@media (max-width: 580px) {
+	.cert-title {
+		font-size: 30px;
+	}
+
+	.cert-title span {
+		font-size: 30px;
+	}
+
+	.cert-title strong {
+		font-size: 30px;
+	}
+
+	.cert-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		justify-content: center;
+		justify-items: center;
+	}
+
+	.cert-desc {
+		font-size: 14px;
+	}
+	.cert-name {
+		font-size: 14px;
+	}
+	.cert-sub {
+		font-size: 12px;
+	}
+}
