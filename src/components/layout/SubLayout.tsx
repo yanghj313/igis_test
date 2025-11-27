@@ -33,9 +33,6 @@ const SubLayout: React.FC<SubLayoutProps> = ({
 }) => {
 	return (
 		<section className={`sub-layout ${className}`}>
-			{' '}
-			{/* 👉 드디어 적용됨 */}
-			{/* Hero */}
 			<div className="sub-hero" style={{ backgroundImage: `url(${bgImage})` }}>
 				<p className="breadcrumb">
 					{category}

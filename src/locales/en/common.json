@@ -185,5 +185,355 @@
 			"12": { "title": "Telemedicine system using a U-healthcare center" },
 			"13": { "title": "DFOS Solution trademark registration" }
 		}
+	},
+	"drone_page": {
+		"eyebrow": "C. Business Area · Drone",
+		"title_before": "A convenient",
+		"title_highlight": "Drone System",
+		"title_after": "for everyone",
+		"description": "IGIS provides total drone solutions that cover the entire process, from hardware supply and consulting to subscription services, shooting, training, and after-sales support.",
+		"mainCard": {
+			"label": "System Sales",
+			"text": "According to the user’s needs, each system can be purchased separately. Various application solutions such as DFOS Pilot, DFOS Viewer, and DFOS Control System are provided together."
+		},
+		"cards": {
+			"system": {
+				"title": "System Sales",
+				"desc": "We propose and supply field-oriented drone solutions such as DFOS Pilot, DFOS Viewer, and DFOS Control System, tailored to each customer environment."
+			},
+			"service": {
+				"title": "Service & Proposal Projects",
+				"desc": "Based on our technology and solutions, we participate in public and private proposal projects and support customers in strengthening their expertise and capabilities."
+			},
+			"subscription": {
+				"title": "Monthly Plan (Private Market)",
+				"desc": "Drone devices and web-based control systems are offered as a monthly subscription, enabling use without large upfront purchase costs."
+			},
+			"shooting": {
+				"title": "Drone Shooting",
+				"desc": "We support the acquisition of realistic data through various drone shooting services such as DB building, data processing and analysis, and panorama imagery."
+			},
+			"edu": {
+				"title": "Flight Training & A/S",
+				"desc": "We provide training and stable maintenance services required to operate drone solutions, helping customers run their systems efficiently."
+			}
+		}
+	},
+
+	"gis_page": {
+		"eyebrow": "C. Business Area · GIS System",
+		"title_before": "High-level,",
+		"title_highlight": "tailored GIS services",
+		"title_after": "from IGIS",
+		"description": "We build GIS systems optimized for each customer’s business environment and provide services for geospatial data processing and analysis.",
+		"mainCard": {
+			"label": "System Sales",
+			"text": "We aim to understand customer needs and deliver optimal GIS systems that fit their environment and workflow."
+		},
+		"cards": {
+			"system": {
+				"title": "System Sales",
+				"desc": "We provide GIS platforms that can integrate and manage various geospatial data such as vector, imagery, and 3D layers."
+			},
+			"edu": {
+				"title": "System Training & A/S",
+				"desc": "Through hands-on training and stable maintenance, we support customers so their systems can be operated reliably after initial deployment."
+			},
+			"build": {
+				"title": "Business-unit System Development",
+				"desc": "We analyze business characteristics and design GIS systems optimized for each task unit."
+			},
+			"data": {
+				"title": "Geospatial Data Processing & Analysis",
+				"desc": "We provide geospatial data processing, analysis, and visualization services that support business decision-making."
+			},
+			"subscription": {
+				"title": "Monthly Plan (Private Market)",
+				"desc": "A subscription-based GIS service that lets customers select and use only the functions they need, reducing initial adoption costs."
+			}
+		}
+	},
+	"drone_diff": {
+		"title_before": "Convenient for everyone",
+		"title_highlight": "Drone System",
+		"title_after": "",
+		"description": "IGIS provides a total solution that covers the entire drone utilization process, including drone equipment supply, consulting, monthly subscription services, shooting, training, and after-sales service.",
+		"items": {
+			"1": {
+				"step": "System Sales",
+				"title": "",
+				"lead": "Users can purchase each system individually according to their needs",
+				"body": "· DFOS Pilot : An operational app that intuitively controls drone photo, video shooting, and route flight\n· DFOS Viewer : A monitoring app that allows multiple users to share the DFOS Pilot screen simultaneously\n· DFOS Control System : A control system that integrates and manages video, photo, and sensor data obtained from drones\n· DFOS Streaming Viewer : A streaming viewer that can stably play multiple videos\n· DFOS IMS : An image management system that supports automatic orthophoto production and registration, management, and analysis of drone videos"
+			},
+			"2": {
+				"step": "Contract and Proposal Business",
+				"title": "",
+				"lead": "",
+				"body": "We apply our technologies and solutions to contract and proposal businesses, enhancing customer expertise and capabilities."
+			},
+			"3": {
+				"step": "Monthly Subscription Service",
+				"title": "",
+				"lead": "",
+				"body": "· Drone app monthly plan and drone web control system monthly plan\n· For private market users, instead of a one-time purchase with a high cost burden, it is possible to pay monthly or annually"
+			},
+			"4": {
+				"step": "Drone Shooting Service",
+				"title": "",
+				"lead": "",
+				"body": "· DB building / data processing and analysis\n· We support processing drone-captured images into orthophotos, panorama images, etc., and assist in collecting and processing AI training data."
+			},
+			"5": {
+				"step": "Flight Training & After-Service",
+				"title": "",
+				"lead": "",
+				"body": "We provide training and stable maintenance services required to operate drone solutions, helping customers run their systems efficiently."
+			}
+		}
+	},
+	"gis_diff": {
+		"title_before": "Providing",
+		"title_highlight": "high-level tailored GIS services",
+		"title_after": "",
+		"description": "From system sales and training to data processing, analysis,\nand subscription-based policies, IGIS delivers end-to-end GIS solutions\noptimized for each customer’s workflow.",
+		"items": {
+			"1": {
+				"step": "System Sales",
+				"title": "",
+				"lead": "Proposing the optimal GIS system for your needs",
+				"body": "We analyze your business requirements and operating environment to propose the most suitable GIS system.\nOur proposals consider scalability, maintenance, and long-term operation from the very beginning."
+			},
+			"2": {
+				"step": "System Training & After-Service",
+				"title": "",
+				"lead": "Hands-on training and stable system operation",
+				"body": "We provide training so that users can quickly learn how to use GIS in real projects.\nProfessional engineers support you with troubleshooting, feature improvements, and regular maintenance."
+			},
+			"3": {
+				"step": "Business-unit System Implementation",
+				"title": "",
+				"lead": "GIS systems tailored to each business process",
+				"body": "We design and implement GIS systems based on the actual business units and workflows of the customer.\nCustom screens and processes per department improve usability and on-site productivity."
+			},
+			"4": {
+				"step": "Spatial Data Processing & Analysis",
+				"title": "",
+				"lead": "Turning location data into business insight",
+				"body": "We collect, process, and restructure spatial data into a form that best fits your business.\nUsing GIS analysis such as spatial statistics, time-series analysis, and visibility analysis, we support data-driven decision making."
+			},
+			"5": {
+				"step": "Subscription Policy (for private sector)",
+				"title": "",
+				"lead": "Flexible subscription model instead of one-off purchase",
+				"body": "For private-sector customers, we offer subscription-based pricing instead of a large one-time license purchase.\nYou can pay monthly or annually, while receiving continuous updates and technical support."
+			}
+		}
+	},
+	"fms_diff": {
+		"title_before": "Efficient field management tool,",
+		"title_highlight": "FMS that boosts productivity",
+		"title_after": "",
+		"description": "IGIS FMS supports various on-site workflows based on geospatial data,\nhelping organizations improve work speed, accuracy, and management efficiency.",
+		"items": {
+			"1": {
+				"step": "SYSTEM SALES",
+				"title": "",
+				"lead": "FMS applications that support field operations",
+				"body": "We provide FMS systems that manage on-site tasks intuitively using map-based screens and location information.\nThey can be applied to inspections, civil complaints, facility management, and more, improving productivity with standardized workflows."
+			},
+			"2": {
+				"step": "SYSTEM TRAINING & AFTER-SERVICE",
+				"title": "",
+				"lead": "Hands-on training and stable system operation",
+				"body": "We offer training programs based on real field workflows so users can quickly learn and utilize the system.\nProfessional engineers provide technical support for incidents, feature improvements, and version upgrades to ensure stable operation."
+			},
+			"3": {
+				"step": "BUSINESS-UNIT FMS IMPLEMENTATION",
+				"title": "",
+				"lead": "Customized FMS designed for each task type",
+				"body": "We define the required functions and data for each task type—such as inspections, patrols, complaints, and facility management—\nand design screens and processes that are optimized for field use."
+			},
+			"4": {
+				"step": "SUBSCRIPTION POLICY (FOR PRIVATE SECTOR)",
+				"title": "",
+				"lead": "Subscription model that reduces initial cost burden",
+				"body": "For private-sector users, we provide subscription-based pricing instead of a one-time large initial payment.\nYou can pay monthly or annually while receiving continuous technical support and system upgrades during the service period."
+			}
+		}
+	},
+	"rnd_diff": {
+		"title_before": "Continuous Research & Development",
+		"title_highlight": "R&D and Service",
+		"title_after": "Business",
+		"description": "Based on accumulated technology and project experience, IGIS carries out various R&D projects and service contracts,\nhelping our clients strengthen their business competitiveness.",
+		"items": {
+			"1": {
+				"step": "R&D Projects",
+				"title": "",
+				"lead": "Planning and executing R&D / non-R&D projects",
+				"body": "- National and private R&D / non-R&D projects\n- Various projects designed to enhance corporate capability and increase sales"
+			},
+			"2": {
+				"step": "Service & Proposal Projects",
+				"title": "",
+				"lead": "Tailored services based on IGIS technologies and solutions",
+				"body": "- Applying in-house technologies and solutions to service and proposal projects\n- Providing customized proposals and consulting to strengthen clients’ expertise and capability"
+			}
+		}
+	},
+	"contact_detail": {
+		"title": "We are always happy to hear your feedback.",
+		"label": {
+			"subject": "Subject",
+			"company": "Company",
+			"manager": "Contact person",
+			"email": "E-mail",
+			"phone": "Phone",
+			"inquiryType": "Inquiry type",
+			"productType": "Product type",
+			"text": "Message",
+			"files": "Attachments",
+			"agreeText": "I agree to the privacy policy."
+		},
+		"placeholder": {
+			"subject": "e.g. Inquiry about logo usage",
+			"company": "Enter your company name",
+			"manager": "Enter the contact person's name",
+			"email": "example@domain.com",
+			"phone": "Numbers only",
+			"text": "Please enter your inquiry."
+		},
+		"inquiryTypes": {
+			"general": "General inquiry",
+			"partnership": "Partnership",
+			"purchase": "Purchase / Quotation",
+			"etc": "Other"
+		},
+		"productTypes": {
+			"drone": "Drone",
+			"gis": "GIS",
+			"fms": "FMS",
+			"rnd": "R&D",
+			"etc": "Other"
+		},
+		"files": {
+			"selected": "{{count}} file(s) selected"
+		},
+		"button": {
+			"submit": "Submit",
+			"submitting": "Sending..."
+		},
+		"done": {
+			"title": "Your inquiry has been submitted successfully.",
+			"new": "Write another inquiry"
+		},
+		"error": {
+			"agree": "You must agree to the privacy policy.",
+			"company": "Please enter your company name.",
+			"email": "Please enter a valid e-mail address.",
+			"manager": "Please enter the contact person's name.",
+			"subject": "Please enter a subject.",
+			"text": "Please enter your message."
+		}
+	},
+	"layout": {
+		"companyIntro": {
+			"locationLabel": "About IGIS",
+			"title": {
+				"vision": "VISION",
+				"organization": "ORGANIZATION",
+				"history": "HISTORY",
+				"location": "LOCATION"
+			},
+			"tabs": {
+				"vision": "Vision",
+				"organization": "Organization",
+				"history": "History",
+				"location": "Location"
+			}
+		},
+		"companyAward": {
+			"locationLabel": "Certificates & Awards",
+			"title": {
+				"certificate": "CERTIFICATE",
+				"patent": "PATENT"
+			},
+			"tabs": {
+				"certificate": "Certificates",
+				"patent": "Patents & Trademarks"
+			}
+		},
+		"business": {
+			"locationLabel": "Business Area",
+			"title": {
+				"drone": "DRONE",
+				"gis": "GIS SYSTEM",
+				"fms": "FMS",
+				"rnd": "R&D"
+			},
+			"tabs": {
+				"drone": "Drone",
+				"gis": "GIS System",
+				"fms": "FMS",
+				"rnd": "R&D & Services"
+			}
+		},
+		"solutionGis": {
+			"locationLabel": "GIS Solutions",
+			"title": {
+				"igis": "IGIS",
+				"forest": "IGIS Forest System",
+				"fms": "FMS",
+				"default": "GIS SOLUTION"
+			},
+			"tabs": {
+				"igis": "IGIS",
+				"forest": "IGIS Forest System",
+				"fms": "FMS"
+			}
+		},
+		"solutionDrone": {
+			"locationLabel": "Drone Solutions",
+			"title": {
+				"station": "DFOS STATION",
+				"panorama": "PANORAMA",
+				"pilot": "DFOS PILOT PRO",
+				"ims": "DFOS IMS",
+				"viewer": "DFOS Viewer",
+				"stream": "DFOS Streaming Viewer",
+				"default": "DRONE SOLUTION"
+			},
+			"tabs": {
+				"station": "DFOS STATION",
+				"panorama": "Panorama",
+				"pilot": "DFOS PILOT PRO",
+				"ims": "DFOS IMS",
+				"viewer": "DFOS Viewer",
+				"stream": "DFOS Streaming Viewer"
+			}
+		},
+		"community": {
+			"locationLabel": "Community",
+			"title": {
+				"contact": "CONTACT",
+				"recruitment": "RECRUIT",
+				"default": "COMMUNITY"
+			},
+			"tabs": {
+				"contact": "Contact",
+				"recruitment": "Careers"
+			},
+			"media": {
+				"locationLabel": "News & Media",
+				"title": {
+					"news": "NEWS",
+					"video": "MEDIA"
+				},
+				"tabs": {
+					"news": "News",
+					"video": "Media"
+				}
+			}
+		}
 	}
 }

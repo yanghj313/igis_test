@@ -1,42 +1,39 @@
 // src/pages/Solution/GISSolutionLayout.tsx
 import React from 'react';
 import { Outlet, useLocation, Navigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import SubLayout from '@/components/layout/SubLayout';
 
 const GISSolutionLayout: React.FC = () => {
 	const { pathname } = useLocation();
+	const { t } = useTranslation();
 
-	// ex) /solution/gis/igis → ["solution", "gis", "igis"]
 	const segments = pathname.split('/').filter(Boolean);
-
-	// 세 번째 값이 상세 메뉴
 	const detail = segments[2]; // igis, forest, fms
 
 	const titleMap: Record<string, string> = {
-		igis: 'IGIS',
-		forest: 'IGIS 산림 시스템',
-		fms: 'FMS',
+		igis: t('layout.solutionGis.title.igis'),
+		forest: t('layout.solutionGis.title.forest'),
+		fms: t('layout.solutionGis.title.fms'),
 	};
 
-	const title = titleMap[detail] || 'GIS SOLUTION';
+	const title = detail ? titleMap[detail] || t('layout.solutionGis.title.default') : t('layout.solutionGis.title.default');
 
-	// GIS 탭 메뉴 그룹
 	const groups = [
 		{
-			groupLabel: 'GIS 솔루션',
+			groupLabel: t('layout.solutionGis.locationLabel'),
 			items: [
-				{ to: 'igis', label: 'IGIS' },
-				{ to: 'forest', label: 'IGIS 산림 시스템' },
-				{ to: 'fms', label: 'FMS' },
+				{ to: 'igis', label: t('layout.solutionGis.tabs.igis') },
+				{ to: 'forest', label: t('layout.solutionGis.tabs.forest') },
+				{ to: 'fms', label: t('layout.solutionGis.tabs.fms') },
 			],
 		},
 	];
 
-	// /solution/gis → /solution/gis/igis 기본 이동
 	if (!detail) return <Navigate to="igis" replace />;
 
 	return (
-		<SubLayout category="Solution" locationLabel="GIS 솔루션" title={title} groups={groups} bgImage="/assets/images/sub_03.png">
+		<SubLayout category="Solution" locationLabel={t('layout.solutionGis.locationLabel')} title={title} groups={groups} bgImage="/assets/images/sub_03.png">
 			<Outlet />
 		</SubLayout>
 	);

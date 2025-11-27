@@ -185,5 +185,283 @@
 			"12": { "title": "U-의료센터를 이용한 원격의료시스템" },
 			"13": { "title": "DFOS Solution 상표등록" }
 		}
+	},
+	"drone_diff": {
+		"title_before": "누구나 편리한",
+		"title_highlight": "드론 시스템",
+		"title_after": "",
+		"description": "IGIS는 드론 장비 공급뿐 아니라 컨설팅, 월 정액 서비스, 촬영, 교육·A/S까지 드론 활용 전 과정을 아우르는 토털 솔루션을 제공합니다.",
+		"items": {
+			"1": {
+				"step": "시스템 판매",
+				"title": "",
+				"lead": "사용자의 요구에 따라 각 시스템 개별 구매 가능",
+				"body": "· DFOS Pilot : 드론의 사진, 동영상 촬영 및 경로 비행을 직관적으로 제어할 수 있는 운용 앱\n· DFOS Viewer : DFOS Pilot 화면을 여러 사용자가 동시에 공유할 수 있는 모니터링 앱\n· DFOS Control System : 드론에서 얻은 영상·사진·센서 데이터를 통합 관리하는 관제 시스템\n· DFOS Streaming Viewer : 여러 개의 영상을 안정적으로 재생할 수 있는 스트리밍 뷰어\n· DFOS IMS : 자동 정사영상 제작과 드론 영상의 등록·관리·분석을 지원하는 이미지 관리 시스템"
+			},
+			"2": { "step": "용역 및 제안 사업", "title": "", "lead": "", "body": "보유 중인 기술과 솔루션을 용역 및제안 사업에 적용하여 고객의 전문성과 역량 강화를 제시" },
+			"3": {
+				"step": "월 정액 서비스",
+				"title": "",
+				"lead": "",
+				"body": "· 드론 앱 월 정책 및 드론 웹 관제시스템 월 정책\n· 민간시장의 사용자들을 위해 금액부담이 부담이 큰 일회성 구매 대신 월별 요금이나 연간 요금을 지불하여 사용이 가능함"
+			},
+			"4": {
+				"step": "드론 촬영 서비스",
+				"title": "",
+				"lead": "",
+				"body": "· DB구축 / 데이터 가공 및 분석\n· 드론으로 촬영된 영상을 정사영상, 파노라마영상 등 으로의 가공을 지원하며, 인공지능 학습용 데이터의 수집과 가공을 지원합니다."
+			},
+			"5": {
+				"step": "비행 교육 및 A/S",
+				"title": "",
+				"lead": "",
+				"body": "드론 솔루션을 활용한 드론 운용에 대한 교육과 안정적인 AS를 통해 고객 여러분의 효율적인 시스템 운영을 지원합니다."
+			}
+		}
+	},
+	"gis_diff": {
+		"title_before": "GIS의 수준 높은",
+		"title_highlight": "맞춤형 서비스",
+		"title_after": "제공",
+		"description": "IGIS는 고객의 업무 환경과 산업 특성을 고려하여\n시스템 판매부터 교육·AS, 데이터 가공·분석, 월 정책 서비스까지\n통합 GIS 솔루션을 제공합니다.",
+		"items": {
+			"1": {
+				"step": "시스템 판매",
+				"title": "",
+				"lead": "고객 니즈를 반영한 최적의 GIS 시스템 제안",
+				"body": "시스템 판매 시 고객의 니즈를 정확히 파악하여 서비스 목적과 예산, 운영 환경에 맞는 GIS 시스템을 제안합니다.\n장기적인 운영 관점에서 확장성과 유지보수까지 고려한 솔루션 구성을 지원합니다."
+			},
+			"2": {
+				"step": "시스템 교육 및 AS",
+				"title": "",
+				"lead": "최신 기술 교육과 안정적인 운영 지원",
+				"body": "교육을 통해 시스템 이해도를 높이고, 실제 업무에 바로 적용할 수 있는 활용 방법을 안내합니다.\n전문 엔지니어의 AS 지원을 통해 장애 대응, 기능 개선, 정기 점검 등 안정적인 시스템 운영을 돕습니다."
+			},
+			"3": {
+				"step": "업무 단위 시스템 구축",
+				"title": "",
+				"lead": "업무 프로세스에 맞춘 맞춤형 GIS 구축",
+				"body": "고객의 업무 단위를 세분화하여 필요한 기능과 데이터를 정의하고, 이에 맞춘 GIS 시스템을 설계·구축합니다.\n부서별·업무별 맞춤 화면과 워크플로우를 통해 실제 현장에서 활용도 높은 시스템을 제공합니다."
+			},
+			"4": {
+				"step": "지리정보 데이터 가공·분석",
+				"title": "",
+				"lead": "의사결정을 돕는 공간 데이터 분석 서비스",
+				"body": "위치 기반 데이터를 수집·가공하여 고객 업무에 적합한 형태로 재구성합니다.\n시계열 분석, 공간 통계, 가시권 분석 등 다양한 GIS 분석 기법을 활용해 비즈니스 인사이트 도출을 지원합니다."
+			},
+			"5": {
+				"step": "월 정책 (민간시장 적용)",
+				"title": "",
+				"lead": "초기 도입 부담을 줄이는 구독형 서비스",
+				"body": "민간시장 사용자를 위해 초기 일회성 구매 대신 월 요금 또는 연간 요금을 지불하는 구독형 서비스 정책을 제공합니다.\n예산 계획에 유연하게 대응할 수 있고, 정기 업데이트와 기술 지원을 함께 제공받을 수 있습니다."
+			}
+		}
+	},
+	"fms_diff": {
+		"title_before": "현장업무 생산성을 높이는",
+		"title_highlight": "효율적인 업무툴 FMS",
+		"title_after": "",
+		"description": "IGIS FMS는 지리정보를 기반으로 다양한 현장 업무를 지원하여\n업무 처리 속도와 정확도를 높이고, 관리 효율을 극대화합니다.",
+		"items": {
+			"1": {
+				"step": "시스템 판매",
+				"title": "",
+				"lead": "지리정보 기반 현장 업무 지원 APP 제공",
+				"body": "지도 기반 화면과 위치 정보를 활용하여 현장 업무를 직관적으로 관리할 수 있는 FMS 시스템을 제공합니다.\n점검, 민원, 시설 관리 등 다양한 업무 시나리오에 적용 가능하며, 표준화된 업무 프로세스로 생산성 향상을 돕습니다."
+			},
+			"2": {
+				"step": "시스템 교육 및 AS",
+				"title": "",
+				"lead": "현장 중심 실무 교육과 안정적인 운영 지원",
+				"body": "실제 현장 업무 흐름을 반영한 교육으로 사용자가 시스템을 빠르게 익히고 활용할 수 있도록 지원합니다.\n장애 대응, 기능 개선, 버전 업그레이드 등 전문 엔지니어의 AS 서비스를 통해 안정적인 시스템 운영이 가능합니다."
+			},
+			"3": {
+				"step": "업무 단위 시스템 구축",
+				"title": "",
+				"lead": "업무 유형별 맞춤형 FMS 설계",
+				"body": "점검·순찰·민원·시설관리 등 업무 유형별로 필요한 기능과 데이터를 정의하고,\n이에 맞는 화면 구성과 업무 흐름을 설계하여 현장 실무에 최적화된 FMS를 구축합니다."
+			},
+			"4": {
+				"step": "월 정책 (민간시장 적용)",
+				"title": "",
+				"lead": "초기 도입 부담을 줄이는 구독형 요금제",
+				"body": "민간시장 사용자를 위해 일회성 도입 비용 대신 월 단위 또는 연 단위 이용료를 지불하는 구독형 정책을 제공합니다.\n예산 계획에 유연하게 대응할 수 있고, 서비스 기간 동안 지속적인 기술 지원과 업그레이드를 함께 제공받을 수 있습니다."
+			}
+		}
+	},
+	"rnd_diff": {
+		"title_before": "끊임없는 연구개발",
+		"title_highlight": "R&D 및 용역",
+		"title_after": "분야",
+		"description": "IGIS는 축적된 기술력과 프로젝트 경험을 바탕으로 다양한 연구개발 과제와 용역 사업을 수행하며,\n고객의 비즈니스 경쟁력 향상에 기여합니다.",
+		"items": {
+			"1": {
+				"step": "과제사업",
+				"title": "",
+				"lead": "R&D / 비 R&D 과제 기획 및 수행",
+				"body": "- R&D 과제 사업 / 비 R&D 과제 사업\n- 기업의 역량 강화와 매출 신장을 위해 다양한 정부·지자체·민간 과제사업을 진행"
+			},
+			"2": {
+				"step": "용역 및 제안사업",
+				"title": "",
+				"lead": "보유 기술과 솔루션을 활용한 맞춤형 용역",
+				"body": "- 보유 중인 기술과 솔루션을 용역 및 제안 사업에 적용\n- 고객의 전문성과 역량 강화를 위한 최적의 제안 및 컨설팅 제공"
+			}
+		}
+	},
+	"contact_detail": {
+		"title": "더 나은 서비스를 위해 고객님의 의견을 기다립니다.",
+		"label": {
+			"subject": "제목",
+			"company": "회사",
+			"manager": "담당자",
+			"email": "이메일",
+			"phone": "전화번호",
+			"inquiryType": "문의 분류",
+			"productType": "제품 분류",
+			"text": "문의내용",
+			"files": "첨부파일",
+			"agreeText": "개인정보 처리에 동의합니다."
+		},
+		"placeholder": {
+			"subject": "예) 로고 사용 관련 문의",
+			"company": "회사명을 입력하세요.",
+			"manager": "담당자명을 입력하세요.",
+			"email": "example@domain.com",
+			"phone": "숫자만 입력",
+			"text": "문의 내용을 입력하세요."
+		},
+		"inquiryTypes": {
+			"general": "일반 문의",
+			"partnership": "제휴 문의",
+			"purchase": "구매/견적 문의",
+			"etc": "기타 문의"
+		},
+		"productTypes": {
+			"drone": "드론",
+			"gis": "GIS",
+			"fms": "FMS",
+			"rnd": "R&D",
+			"etc": "기타"
+		},
+		"files": {
+			"selected": "첨부 {{count}}개 선택됨"
+		},
+		"button": {
+			"submit": "문의 접수",
+			"submitting": "전송 중..."
+		},
+		"done": {
+			"title": "문의가 정상적으로 접수되었습니다.",
+			"new": "새 문의 작성"
+		},
+		"error": {
+			"agree": "개인정보 처리 동의가 필요합니다.",
+			"company": "회사명을 입력하세요.",
+			"email": "이메일 형식이 올바르지 않습니다.",
+			"manager": "담당자명을 입력하세요.",
+			"subject": "제목을 입력하세요.",
+			"text": "문의 내용을 입력하세요."
+		}
+	},
+	"layout": {
+		"companyIntro": {
+			"locationLabel": "기업소개",
+			"title": {
+				"vision": "VISION",
+				"organization": "ORGANIZATION",
+				"history": "HISTORY",
+				"location": "LOCATION"
+			},
+			"tabs": {
+				"vision": "비전",
+				"organization": "조직도",
+				"history": "연혁",
+				"location": "오시는 길"
+			}
+		},
+		"companyAward": {
+			"locationLabel": "인증 및 수상",
+			"title": {
+				"certificate": "CERTIFICATE",
+				"patent": "PATENT"
+			},
+			"tabs": {
+				"certificate": "인증서",
+				"patent": "특허 및 상표"
+			}
+		},
+		"business": {
+			"locationLabel": "사업분야",
+			"title": {
+				"drone": "DRONE",
+				"gis": "GIS SYSTEM",
+				"fms": "FMS",
+				"rnd": "R&D"
+			},
+			"tabs": {
+				"drone": "드론",
+				"gis": "GIS 시스템",
+				"fms": "FMS",
+				"rnd": "R&D 및 용역"
+			}
+		},
+		"solutionGis": {
+			"locationLabel": "GIS 솔루션",
+			"title": {
+				"igis": "IGIS",
+				"forest": "IGIS 산림 시스템",
+				"fms": "FMS",
+				"default": "GIS SOLUTION"
+			},
+			"tabs": {
+				"igis": "IGIS",
+				"forest": "IGIS 산림 시스템",
+				"fms": "FMS"
+			}
+		},
+		"solutionDrone": {
+			"locationLabel": "드론 솔루션",
+			"title": {
+				"station": "DFOS STATION",
+				"panorama": "PANORAMA",
+				"pilot": "DFOS PILOT PRO",
+				"ims": "DFOS IMS",
+				"viewer": "DFOS Viewer",
+				"stream": "DFOS Streaming Viewer",
+				"default": "DRONE SOLUTION"
+			},
+			"tabs": {
+				"station": "DFOS STATION",
+				"panorama": "Panorama",
+				"pilot": "DFOS PILOT PRO",
+				"ims": "DFOS IMS",
+				"viewer": "DFOS Viewer",
+				"stream": "DFOS Streaming Viewer"
+			}
+		},
+		"community": {
+			"locationLabel": "커뮤니티",
+			"title": {
+				"contact": "CONTACT",
+				"recruitment": "RECRUIT",
+				"default": "COMMUNITY"
+			},
+			"tabs": {
+				"contact": "문의하기",
+				"recruitment": "채용정보"
+			},
+			"media": {
+				"locationLabel": "뉴스 및 홍보영상",
+				"title": {
+					"news": "NEWS",
+					"video": "MEDIA"
+				},
+				"tabs": {
+					"news": "뉴스",
+					"video": "홍보영상"
+				}
+			}
+		}
 	}
 }

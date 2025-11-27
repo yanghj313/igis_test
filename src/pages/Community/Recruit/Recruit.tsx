@@ -100,7 +100,6 @@ const Recruit: React.FC = () => {
 				})}
 			</ul>
 
-			{/* 10개 이상일 때만 페이지네이션 */}
 			{total > PER_PAGE && (
 				<div className="recruit-pagination">
 					<button type="button" onClick={() => setPage(p => Math.max(1, p - 1))} disabled={page === 1}>

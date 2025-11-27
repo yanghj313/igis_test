@@ -1,48 +1,45 @@
 // src/pages/Solution/DroneSolutionLayout.tsx
 import React from 'react';
 import { Outlet, useLocation, Navigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import SubLayout from '@/components/layout/SubLayout';
 
 const DroneSolutionLayout: React.FC = () => {
 	const { pathname } = useLocation();
+	const { t } = useTranslation();
 
-	// ex) /solution/drone/station → ["solution", "drone", "station"]
 	const segments = pathname.split('/').filter(Boolean);
-
-	// 세 번째 값이 상세 메뉴
-	const detail = segments[2]; // station, panorama, pilot, ims, viewer, stream
+	const detail = segments[2]; // station, panorama, ...
 
 	const titleMap: Record<string, string> = {
-		station: 'DFOS STATION',
-		panorama: 'PANORAMA',
-		pilot: 'DFOS PILOT PRO',
-		ims: 'DFOS IMS',
-		viewer: 'DFOS Viewer',
-		stream: 'DFOS Streaming Viewer',
+		station: t('layout.solutionDrone.title.station'),
+		panorama: t('layout.solutionDrone.title.panorama'),
+		pilot: t('layout.solutionDrone.title.pilot'),
+		ims: t('layout.solutionDrone.title.ims'),
+		viewer: t('layout.solutionDrone.title.viewer'),
+		stream: t('layout.solutionDrone.title.stream'),
 	};
 
-	const title = titleMap[detail] || 'DRONE SOLUTION';
+	const title = detail ? titleMap[detail] || t('layout.solutionDrone.title.default') : t('layout.solutionDrone.title.default');
 
-	// 드론 솔루션 탭 메뉴 그룹
 	const groups = [
 		{
-			groupLabel: '드론 솔루션',
+			groupLabel: t('layout.solutionDrone.locationLabel'),
 			items: [
-				{ to: 'station', label: 'DFOS STATION' },
-				{ to: 'panorama', label: 'Panorama' },
-				{ to: 'pilot', label: 'DFOS PILOT PRO' },
-				{ to: 'ims', label: 'DFOS IMS' },
-				{ to: 'viewer', label: 'DFOS Viewer' },
-				{ to: 'stream', label: 'DFOS Streaming Viewer' },
+				{ to: 'station', label: t('layout.solutionDrone.tabs.station') },
+				{ to: 'panorama', label: t('layout.solutionDrone.tabs.panorama') },
+				{ to: 'pilot', label: t('layout.solutionDrone.tabs.pilot') },
+				{ to: 'ims', label: t('layout.solutionDrone.tabs.ims') },
+				{ to: 'viewer', label: t('layout.solutionDrone.tabs.viewer') },
+				{ to: 'stream', label: t('layout.solutionDrone.tabs.stream') },
 			],
 		},
 	];
 
-	// /solution/drone → /solution/drone/station 기본 이동
 	if (!detail) return <Navigate to="station" replace />;
 
 	return (
-		<SubLayout category="Solution" locationLabel="드론 솔루션" title={title} groups={groups} bgImage="/assets/images/sub_03.png" className="drone-solution-layout">
+		<SubLayout category="Solution" locationLabel={t('layout.solutionDrone.locationLabel')} title={title} groups={groups} bgImage="/assets/images/sub_03.png" className="drone-solution-layout">
 			<Outlet />
 		</SubLayout>
 	);

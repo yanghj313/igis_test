@@ -1,51 +1,43 @@
 // src/pages/Business/BusinessLayout.tsx
 import React from 'react';
 import { Outlet, useLocation, Navigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import SubLayout from '@/components/layout/SubLayout';
 
 const BusinessLayout: React.FC = () => {
 	const { pathname } = useLocation();
-	const segments = pathname.split('/').filter(Boolean);
+	const { t } = useTranslation();
 
-	// /business/drone → ["business", "drone"]
+	const segments = pathname.split('/').filter(Boolean);
 	const detail = segments[1] || 'drone';
 
-	/** 대제목 (영문) */
 	const titleMap: Record<string, string> = {
-		drone: 'DRONE',
-		gis: 'GIS SYSTEM',
-		fms: 'FMS',
-		rnd: 'R&D',
+		drone: t('layout.business.title.drone'),
+		gis: t('layout.business.title.gis'),
+		fms: t('layout.business.title.fms'),
+		rnd: t('layout.business.title.rnd'),
 	};
 
-	const title = titleMap[detail] || 'DRONE';
+	const title = titleMap[detail] || t('layout.business.title.drone');
 
-	/** 탭(소메뉴) 그룹 */
 	const groups = [
 		{
-			groupLabel: '서비스',
+			groupLabel: t('layout.business.locationLabel'),
 			items: [
-				{ to: 'drone', label: '드론' },
-				{ to: 'gis', label: 'GIS 시스템' },
-				{ to: 'fms', label: 'FMS' },
-				{ to: 'rnd', label: 'R&D 및 용역' },
+				{ to: 'drone', label: t('layout.business.tabs.drone') },
+				{ to: 'gis', label: t('layout.business.tabs.gis') },
+				{ to: 'fms', label: t('layout.business.tabs.fms') },
+				{ to: 'rnd', label: t('layout.business.tabs.rnd') },
 			],
 		},
 	];
 
-	/** 기본 이동 → /business */
 	if (!segments[1]) {
 		return <Navigate to="drone" replace />;
 	}
 
 	return (
-		<SubLayout
-			category="Business" // 상단 카테고리
-			locationLabel="서비스" // 브레드크럼 (한글)
-			title={title} // 대제목 (영문)
-			groups={groups} // 탭 그룹
-			bgImage="/assets/images/sub_02.png"
-		>
+		<SubLayout category="Business" locationLabel={t('layout.business.locationLabel')} title={title} groups={groups} bgImage="/assets/images/sub_02.png">
 			<Outlet />
 		</SubLayout>
 	);
