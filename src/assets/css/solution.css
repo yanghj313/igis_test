@@ -12,8 +12,6 @@
 	margin: 0 auto;
 }
 
-/* ------ 헤더 ------ */
-
 .station-header {
 	display: flex;
 	align-items: center;
@@ -91,6 +89,10 @@
 	max-width: 100%;
 }
 
+.igis-section .station-tag {
+	width: 260px;
+}
+
 .station-tag-label {
 	font-size: 16px;
 	line-height: 1.2;
@@ -152,6 +154,21 @@
 .ims-swiper .swiper-wrapper,
 .viewer-swiper .swiper-wrapper {
 	align-items: stretch;
+}
+.igis-section .station-static-item {
+	width: 48%;
+}
+
+.igis-section .station-slider {
+	display: flex;
+	justify-content: center;
+	gap: 40px;
+	max-width: 1530px;
+	margin: 160px auto 0;
+}
+
+.igis-section .station-slide-list li {
+	font-size: 14px;
 }
 
 .station-slide-inner {
@@ -250,6 +267,8 @@
 	font-weight: 700;
 	color: #244079;
 	margin-bottom: 18px;
+	line-height: 140%;
+	word-break: keep-all;
 }
 
 .station-slide-list {
@@ -348,6 +367,16 @@
 	.station-slide-inner {
 		height: 420px;
 	}
+
+	.igis-section .station-slider {
+		gap: 20px;
+		max-width: 1280px;
+		margin: 100px auto 0;
+	}
+
+	.igis-section .station-slide-list li {
+		font-size: 13px;
+	}
 }
 
 @media (max-width: 1280px) {
@@ -357,8 +386,25 @@
 		margin: 0 auto;
 	}
 
+	.station-desc {
+		width: 100%;
+	}
+
 	.station-tag-wrap {
 		width: 100%;
+	}
+
+	.igis-section .station-static-item {
+		width: 49%;
+	}
+
+	.igis-section .station-slider {
+		gap: 10px;
+		max-width: 1100px;
+	}
+
+	.igis-section .station-slide-list li {
+		font-size: 12px;
 	}
 }
 @media (max-width: 1024px) {
@@ -378,6 +424,19 @@
 		margin: 0 auto;
 		max-width: 80%;
 		height: auto;
+	}
+	.igis-section .station-slide-inner {
+		flex-direction: column;
+		max-height: 700px;
+		height: 100%;
+		box-shadow: none;
+		border: 1px solid #dadada;
+	}
+
+	.igis-section .station-slide-inner .station-slide-image {
+		flex: 0 0 auto;
+		width: 100%;
+		height: 200px;
 	}
 }
 
@@ -494,6 +553,19 @@
 	.ims-swiper .swiper-pagination,
 	.viewer-swiper .swiper-pagination {
 		margin-top: 18px;
+	}
+
+	.igis-section .station-slider {
+		flex-direction: column;
+		margin: 50px auto 0;
+		gap: 40px;
+	}
+	.igis-section .station-static-item {
+		width: 100%;
+	}
+
+	.igis-section .station-tag {
+		width: 220px;
 	}
 }
 @container stationTag (max-width: 240px) {
