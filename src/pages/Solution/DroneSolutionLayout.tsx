@@ -17,7 +17,6 @@ const DroneSolutionLayout: React.FC = () => {
 		pilot: t('layout.solutionDrone.title.pilot'),
 		ims: t('layout.solutionDrone.title.ims'),
 		viewer: t('layout.solutionDrone.title.viewer'),
-		stream: t('layout.solutionDrone.title.stream'),
 	};
 
 	const title = detail ? titleMap[detail] || t('layout.solutionDrone.title.default') : t('layout.solutionDrone.title.default');
@@ -31,7 +30,6 @@ const DroneSolutionLayout: React.FC = () => {
 				{ to: 'pilot', label: t('layout.solutionDrone.tabs.pilot') },
 				{ to: 'ims', label: t('layout.solutionDrone.tabs.ims') },
 				{ to: 'viewer', label: t('layout.solutionDrone.tabs.viewer') },
-				{ to: 'stream', label: t('layout.solutionDrone.tabs.stream') },
 			],
 		},
 	];

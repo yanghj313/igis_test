@@ -5,7 +5,6 @@
 	flex-direction: column;
 }
 
-/* Hero */
 .sub-hero {
 	position: relative;
 	width: 100%;
@@ -80,7 +79,6 @@ nav.sub-tabs::after {
 	border-bottom: 3px solid #84e8fa;
 }
 
-/* Content */
 .sub-content {
 	flex: 1;
 	max-width: 1720px;
@@ -88,7 +86,7 @@ nav.sub-tabs::after {
 	width: 100%;
 }
 
-@media (max-width: 580px) {
+@media (max-width: 1024px) {
 	.sub-hero {
 		height: 300px;
 	}

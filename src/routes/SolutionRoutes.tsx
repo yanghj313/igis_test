@@ -9,7 +9,6 @@ import Panorama from '@/pages/Solution/Panorama';
 import Pilot from '@/pages/Solution/Pilot';
 import Ims from '@/pages/Solution/Ims';
 import Viewer from '@/pages/Solution/Viewer';
-import Stream from '@/pages/Solution/Stream';
 
 import Igis from '@/pages/Solution/Igis';
 import Forest from '@/pages/Solution/Forest';
@@ -25,7 +24,6 @@ const SolutionRoutes: React.FC = () => (
 			<Route path="pilot" element={<Pilot />} />
 			<Route path="ims" element={<Ims />} />
 			<Route path="viewer" element={<Viewer />} />
-			<Route path="stream" element={<Stream />} />
 		</Route>
 
 		{/* GIS 솔루션 */}

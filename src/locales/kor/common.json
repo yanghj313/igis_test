@@ -427,8 +427,7 @@
 				"panorama": "PANORAMA",
 				"pilot": "DFOS PILOT PRO",
 				"ims": "DFOS IMS",
-				"viewer": "DFOS Viewer",
-				"stream": "DFOS Streaming Viewer",
+				"viewer": "DFOS Streaming Viewer",
 				"default": "DRONE SOLUTION"
 			},
 			"tabs": {
@@ -436,8 +435,7 @@
 				"panorama": "Panorama",
 				"pilot": "DFOS PILOT PRO",
 				"ims": "DFOS IMS",
-				"viewer": "DFOS Viewer",
-				"stream": "DFOS Streaming Viewer"
+				"viewer": "DFOS Streaming Viewer"
 			}
 		},
 		"community": {
@@ -461,6 +459,211 @@
 					"news": "뉴스",
 					"video": "홍보영상"
 				}
+			}
+		}
+	},
+	"station_page": {
+		"eyebrow": "DFOS STATION",
+		"title_main": "DFOS STATION",
+		"description": "DFOS STATION은 고정형과 이동형으로 유연하게 배치를 통해, 다양한 상황과 환경에서 효과적인 대응이 가능하며, \n일정 지역에 정기적 운용이 필요한 곳에서는 고정형을, 기동성과 신속한 배치가 필요한 곳에서는 이동형으로 적용하여 효율적 운용이 가능 합니다.",
+		"tag_title": "DFOS Station 적용 장비",
+		"tags": {
+			"djiDock1": "DJI DOCK 1",
+			"djiDock2": "DJI DOCK 2",
+			"djiDock3": "DJI DOCK 3",
+			"matrice30": "DJI Matrice 30 시리즈",
+			"matrice300": "DJI Matrice 300 RTK",
+			"matrice350": "DJI Matrice 350 RTK",
+			"matrice3": "DJI Matrice 3 시리즈",
+			"matrice4": "DJI Matrice 4 시리즈"
+		},
+		"slides": {
+			"dashboard": {
+				"title": "대시보드",
+				"items": ["드론 스테이션의 통합 정보", "스테이션 지도 및 날씨", "실시간 스트리밍", "작업대기 스케줄"]
+			},
+			"mission": {
+				"title": "미션 및 스케줄",
+				"items": [
+					"WayPoint 미션",
+					"회전촬영 기능",
+					"각 포인트 경유점 좌표 이동",
+					"포인트별 고도 추가 / 액션파일 불러오기",
+					"Polygon 미션 / 녹화(REC) 미션",
+					"미션 불러오기(KMZ파일) / 즉시/ 예약/ 반복 비행",
+					"스케줄 상세정보"
+				]
+			},
+			"stats": {
+				"title": "통계",
+				"items": ["Flight Time / Distance / Area", "Flight Record / 날씨, 풍향, 풍속, 자기장 정보 표출", "주소 표시 기능 / 비행 시간", "통계자료 다운로드 / 일간·주간·월간별 확인 가능"]
+			},
+			"droneInfo": {
+				"title": "드론정보",
+				"items": ["드론 기체 정보", "드론 정보창 (경위도 좌표)", "드론 상태 정보 등", "배터리 (기체별도 적용)"]
+			},
+			"tracking": {
+				"title": "버추얼콕핏",
+				"items": ["레이저 포인터 기능 (좌표 및 거리 표시)", "멀티창 SBS (다분할 스트리밍) 기능", "프레임 줌 (영역줌)", "障애물 센서 감지"]
+			},
+			"stream": {
+				"title": "스트리밍 뷰어",
+				"items": ["간편한 조작과 편리한 이용 / 자동 레이아웃 변화", "드론 정보 표시 / 대형 화면을 통한 시청", "적외선·실시간 스트리밍 지원", "최적화된 영상 지원"]
+			},
+			"map": {
+				"title": "지도",
+				"items": ["Naver 배경지도", "비행제한구역 표시", "기상정보 (고도풍향)", "주소, 좌표 검색 기능 / 거리 및 면적 재기 기능"]
+			},
+			"remote": {
+				"title": "원격제어",
+				"items": ["카메라 줌 변경", "5D조그 (PTZ)", "드론 기체 조작", "렌즈 변경 / 열화상 모드"]
+			}
+		}
+	},
+	"panorama_page": {
+		"eyebrow": "DFOS PANORAMA",
+		"title_main": "DFOS PANORAMA",
+		"description": "다양한 드론과 카메라를 활용한 사진 촬영, 파노라마 변환 및 평면공간자료(지적도 등)도 함께 확인 가능한 파노라마 웹 서비스",
+		"tag_title": "DFOS Panorama 주요기능",
+		"tags": {
+			"made": "손쉬운 파노라마 영상 제작",
+			"place": "공간정보의 활용",
+			"manage": "편리한 파노라마 영상 관리",
+			"device": "다양한 디바이스 지원",
+			"convenient": "다양한 편의 기능 제공",
+			"symbol": "공간정보와 심볼 및 정보 연동"
+		},
+		"slides": {
+			"media": {
+				"title": "혁신적인 파노라마 영상 활용 시스템",
+				"items": ["드론 촬영 사진에 대한 360º 파노라마 사진 제작", "편리한 자동 파노라마 사진 변환 지원", "자동 파노라마 사진 실시간 제작 현황 확인"]
+			},
+			"made": {
+				"title": "편리한 파노라마 영상 제작과 관리",
+				"items": [
+					"현장 관리를 위한 편집 및 공간자료 편집 기능",
+					"심볼을 통한 촬영 위치 확인 등의 편의 기능 지원",
+					"지적도 레이어 On/Off",
+					"웹과 모바일 서비스 연동으로 빠르고 쉬운 콘텐츠 확인",
+					"파노라마 콘텐츠의 생산, 저장, 관리 및 배포 지원"
+				]
+			},
+			"place": {
+				"title": "다양한 디바이스 지원",
+				"items": ["파노라마 사진을 활용한 관광지 및 명소 가상체험 가능", "파노라마 사진을 활용한 현장 확인 가능"]
+			}
+		}
+	},
+	"pilot_page": {
+		"eyebrow": "DFOS PILOT",
+		"title_main": "DFOS PILOT",
+		"description": "드론의 사진, 동영상, 촬영 및 경로 비행을 사용자가 편리하게 컨트롤 할 수 있는 APP",
+		"tag_title": "DFOS Pilot 적용 장비",
+		"tags": {
+			"matrice300": "DJI Matricve 300 시리즈",
+			"matrice400": "DJI Matricve 400 시리즈",
+			"matrice30": "DJI Matricve 30 시리즈",
+			"matrice3": "DJI Matricve 3 시리즈",
+			"matrice4": "DJI Matricve 4 시리즈",
+			"marvic3": "DJI Marvic 3 시리즈"
+		},
+		"slides": {
+			"mission": {
+				"title": "다양한 미션수행 가능",
+				"items": ["Way Point Mission", "Panorama Mission", "Grid/Polygon Interval Mission", "Grid/Polygon Distance IntervalMission"]
+			},
+			"setting": {
+				"title": "기체 설정",
+				"items": ["Photo/Video Setting", "Flight Setting", "Visual Navigation Setting", "Remote Controller/HD Setting", "Battery/Gimbal Setting", "General Setting", "RTK Setting"]
+			},
+			"camera": {
+				"title": "카메라 촬영",
+				"items": ["자동 촬영 모드", "수동 촬영 모드", "360°파노라마 촬영 지원"]
+			},
+			"system": {
+				"title": "3D 고도 비행",
+				"items": ["국내 DEM 자료 활용", "간편한 조작으로 3D 고도 미션 수행", "3D 고도 데이터 시각화", "안전 및 정밀한 미션 수행"]
+			}
+		}
+	},
+	"ims_page": {
+		"eyebrow": "DFOS IMS",
+		"title_main": "DFOS IMS",
+		"description": "드론으로 촬영한 영상(정사영상, 낱장사진 등) 관리 및 자동 정사영상 제작이 가능한 웹 서비스",
+		"tag_title": "DFOS IMS 주요 기능",
+		"tags": {
+			"total": "편리한 드론 영상 통합 관리",
+			"auto": "자동 정사영상 제작 기능",
+			"filter": "강력한 검색 및 필터 기능",
+			"analysis": "정사영상 비교 및 시계열 분석 지원",
+			"real": "정사영상과 원본사진 연동 기능",
+			"web": "웹 기반의 사용자 중심 플랫폼"
+		},
+		"slides": {
+			"auto": {
+				"title": "편리한 자동 정사영상 제작",
+				"items": ["촬영된 낱장사진을 클릭 몇 번을 통해 간단하게 정사영상으로 제작이 가능하며,\n그 처리 과정을 실시간으로 어디서나 확인이 가능합니다."]
+			},
+			"2d3d": {
+				"title": "2D·3D 영상서비스를 제공",
+				"items": ["자동정사영상제작 기능으로 제작된 정상영상의 경우는 정사영상에 원본 낱장사진과 바로 연결된 마커들이 표시되어 마커를 클릭하면 원본사진을 바로 확인이 가능합니다."]
+			},
+			"graph": {
+				"title": "통계 기능 제공",
+				"items": ["비행 완료한 기체별 비행시간, 비행면적, 비행거리 등의 다양한 정보확인과 통계기능을 지원하여 편리한 업무환경을 제공합니다."]
+			}
+		}
+	},
+	"viewer_page": {
+		"title_main": "DFOS Streaming Viewer",
+		"description": "여러 개의 드론 영상 소스를 편리하게 재생할 수 있는 멀티 스트리밍 뷰어",
+		"tag_title": "DFOS Streaming Viewer 주요기능",
+		"tags": {
+			"support": "실시간 스트리밍 지원",
+			"flight": "실시간 비행 정보 표시",
+			"layout": "다양한 디바이스 및 레이아웃 지원",
+			"fitting": "최적화된 영상 지원"
+		},
+		"slides": {
+			"map": {
+				"icon": "DFOS Viewer(App)",
+				"title": "다양한 미션 모니터링 및 배경지도",
+				"items": ["Way Point Mission 모니터링", "Grid/Polygon Mission 모니터링", "Grid/Polygon Interval Mission 모니터링", "Grid/Polygon Distance Interval Mission 모니터링", "Google, Naver 등"]
+			},
+			"monitor": {
+				"icon": "DFOS Viewer(App)",
+				"title": "드론 정보 모니터링",
+				"items": [
+					"드론 GPS정보(경위도 좌표)",
+					"드론 상태 (고도, 높이, 속도, 거리 등) 모니터링",
+					"배터리상태 모니터링",
+					"Finish Action 정보",
+					"Point Action 정보",
+					"종중복도, 횡중복도 정보",
+					"미션 반복 횟수",
+					"짐벌 각도 정보"
+				]
+			},
+			"divide": {
+				"icon": "DFOS Streaming Viewer",
+				"title": "화면 분할 및 화질",
+				"items": ["1~2개 연결 (FHD(1080p) 화질 재생)", "3~4개 연결(HD(720p) 화질 재생)", "5~6개 연결(SD(360p) 화질 재생)", "7~9개 연결 (160p 화질 재생)"]
+			},
+			"list": {
+				"icon": "DFOS Streaming Viewer",
+				"title": "드론 정보 및 드론 리스트 표시",
+				"items": [
+					"드론 이름 및 정보 표시",
+					"드론 비행고도 표시(m)",
+					"드론 위치정보(주소정보) / 홈포인트까지 거리 표시(m)",
+					"드론 비행속도 표시(m/s) / 배터리 상태 표시",
+					"연결 상태별 표시(연결, 미연결 드론 표시)"
+				]
+			},
+			"play": {
+				"icon": "DFOS Streaming Viewer",
+				"title": "스트리밍 재생",
+				"items": ["선택된 드론 개수에 따라 자동 레이아웃 설정", "선택된 드론 개수에 따라 화질(bitrate) 설정", "전체 스트리밍 화면 제공"]
 			}
 		}
 	}

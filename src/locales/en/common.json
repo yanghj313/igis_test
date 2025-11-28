@@ -499,8 +499,7 @@
 				"panorama": "PANORAMA",
 				"pilot": "DFOS PILOT PRO",
 				"ims": "DFOS IMS",
-				"viewer": "DFOS Viewer",
-				"stream": "DFOS Streaming Viewer",
+				"viewer": "DFOS Streaming Viewer",
 				"default": "DRONE SOLUTION"
 			},
 			"tabs": {
@@ -508,8 +507,7 @@
 				"panorama": "Panorama",
 				"pilot": "DFOS PILOT PRO",
 				"ims": "DFOS IMS",
-				"viewer": "DFOS Viewer",
-				"stream": "DFOS Streaming Viewer"
+				"viewer": "DFOS Viewer"
 			}
 		},
 		"community": {
@@ -533,6 +531,231 @@
 					"news": "News",
 					"video": "Media"
 				}
+			}
+		}
+	},
+	"station_page": {
+		"eyebrow": "DFOS STATION",
+		"title_main": "DFOS STATION",
+		"description": "DFOS STATION can be flexibly deployed as a fixed or mobile type to respond efficiently to various situations and environments. Fixed type is optimized for areas that require regular operation, while mobile type is suitable for sites that need rapid and flexible deployment.",
+		"tag_title": "DFOS Station compatible equipment",
+		"tags": {
+			"djiDock1": "DJI DOCK 1",
+			"djiDock2": "DJI DOCK 2",
+			"djiDock3": "DJI DOCK 3",
+			"matrice30": "DJI Matrice 30 Series",
+			"matrice300": "DJI Matrice 300 RTK",
+			"matrice350": "DJI Matrice 350 RTK",
+			"matrice3": "DJI Matrice 3 Series",
+			"matrice4": "DJI Matrice 4 Series"
+		},
+		"slides": {
+			"dashboard": {
+				"title": "Dashboard",
+				"items": ["Integrated status of drone stations", "Station map and weather information", "Live streaming view", "Work waiting & schedule management"]
+			},
+			"mission": {
+				"title": "Mission & Schedule",
+				"items": [
+					"WayPoint mission",
+					"Orbit / rotation shooting",
+					"Move through each waypoint coordinate",
+					"Add altitude per point / load action files",
+					"Polygon mission / recording (REC) mission",
+					"Load mission (KMZ file) / instant, scheduled, repeated flight",
+					"Detailed mission schedule information"
+				]
+			},
+			"stats": {
+				"title": "Statistics",
+				"items": [
+					"Flight time / distance / area",
+					"Flight record with weather, wind speed & direction, magnetic data",
+					"Address display and flight time",
+					"Downloadable statistics by day / week / month"
+				]
+			},
+			"droneInfo": {
+				"title": "Drone Information",
+				"items": ["Drone airframe information", "Drone info window (latitude / longitude coordinates)", "Real-time drone status", "Battery information (per airframe)"]
+			},
+			"tracking": {
+				"title": "Virtual Cockpit",
+				"items": ["Laser pointer (coordinate & distance display)", "Multi-view SBS (multi-split streaming)", "Frame zoom (area zoom)", "Obstacle sensor detection"]
+			},
+			"stream": {
+				"title": "Streaming Viewer",
+				"items": ["Easy operation and automatic layout switching", "Drone status overlay on large screen", "Supports IR and live streaming", "Optimized video quality"]
+			},
+			"map": {
+				"title": "Map",
+				"items": ["Naver base map", "No-fly / restricted zones display", "High-altitude wind & weather information", "Address & coordinate search / distance & area measurement"]
+			},
+			"remote": {
+				"title": "Remote Control",
+				"items": ["Camera zoom control", "5D jog (PTZ)", "Remote drone control", "Lens switching / thermal mode"]
+			}
+		}
+	},
+	"panorama_page": {
+		"eyebrow": "DFOS PANORAMA",
+		"title_main": "DFOS PANORAMA",
+		"description": "Panorama web service that enables the conversion of photographs taken using various drones and cameras into 360° panoramic images, combined with spatial data",
+		"tag_title": "DFOS Panorama Key Features",
+		"tags": {
+			"made": "Easy panorama video production",
+			"place": "Utilization of spatial information",
+			"manage": "Convenient panorama video management",
+			"device": "Support for various devices",
+			"convenient": "Provision of various convenient features",
+			"symbol": "Integration of spatial information with symbols and information"
+		},
+		"slides": {
+			"media": {
+				"title": "Innovative Panorama Video Utilization System",
+				"items": ["360º panorama photo production from drone-captured photos", "Convenient automatic panorama photo conversion support", "Real-time automatic panorama photo production status check"]
+			},
+			"made": {
+				"title": "Convenient Panorama Video Production and Management",
+				"items": [
+					"Editing and spatial data editing functions for field management",
+					"Support for convenient features such as location confirmation through symbols",
+					"On/Off for cadastral map layer",
+					"Fast and easy content verification through web and mobile service linkage",
+					"Support for production, storage, management, and distribution of panorama content"
+				]
+			},
+			"place": {
+				"title": "Support for Various Devices",
+				"items": ["Virtual tours of tourist attractions and landmarks using panorama photos", "On-site verification using panorama photos"]
+			}
+		}
+	},
+	"pilot_page": {
+		"eyebrow": "DFOS PILOT",
+		"title_main": "DFOS PILOT",
+		"description": "An app that allows users to conveniently control drone photos, videos, shooting, and route flights",
+		"tag_title": "DFOS Pilot Supported Devices",
+		"tags": {
+			"matrice300": "DJI Matrice 300 Series",
+			"matrice400": "DJI Matrice 400 Series",
+			"matrice30": "DJI Matrice 30 Series",
+			"matrice3": "DJI Matrice 3 Series",
+			"matrice4": "DJI Matrice 4 Series",
+			"marvic3": "DJI Marvic 3 Series"
+		},
+		"slides": {
+			"mission": {
+				"title": "Various Mission Capabilities",
+				"items": ["Way Point Mission", "Panorama Mission", "Grid/Polygon Interval Mission", "Grid/Polygon Distance IntervalMission"]
+			},
+			"setting": {
+				"title": "Aircraft Settings",
+				"items": ["Photo/Video Setting", "Flight Setting", "Visual Navigation Setting", "Remote Controller/HD Setting", "Battery/Gimbal Setting", "General Setting", "RTK Setting"]
+			},
+			"camera": {
+				"title": "Camera Shooting",
+				"items": ["Automatic Shooting Mode", "Manual Shooting Mode", "360° Panorama Shooting Support"]
+			},
+			"system": {
+				"title": "3D Altitude Flight",
+				"items": ["Utilization of domestic DEM data", "Easy operation for 3D altitude mission execution", "3D altitude data visualization", "Safe and precise mission execution"]
+			}
+		}
+	},
+	"ims_page": {
+		"eyebrow": "DFOS IMS",
+		"title_main": "DFOS IMS",
+		"description": "Web service for managing drone-captured videos (orthophotos, individual photos, etc.) and automatic orthophoto production",
+		"tag_title": "DFOS IMS Key Features",
+		"tags": {
+			"total": "Convenient integrated drone video management",
+			"auto": "Automatic orthophoto production",
+			"filter": "Powerful search and filter functions",
+			"analysis": "Support for orthophoto comparison and time-series analysis",
+			"real": "Linking function between orthophotos and original photos",
+			"web": "User-centered web-based platform"
+		},
+		"slides": {
+			"auto": {
+				"title": "Convenient Automatic Orthophoto Production",
+				"items": ["Orthophotos can be easily produced from individual photos with just a few clicks,\nand the processing status can be checked in real-time from anywhere."]
+			},
+			"2d3d": {
+				"title": "2D·3D Video Services Provided",
+				"items": [
+					"For orthophotos produced using the automatic orthophoto production feature, markers linked directly to the original individual photos are displayed on the orthophotos, allowing users to click the markers to view the original photos immediately."
+				]
+			},
+			"graph": {
+				"title": "Statistics Function Provided",
+				"items": [
+					"Provides a convenient work environment by supporting various information checks and statistical functions such as flight time, flight area, and flight distance for each completed aircraft."
+				]
+			}
+		}
+	},
+	"viewer_page": {
+		"title_main": "DFOS Streaming Viewer",
+		"description": "Multi-streaming viewer for convenient playback of multiple drone image sources",
+		"tag_title": "DFOS Streaming Viewer Key Features",
+		"tags": {
+			"support": "Real-time streaming support",
+			"flight": "Real-time flight information display",
+			"layout": "Support for various devices and layouts",
+			"fitting": "Optimized video support"
+		},
+		"slides": {
+			"map": {
+				"eyebrow": "DFOS Viewer(App)",
+				"title": "Various Mission Monitoring and Background Maps",
+				"items": [
+					"Way Point Mission Monitoring",
+					"Grid/Polygon Mission Monitoring",
+					"Grid/Polygon Interval Mission Monitoring",
+					"Grid/Polygon Distance Interval Mission Monitoring",
+					"Google, Naver, etc."
+				]
+			},
+			"monitor": {
+				"eyebrow": "DFOS Viewer(App)",
+				"title": "Drone Information Monitoring",
+				"items": [
+					"Drone GPS Information (Latitude and Longitude Coordinates)",
+					"Drone Status Monitoring (Altitude, Height, Speed, Distance, etc.)",
+					"Battery Status Monitoring",
+					"Finish Action Information",
+					"Point Action Information",
+					"Longitudinal Overlap and Lateral Overlap Information",
+					"Mission Repeat Count",
+					"Gimbal Angle Information"
+				]
+			},
+			"divide": {
+				"eyebrow": "DFOS Streaming Viewer",
+				"title": "Screen Division and Image Quality",
+				"items": [
+					"1~2 connections (FHD(1080p) quality playback)",
+					"3~4 connections (HD(720p) quality playback)",
+					"5~6 connections (SD(360p) quality playback)",
+					"7~9 connections (160p quality playback)"
+				]
+			},
+			"list": {
+				"eyebrow": "DFOS Streaming Viewer",
+				"title": "Drone Information and Drone List Display",
+				"items": [
+					"Display of drone names and information",
+					"Display of drone flight altitude (m)",
+					"Display of drone location information (address information) / distance to home point (m)",
+					"Display of drone flight speed (m/s) / battery status display",
+					"Display by connection status (connected, disconnected drones)"
+				]
+			},
+			"play": {
+				"eyebrow": "DFOS Streaming Viewer",
+				"title": "Streaming Playback",
+				"items": ["Automatic layout setting according to the number of selected drones", "Bitrate setting according to the number of selected drones", "Provides full streaming screen"]
 			}
 		}
 	}
