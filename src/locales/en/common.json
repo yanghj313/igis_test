@@ -758,5 +758,68 @@
 				"items": ["Automatic layout setting according to the number of selected drones", "Bitrate setting according to the number of selected drones", "Provides full streaming screen"]
 			}
 		}
+	},
+	"forest_page": {
+		"eyebrow": "DFOS Forest",
+		"title_main": "DFOS Forest",
+		"description": "A specialized forest GIS solution optimized for forestry tasks,\nallowing editing, analysis, and 3D modeling of forest spatial information.",
+		"tag_title": "Key Features of DFOS Forest",
+		"tags": {
+			"forest": "Provides forest-specific analysis functions",
+			"automatic": "Automated eco-friendly logging design",
+			"construction": "Support for logging road and forest road design",
+			"feature": "Provides industry-focused work functions",
+			"link": "Powerful spatial data editing and linkage functions",
+			"custom": "Customizable and extensible"
+		},
+		"slides": {
+			"forest": {
+				"title": "Efficient functions in forest areas with a specialized program",
+				"items": [
+					"Support for logging road and forest road design",
+					"Production of longitudinal and cross-sectional views",
+					"Print output and layout provision",
+					"Support for eco-friendly logging design necessary for forest logging tasks",
+					"Provides analysis functions\n(surface distance, surface area, viewshed, water flow, slope analysis)"
+				]
+			},
+			"place": {
+				"title": "User-friendly GIS for forest terrain information processing",
+				"items": [
+					"A forest spatial information system usable by both domestic and international public institutions and private companies requiring forest administration tasks using spatial information"
+				]
+			}
+		}
+	},
+	"fms_page": {
+		"eyebrow": "DFOS FMS",
+		"title_main": "DFOS FMS",
+		"description": " FMS is a GIS map–based mobile app that supports location-based field investigation, data editing, and spatial verification in real time.",
+		"tag_title": "Key Features of DFOS FMS",
+		"tags": {
+			"where": " Provide Real-Time, Field-Centric Location-Based Capabilities",
+			"layer": "Layer and map data management capabilities",
+			"memo": "Various memo and attachment features",
+			"out": "WMS and external map integration",
+			"comport": "Fast and concise UI",
+			"mobile": "Mobile work expansion linked with PC"
+		},
+		"slides": {
+			"fms": {
+				"title": "Efficient fieldwork tool FMS that enhances productivity",
+				"items": [
+					"Supports On/Off Line base maps",
+					"Equipped with design and completion drawing viewer functions",
+					"Supports Shape, KML File",
+					"Supports video services (WMS, etc.)",
+					"Supports memo function",
+					"Supports tracking function"
+				]
+			},
+			"kind": {
+				"title": "FMS Usable in Various Fields",
+				"items": ["Can be used by public institutions and companies performing on-site land surveying required for urban development, housing construction projects, etc."]
+			}
+		}
 	}
 }

@@ -701,5 +701,59 @@
 				]
 			}
 		}
+	},
+	"forest_page": {
+		"eyebrow": "DFOS Forest",
+		"title_main": "DFOS Forest",
+		"description": "산림업무에 최적화된 솔루션으로 산림공간정보에 대한\n편집, 분석 및 3D 모델링이 가능한 전문 산림 GIS Solution",
+		"tag_title": "DFOS Forest 주요 기능",
+		"tags": {
+			"forest": "산림 특화 분석 기능 제공",
+			"automatic": "친환경 벌채 설계 자동화",
+			"construction": "운재로 및 임도 설계 지원",
+			"feature": "현업 중심 업무 기능 제공",
+			"link": "강력한 공간 데이터 편집과 연계 기능",
+			"custom": "맞춤형 커스터마이징 및 확장성"
+		},
+		"slides": {
+			"forest": {
+				"title": "전문적인 프로그램으로 산림지역에서 효율적인 기능",
+				"items": [
+					"운재로 및 임도에대한 설계지원 기능",
+					"종단면도, 횡단면도 제작 기능",
+					"프린트 출력 및 레이아웃 제공",
+					"산림 벌재 업무에 필요한 친환경 벌채 설계 기능 지원",
+					"분석 기능 제공\n(표면거리, 표면적, 가시권, 수계흐름, 경사도 분석)"
+				]
+			},
+			"place": {
+				"title": "산림지형정보처리를 위한 사용자 친화적 GIS",
+				"items": ["공간정보를 이용하여 산림행정 업무가 필요한국내외\n공공기관 및 민간회사 모두 사용가능한 산림공간 정보시스템"]
+			}
+		}
+	},
+	"fms_page": {
+		"eyebrow": "DFOS FMS",
+		"title_main": "DFOS FMS",
+		"description": "FMS는 GIS 지도기반의 Mobile App으로 현장 조사에 필요한 위치정보기반 조사 및 편집 등을 지원하는 Mobile GIS Solution",
+		"tag_title": "DFOS FMS 주요 기능",
+		"tags": {
+			"where": "현장 중심의 실시간 위치 기반 기능 제공",
+			"layer": "레이어 및 지도 데이터 관리 기능",
+			"memo": "다양한 메모 및 첨부 기능",
+			"out": "WMS 및 외부 지도 연동",
+			"comport": "빠르고 간결한 UI",
+			"mobile": "PC와 연계되는 모바일 업무 확장성"
+		},
+		"slides": {
+			"fms": {
+				"title": "현장업무 생산성을 높이는 효율적인 업무툴 FMS",
+				"items": ["On/Off Line 배경지도 지원", "설계 도면 및 준공 도면 Viewer 기능 탑재", "Shape, KML File 지원", "영상 서비스(WMS 등) 지원", "메모 기능 지원", "트래킹 기능 지원"]
+			},
+			"kind": {
+				"title": "다양한 곳에서 활용가능한 FMS",
+				"items": ["도시개발, 주택건설사업 등에 필요한 현장 토지측량을 수행할 공공기관 및 업체 사용가능"]
+			}
+		}
 	}
 }

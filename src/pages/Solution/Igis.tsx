@@ -1,4 +1,3 @@
-// src/pages/Solution/Ims.tsx (파일명은 상황에 맞게)
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import '../../assets/css/solution.css';
