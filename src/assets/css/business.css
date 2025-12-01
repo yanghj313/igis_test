@@ -91,7 +91,7 @@
 
 .biz-diff-text-inner {
 	position: absolute;
-	top: 40px;
+	top: 30px;
 	left: 40px;
 	right: 40px;
 	padding: 0 10px;
@@ -177,9 +177,14 @@
 }
 
 /* 반응형 대충 잡기 */
+@media (max-width: 1400px) {
+	.biz-diff-section {
+		padding: 100px 20px 150px;
+	}
+}
 @media (max-width: 1024px) {
 	.biz-diff-section {
-		padding: 100px 0 150px;
+		padding: 100px 0 100px;
 	}
 	.biz-diff-title {
 		font-size: 36px;
