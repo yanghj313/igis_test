@@ -4,28 +4,32 @@ import { useParams, Link } from 'react-router-dom';
 import { db } from '@config/firebase';
 import { doc, getDoc } from 'firebase/firestore';
 import type { RecruitDoc } from '@/types/recruit';
+import { useTranslation } from 'react-i18next';
 import '../../../assets/css/recruitdetail.css';
 
 const formatDate = (ms?: number) => (typeof ms === 'number' ? new Date(ms).toLocaleDateString() : '');
 
 type Period = { start?: number; finish?: number } | undefined;
+type RecruitStatus = 'open' | 'closed';
 
-const getRecruitStatus = (period: Period): '채용중' | '채용마감' => {
+// 상태 계산: 문자열 말고 상태코드로만 반환
+const getRecruitStatus = (period: Period): RecruitStatus => {
 	if (period?.finish) {
 		const now = Date.now();
-		if (now > period.finish) return '채용마감';
+		if (now > period.finish) return 'closed';
 	}
-	return '채용중';
+	return 'open';
 };
 
-const getPeriodLabel = (period: Period) => {
+const getPeriodLabel = (period: Period, t: (key: string) => string): string => {
 	if (!period?.start) return '';
 	if (period.finish) {
 		return `${formatDate(period.start)} ~ ${formatDate(period.finish)}`;
 	}
-	return `${formatDate(period.start)} · 채용 시`;
+	return `${formatDate(period.start)} · ${t('recruitment.until_hired')}`; // "채용 시"
 };
 
+// 그대로 한국어로 두고, 나중에 필요하면 i18n 키로 빼도 됨
 const tagText = [
 	{ text: '# 자율적이고 편안한 분위기', type: 'tag1' },
 	{ text: '# 탄력근무제', type: 'tag2' },
@@ -197,15 +201,16 @@ const section2 = [
 ];
 
 const section3_1 = [
-	{ img: '/assets/images/recruit/section3-1-icon1.svg', text: '입사지원' },
-	{ img: '/assets/images/recruit/section3-1-icon2.svg', text: '서류전형' },
-	{ img: '/assets/images/recruit/section3-1-icon3.svg', text: '1차 실무진 면접' },
-	{ img: '/assets/images/recruit/section3-1-icon4.svg', text: '2차 임원 면접' },
-	{ img: '/assets/images/recruit/section3-1-icon5.svg', text: '최종 합격' },
+	{ img: '/assets/images/recruit/section3-1-icon1.svg', textKey: 'recruitment.step.apply' }, // 입사지원
+	{ img: '/assets/images/recruit/section3-1-icon2.svg', textKey: 'recruitment.step.document' }, // 서류전형
+	{ img: '/assets/images/recruit/section3-1-icon3.svg', textKey: 'recruitment.step.first' }, // 1차 실무진 면접
+	{ img: '/assets/images/recruit/section3-1-icon4.svg', textKey: 'recruitment.step.second' }, // 2차 임원 면접
+	{ img: '/assets/images/recruit/section3-1-icon5.svg', textKey: 'recruitment.step.final' }, // 최종 합격
 ];
 
 const RecruitDetail: React.FC = () => {
 	const { id } = useParams<{ id: string }>();
+	const { t } = useTranslation();
 	const [job, setJob] = useState<RecruitDoc | null>(null);
 	const [loading, setLoading] = useState(true);
 	const [err, setErr] = useState<string | null>(null);
@@ -227,25 +232,31 @@ const RecruitDetail: React.FC = () => {
 	if (loading)
 		return (
 			<section className="content-box">
-				<p>불러오는 중…</p>
-			</section>
-		);
-	if (err)
-		return (
-			<section className="content-box">
-				<p style={{ color: 'crimson' }}>에러: {err}</p>
-			</section>
-		);
-	if (!job)
-		return (
-			<section className="content-box">
-				<p>공고를 찾을 수 없습니다.</p>
+				<p>{t('recruitment.loading_detail')}</p>
 			</section>
 		);
 
-	const title = job.title ?? job.work ?? '(제목 없음)';
+	if (err)
+		return (
+			<section className="content-box">
+				<p style={{ color: 'crimson' }}>
+					{t('recruitment.error')}: {err}
+				</p>
+			</section>
+		);
+
+	if (!job)
+		return (
+			<section className="content-box">
+				<p>{t('recruitment.not_found')}</p>
+			</section>
+		);
+
+	const title = job.title ?? job.work ?? t('recruitment.no_title');
 	const status = getRecruitStatus(job.period);
-	const periodLabel = getPeriodLabel(job.period);
+	const periodLabel = getPeriodLabel(job.period, t);
+
+	const bannerText = status === 'open' ? t('recruitment.banner_open') : t('recruitment.banner_closed');
 
 	return (
 		<main className="RecrultmentDetail">
@@ -258,8 +269,9 @@ const RecruitDetail: React.FC = () => {
 					<img src="/assets/images/logo.svg" alt="IGIS" />
 				</div>
 				<div className="text">
-					우리가 가면 길이 됩니다 <br />
-					<span>아이지아이에스와 동행할 인재를 찾습니다</span>
+					{t('recruitment.hero_main')}
+					<br />
+					<span>{t('recruitment.hero_sub')}</span>
 				</div>
 				<div className="line" />
 			</div>
@@ -315,12 +327,8 @@ const RecruitDetail: React.FC = () => {
 
 				<div className="section1-sub-wrapper">
 					<div className="title-section">
-						<div className="title">우리는 이런 인재를 찾습니다</div>
-						<div className="sub">
-							아이지아이에스와 함께 더 높게
-							<br />
-							성장하실 인재를 모십니다
-						</div>
+						<div className="title">{t('recruitment.section1_title')}</div>
+						<div className="sub">{t('recruitment.section1_sub')}</div>
 					</div>
 
 					<div className="content-section">
@@ -352,8 +360,9 @@ const RecruitDetail: React.FC = () => {
 			<div className="section2">
 				<div className="transparent" />
 				<div className="title">
-					내일 더 성장할 <br />
-					인재를 위해 지원합니다
+					{t('recruitment.section2_title_line1')}
+					<br />
+					{t('recruitment.section2_title_line2')}
 				</div>
 
 				<div className="section2-content">
@@ -380,9 +389,9 @@ const RecruitDetail: React.FC = () => {
 					<img src="/assets/images/recruit/igis-back.svg" alt="" />
 				</div>
 
-				<div className="title">쾌적한 근무환경</div>
+				<div className="title">{t('recruitment.section3_title')}</div>
 
-				{/* 사진 그리드 – 이미지 이름은 폴더 기준으로 맞춰둠 */}
+				{/* 사진 그리드 */}
 				<div className="section3-content">
 					<div className="top">
 						<div className="left">
@@ -407,31 +416,30 @@ const RecruitDetail: React.FC = () => {
 					</div>
 				</div>
 
-				{/* 근무조건 / 채용절차 – Firestore 데이터 연결 */}
+				{/* 근무조건 / 채용절차 */}
 				<div className="section3-1">
 					<div className="title-wrapper">
 						<div className="title">
-							아이지아이에스의 <br />
-							소중한 팀원을 기다립니다
+							{t('recruitment.section3_1_title_line1')}
+							<br />
+							{t('recruitment.section3_1_title_line2')}
 						</div>
 						<div className="sub">
-							지원해 주시는 모든 분의 서류를 신중하게 살펴보겠습니다. <br />
-							아이지아이에스와 오래 함께할 소중한 팀원을 기다립니다.
+							{t('recruitment.section3_1_sub_line1')}
+							<br />
+							{t('recruitment.section3_1_sub_line2')}
 						</div>
 					</div>
 
 					<div className="section3-1-content">
 						<div className="top">
-							<div className="title">근무조건</div>
-							<div className="sub">{job.condition ? job.condition : '상세 근무조건은 문의 시 안내드립니다.'}</div>
+							<div className="title">{t('recruitment.working_condition_title')}</div>
+							<div className="sub">{job.condition || t('recruitment.working_condition_fallback')}</div>
 						</div>
 
 						<div className="bottom top">
-							<div className="title">채용절차</div>
-							<div className="sub">
-								· 제출 서류 : 경력기술이 포함 된 이력서, 포트폴리오 <br />
-								· 절차 변동 시 유선상으로 사전에 안내를 드립니다. <br />· 허위사실이 발견될 경우 채용이 취소될 수 있습니다.
-							</div>
+							<div className="title">{t('recruitment.process_title')}</div>
+							<div className="sub">{t('recruitment.process_desc')}</div>
 
 							<div className="order">
 								{section3_1.map((item, idx) => (
@@ -439,7 +447,7 @@ const RecruitDetail: React.FC = () => {
 										<div className="img">
 											<img src={item.img} alt="" />
 										</div>
-										<div className="text">{item.text}</div>
+										<div className="text">{t(item.textKey)}</div>
 									</div>
 								))}
 							</div>
@@ -448,13 +456,14 @@ const RecruitDetail: React.FC = () => {
 				</div>
 
 				<a className="section3-btn" href="https://www.saramin.co.kr/zf_user/company-info/view?csn=R0pGcVlEVVZkOE8wa2xaZDBHdDVVZz09" target="_blank" rel="noreferrer">
-					채용사이트 바로가기
+					{t('recruitment.go_to_job_site')}
 				</a>
 
-				{/* 이번 공고 상세 내용 – Firestore 데이터 바인딩 */}
+				{/* 이번 공고 상세 내용 */}
 				<div className="section3-2">
 					<div className="title">
-						아이지아이에스는 <br /> 현재 {status === '채용중' ? '채용중 입니다' : '해당 공고 채용이 마감되었습니다'}
+						{t('recruitment.section3_2_title_line1')}
+						<br /> {bannerText}
 					</div>
 					<div className="content">
 						<div className="top">
@@ -464,25 +473,25 @@ const RecruitDetail: React.FC = () => {
 						<div className="bottom">
 							<div className="text-section">
 								<div className="box">
-									<div className="title">이런 일을 하게 됩니다</div>
+									<div className="title">{t('recruitment.detail_job_title')}</div>
 									<div className="sub">{job.work}</div>
 								</div>
 								<div className="box">
-									<div className="title">이런 분을 찾고 있습니다.</div>
+									<div className="title">{t('recruitment.detail_find_title')}</div>
 									<div className="sub">{job.find}</div>
 								</div>
 								<div className="box">
-									<div className="title">이런 경험과 역량을 보유하시면 더 좋습니다.</div>
+									<div className="title">{t('recruitment.detail_experience_title')}</div>
 									<div className="sub">{job.experience}</div>
 								</div>
 								<div className="box">
-									<div className="title">접수기간</div>
-									<div className="sub">{periodLabel || '상세 접수기간은 별도 공지'}</div>
+									<div className="title">{t('recruitment.detail_period_title')}</div>
+									<div className="sub">{periodLabel || t('recruitment.detail_period_fallback')}</div>
 								</div>
 							</div>
 
 							<p className="recruit-back" style={{ marginTop: 32 }}>
-								<Link to="/community/recruitment">목록</Link>
+								<Link to="/community/recruitment">{t('recruitment.back_to_list')}</Link>
 							</p>
 						</div>
 					</div>

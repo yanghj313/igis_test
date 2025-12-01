@@ -79,7 +79,7 @@ const VideoContainer: React.FC = () => {
 
 		if (searchField === 'title') return title.includes(keyword);
 
-		// 'all' 인 경우 – 지금은 제목만 있지만 나중에 설명 필드 생기면 여기서 추가
+		// 'all' – 지금은 제목만, 나중에 설명 필드 생기면 여기서 추가
 		return title.includes(keyword);
 	});
 
@@ -106,20 +106,20 @@ const VideoContainer: React.FC = () => {
 
 	return (
 		<section className="video-list">
-			{/* 🔹 뉴스 리스트랑 똑같은 헤더 구조 사용 */}
+			{/* 헤더 */}
 			<div className="news-header">
 				<div className="news-header-right">
 					<p className="news-total">
-						Total <span>{total}</span>
+						{t('videoList.total')} <span>{total}</span>
 					</p>
 
 					<div className="news-sort">
 						<label htmlFor="videoSort" className="sr-only">
-							정렬
+							{t('videoList.sort_label')}
 						</label>
 						<select id="videoSort" value={sortOrder} onChange={e => setSortOrder(e.target.value as SortOrder)}>
-							<option value="latest">{t('최신순') ?? '최신순'}</option>
-							<option value="oldest">{t('오래된 순') ?? '오래된 순'}</option>
+							<option value="latest">{t('videoList.sort_latest')}</option>
+							<option value="oldest">{t('videoList.sort_oldest')}</option>
 						</select>
 					</div>
 				</div>
@@ -127,7 +127,7 @@ const VideoContainer: React.FC = () => {
 
 			{/* 리스트 */}
 			<ul className="video-items">
-				{current.length === 0 && <li>{t('no_video') ?? 'No videos found.'}</li>}
+				{current.length === 0 && <li>{t('videoList.no_video') ?? 'No videos found.'}</li>}
 
 				{current.map(v => (
 					<li key={v.id} className="video-item">
@@ -144,7 +144,7 @@ const VideoContainer: React.FC = () => {
 				))}
 			</ul>
 
-			{/* 🔹 검색 바 – 뉴스랑 같은 틀 */}
+			{/* 검색 바 */}
 			<div className="news-search-bar">
 				<form
 					onSubmit={e => {
@@ -154,34 +154,34 @@ const VideoContainer: React.FC = () => {
 				>
 					<div className="news-search-select">
 						<label htmlFor="videoSearchField" className="sr-only">
-							검색 구분
+							{t('videoList.search_field_label')}
 						</label>
 						<select id="videoSearchField" value={searchField} onChange={e => setSearchField(e.target.value as SearchField)}>
-							<option value="title">제목</option>
-							<option value="all">전체</option>
+							<option value="title">{t('videoList.search_title')}</option>
+							<option value="all">{t('videoList.search_all')}</option>
 						</select>
 					</div>
 
 					<label htmlFor="videoSearch" className="sr-only">
-						검색어
+						{t('videoList.search_label')}
 					</label>
-					<input id="videoSearch" type="text" value={searchTerm} onChange={e => setSearchTerm(e.target.value)} placeholder="검색어를 입력하세요" />
+					<input id="videoSearch" type="text" value={searchTerm} onChange={e => setSearchTerm(e.target.value)} placeholder={t('videoList.search_placeholder')} />
 
-					<button type="submit">{t('검색') ?? '검색'}</button>
+					<button type="submit">{t('videoList.search_button')}</button>
 				</form>
 			</div>
 
-			{/* 🔹 페이지네이션 – 뉴스랑 동일 구조 (≪ < 1 2 3 > ≫) */}
+			{/* 페이지네이션 */}
 			{total > PER_PAGE && (
 				<div className="news-pagination">
 					{/* 처음 페이지 */}
 					<button type="button" className="icon-btn first" onClick={() => setPage(1)} disabled={page === 1}>
-						<img src={ICON_PREV_BEFORE} alt="처음 페이지" />
+						<img src={ICON_PREV_BEFORE} alt={t('videoList.page_first')} />
 					</button>
 
 					{/* 이전 페이지 */}
 					<button type="button" className="icon-btn prev" onClick={() => setPage(p => Math.max(1, p - 1))} disabled={page === 1}>
-						<img src={ICON_PREV} alt="이전 페이지" />
+						<img src={ICON_PREV} alt={t('videoList.page_prev')} />
 					</button>
 
 					{/* 숫자 버튼 */}
@@ -193,12 +193,12 @@ const VideoContainer: React.FC = () => {
 
 					{/* 다음 페이지 */}
 					<button type="button" className="icon-btn next" onClick={() => setPage(p => Math.min(totalPages, p + 1))} disabled={page === totalPages}>
-						<img src={ICON_PREV} alt="다음 페이지" />
+						<img src={ICON_PREV} alt={t('videoList.page_next')} />
 					</button>
 
 					{/* 마지막 페이지 */}
 					<button type="button" className="icon-btn last" onClick={() => setPage(totalPages)} disabled={page === totalPages}>
-						<img src={ICON_PREV_BEFORE} alt="마지막 페이지" />
+						<img src={ICON_PREV_BEFORE} alt={t('videoList.page_last')} />
 					</button>
 				</div>
 			)}

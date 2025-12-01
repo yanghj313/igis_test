@@ -133,7 +133,7 @@ const VideoDetailContainer: React.FC = () => {
 
 				<div className="news-detail-footer">
 					<button type="button" onClick={() => navigate('/community/video')}>
-						목록
+						{t('videoList.back_to_list') ?? '목록'}
 					</button>
 				</div>
 			</section>

@@ -821,5 +821,107 @@
 				"items": ["Can be used by public institutions and companies performing on-site land surveying required for urban development, housing construction projects, etc."]
 			}
 		}
+	},
+	"loading": "Loading",
+	"error": "Error",
+	"total": "Total",
+	"prev": "Prev",
+	"next": "Next",
+
+	"recruitment": {
+		"title": "IGIS is looking for members to shape the future together",
+		"loading_detail": "Loading...",
+		"error": "Error",
+		"not_found": "Job posting not found.",
+		"no_title": "(No title)",
+
+		"open": "Open",
+		"closed": "Closed",
+		"until_hired": "Until filled",
+
+		"banner_open": "We are currently hiring",
+		"banner_closed": "This posting is closed",
+
+		"hero_main": "We pave the way wherever we go",
+		"hero_sub": "Join IGIS and grow together with us",
+
+		"section1_title": "We are looking for people like this",
+		"section1_sub": "We welcome talents who want to grow higher together with IGIS.",
+
+		"section2_title_line1": "We support talents",
+		"section2_title_line2": "who will grow even more tomorrow",
+
+		"section3_title": "Comfortable work environment",
+
+		"section3_1_title_line1": "We are waiting for",
+		"section3_1_title_line2": "our precious new teammates",
+		"section3_1_sub_line1": "We carefully review every application we receive.",
+		"section3_1_sub_line2": "We are looking for teammates who will stay and grow with IGIS.",
+
+		"working_condition_title": "Working conditions",
+		"working_condition_fallback": "Detailed conditions will be provided upon inquiry.",
+
+		"process_title": "Hiring process",
+		"process_desc": "· Required documents: CV (incl. career details) and portfolio\n· The process may change and will be notified in advance by phone.\n· If false information is found, the offer may be withdrawn.",
+
+		"step": {
+			"apply": "Application",
+			"document": "Document screening",
+			"first": "1st interview",
+			"second": "2nd interview",
+			"final": "Final offer"
+		},
+
+		"go_to_job_site": "Go to job site",
+
+		"section3_2_title_line1": "At the moment, IGIS",
+
+		"detail_job_title": "What you will do",
+		"detail_find_title": "Who we are looking for",
+		"detail_experience_title": "Preferred experience and skills",
+		"detail_period_title": "Application period",
+		"detail_period_fallback": "The detailed period will be notified separately.",
+
+		"back_to_list": "Back to list"
+	},
+	"newsdetail": {
+		"total": "Total",
+		"sort_latest": "Newest",
+		"sort_oldest": "Oldest",
+
+		"no_news": "No articles found.",
+		"back_to_list": "Back to list",
+		"search_field_label": "Search field",
+		"search_label": "Search keyword",
+		"search_title": "Title",
+		"search_content": "Content",
+		"search_all": "Title + Content",
+		"search_placeholder": "Enter a keyword",
+		"search_button": "Search",
+
+		"page_first": "First page",
+		"page_prev": "Previous page",
+		"page_next": "Next page",
+		"page_last": "Last page"
+	},
+	"videoList": {
+		"total": "Total",
+		"sort_label": "Sort",
+		"sort_latest": "Newest",
+		"sort_oldest": "Oldest",
+
+		"no_video": "No videos found.",
+
+		"search_field_label": "Search field",
+		"search_label": "Search keyword",
+		"search_title": "Title",
+		"search_all": "All",
+		"search_placeholder": "Enter a keyword",
+		"search_button": "Search",
+		"back_to_list": "Back to list",
+		"page_first": "First page",
+		"page_prev": "Previous page",
+		"page_next": "Next page",
+		"page_last": "Last page"
 	}
 }
