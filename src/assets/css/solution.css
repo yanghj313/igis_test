@@ -94,7 +94,8 @@
 }
 
 .station-tag-label {
-	font-size: 16px;
+	font-size: 15px;
+	word-break: keep-all;
 	line-height: 1.2;
 	text-align: center;
 }

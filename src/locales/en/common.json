@@ -816,7 +816,7 @@
 					"Supports tracking function"
 				]
 			},
-			"kind": {
+			"place": {
 				"title": "FMS Usable in Various Fields",
 				"items": ["Can be used by public institutions and companies performing on-site land surveying required for urban development, housing construction projects, etc."]
 			}

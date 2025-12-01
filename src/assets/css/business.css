@@ -34,7 +34,6 @@
 	white-space: pre-line;
 }
 
-/* 리스트 랩퍼 */
 .biz-diff-list {
 	margin-top: 60px;
 	display: flex;
@@ -49,7 +48,6 @@
 	position: relative;
 }
 
-/* 활성화 시 넓어지는 부분 */
 .biz-diff-item.active {
 	width: 60%;
 }
@@ -91,7 +89,6 @@
 	right: -50%;
 }
 
-/* 텍스트 인너 (.cont) */
 .biz-diff-text-inner {
 	position: absolute;
 	top: 40px;
@@ -111,7 +108,7 @@
 	border-radius: 999px;
 	background: #fff;
 	color: #008efb;
-	font-size: 13px;
+	font-size: 15px;
 	font-weight: 700;
 	margin-bottom: 20px;
 }
