@@ -35,14 +35,12 @@
 
 .vision-intro {
 	font-size: 18px;
-	line-height: 140%;
+	line-height: 160%;
 	color: #666;
 	padding-bottom: 80px;
 	padding-left: 50px;
 	word-break: keep-all;
 }
-
-/* 리스트 레이아웃 */
 
 .vision-list {
 	display: flex;
@@ -59,10 +57,7 @@
 	justify-content: center;
 	opacity: 0;
 	transform: translateY(40px);
-	animation: vision-float-in 0.8s ease-out forwards;
 }
-
-/* 카드 기본 형태 (타원형) */
 
 .vision-card {
 	position: relative;
@@ -78,7 +73,6 @@
 .vision-item:nth-child(even) .vision-card {
 	margin-top: 100px;
 }
-/* 이미지 + 기본 딤 (검정) */
 
 .vision-img {
 	width: 100%;
@@ -95,13 +89,9 @@
 	transition: background 0.35s ease;
 }
 
-/* hover 시 딤 컬러 변경 (#244079) */
-
 .vision-card:hover::before {
 	background: rgba(36, 64, 121, 0.4);
 }
-
-/* 텍스트 영역 */
 
 .vision-content {
 	position: absolute;
@@ -121,13 +111,9 @@
 	padding-top: 70%;
 }
 
-/* 가운데 있던 문구가 아래로 살짝 내려가는 효과 */
-
 .vision-card:hover .vision-content {
 	transform: translateY(10px);
 }
-
-/* 메인 단어 (INNOVATE / GRIT 등) */
 
 .vision-word {
 	font-size: 45px;
@@ -157,33 +143,13 @@
 	transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
-/* hover 시 설명 노출 */
-
 .vision-card:hover .vision-desc {
 	opacity: 1;
 	transform: translateY(0);
 }
 
-/* 추가 설명이 없는 카드(추후 쓸 수도 있어서) */
 .vision-card:not(:hover) .vision-desc:empty {
 	display: none;
-}
-
-/* 처음 등장할 때 순서대로 플로팅되며 올라오는 애니메이션 */
-
-@keyframes vision-float-in {
-	0% {
-		opacity: 0;
-		transform: translateY(40px);
-	}
-	60% {
-		opacity: 1;
-		transform: translateY(-6px);
-	}
-	100% {
-		opacity: 1;
-		transform: translateY(0);
-	}
 }
 
 /* 반응형 */
@@ -268,6 +234,9 @@
 	.vision-item {
 		flex: 0 1 calc(50% - 16px);
 		margin-bottom: 24px;
+		opacity: 1;
+		transform: translateY(0);
+		animation: none;
 	}
 
 	.vision-card {
@@ -277,20 +246,21 @@
 
 @media (max-width: 580px) {
 	.vision-kicker {
-		font-size: 30px;
-	}
-
-	.vision-kicker {
-		font-size: 30px;
+		font-size: 25px;
+		padding-left: 10px;
 	}
 
 	.vision-title-main {
-		font-size: 30px;
+		font-size: 25px;
 		padding-bottom: 20px;
+		padding-left: 10px;
 	}
 
 	.vision-intro {
 		font-size: 14px;
+		padding-bottom: 20px;
+		padding-left: 10px;
+		padding-right: 10px;
 	}
 	.vision-item {
 		flex: 0 1 100%;

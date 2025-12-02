@@ -66,23 +66,6 @@
 	max-width: 250px;
 }
 
-.cert-thumb::before {
-	content: '';
-	position: absolute;
-	inset: 0;
-	border: 2px solid #62b6ff;
-	pointer-events: none;
-	opacity: 0;
-	transform-origin: center;
-	transition: opacity 0.35s ease, transform 0.35s ease;
-}
-
-.cert-thumb:hover::before,
-.cert-thumb:focus-within::before {
-	opacity: 1;
-	transform: scale(1);
-}
-
 .cert-thumb {
 	position: relative;
 	width: 100%;
@@ -92,6 +75,80 @@
 	border: 1px solid #e3e3e3;
 	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.04);
 	transition: transform 0.25s ease, box-shadow 0.25s ease;
+	border-radius: 12px; /* 모서리 부드럽게 (필요 없으면 빼도 됨) */
+}
+
+/* 공통: 선이 그려지는 효과를 위한 before/after */
+.cert-thumb::before,
+.cert-thumb::after {
+	content: '';
+	position: absolute;
+	box-sizing: border-box;
+	width: 0;
+	height: 0;
+	opacity: 0;
+	pointer-events: none;
+	border-radius: 12px;
+}
+
+/* 왼쪽 위 + 오른쪽 위에서 그려지는 선 */
+.cert-thumb::before {
+	top: 0;
+	left: 0;
+	border-top: 2px solid #008ffe;
+	border-right: 2px solid #008ffe;
+}
+
+/* 오른쪽 아래 + 왼쪽 아래에서 그려지는 선 */
+.cert-thumb::after {
+	bottom: 0;
+	right: 0;
+	border-bottom: 2px solid #008ffe;
+	border-left: 2px solid #008ffe;
+}
+
+/* 호버 시 애니메이션 실행 */
+.cert-thumb:hover::before,
+.cert-thumb:focus-within::before {
+	opacity: 1;
+	animation: cert-border-draw-1 0.6s linear forwards;
+}
+
+.cert-thumb:hover::after,
+.cert-thumb:focus-within::after {
+	opacity: 1;
+	animation: cert-border-draw-2 0.6s linear 0.6s forwards;
+}
+
+/* 모서리에서 선이 그려지는 애니메이션 */
+@keyframes cert-border-draw-1 {
+	0% {
+		width: 0;
+		height: 0;
+	}
+	50% {
+		width: 100%;
+		height: 0;
+	}
+	100% {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+@keyframes cert-border-draw-2 {
+	0% {
+		width: 0;
+		height: 0;
+	}
+	50% {
+		width: 100%;
+		height: 0;
+	}
+	100% {
+		width: 100%;
+		height: 100%;
+	}
 }
 
 .cert-thumb img {

@@ -202,7 +202,7 @@ const History: React.FC = () => {
 	if (loading) {
 		return (
 			<section className="history-wrap">
-				<p>{t('loading') || '불러오는 중…'}</p>
+				<p className="loading">{t('loading') || '불러오는 중…'}</p>
 			</section>
 		);
 	}

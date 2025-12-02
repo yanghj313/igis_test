@@ -110,6 +110,17 @@
 		word-break: keep-all;
 	}
 }
+@media (max-width: 768px) {
+	.org-banner {
+		opacity: 1;
+		transform: none;
+	}
+
+	.org-chart-image img {
+		opacity: 1;
+		transform: none;
+	}
+}
 @media (max-width: 580px) {
 	.organization-section {
 		padding: 70px 20px 100px 20px;

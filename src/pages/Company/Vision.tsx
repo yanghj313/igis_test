@@ -1,9 +1,12 @@
-import React, { CSSProperties } from 'react';
+import React, { CSSProperties, useLayoutEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import '../../assets/css/vision.css';
 
+gsap.registerPlugin(ScrollTrigger);
+
 const Vision: React.FC = () => {
-	// common이 defaultNS라면 인자 없이 써도 됨
 	const { t } = useTranslation();
 
 	const visionItems = [
@@ -33,6 +36,41 @@ const Vision: React.FC = () => {
 		},
 	];
 
+	const listRef = useRef<HTMLUListElement | null>(null);
+
+	useLayoutEffect(() => {
+		if (typeof window === 'undefined') return;
+
+		if (window.innerWidth <= 768) {
+			return;
+		}
+
+		const ctx = gsap.context(() => {
+			const items = gsap.utils.toArray<HTMLElement>('.vision-item');
+
+			gsap.set(items, { opacity: 0, y: 40 });
+
+			gsap.to(items, {
+				opacity: 1,
+				y: 0,
+				duration: 0.8,
+				ease: 'power3.out',
+				stagger: 0.15,
+				scrollTrigger: {
+					trigger: listRef.current,
+					start: 'top 75%',
+					end: 'bottom 30%',
+					once: true,
+					toggleActions: 'play none none none',
+				},
+			});
+		}, listRef);
+
+		return () => {
+			ctx.revert();
+		};
+	}, []);
+
 	return (
 		<section className="vision-section">
 			<div className="vision-inner">
@@ -46,7 +84,7 @@ const Vision: React.FC = () => {
 					</p>
 				</div>
 
-				<ul className="vision-list">
+				<ul className="vision-list" ref={listRef}>
 					{visionItems.map((item, index) => {
 						const delayStyle: CSSProperties = {
 							animationDelay: `${index * 0.15}s`,
