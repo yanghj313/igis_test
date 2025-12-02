@@ -36,6 +36,7 @@
 	line-height: 1.6;
 	text-align: right;
 	margin-top: 20px;
+	word-break: keep-all;
 }
 
 /* ======================== 카드 레이아웃 ========================= */

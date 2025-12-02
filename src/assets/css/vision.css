@@ -223,7 +223,7 @@
 
 @media (max-width: 768px) {
 	.vision-section {
-		padding: 56px 0 80px;
+		padding: 56px 20px 80px;
 	}
 
 	.vision-list {
@@ -247,20 +247,19 @@
 @media (max-width: 580px) {
 	.vision-kicker {
 		font-size: 25px;
-		padding-left: 10px;
+		padding-left: 0;
 	}
 
 	.vision-title-main {
 		font-size: 25px;
 		padding-bottom: 20px;
-		padding-left: 10px;
+		padding-left: 0;
 	}
 
 	.vision-intro {
 		font-size: 14px;
 		padding-bottom: 20px;
-		padding-left: 10px;
-		padding-right: 10px;
+		padding-left: 0;
 	}
 	.vision-item {
 		flex: 0 1 100%;

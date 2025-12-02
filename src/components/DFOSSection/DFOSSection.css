@@ -319,7 +319,7 @@
 	}
 
 	.swiper-pagination {
-		bottom: -20px !important;
+		bottom: -2px !important;
 		z-index: 10;
 	}
 
@@ -343,6 +343,20 @@
 	.dfos-item .box:hover {
 		box-shadow: unset;
 	}
+
+	.dfos_swiper .swiper-button-prev,
+	.dfos_swiper .swiper-button-next {
+		width: 32px;
+		height: 32px;
+		color: #244079; /* 화살표 색 */
+	}
+
+	.dfos_swiper .swiper-button-prev {
+		left: 0;
+	}
+	.dfos_swiper .swiper-button-next {
+		right: 0;
+	}
 }
 
 @media (max-width: 769px) {
@@ -353,6 +367,9 @@
 	.dfos-lottie {
 		width: 280px !important;
 		height: 320px !important;
+	}
+	.dfos-item .tit {
+		font-size: 23px;
 	}
 }
 
@@ -389,5 +406,8 @@
 		width: 100%;
 		padding: 20px 10px 50px;
 		box-sizing: border-box;
+	}
+	.swiper-pagination {
+		bottom: 50px !important;
 	}
 }

@@ -216,8 +216,6 @@
 	margin-bottom: 0;
 	border: none;
 }
-
-/* 텍스트 박스 */
 .history_page .rightBox .contBox .textBox {
 	letter-spacing: -0.7px;
 }
@@ -488,7 +486,7 @@
 	.history_page h2 {
 		font-size: 25px;
 		padding-bottom: 25px;
-		padding-left: 25px;
+		padding-left: 0;
 	}
 	.history_page .leftBox {
 		top: 56px;

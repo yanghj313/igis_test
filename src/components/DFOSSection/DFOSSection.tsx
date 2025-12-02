@@ -3,7 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Lottie from 'lottie-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
+import { Pagination, Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { useTranslation } from 'react-i18next';
@@ -134,7 +134,7 @@ const DFOSSection: React.FC = () => {
 						</ul>
 					) : (
 						// --- 모바일: Swiper 슬라이드 ---
-						<Swiper className="dfos_swiper" modules={[Pagination]} slidesPerView={1} pagination={{ clickable: true }} spaceBetween={40}>
+						<Swiper className="dfos_swiper" modules={[Pagination, Navigation]} slidesPerView={1} pagination={{ clickable: true }} spaceBetween={40} navigation={true}>
 							{dfosData.map((item, idx) => (
 								<SwiperSlide key={idx} className="dfos-item">
 									<div className="box">
