@@ -41,7 +41,10 @@ const RND: React.FC = () => {
 				{/* 상단 텍스트 */}
 				<header className="biz-diff-header">
 					<h2 className="biz-diff-title">
-						{t('rnd_diff.title_before')} <span className="highlight">{t('rnd_diff.title_highlight')}</span> {t('rnd_diff.title_after')}
+						{t('rnd_diff.title_before')}{' '}
+						<p className="biz-diff-title-mobile">
+							<span className="highlight">{t('rnd_diff.title_highlight')}</span> {t('rnd_diff.title_after')}
+						</p>
 					</h2>
 					<p className="biz-diff-desc">{t('rnd_diff.description')}</p>
 				</header>

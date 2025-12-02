@@ -19,6 +19,7 @@
 	color: #244079;
 	padding-bottom: 30px;
 	word-break: keep-all;
+	line-height: 140%;
 }
 
 .biz-diff-title .highlight {
@@ -192,6 +193,18 @@
 	display: block;
 	object-fit: cover;
 }
+
+.biz-diff-title-mobile {
+	display: inline-block;
+}
+
+.pc_ment {
+	display: block;
+}
+.mobile_ment {
+	display: none;
+}
+
 @media (max-width: 1400px) {
 	.biz-diff-section {
 		padding: 100px 20px 150px;
@@ -236,6 +249,7 @@
 @media (max-width: 768px) {
 	.biz-diff-title {
 		font-size: 30px;
+		padding-bottom: 10px;
 	}
 	.biz-diff-desc {
 		font-size: 14px;
@@ -326,5 +340,12 @@
 	.biz-diff-body {
 		font-size: 14px;
 		line-height: 1.8;
+	}
+	.pc_ment {
+		display: none;
+	}
+	.mobile_ment {
+		display: block;
+		white-space: pre-line;
 	}
 }

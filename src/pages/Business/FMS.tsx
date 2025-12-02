@@ -57,9 +57,13 @@ const Fms: React.FC = () => {
 				{/* 상단 타이틀 */}
 				<header className="biz-diff-header">
 					<h2 className="biz-diff-title">
-						{t('fms_diff.title_before')} <span className="highlight">{t('fms_diff.title_highlight')}</span> {t('fms_diff.title_after')}
+						{t('fms_diff.title_before')}{' '}
+						<p className="biz-diff-title-mobile">
+							<span className="highlight">{t('fms_diff.title_highlight')}</span> {t('fms_diff.title_after')}
+						</p>
 					</h2>
-					<p className="biz-diff-desc">{t('fms_diff.description')}</p>
+					<p className="biz-diff-desc pc_ment">{t('fms_diff.description')}</p>
+					<p className="biz-diff-desc mobile_ment">{t('fms_diff.description_02')}</p>
 				</header>
 
 				{/* 아코디언 리스트 (Drone / GIS와 동일 구조·클래스) */}
