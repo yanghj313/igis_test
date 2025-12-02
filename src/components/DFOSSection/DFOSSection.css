@@ -1,3 +1,7 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
+
+/* 이하 Swiper 커스텀 css ... */
+
 .sec_dfos {
 	background: #fff;
 	padding: 200px 0;
@@ -344,21 +348,58 @@
 		box-shadow: unset;
 	}
 
+	/* 동그란 버튼 박스 */
 	.dfos_swiper .swiper-button-prev,
 	.dfos_swiper .swiper-button-next {
-		width: 32px;
-		height: 32px;
-		color: #244079;
 		position: absolute;
 		top: 50%;
 		transform: translateY(-50%);
+		width: 48px;
+		height: 48px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		background: transparent; /* 배경은 투명, 아이콘 자체가 원이라서 */
+		border: none;
+		z-index: 10;
 	}
-
+	/* 좌우 위치 */
 	.dfos_swiper .swiper-button-prev {
 		left: 0;
 	}
 	.dfos_swiper .swiper-button-next {
 		right: 0;
+	}
+
+	.dfos_swiper .swiper-button-prev::after,
+	.dfos_swiper .swiper-button-next::after {
+		font-family: 'Font Awesome 6 Free' !important;
+		font-weight: 900;
+		font-size: 30px;
+		color: #c5c5c5;
+	}
+	.swiper-navigation-icon {
+		display: none;
+	}
+
+	.dfos_swiper .swiper-button-prev::after {
+		content: '\f137';
+	}
+
+	.dfos_swiper .swiper-button-next::after {
+		content: '\f138';
+	}
+
+	/* 호버 효과 */
+	.dfos_swiper .swiper-button-prev:hover,
+	.dfos_swiper .swiper-button-next:hover {
+		transform: translateY(-50%) translateY(-1px);
+	}
+
+	.dfos_swiper .swiper-button-prev:hover::after,
+	.dfos_swiper .swiper-button-next:hover::after {
+		color: #008efb;
 	}
 }
 

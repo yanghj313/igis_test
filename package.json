@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@dotlottie/react-player": "^1.6.19",
+    "@fortawesome/fontawesome-free": "^7.1.0",
     "@lottiefiles/react-lottie-player": "^3.6.0",
     "archiver": "^7.0.1",
     "dompurify": "^3.3.0",

@@ -190,10 +190,6 @@
 	.main-header {
 		margin: 0;
 		border-radius: 0;
-		position: fixed;
-		top: 0;
-		left: 0;
-		right: 0;
 		z-index: 1000;
 	}
 
@@ -207,7 +203,7 @@
 		max-width: 420px;
 		height: 100vh;
 		padding: 74px 28px 24px;
-		background: rgba(0, 0, 0, 0.95);
+		background: #fff;
 		transition: right 0.3s ease;
 		overflow-y: auto;
 	}
@@ -219,7 +215,6 @@
 		right: 0;
 		width: 260px;
 		height: 100vh;
-		background: #fff;
 		z-index: 1001;
 	}
 	.nav-title-btn {
@@ -228,13 +223,21 @@
 	}
 	.accordion-toggle {
 		display: inline-block;
-		color: #fff;
+		color: #003366;
 	}
 	.nav-item {
 		width: 100%;
 	}
+
 	.nav-title {
+		font-size: 18px;
+		color: #003366;
+		text-align: left;
+		width: 100%;
+	}
+	.bg-white .nav-title {
 		font-size: 22px;
+		color: #003366;
 	}
 
 	.dropdown {
@@ -256,7 +259,7 @@
 		padding: 6px 0;
 	}
 	.dropdown li a {
-		color: rgba(255, 255, 255, 0.85);
+		color: #555;
 		font-size: 16px;
 	}
 

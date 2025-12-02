@@ -167,7 +167,7 @@
 	.content-box h2 {
 		font-size: 25px;
 		padding-bottom: 50px;
-		padding-left: 25px;
+		padding-left: 0;
 	}
 	.content-box .row {
 		margin-bottom: 10px;

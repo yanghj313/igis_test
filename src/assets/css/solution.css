@@ -555,7 +555,7 @@
 
 	.station-tag-title {
 		font-size: 16px;
-		margin-bottom: 8px;
+		margin-bottom: 14px;
 	}
 	.location-card-icon {
 		height: 14px;
@@ -563,7 +563,8 @@
 	}
 
 	.station-tags {
-		gap: 6px;
+		gap: 10px;
+		justify-content: space-between;
 	}
 
 	.station-tag {
@@ -656,7 +657,8 @@
 	}
 
 	.igis-section .station-tag {
-		width: 220px;
+		width: 100%;
+		padding: 10px;
 	}
 }
 @container stationTag (max-width: 240px) {

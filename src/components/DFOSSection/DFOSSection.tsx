@@ -10,6 +10,7 @@ import 'swiper/css/navigation';
 import { useTranslation } from 'react-i18next';
 import loaderAnimation from '../../../src/assets/lottie/loader.json';
 import './DFOSSection.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
