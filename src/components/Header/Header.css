@@ -167,6 +167,14 @@
 .bg-white .menu-toggle img {
 	filter: none;
 }
+
+.nav-overlay {
+	position: fixed;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.4);
+	z-index: 900;
+}
+
 @media (max-width: 1400px) {
 	.main-header {
 		max-width: 1280px;
@@ -182,6 +190,11 @@
 	.main-header {
 		margin: 0;
 		border-radius: 0;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 1000;
 	}
 
 	.nav {
@@ -201,6 +214,13 @@
 
 	.nav.open {
 		right: 0;
+		position: fixed;
+		top: 0;
+		right: 0;
+		width: 260px;
+		height: 100vh;
+		background: #fff;
+		z-index: 1001;
 	}
 	.nav-title-btn {
 		width: 100%;
