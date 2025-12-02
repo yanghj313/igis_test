@@ -189,13 +189,9 @@
 		padding-left: 25px;
 	}
 
-	/* 리스트 레이아웃 */
-
 	.vision-list {
 		gap: 20px;
 	}
-
-	/* 카드 기본 형태 (타원형) */
 
 	.vision-card {
 		max-width: 280px;
@@ -205,7 +201,6 @@
 	.vision-item:nth-child(even) .vision-card {
 		margin-top: 50px;
 	}
-	/* 이미지 + 기본 딤 (검정) */
 
 	.vision-word {
 		font-size: 30px;
@@ -260,6 +255,8 @@
 		font-size: 14px;
 		padding-bottom: 20px;
 		padding-left: 0;
+		text-align: justify;
+		text-align-last: left;
 	}
 	.vision-item {
 		flex: 0 1 100%;
