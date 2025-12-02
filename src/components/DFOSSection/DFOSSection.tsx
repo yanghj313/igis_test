@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 import { useTranslation } from 'react-i18next';
 import loaderAnimation from '../../../src/assets/lottie/loader.json';
 import './DFOSSection.css';

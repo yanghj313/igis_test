@@ -348,7 +348,10 @@
 	.dfos_swiper .swiper-button-next {
 		width: 32px;
 		height: 32px;
-		color: #244079; /* 화살표 색 */
+		color: #244079;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
 	}
 
 	.dfos_swiper .swiper-button-prev {
@@ -375,11 +378,11 @@
 
 @media (max-width: 580px) {
 	.sec_dfos {
-		padding: 60px 0 0;
+		padding: 60px 0 90px;
 	}
 
 	.sec_dfos .inner {
-		max-width: 90%;
+		max-width: 96%;
 		flex-direction: column;
 		gap: 0;
 	}
@@ -404,10 +407,10 @@
 	}
 	.dfos_swiper {
 		width: 100%;
-		padding: 20px 10px 50px;
+		padding: 40px 10px 50px;
 		box-sizing: border-box;
 	}
 	.swiper-pagination {
-		bottom: 50px !important;
+		bottom: 10px !important;
 	}
 }
