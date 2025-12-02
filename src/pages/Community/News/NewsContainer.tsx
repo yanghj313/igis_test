@@ -8,6 +8,7 @@ import '../../../assets/css/news.css';
 
 const ICON_PREV = '/assets/images/prev.png';
 const ICON_PREV_BEFORE = '/assets/images/prev_before.png';
+const DEFAULT_IMAGE = '/assets/images/default.jpg';
 
 // Firestore에 저장되는 형태
 interface NewsRow {
@@ -192,7 +193,14 @@ const NewsContainer: React.FC = () => {
 						<li key={n.id} className="news-item">
 							<Link to={`/community/news/${n.id}`} className="news-link">
 								<div className="news-thumb">
-									<img src={thumbnail} alt={displayTitle} loading="lazy" />
+									<img
+										src={thumbnail}
+										alt={displayTitle}
+										loading="lazy"
+										onError={e => {
+											(e.target as HTMLImageElement).src = DEFAULT_IMAGE;
+										}}
+									/>
 								</div>
 
 								<div className="news-info">

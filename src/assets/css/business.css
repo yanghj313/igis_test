@@ -28,7 +28,7 @@
 
 .biz-diff-desc {
 	font-size: 16px;
-	line-height: 140%;
+	line-height: 160%;
 	color: #666;
 	word-break: keep-all;
 	white-space: pre-line;
@@ -175,8 +175,23 @@
 .biz-diff-item--5 .biz-diff-card {
 	background: #00b4ff;
 }
+.biz-diff-deco {
+	display: block;
+	position: absolute;
+	top: 100%;
+	right: 10%;
+	z-index: -1;
+	opacity: 0.1;
+	width: 300px;
+	height: auto;
+}
 
-/* 반응형 대충 잡기 */
+.biz-diff-deco img {
+	width: 100%;
+	height: auto;
+	display: block;
+	object-fit: cover;
+}
 @media (max-width: 1400px) {
 	.biz-diff-section {
 		padding: 100px 20px 150px;

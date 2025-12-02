@@ -79,6 +79,9 @@ const Fms: React.FC = () => {
 											<p className="biz-diff-heading">{t(item.titleKey)}</p>
 											<span className="biz-col-lead">{t(item.leadKey)}</span>
 											<p className="biz-diff-body">{t(item.bodyKey)}</p>
+											<span className="biz-diff-deco">
+												<img src="/assets/images/business/igis-back.png" alt="" />
+											</span>
 										</div>
 									</div>
 								</div>

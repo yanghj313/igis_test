@@ -52,8 +52,6 @@ function App() {
 				{/* Community 라우트 */}
 				<Route path="/community/*" element={<CommunityRoutes />} />
 
-				{/* ❌ 단축 경로 제거됨 */}
-
 				{/* 404 → 메인 */}
 				<Route path="*" element={<Navigate to="/" replace />} />
 			</Routes>
@@ -62,7 +60,4 @@ function App() {
 		</>
 	);
 }
-console.log('🔥 ENV TEST:', import.meta.env);
-console.log('🔥 API KEY:', import.meta.env.VITE_FIREBASE_API_KEY);
-
 export default App;

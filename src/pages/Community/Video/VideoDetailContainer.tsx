@@ -4,17 +4,59 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { db } from '@config/firebase';
 import { doc, getDoc } from 'firebase/firestore';
 import { useTranslation } from 'react-i18next';
-import '../../../assets/css/newsdetails.css'; // ✅ 뉴스 디테일이랑 같은 레이아웃 사용
+import '../../../assets/css/newsdetails.css';
 
 interface VideoData {
 	id: string;
 	title: string;
 	img?: string;
-	content?: string; // 유튜브 영상 ID
+	content?: string; // 기존 (지금은 잘못된 ID일 수 있음)
+	youtubeId?: string; // 🔥 Firestore 콘솔에서 새로 넣는 실제 유튜브 ID
 	timestamp?: number;
 	isBlind?: number;
 }
 
+// 유튜브 URL/ID에서 순수 ID만 추출하는 유틸
+const extractYoutubeId = (raw?: string): string | null => {
+	if (!raw) return null;
+
+	const value = raw.trim();
+
+	// URL이 아닌, 그냥 ID처럼 보이는 경우
+	if (!value.includes('http') && !value.includes('youtu')) {
+		return value.split(/[?&]/)[0];
+	}
+
+	try {
+		const url = new URL(value);
+
+		// https://youtu.be/abcdEFGHijk
+		if (url.hostname.includes('youtu.be')) {
+			return url.pathname.replace('/', '').split(/[?&]/)[0];
+		}
+
+		// https://www.youtube.com/watch?v=abcdEFGHijk
+		const vParam = url.searchParams.get('v');
+		if (vParam) {
+			return vParam.split(/[?&]/)[0];
+		}
+
+		// https://www.youtube.com/shorts/abcdEFGHijk
+		if (url.pathname.startsWith('/shorts/')) {
+			return url.pathname.replace('/shorts/', '').split(/[?&]/)[0];
+		}
+
+		// 기타: 마지막 path segment를 시도
+		const parts = url.pathname.split('/');
+		const last = parts[parts.length - 1];
+		return last ? last.split(/[?&]/)[0] : null;
+	} catch {
+		// URL 파싱 실패 시, 그냥 ? 앞까지만 사용
+		return value.split(/[?&]/)[0];
+	}
+};
+
+// 날짜 포맷
 const formatDate = (ts?: number): string => {
 	if (!ts) return '';
 	const d = new Date(ts);
@@ -23,7 +65,11 @@ const formatDate = (ts?: number): string => {
 	const dd = d.getDate().toString().padStart(2, '0');
 	return `${yyyy}.${mm}.${dd}`;
 };
-
+const extractYoutubeIdFromImg = (img?: string): string | null => {
+	if (!img) return null;
+	const match = img.match(/\/vi\/([^/]+)\//);
+	return match?.[1] ?? null;
+};
 const VideoDetailContainer: React.FC = () => {
 	const { id } = useParams<{ id: string }>();
 	const { t } = useTranslation();
@@ -56,9 +102,20 @@ const VideoDetailContainer: React.FC = () => {
 		fetchVideo().catch(console.error);
 	}, [id]);
 
+	// youtubeId > content 우선순위로 ID 추출
+	const youtubeId = extractYoutubeId(video?.youtubeId) || extractYoutubeIdFromImg(video?.img) || extractYoutubeId(video?.content);
+
+	// 디버깅 로그 (확인 다 됐으면 빼도 됨)
+	useEffect(() => {
+		if (!video) return;
+		console.log('🔥 raw content from DB:', video.content);
+		console.log('🔥 raw youtubeId from DB:', video.youtubeId);
+		console.log('🎯 parsed youtubeId (final):', youtubeId);
+		console.log('🔗 embed url:', youtubeId ? `https://www.youtube.com/embed/${youtubeId}` : 'no id');
+	}, [video, youtubeId]);
+
 	const backLabel = t('back_to_list') || '목록으로';
 
-	// 로딩/없음/비공개도 레이아웃 안에서 보여주면 더 자연스러움
 	if (loading) {
 		return (
 			<main className="NewsDetail">
@@ -117,16 +174,22 @@ const VideoDetailContainer: React.FC = () => {
 					</header>
 
 					<div className="news-content">
-						{video.content ? (
+						{youtubeId ? (
 							<div className="video-frame">
-								<iframe width="100%" height="480" src={`https://www.youtube.com/embed/${video.content}`} title={video.title} frameBorder="0" allowFullScreen />
+								<iframe
+									src={`https://www.youtube.com/embed/${youtubeId}`}
+									title={video.title}
+									frameBorder="0"
+									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+									allowFullScreen
+								/>
+							</div>
+						) : video.img ? (
+							<div className="video-frame">
+								<img src={video.img} alt={video.title} />
 							</div>
 						) : (
-							video.img && (
-								<div className="video-frame">
-									<img src={video.img} alt={video.title} />
-								</div>
-							)
+							<p>{t('no_video') ?? 'Video not found.'}</p>
 						)}
 					</div>
 				</article>
