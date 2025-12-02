@@ -77,10 +77,15 @@ const Vision: React.FC = () => {
 				<div className="vision-head">
 					<h2 className="vision-kicker">{t('vision_page.kicker')}</h2>
 					<h2 className="vision-title-main">{t('vision_page.main')}</h2>
-					<p className="vision-intro">
+					<p className="vision-intro pc_ment">
 						{t('vision_page.intro1')}
 						<br />
 						{t('vision_page.intro2')}
+					</p>
+					<p className="vision-intro mobile_ment">
+						{t('vision_page.intro3')}
+						<br />
+						{t('vision_page.intro4')}
 					</p>
 				</div>
 

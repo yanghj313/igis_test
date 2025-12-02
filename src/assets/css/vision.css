@@ -152,6 +152,14 @@
 	display: none;
 }
 
+.pc_ment {
+	display: block;
+}
+
+.mobile_ment {
+	display: none;
+}
+
 /* 반응형 */
 @media (max-width: 1400px) {
 	.vision-section {
@@ -255,8 +263,6 @@
 		font-size: 14px;
 		padding-bottom: 20px;
 		padding-left: 0;
-		text-align: justify;
-		text-align-last: left;
 	}
 	.vision-item {
 		flex: 0 1 100%;
@@ -265,5 +271,12 @@
 
 	.vision-item:nth-child(even) .vision-card {
 		margin-top: 0;
+	}
+	.pc_ment {
+		display: none;
+	}
+	.mobile_ment {
+		display: block;
+		white-space: pre-line;
 	}
 }
