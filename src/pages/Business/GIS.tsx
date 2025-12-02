@@ -65,10 +65,7 @@ const Gis: React.FC = () => {
 				{/* 상단 타이틀 */}
 				<header className="biz-diff-header">
 					<h2 className="biz-diff-title">
-						{t('gis_diff.title_before')}{' '}
-						<p className="biz-diff-title-mobile">
-							<span className="highlight">{t('gis_diff.title_highlight')}</span> {t('gis_diff.title_after')}
-						</p>
+						{t('gis_diff.title_before')} <span className="highlight">{t('gis_diff.title_highlight')}</span> {t('gis_diff.title_after')}
 					</h2>
 					<p className="biz-diff-desc">{t('gis_diff.description')}</p>
 				</header>
