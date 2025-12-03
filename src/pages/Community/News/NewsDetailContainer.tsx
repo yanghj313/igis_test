@@ -1,7 +1,8 @@
+// src/pages/Community/News/NewsDetailContainer.tsx
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { db } from '@config/firebase';
-import { doc, getDoc } from 'firebase/firestore';
+import { doc, onSnapshot } from 'firebase/firestore';
 import NewsDetail from './NewsDetail';
 import { useTranslation } from 'react-i18next';
 import '../../../assets/css/newsdetails.css';
@@ -12,7 +13,7 @@ interface NewsData {
 	text?: string;
 	eng_text?: string;
 	isBlind?: boolean;
-	content?: string;
+	content?: string; // detail 문서 ID
 	timestamp?: { seconds: number; nanoseconds: number };
 }
 
@@ -26,39 +27,68 @@ const NewsDetailContainer: React.FC = () => {
 	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
-		const fetchNews = async () => {
-			if (!id) return;
+		if (!id) return;
 
-			try {
-				const firestore = db();
-				const newsDoc = await getDoc(doc(firestore, 'news', id));
+		const firestore = db();
+		const newsRef = doc(firestore, 'news', id);
 
-				if (!newsDoc.exists()) {
-					setLoading(false);
-					return;
+		setLoading(true);
+
+		let unsubscribeDetail: (() => void) | null = null;
+
+		// 🔹 news 문서 실시간 구독
+		const unsubscribeNews = onSnapshot(newsRef, snap => {
+			if (!snap.exists()) {
+				// 문서가 없는 경우
+				setData(null);
+				setContent('');
+				setEngContent('');
+				setLoading(false);
+
+				if (unsubscribeDetail) {
+					unsubscribeDetail();
+					unsubscribeDetail = null;
 				}
+				return;
+			}
 
-				const value = newsDoc.data() as NewsData;
-				setData(value);
+			const value = snap.data() as NewsData;
+			setData(value);
 
-				// 상세 내용 가져오기
-				if (value.content) {
-					const detailDoc = await getDoc(doc(firestore, 'detail', value.content));
+			if (unsubscribeDetail) {
+				unsubscribeDetail();
+				unsubscribeDetail = null;
+			}
 
-					if (detailDoc.exists()) {
-						const d = detailDoc.data() as { content: string; eng?: string };
+			if (value.content) {
+				const detailRef = doc(firestore, 'detail', value.content);
+
+				unsubscribeDetail = onSnapshot(detailRef, detailSnap => {
+					if (detailSnap.exists()) {
+						const d = detailSnap.data() as { content: string; eng?: string };
 						setContent(d.content);
-						if (d.eng) setEngContent(d.eng);
+						setEngContent(d.eng ?? '');
+					} else {
+						setContent('');
+						setEngContent('');
 					}
-				}
-			} catch (err) {
-				console.error('❌ News detail load failed:', err);
-			} finally {
+					setLoading(false);
+				});
+			} else {
+				// content 필드 자체가 없으면
+				setContent('');
+				setEngContent('');
 				setLoading(false);
 			}
-		};
+		});
 
-		fetchNews();
+		// 🔹 cleanup: news/detail 구독 모두 해제
+		return () => {
+			unsubscribeNews();
+			if (unsubscribeDetail) {
+				unsubscribeDetail();
+			}
+		};
 	}, [id]);
 
 	// 🔹 로딩

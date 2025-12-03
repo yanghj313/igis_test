@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { db } from '@config/firebase';
-import { doc, getDoc } from 'firebase/firestore';
+import { doc, onSnapshot } from 'firebase/firestore';
 import type { RecruitDoc } from '@/types/recruit';
 import { useTranslation } from 'react-i18next';
 import '../../../assets/css/recruitdetail.css';
@@ -217,16 +217,38 @@ const RecruitDetail: React.FC = () => {
 
 	useEffect(() => {
 		if (!id) return;
-		(async () => {
-			try {
-				const snap = await getDoc(doc(db(), 'recruit', id));
-				setJob(snap.exists() ? ({ id: snap.id, ...(snap.data() as Omit<RecruitDoc, 'id'>) } as RecruitDoc) : null);
-			} catch (e) {
+
+		const firestore = db();
+		const ref = doc(firestore, 'recruit', id);
+
+		setLoading(true);
+
+		// 🔹 실시간 구독
+		const unsubscribe = onSnapshot(
+			ref,
+			snap => {
+				if (snap.exists()) {
+					setJob({
+						id: snap.id,
+						...(snap.data() as Omit<RecruitDoc, 'id'>),
+					} as RecruitDoc);
+					setErr(null);
+				} else {
+					setJob(null);
+				}
+				setLoading(false);
+			},
+			e => {
 				setErr(e instanceof Error ? e.message : String(e));
-			} finally {
+				setJob(null);
 				setLoading(false);
 			}
-		})();
+		);
+
+		// 🔹 cleanup
+		return () => {
+			unsubscribe();
+		};
 	}, [id]);
 
 	if (loading)

@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { db } from '@config/firebase';
-import { collection, getDocs, orderBy, query } from 'firebase/firestore';
+import { collection, onSnapshot, orderBy, query } from 'firebase/firestore';
 import type { RecruitDoc } from '@/types/recruit';
 import { useTranslation } from 'react-i18next';
 import '../../../assets/css/recruit.css';
@@ -39,21 +39,37 @@ const Recruit: React.FC = () => {
 	const [page, setPage] = useState(1);
 
 	useEffect(() => {
-		(async () => {
-			try {
-				const q = query(collection(db(), 'recruit'), orderBy('fixtime', 'desc'));
-				const snap = await getDocs(q);
-				const rows = snap.docs.map(d => ({
-					id: d.id,
-					...(d.data() as Omit<RecruitDoc, 'id'>),
-				}));
+		const firestore = db();
+		const q = query(collection(firestore, 'recruit'), orderBy('fixtime', 'desc'));
+
+		setLoading(true);
+
+		// 🔹 실시간 구독
+		const unsubscribe = onSnapshot(
+			q,
+			snap => {
+				const rows = snap.docs.map(
+					d =>
+						({
+							id: d.id,
+							...(d.data() as Omit<RecruitDoc, 'id'>),
+						} as RecruitDoc)
+				);
 				setJobs(rows);
-			} catch (e) {
+				setErr(null);
+				setLoading(false);
+			},
+			e => {
 				setErr(e instanceof Error ? e.message : String(e));
-			} finally {
+				setJobs([]);
 				setLoading(false);
 			}
-		})();
+		);
+
+		// 🔹 cleanup: 컴포넌트 언마운트 시 구독 해제
+		return () => {
+			unsubscribe();
+		};
 	}, []);
 
 	const total = jobs.length;

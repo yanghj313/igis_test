@@ -1,7 +1,7 @@
 // src/pages/Company/History.tsx
 import React, { useEffect, useMemo, useState } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
-import { collection, getDocs } from 'firebase/firestore';
+import { collection, onSnapshot } from 'firebase/firestore'; // ★ getDocs 대신 onSnapshot
 import { db } from '@config/firebase';
 import '../../assets/css/history.css';
 
@@ -58,18 +58,29 @@ const History: React.FC = () => {
 	const [err, setErr] = useState<string | null>(null);
 
 	useEffect(() => {
-		(async () => {
-			try {
-				const snap = await getDocs(collection(db(), 'history'));
+		// ★ Firestore 컬렉션 실시간 구독
+		const colRef = collection(db(), 'history');
+
+		const unsubscribe = onSnapshot(
+			colRef,
+			snap => {
 				const first = snap.docs[0]?.data() as HistoryDoc | undefined;
 				const list: HistoryRow[] = Array.isArray(first?.list) ? first!.list : [];
 				setRows(list);
-			} catch (e) {
-				setErr(e instanceof Error ? e.message : String(e));
-			} finally {
+				setErr(null);
+				setLoading(false);
+			},
+			error => {
+				console.error(error);
+				setErr(error.message);
 				setLoading(false);
 			}
-		})();
+		);
+
+		// ★ 컴포넌트 언마운트 시 구독 해제
+		return () => {
+			unsubscribe();
+		};
 	}, []);
 
 	const grouped = useMemo(() => {

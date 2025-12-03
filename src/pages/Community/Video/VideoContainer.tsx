@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { db } from '@config/firebase';
-import { collection, getDocs, orderBy, query, type DocumentData, type QueryDocumentSnapshot } from 'firebase/firestore';
+import { collection, onSnapshot, orderBy, query, type DocumentData, type QueryDocumentSnapshot } from 'firebase/firestore';
 import { Link } from 'react-router-dom';
 import '../../../assets/css/news.css';
 
@@ -36,29 +36,36 @@ const VideoContainer: React.FC = () => {
 	const [page, setPage] = useState(1);
 
 	useEffect(() => {
-		const fetchVideos = async (): Promise<void> => {
-			setLoading(true);
-			try {
-				const q = query(collection(db(), 'video'), orderBy('timestamp', 'desc'));
-				const snapshot = await getDocs(q);
+		setLoading(true);
 
+		const firestore = db();
+		const q = query(collection(firestore, 'video'), orderBy('timestamp', 'desc'));
+
+		// 🔹 실시간 구독
+		const unsubscribe = onSnapshot(
+			q,
+			snapshot => {
 				const rows: VideoData[] = snapshot.docs.map((d: QueryDocumentSnapshot<DocumentData>) => ({
 					id: d.id,
-					...(d.data() as VideoData),
+					...(d.data() as Omit<VideoData, 'id'>),
 				}));
 
-				// isBlind === 0 만 노출
+				// isBlind === 0 또는 undefined만 노출
 				const visible = rows.filter(v => v.isBlind === 0 || v.isBlind === undefined);
 				setVideos(visible);
-			} catch (err) {
+				setLoading(false);
+			},
+			err => {
 				console.error('❌ Video load failed:', err);
 				setVideos([]);
-			} finally {
 				setLoading(false);
 			}
-		};
+		);
 
-		fetchVideos().catch(console.error);
+		// 🔹 컴포넌트 언마운트 시 구독 해제
+		return () => {
+			unsubscribe();
+		};
 	}, []);
 
 	const formatDate = (ts?: number): string => {

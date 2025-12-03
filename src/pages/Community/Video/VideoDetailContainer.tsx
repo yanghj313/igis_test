@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { db } from '@config/firebase';
-import { doc, getDoc } from 'firebase/firestore';
+import { doc, onSnapshot } from 'firebase/firestore';
 import { useTranslation } from 'react-i18next';
 import '../../../assets/css/newsdetails.css';
 
@@ -65,11 +65,13 @@ const formatDate = (ts?: number): string => {
 	const dd = d.getDate().toString().padStart(2, '0');
 	return `${yyyy}.${mm}.${dd}`;
 };
+
 const extractYoutubeIdFromImg = (img?: string): string | null => {
 	if (!img) return null;
 	const match = img.match(/\/vi\/([^/]+)\//);
 	return match?.[1] ?? null;
 };
+
 const VideoDetailContainer: React.FC = () => {
 	const { id } = useParams<{ id: string }>();
 	const { t } = useTranslation();
@@ -79,40 +81,39 @@ const VideoDetailContainer: React.FC = () => {
 	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
-		const fetchVideo = async (): Promise<void> => {
-			if (!id) return;
-			setLoading(true);
-			try {
-				const docRef = doc(db(), 'video', id);
-				const snapshot = await getDoc(docRef);
+		if (!id) return;
+
+		setLoading(true);
+		const firestore = db();
+		const docRef = doc(firestore, 'video', id);
+
+		// 🔹 실시간 구독
+		const unsubscribe = onSnapshot(
+			docRef,
+			snapshot => {
 				if (snapshot.exists()) {
 					const data = snapshot.data() as Omit<VideoData, 'id'>;
 					setVideo({ id: snapshot.id, ...data });
 				} else {
 					setVideo(null);
 				}
-			} catch (err) {
+				setLoading(false);
+			},
+			err => {
 				console.error('❌ Video fetch error:', err);
 				setVideo(null);
-			} finally {
 				setLoading(false);
 			}
-		};
+		);
 
-		fetchVideo().catch(console.error);
+		// 🔹 cleanup
+		return () => {
+			unsubscribe();
+		};
 	}, [id]);
 
 	// youtubeId > content 우선순위로 ID 추출
 	const youtubeId = extractYoutubeId(video?.youtubeId) || extractYoutubeIdFromImg(video?.img) || extractYoutubeId(video?.content);
-
-	// 디버깅 로그 (확인 다 됐으면 빼도 됨)
-	useEffect(() => {
-		if (!video) return;
-		console.log('🔥 raw content from DB:', video.content);
-		console.log('🔥 raw youtubeId from DB:', video.youtubeId);
-		console.log('🎯 parsed youtubeId (final):', youtubeId);
-		console.log('🔗 embed url:', youtubeId ? `https://www.youtube.com/embed/${youtubeId}` : 'no id');
-	}, [video, youtubeId]);
 
 	const backLabel = t('back_to_list') || '목록으로';
 
@@ -121,7 +122,7 @@ const VideoDetailContainer: React.FC = () => {
 			<main className="NewsDetail">
 				<section className="news-section">
 					<article className="news-detail">
-						<p className="loading">{t('loading') ?? 'Loading...'}</p>
+						<p className="loading">{t('loading') ?? 'Loading'}</p>
 					</article>
 				</section>
 			</main>

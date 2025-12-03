@@ -1,3 +1,4 @@
+// src/pages/Community/News/NewsDetail.tsx
 import React, { useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../../../assets/css/newsdetails.css';
@@ -42,8 +43,10 @@ const formatDate = (ts?: NewsTimestamp): string => {
 
 const NewsDetail: React.FC<Props> = ({ data, content, EngContent }) => {
 	const navigate = useNavigate();
-	const { t } = useTranslation();
-	const lang: 'ko' | 'en' = typeof navigator !== 'undefined' && navigator.language.toLowerCase().startsWith('en') ? 'en' : 'ko';
+	const { t, i18n } = useTranslation();
+
+	// i18n 기준으로 언어 판단
+	const lang: 'ko' | 'en' = i18n.language.toLowerCase().startsWith('en') ? 'en' : 'ko';
 
 	const title = useMemo(() => (lang === 'en' ? data.eng_title || data.title : data.title), [lang, data.eng_title, data.title]);
 

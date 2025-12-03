@@ -1,7 +1,7 @@
 // src/pages/Community/News/NewsContainer.tsx
 import React, { useEffect, useState } from 'react';
 import { db } from '@config/firebase';
-import { collection, getDocs, orderBy, query, type CollectionReference, type DocumentData, type QueryDocumentSnapshot, Timestamp } from 'firebase/firestore';
+import { collection, onSnapshot, orderBy, query, type CollectionReference, type DocumentData, type QueryDocumentSnapshot, Timestamp } from 'firebase/firestore';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import '../../../assets/css/news.css';
@@ -53,18 +53,18 @@ const NewsContainer: React.FC = () => {
 
 	const isEnglish = i18n.language.toLowerCase().startsWith('en');
 
-	// 🔹 Firestore에서 뉴스 목록 로드
+	// 🔹 Firestore에서 뉴스 목록 실시간 구독
 	useEffect(() => {
-		const fetchNews = async (): Promise<void> => {
-			setLoading(true);
+		setLoading(true);
 
-			try {
-				const firestore = db();
+		const firestore = db();
+		const colRef = collection(firestore, 'news') as CollectionReference<NewsRow>;
+		const q = query(colRef, orderBy('timestamp', 'desc'));
 
-				const colRef = collection(firestore, 'news') as CollectionReference<NewsRow>;
-				const q = query(colRef, orderBy('timestamp', 'desc'));
-				const snapshot = await getDocs(q);
-
+		// onSnapshot: 실시간 구독
+		const unsubscribe = onSnapshot(
+			q,
+			snapshot => {
 				console.log('📦 총 문서 수:', snapshot.size);
 
 				const rows: NewsData[] = snapshot.docs.map((doc: QueryDocumentSnapshot<DocumentData>): NewsData => {
@@ -97,15 +97,19 @@ const NewsContainer: React.FC = () => {
 				});
 
 				setNews(visible);
-			} catch (err) {
-				console.error('❌ News load failed:', err);
+				setLoading(false);
+			},
+			error => {
+				console.error('❌ News load failed:', error);
 				setNews([]);
-			} finally {
 				setLoading(false);
 			}
-		};
+		);
 
-		void fetchNews();
+		// 컴포넌트 언마운트 시 구독 해제
+		return () => {
+			unsubscribe();
+		};
 	}, []);
 
 	// 🔹 날짜 formatting

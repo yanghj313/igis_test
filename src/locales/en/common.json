@@ -905,7 +905,10 @@
 		"page_first": "First page",
 		"page_prev": "Previous page",
 		"page_next": "Next page",
-		"page_last": "Last page"
+		"page_last": "Last page",
+		"loading": "Loading",
+		"not_found": "No articles found.",
+		"blind": "This article is private."
 	},
 	"videoList": {
 		"total": "Total",
