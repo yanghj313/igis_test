@@ -1,10 +1,20 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules';
+
+import 'swiper/css';
+import 'swiper/css/pagination';
 import '../../assets/css/solution.css';
 
 const FMS_SLIDES = [
-	{ id: 1, key: 'fms', img: '/assets/images/solution/igis/fms/fms.png' },
-	{ id: 2, key: 'place', img: '/assets/images/solution/igis/fms/kind.png' },
+	{ id: 1, key: 'fms', img: '/assets/images/solution/igis/fms/f_01.png' },
+	{ id: 2, key: 'place', img: '/assets/images/solution/igis/fms/f_02.png' },
+	{ id: 3, key: 'layer', img: '/assets/images/solution/igis/fms/f_03.png' },
+	{ id: 4, key: 'memo', img: '/assets/images/solution/igis/fms/f_04.png' },
+	{ id: 5, key: 'out', img: '/assets/images/solution/igis/fms/f_05.png' },
+	{ id: 6, key: 'comport', img: '/assets/images/solution/igis/fms/f_06.png' },
+	{ id: 7, key: 'mobile', img: '/assets/images/solution/igis/fms/f_07.png' },
 ];
 
 type FmsTagId = 'where' | 'layer' | 'memo' | 'out' | 'comport' | 'mobile';
@@ -15,7 +25,7 @@ const Fms: React.FC = () => {
 	const { t } = useTranslation();
 
 	return (
-		<section className="station-section igis-section">
+		<section className="station-section">
 			<div className="station-inner">
 				{/* ---------------- 헤더 ---------------- */}
 				<header className="station-header">
@@ -32,7 +42,7 @@ const Fms: React.FC = () => {
 								<img src="/assets/images/drone_icon.png" alt="" className="location-card-icon" />
 								{t('forest_page.tag_title', 'DFOS Forest 주요 기능')}
 							</span>
-							<div className="station-tags">
+							<div className="station-tags igis-section">
 								{FMS_TAG_IDS.map(id => (
 									<span key={id} className="station-tag">
 										<span className="station-tag-label">{t(`fms_page.tags.${id}`)}</span>
@@ -43,37 +53,63 @@ const Fms: React.FC = () => {
 					</div>
 				</header>
 
-				<div className="station-slider station-slider--static">
-					{FMS_SLIDES.map(slide => {
-						const titleKey = `fms_page.slides.${slide.key}.title`;
-						const itemsKey = `fms_page.slides.${slide.key}.items`;
-						const raw = t(itemsKey, { returnObjects: true }) as unknown;
-						const items = Array.isArray(raw) ? (raw as string[]) : [];
+				{/* ---------------- 슬라이더 ---------------- */}
+				<div className="station-slider">
+					<Swiper
+						modules={[Pagination]}
+						loop={true}
+						centeredSlides={true}
+						slidesPerView={1.8}
+						spaceBetween={40}
+						pagination={{ clickable: true }}
+						className="station-swiper"
+						breakpoints={{
+							0: {
+								slidesPerView: 1,
+								centeredSlides: false,
+							},
+							768: {
+								slidesPerView: 1.4,
+								centeredSlides: true,
+							},
+							1200: {
+								slidesPerView: 1.8,
+								centeredSlides: true,
+								spaceBetween: 10,
+							},
+						}}
+					>
+						{FMS_SLIDES.map(slide => {
+							const titleKey = `fms_page.slides.${slide.key}.title`;
+							const itemsKey = `fms_page.slides.${slide.key}.items`;
+							const raw = t(itemsKey, { returnObjects: true }) as unknown;
+							const items = Array.isArray(raw) ? (raw as string[]) : [];
 
-						return (
-							<article key={slide.id} className="station-static-item">
-								<div className="station-slide-inner">
-									{/* 왼쪽 이미지 */}
-									<div className="station-slide-image">
-										<img src={slide.img} alt={t(titleKey)} className="station-slide-img" loading="lazy" />
-									</div>
+							return (
+								<SwiperSlide key={slide.id} className="station-swiper-slide">
+									<div className="station-slide-inner">
+										{/* 왼쪽 이미지 */}
+										<div className="station-slide-image">
+											<img src={slide.img} alt={t(titleKey)} className="station-slide-img" loading="lazy" />
+										</div>
 
-									{/* 오른쪽 텍스트 */}
-									<div className="station-slide-text">
-										<h3 className="station-slide-title">{t(titleKey)}</h3>
-										<ul className="station-slide-list">
-											{items.map((item, itemIdx) => (
-												<li key={itemIdx}>
-													<img src="/assets/images/solution/check.png" alt="" aria-hidden="true" className="station-check" />
-													<span>{item}</span>
-												</li>
-											))}
-										</ul>
+										{/* 오른쪽 텍스트 */}
+										<div className="station-slide-text">
+											<h3 className="station-slide-title">{t(titleKey)}</h3>
+											<ul className="station-slide-list">
+												{items.map((item, idx) => (
+													<li key={idx}>
+														<img src="/assets/images/solution/check.png" alt="" aria-hidden="true" className="station-check" />
+														<span>{item}</span>
+													</li>
+												))}
+											</ul>
+										</div>
 									</div>
-								</div>
-							</article>
-						);
-					})}
+								</SwiperSlide>
+							);
+						})}
+					</Swiper>
 				</div>
 			</div>
 		</section>

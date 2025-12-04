@@ -9,17 +9,17 @@ import 'swiper/css/pagination';
 import '../../assets/css/solution.css';
 
 const VIEWER_SLIDES = [
-	{ id: 1, key: 'map', img: '/assets/images/solution/drone/viewer/map.png' },
-	{ id: 2, key: 'monitor', img: '/assets/images/solution/drone/viewer/monitor.png' },
-	{ id: 3, key: 'divide', img: '/assets/images/solution/drone/streaming/dvide.png' },
-	{ id: 4, key: 'list', img: '/assets/images/solution/drone/streaming/list.png' },
-	{ id: 5, key: 'play', img: '/assets/images/solution/drone/streaming/play.png' },
+	{ id: 1, key: 'map', img: '/assets/images/solution/drone/viewer/search.png' },
+	{ id: 2, key: 'monitor', img: '/assets/images/solution/drone/viewer/bookmark.png' },
+	{ id: 3, key: 'divide', img: '/assets/images/solution/drone/viewer/dvide.png' },
+	{ id: 4, key: 'list', img: '/assets/images/solution/drone/viewer/list.png' },
+	{ id: 5, key: 'play', img: '/assets/images/solution/drone/viewer/play.png' },
 ];
 
 // 헤더 오른쪽 장비 태그
-type ViewerTagId = 'support' | 'flight' | 'layout' | 'fitting';
+type ViewerTagId = 'support' | 'flight' | 'layout' | 'fitting' | 'alert' | 'device';
 
-const VIEWER_TAG_IDS: ViewerTagId[] = ['support', 'flight', 'layout', 'fitting'];
+const VIEWER_TAG_IDS: ViewerTagId[] = ['support', 'flight', 'layout', 'fitting', 'alert', 'device'];
 
 const Viewer: React.FC = () => {
 	const { t } = useTranslation();
@@ -30,25 +30,19 @@ const Viewer: React.FC = () => {
 				{/* ---------------- 헤더 ---------------- */}
 				<header className="station-header">
 					<div className="station-header-left">
-						<h2 className="station-title">{t('viewer_page.title_main', 'DFOS Streaming Viewer')}</h2>
-						<p className="station-desc">
-							{t(
-								'viewer_page.description',
-								'DFOS STATION은 고정형과 이동형으로 유연하게 배치를 통해, 다양한 상황과 환경에서 효율적인 대응이 가능하며, 일정 지역에 정기적 운용이 필요한 곳에서는 고정형을, ' +
-									'기동성과 신속한 배치가 필요한 곳에서는 이동형으로 적용하여 효율적 운용이 가능합니다.'
-							)}
-						</p>
+						<h2 className="station-title">{t('viewer_page.title_main', 'DFOS WEATHER')}</h2>
+						<p className="station-desc">{t('viewer_page.description', '안전한 드론 비행에 대한 의사 결정을 지원하는 드론 전용 날씨 정보 서비스')}</p>
 
-						<img src="/assets/images/solution/drone/viewer/header.png" alt="DFOS Streaming Viewer 화면" className="station-header-img" />
+						<img src="/assets/images/solution/drone/viewer/header.png" alt="DFOS WEATHER 화면" className="station-header-img" />
 					</div>
 
-					<div className="station-header-right">
+					<div className="station-header">
 						<div className="station-tag-wrap">
 							<span className="station-tag-title">
 								<img src="/assets/images/drone_icon.png" alt="" className="location-card-icon" />
-								{t('viewer_page.tag_title', 'DFOS Streaming Viewer 주요 기능')}
+								{t('viewer_page.tag_title', 'DFOS WEATHER 주요 기능')}
 							</span>
-							<div className="station-tags">
+							<div className="station-tags igis-section">
 								{VIEWER_TAG_IDS.map(id => (
 									<span key={id} className="station-tag">
 										<span className="station-tag-label">{t(`viewer_page.tags.${id}`)}</span>
@@ -88,7 +82,6 @@ const Viewer: React.FC = () => {
 						{VIEWER_SLIDES.map(slide => {
 							const titleKey = `viewer_page.slides.${slide.key}.title`;
 							const itemsKey = `viewer_page.slides.${slide.key}.items`;
-							const iconKey = `viewer_page.slides.${slide.key}.icon`;
 
 							const raw = t(itemsKey, { returnObjects: true }) as unknown;
 							const items = Array.isArray(raw) ? (raw as string[]) : [];
@@ -103,7 +96,6 @@ const Viewer: React.FC = () => {
 
 										{/* 오른쪽 텍스트 */}
 										<div className="station-slide-text">
-											<span className="station-slide-icon">{t(iconKey)}</span>
 											<h3 className="station-slide-title">{t(titleKey)}</h3>
 											<ul className="station-slide-list">
 												{items.map((item, idx) => (

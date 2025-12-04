@@ -499,18 +499,20 @@
 			"locationLabel": "Drone Solutions",
 			"title": {
 				"station": "DFOS STATION",
+				"stream": "DFOS STREAMING VIEWER",
 				"panorama": "PANORAMA",
 				"pilot": "DFOS PILOT PRO",
 				"ims": "DFOS IMS",
-				"viewer": "DFOS Streaming Viewer",
+				"viewer": "DFOS WEATHER",
 				"default": "DRONE SOLUTION"
 			},
 			"tabs": {
 				"station": "DFOS STATION",
+				"stream": "DFOS STREAMING VIEWER",
 				"panorama": "Panorama",
 				"pilot": "DFOS PILOT PRO",
 				"ims": "DFOS IMS",
-				"viewer": "DFOS Viewer"
+				"viewer": "DFOS WEATHER"
 			}
 		},
 		"community": {
@@ -560,43 +562,56 @@
 			"mission": {
 				"title": "Mission & Schedule",
 				"items": [
-					"WayPoint mission",
-					"Orbit / rotation shooting",
-					"Move through each waypoint coordinate",
-					"Add altitude per point / load action files",
-					"Polygon mission / recording (REC) mission",
-					"Load mission (KMZ file) / instant, scheduled, repeated flight",
-					"Detailed mission schedule information"
+					"WayPoint Mission\n- Rotation action feature\n- Move to latitude and longitude coordinates for each point\n- Add altitude for each point\n- Load Excel file",
+					"Polygon Mission",
+					"Recording (REC) Mission",
+					"Load Mission (KMZ file)",
+					"Immediate / Scheduled / Repeated Flight",
+					"Schedule Details"
 				]
 			},
 			"stats": {
 				"title": "Statistics",
 				"items": [
-					"Flight time / distance / area",
-					"Flight record with weather, wind speed & direction, magnetic data",
-					"Address display and flight time",
-					"Downloadable statistics by day / week / month"
+					"Flight Time / Distance / Area",
+					"Flight Record\n- Weather, Wind Direction, Wind Speed, Magnetic Field Information Display\n- Address Display Function\n- Flight Time",
+					"Download Statistics Data",
+					"Available by Day, Week, Month"
 				]
 			},
 			"droneInfo": {
 				"title": "Drone Information",
-				"items": ["Drone airframe information", "Drone info window (latitude / longitude coordinates)", "Real-time drone status", "Battery information (per airframe)"]
+				"items": ["Drone Body Information", "Drone GPS Information (Latitude and Longitude Coordinates)", "Battery Information", "Drone Status Information, etc.", "Bounding (Applied per Body)"]
 			},
 			"tracking": {
 				"title": "Virtual Cockpit",
-				"items": ["Laser pointer (coordinate & distance display)", "Multi-view SBS (multi-split streaming)", "Frame zoom (area zoom)", "Obstacle sensor detection"]
+				"items": [
+					"Easy operation and convenient use",
+					"Automatic layout change",
+					"Drone information display",
+					"Viewing on a large screen",
+					"Optimal real-time streaming support",
+					"Optimized video support"
+				]
 			},
 			"stream": {
 				"title": "Streaming Viewer",
-				"items": ["Easy operation and automatic layout switching", "Drone status overlay on large screen", "Supports IR and live streaming", "Optimized video quality"]
+				"items": [
+					"Easy operation and convenient use",
+					"Automatic layout change",
+					"Drone information display",
+					"Viewing on a large screen",
+					"Optimal real-time streaming support",
+					"Optimized video support"
+				]
 			},
 			"map": {
 				"title": "Map",
-				"items": ["Naver base map", "No-fly / restricted zones display", "High-altitude wind & weather information", "Address & coordinate search / distance & area measurement"]
+				"items": ["Naver Background Map", "Flight Restriction Zone Display", "Weather Information (Altitude Setting)", "Address, Coordinate Search Function", "Distance and Area Measurement Function"]
 			},
 			"remote": {
 				"title": "Remote Control",
-				"items": ["Camera zoom control", "5D jog (PTZ)", "Remote drone control", "Lens switching / thermal mode"]
+				"items": ["Change Camera Type", "Manual Mode (DRC)\n- Drone / Gimbal Control", "Lens Change / Thermal Imaging Mode"]
 			}
 		}
 	},
@@ -615,22 +630,46 @@
 		},
 		"slides": {
 			"media": {
-				"title": "Innovative Panorama Video Utilization System",
-				"items": ["360º panorama photo production from drone-captured photos", "Convenient automatic panorama photo conversion support", "Real-time automatic panorama photo production status check"]
+				"title": "Panorama Management",
+				"items": [
+					"Panorama List\n- Search Panorama\n- View Panorama\n- Edit / Delete Panorama Information",
+					"Register Panorama\n- Enter Shooting Information\n- Upload Files",
+					"Automatic Production Status\n- Check Production Status\n- Search Automatic Production Status\n- Reproduction"
+				]
 			},
 			"made": {
-				"title": "Convenient Panorama Video Production and Management",
+				"title": "Panorama Viewer",
 				"items": [
-					"Editing and spatial data editing functions for field management",
-					"Support for convenient features such as location confirmation through symbols",
-					"On/Off for cadastral map layer",
-					"Fast and easy content verification through web and mobile service linkage",
-					"Support for production, storage, management, and distribution of panorama content"
+					"View panorama videos",
+					"Split screen (same location/continuous)",
+					"Set and display spatial information",
+					"Create and display symbols",
+					"Stream connection",
+					"Check shooting information",
+					"Panorama explorer"
 				]
 			},
 			"place": {
-				"title": "Support for Various Devices",
-				"items": ["Virtual tours of tourist attractions and landmarks using panorama photos", "On-site verification using panorama photos"]
+				"title": "Spatial Information Management",
+				"items": [
+					"Spatial Information List\n- Search Spatial Information\n- View Spatial Information\n- Download Spatial Information\n- Edit / Delete Spatial Information",
+					"Register Spatial Information\n- Enter Information\n- Upload Files"
+				]
+			},
+			"realease": {
+				"title": "Distribution",
+				"items": [
+					"Register Distributed Panorama",
+					"Distributed Panorama List",
+					"View Distributed Panorama",
+					"Edit / Delete Distributed Panorama",
+					"Public/Private Settings",
+					"Copy Distributed Panorama URL"
+				]
+			},
+			"open": {
+				"title": "Public Panorama",
+				"items": ["Public Panorama List", "Search Public Panorama", "Copy Public Panorama URL", "View Public Panorama"]
 			}
 		}
 	},
@@ -663,6 +702,14 @@
 			"system": {
 				"title": "3D Altitude Flight",
 				"items": ["Utilization of domestic DEM data", "Easy operation for 3D altitude mission execution", "3D altitude data visualization", "Safe and precise mission execution"]
+			},
+			"flight": {
+				"title": "IMU/Compass Calibration",
+				"items": ["Supports self-calibration through the app for convenient and safe flight"]
+			},
+			"media": {
+				"title": "Thermal Imaging",
+				"items": ["Utilizes thermal cameras mounted on drones for various applications"]
 			}
 		}
 	},
@@ -681,84 +728,172 @@
 		},
 		"slides": {
 			"auto": {
-				"title": "Convenient Automatic Orthophoto Production",
-				"items": ["Orthophotos can be easily produced from individual photos with just a few clicks,\nand the processing status can be checked in real-time from anywhere."]
+				"title": "Drone media management",
+				"items": [
+					"Drone media management\n- Set video name and shooting location\n- Set file name and shooting date\n- Automatic orthophoto production settings\n- Register orthophotos, individual photos, panorama photos, videos",
+					" Drone video list\n- Search drone videos\n- View drone video list by group"
+				]
 			},
 			"2d3d": {
-				"title": "2D·3D Video Services Provided",
+				"title": "Drone video viewing",
 				"items": [
-					"For orthophotos produced using the automatic orthophoto production feature, markers linked directly to the original individual photos are displayed on the orthophotos, allowing users to click the markers to view the original photos immediately."
+					"View registered file list",
+					"Check file metadata",
+					"Download files",
+					"Display orthophotos on map",
+					"Copy orthophoto service URL",
+					"Orthophoto comparison analysis",
+					"Orthophoto time-series analysis"
 				]
 			},
 			"graph": {
-				"title": "Statistics Function Provided",
-				"items": [
-					"Provides a convenient work environment by supporting various information checks and statistical functions such as flight time, flight area, and flight distance for each completed aircraft."
-				]
+				"title": "Orthophoto production status",
+				"items": ["Search by production status and name", "Check automatic production status", "Check progress by production stage"]
 			}
 		}
 	},
 	"viewer_page": {
-		"title_main": "DFOS Streaming Viewer",
-		"description": "Multi-streaming viewer for convenient playback of multiple drone image sources",
-		"tag_title": "DFOS Streaming Viewer Key Features",
+		"title_main": "DFOS WEATHER",
+		"description": " A drone-specific weather information service that supports decision-making for safe drone flights",
+		"tag_title": "DFOS WEATHER features",
 		"tags": {
-			"support": "Real-time streaming support",
-			"flight": "Real-time flight information display",
-			"layout": "Support for various devices and layouts",
-			"fitting": "Optimized video support"
+			"support": "Provides customized weather information by altitude",
+			"flight": "Checks flight feasibility based on drone specifications",
+			"layout": "Provides detailed weather information by week and time",
+			"fitting": "Favorites feature & quick accessibility",
+			"alert": "Provides user-customized unit settings",
+			"device": "Excellent accessibility on web, mobile, etc."
 		},
 		"slides": {
 			"map": {
-				"eyebrow": "DFOS Viewer(App)",
-				"title": "Various Mission Monitoring and Background Maps",
-				"items": [
-					"Way Point Mission Monitoring",
-					"Grid/Polygon Mission Monitoring",
-					"Grid/Polygon Interval Mission Monitoring",
-					"Grid/Polygon Distance Interval Mission Monitoring",
-					"Google, Naver, etc."
-				]
+				"title": "Weather Search",
+				"items": ["Set altitude and address", "View search history", "Delete search history"]
 			},
 			"monitor": {
-				"eyebrow": "DFOS Viewer(App)",
-				"title": "Drone Information Monitoring",
-				"items": [
-					"Drone GPS Information (Latitude and Longitude Coordinates)",
-					"Drone Status Monitoring (Altitude, Height, Speed, Distance, etc.)",
-					"Battery Status Monitoring",
-					"Finish Action Information",
-					"Point Action Information",
-					"Longitudinal Overlap and Lateral Overlap Information",
-					"Mission Repeat Count",
-					"Gimbal Angle Information"
-				]
+				"title": "Favorites",
+				"items": ["Add to favorites", "Edit favorites", "Delete favorites"]
 			},
 			"divide": {
-				"eyebrow": "DFOS Streaming Viewer",
-				"title": "Screen Division and Image Quality",
-				"items": [
-					"1~2 connections (FHD(1080p) quality playback)",
-					"3~4 connections (HD(720p) quality playback)",
-					"5~6 connections (SD(360p) quality playback)",
-					"7~9 connections (160p quality playback)"
-				]
+				"title": "Unit Settings",
+				"items": ["Set wind speed unit", "Set temperature unit", "Set distance unit"]
 			},
 			"list": {
-				"eyebrow": "DFOS Streaming Viewer",
-				"title": "Drone Information and Drone List Display",
-				"items": [
-					"Display of drone names and information",
-					"Display of drone flight altitude (m)",
-					"Display of drone location information (address information) / distance to home point (m)",
-					"Display of drone flight speed (m/s) / battery status display",
-					"Display by connection status (connected, disconnected drones)"
-				]
+				"title": "Flight Environment Settings",
+				"items": ["Set environment based on drone specifications", "Set environment manually"]
 			},
 			"play": {
-				"eyebrow": "DFOS Streaming Viewer",
-				"title": "Streaming Playback",
-				"items": ["Automatic layout setting according to the number of selected drones", "Bitrate setting according to the number of selected drones", "Provides full streaming screen"]
+				"title": "Weather Display",
+				"items": ["View weekly weather", "View detailed weather", "Display daylight hours only"]
+			}
+		}
+	},
+
+	"stream_page": {
+		"title_main": "DFOS STATION Lite",
+		"description": "Web software for integrated control of drone stations, managing drones and stations,\nallowing user permission management, mission creation, and periodic flights through schedule creation.\nSupports real-time monitoring of captured videos and data, as well as management and analysis of collected data.",
+		"tag_title": "Key Features of DFOS STATION Lite",
+		"tags": {
+			"managing": "Mission Management & Schedule Management",
+			"monthly": "Statistics (Daily, Weekly, Monthly)",
+			"mediam": "Media Management",
+			"onestop": "Station Remote Control",
+			"cctv": "Streaming (Drone, CCTV)"
+		},
+		"slider_title": "DFOS MULTI STREAMING VIEWER",
+		"slider_description": "A multi-streaming viewer that allows convenient playback of multiple drone video sources",
+		"slides": {
+			"now": {
+				"title": "Real-time Streaming Support",
+				"items": [
+					"Check real-time drone streaming videos without installing separate programs. Easily accessible via web-based platform across various user environments, enabling quick remote monitoring as needed."
+				]
+			},
+			"mark": {
+				"title": "Real-time Flight Information Display",
+				"items": [
+					"Integrated with DFOS Station to monitor the status and location of active stations and flying drones in real-time, allowing easy operation to view live streaming of drone-captured videos."
+				]
+			},
+			"various": {
+				"title": "Support for Various Devices and Layouts",
+				"items": ["Divided into various layouts according to the number of devices (station, drone, CCTV), allowing convenient use with simple user operations."]
+			},
+			"optimize": {
+				"title": "Optimized Video Support",
+				"items": [
+					"Supports stable playback of multiple streaming videos, and responds to various display methods through full-screen mode and split-screen mode switching functions. Effectively utilized in integrated control center environments such as comprehensive situation rooms and information centers."
+				]
+			}
+		}
+	},
+	"igis_page": {
+		"eyebrow": "DFOS IGIS",
+		"title_main": "DFOS IGIS",
+		"description": "A professional GIS solution optimized for user environments, equipped with features for easy editing and analysis of spatial data.",
+		"tag_title": "Key Features of DFOS IGIS",
+		"tags": {
+			"interface": "Intuitive and easy-to-use user interface",
+			"edit": "Powerful spatial data editing and analysis capabilities",
+			"data": "Support for large-scale data processing",
+			"option": "Provides various background maps and visualization options",
+			"cad": "Compatibility with CAD and support for structured editing",
+			"format": "Support for various external data and formats"
+		},
+		"slides": {
+			"gis": {
+				"title": "Files",
+				"items": [
+					"Create/Load/Save Project",
+					"Open Image Files",
+					"Load GPX Files/Coordinates (Excel)",
+					"Export Images",
+					"Import Geodatabase (GDB)",
+					"DBF Maintenance",
+					"Layout",
+					"Coordinate Transformation",
+					"Data Source Management",
+					"Save SuperMap Workspace"
+				]
+			},
+			"data": {
+				"title": "Layers",
+				"items": [
+					"Manage Layer Groups",
+					"Manage Layer Tables",
+					"Create, Edit, Delete Layers",
+					"Copy, Duplicate Layers",
+					"Excel Join (+SHP Folder), Table Join",
+					"Address Conversion",
+					"Rendering and Labels",
+					"SQL"
+				]
+			},
+			"edit": {
+				"title": "Spatial Processing",
+				"items": [
+					"Spatial Join / Text Structuring",
+					"Data, Multi Merge",
+					"Layer Conversion",
+					"Tile Map Creation",
+					"Registration",
+					"Overlay Analysis, etc.",
+					"Merge and Export Identical Attributes",
+					"Buffering and Clipping / Buffer",
+					"Centerline Creation",
+					"Topology"
+				]
+			},
+			"option": {
+				"title": "Editing",
+				"items": ["Add/Edit Points, Lines, Polygons, Circles", "Edit Objects, Align, Group, Select, Calculate", "Modify Shapes (Points, Lines, Areas)"]
+			},
+			"cad": {
+				"title": "Raster",
+				"items": ["Change Grid Values", "Raster Mosaic", "Extract Shaded Relief / 3D Surface DEM Correction", "Create DEM", "Extract Contours", "Derive Slope", "Extract Slope Direction"]
+			},
+			"format": {
+				"title": "Map",
+				"items": ["Zoom In, Zoom Out, Pan", "Change Background Map", "Measure Distance", "Measure Area", "Select Layer by Location", "Layer Zoom In / Full View"]
 			}
 		}
 	},
@@ -777,20 +912,27 @@
 		},
 		"slides": {
 			"forest": {
-				"title": "Efficient functions in forest areas with a specialized program",
-				"items": [
-					"Support for logging road and forest road design",
-					"Production of longitudinal and cross-sectional views",
-					"Print output and layout provision",
-					"Support for eco-friendly logging design necessary for forest logging tasks",
-					"Provides analysis functions\n(surface distance, surface area, viewshed, water flow, slope analysis)"
-				]
+				"title": "Analysis",
+				"items": ["3D Measurement \n- Surface Distance, Surface Area, Volume, Slope", "Viewshed Analysis", "Slope Analysis", "Watershed Flow Analysis"]
 			},
 			"place": {
-				"title": "User-friendly GIS for forest terrain information processing",
+				"title": "Work",
 				"items": [
-					"A forest spatial information system usable by both domestic and international public institutions and private companies requiring forest administration tasks using spatial information"
+					"Join National Point Number",
+					"Extract Cadastral Information for Planned Forest Roads",
+					"PNU ↔ Address Conversion",
+					"Extract Spatial Data after Buffering",
+					"Extract Spatial Data after Excel Join",
+					"Input Attributes for Check Dams"
 				]
+			},
+			"automatic": {
+				"title": "Logging Road",
+				"items": ["Create Survey Points", "Create Longitudinal Profile", "Create Cross Profile", "Create Longitudinal Section", "Create Cross Section", "Create Survey Report (Excel)"]
+			},
+			"construction": {
+				"title": "Eco-Friendly Logging",
+				"items": ["Create Forest Stand", "Create Logging Road", "Create Logging Area", "Create and Exclude Boundary Influence Zone", "Plan and Extract Stand", "Analyze and Report Stand Residuals"]
 			}
 		}
 	},
@@ -809,19 +951,36 @@
 		},
 		"slides": {
 			"fms": {
-				"title": "Efficient fieldwork tool FMS that enhances productivity",
-				"items": [
-					"Supports On/Off Line base maps",
-					"Equipped with design and completion drawing viewer functions",
-					"Supports Shape, KML File",
-					"Supports video services (WMS, etc.)",
-					"Supports memo function",
-					"Supports tracking function"
-				]
+				"title": "Measurement Functions",
+				"items": ["Distance Measurement", "Area Measurement", "Refresh"]
 			},
 			"place": {
-				"title": "FMS Usable in Various Fields",
-				"items": ["Can be used by public institutions and companies performing on-site land surveying required for urban development, housing construction projects, etc."]
+				"title": "Layer Functions",
+				"items": ["Load Layer", "Set Layer Coordinate System", "Change Layer Order", "Turn Layer On/Off", "Edit Layer"]
+			},
+			"layer": {
+				"title": "Efficient Fieldwork Management",
+				"items": ["Mobile GIS Solution that supports location-based investigation and editing necessary for fieldwork"]
+			},
+			"memo": {
+				"title": "Project Functions",
+				"items": ["Create Project", "Save Project", "Load Project"]
+			},
+			"where": {
+				"title": "Memo Marker Functions",
+				"items": ["Create Memo (Title, Content, Image)", "View Memo", "Memo List", "Edit/Delete Memo"]
+			},
+			"out": {
+				"title": "Others",
+				"items": ["Current Location", "PDF Viewer", "Address Search", "User Movement Tracking (Tracking)"]
+			},
+			"comport": {
+				"title": "WMS Functions",
+				"items": ["Load WMS", "WMS List"]
+			},
+			"mobile": {
+				"title": "Change Background Map",
+				"items": ["Google", "Naver"]
 			}
 		}
 	},
@@ -915,9 +1074,7 @@
 		"sort_label": "Sort",
 		"sort_latest": "Newest",
 		"sort_oldest": "Oldest",
-
 		"no_video": "No videos found.",
-
 		"search_field_label": "Search field",
 		"search_label": "Search keyword",
 		"search_title": "Title",

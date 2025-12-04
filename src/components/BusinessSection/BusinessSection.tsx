@@ -23,7 +23,7 @@ const BusinessSection: React.FC = () => {
 				title: t('busi_1_title'),
 				desc: t('busi_1_desc'),
 				img: '/assets/images/busi_01.png',
-				link: '/business/dfos',
+				link: '/business/drone',
 			},
 			{
 				id: 2,
@@ -37,14 +37,14 @@ const BusinessSection: React.FC = () => {
 				title: t('busi_3_title'),
 				desc: t('busi_3_desc'),
 				img: '/assets/images/busi_03.png',
-				link: '/business/drone',
+				link: '/business/fms',
 			},
 			{
 				id: 4,
 				title: t('busi_4_title'),
 				desc: t('busi_4_desc'),
 				img: '/assets/images/busi_04.png',
-				link: '/business/rd',
+				link: '/business/rnd',
 			},
 		],
 		[t]

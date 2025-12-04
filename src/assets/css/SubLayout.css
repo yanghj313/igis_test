@@ -38,6 +38,7 @@
 	color: #fff;
 	margin-bottom: 130px;
 	font-family: 'Montserrat', sans-serif;
+	text-align: center;
 }
 
 /* Tabs */
@@ -96,8 +97,8 @@ nav.sub-tabs::after {
 		font-size: 12px;
 	}
 	.sub-title {
-		font-size: 36px;
-		margin-bottom: 50px;
+		font-size: 35px;
+		margin-bottom: 38px;
 	}
 	nav.sub-tabs {
 		overflow-x: auto;

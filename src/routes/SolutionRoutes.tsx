@@ -9,6 +9,7 @@ import Panorama from '@/pages/Solution/Panorama';
 import Pilot from '@/pages/Solution/Pilot';
 import Ims from '@/pages/Solution/Ims';
 import Viewer from '@/pages/Solution/Viewer';
+import Stream from '@/pages/Solution/Stream';
 
 import Igis from '@/pages/Solution/Igis';
 import Forest from '@/pages/Solution/Forest';
@@ -20,6 +21,7 @@ const SolutionRoutes: React.FC = () => (
 		<Route path="drone" element={<DroneSolutionLayout />}>
 			<Route index element={<Navigate to="station" replace />} />
 			<Route path="station" element={<Station />} />
+			<Route path="stream" element={<Stream />} />
 			<Route path="panorama" element={<Panorama />} />
 			<Route path="pilot" element={<Pilot />} />
 			<Route path="ims" element={<Ims />} />

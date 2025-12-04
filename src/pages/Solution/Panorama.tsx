@@ -8,9 +8,11 @@ import 'swiper/css/pagination';
 import '../../assets/css/solution.css';
 
 const PANORAMA_SLIDES = [
-	{ id: 1, key: 'media', img: '/assets/images/solution/drone/panorama/media.png' },
-	{ id: 2, key: 'made', img: '/assets/images/solution/drone/panorama/made.png' },
-	{ id: 3, key: 'place', img: '/assets/images/solution/drone/panorama/place.png' },
+	{ id: 1, key: 'media', img: '/assets/images/solution/drone/panorama/p_01.png' },
+	{ id: 2, key: 'made', img: '/assets/images/solution/drone/panorama/p_02.png' },
+	{ id: 3, key: 'place', img: '/assets/images/solution/drone/panorama/p_03.png' },
+	{ id: 4, key: 'realease', img: '/assets/images/solution/drone/panorama/p_04.png' },
+	{ id: 5, key: 'open', img: '/assets/images/solution/drone/panorama/p_05.png' },
 ];
 
 // 헤더 오른쪽 장비 태그

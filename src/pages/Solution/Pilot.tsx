@@ -9,10 +9,12 @@ import 'swiper/css/pagination';
 import '../../assets/css/solution.css';
 
 const PILOT_SLIDES = [
-	{ id: 1, key: 'mission', img: '/assets/images/solution/drone/pilot/mission.png' },
-	{ id: 2, key: 'setting', img: '/assets/images/solution/drone/pilot/setting.png' },
-	{ id: 3, key: 'camera', img: '/assets/images/solution/drone/pilot/camera.png' },
-	{ id: 4, key: 'system', img: '/assets/images/solution/drone/pilot/system.png' },
+	{ id: 1, key: 'mission', img: '/assets/images/solution/drone/pilot/p_01.png' },
+	{ id: 2, key: 'setting', img: '/assets/images/solution/drone/pilot/p_02.png' },
+	{ id: 3, key: 'camera', img: '/assets/images/solution/drone/pilot/p_03.png' },
+	{ id: 4, key: 'system', img: '/assets/images/solution/drone/pilot/p_04.png' },
+	{ id: 5, key: 'flight', img: '/assets/images/solution/drone/pilot/p_05.png' },
+	{ id: 6, key: 'media', img: '/assets/images/solution/drone/pilot/p_06.png' },
 ];
 
 // 헤더 오른쪽 장비 태그

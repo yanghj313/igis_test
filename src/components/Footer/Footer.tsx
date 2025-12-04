@@ -24,10 +24,10 @@ const Footer: React.FC = () => {
 				</div>
 
 				<div className="footer-right">
-					<a href="https://www.youtube.com/@igis" target="_blank" rel="noopener noreferrer">
+					<a href="https://www.youtube.com/@IGISKOREA" target="_blank" rel="noopener noreferrer">
 						<img src="/assets/icons/ytube.png" alt="YouTube" className="sns-icon" />
 					</a>
-					<a href="https://www.linkedin.com/company/igis" target="_blank" rel="noopener noreferrer">
+					<a href="https://www.linkedin.com/company/81814842/admin/page-posts/published/" target="_blank" rel="noopener noreferrer">
 						<img src="/assets/icons/link.png" alt="LinkedIn" className="sns-icon" />
 					</a>
 				</div>

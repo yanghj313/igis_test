@@ -13,6 +13,7 @@ const DroneSolutionLayout: React.FC = () => {
 
 	const titleMap: Record<string, string> = {
 		station: t('layout.solutionDrone.title.station'),
+		stream: t('layout.solutionDrone.title.stream'),
 		panorama: t('layout.solutionDrone.title.panorama'),
 		pilot: t('layout.solutionDrone.title.pilot'),
 		ims: t('layout.solutionDrone.title.ims'),
@@ -26,6 +27,7 @@ const DroneSolutionLayout: React.FC = () => {
 			groupLabel: t('layout.solutionDrone.locationLabel'),
 			items: [
 				{ to: 'station', label: t('layout.solutionDrone.tabs.station') },
+				{ to: 'stream', label: t('layout.solutionDrone.tabs.stream') },
 				{ to: 'panorama', label: t('layout.solutionDrone.tabs.panorama') },
 				{ to: 'pilot', label: t('layout.solutionDrone.tabs.pilot') },
 				{ to: 'ims', label: t('layout.solutionDrone.tabs.ims') },

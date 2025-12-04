@@ -26,11 +26,11 @@ const SolutionLayout: React.FC = () => {
 						groupLabel: '드론 솔루션',
 						items: [
 							{ to: 'station', label: 'DFOS STATION' },
+							{ to: 'stream', label: 'DFOS Streaming Viewer' },
 							{ to: 'panorama', label: 'Panorama' },
 							{ to: 'pilot', label: 'DFOS PILOT PRO' },
 							{ to: 'ims', label: 'DFOS IMS' },
 							{ to: 'viewer', label: 'DFOS Viewer' },
-							{ to: 'stream', label: 'DFOS Streaming Viewer' },
 						],
 					},
 			  ]
