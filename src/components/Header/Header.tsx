@@ -88,7 +88,7 @@ const Header: React.FC = () => {
 				<div className="header-inner">
 					<div className="logo">
 						<Link to="/">
-							<img src={isScrolled ? '/assets/images/logo_bk.png' : '/assets/images/logo_wh.png'} alt="iGiS logo" />
+							<img src={isScrolled ? '/assets/images/logo_bk.png' : '/assets/images/logo_w.svg'} alt="iGiS logo" />
 						</Link>
 					</div>
 
