@@ -38,6 +38,13 @@
 	width: 48%;
 	box-sizing: border-box;
 }
+
+.recruit-grid .recruit-card:hover {
+	border-color: transparent;
+	transition: all 0.3s ease;
+	background: #fafafa;
+}
+
 .recruit-status {
 	margin-bottom: 20px;
 	display: inline-block;
