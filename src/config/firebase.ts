@@ -24,3 +24,5 @@ const _storage: FirebaseStorage = getStorage(app);
 
 export const db = () => _db;
 export const storage = () => _storage;
+
+console.log('FIREBASE PROJECT:', import.meta.env.VITE_FIREBASE_PROJECT_ID);

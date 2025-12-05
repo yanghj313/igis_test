@@ -143,6 +143,4 @@ const Recruit: React.FC = () => {
 	);
 };
 
-console.log('FIREBASE PROJECT:', import.meta.env.VITE_FIREBASE_PROJECT_ID);
-
 export default Recruit;
