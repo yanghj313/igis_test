@@ -19,7 +19,6 @@ function getFirebaseApp() {
 
 const app = getFirebaseApp();
 
-// ⭐ **여기 수정**
 const _db: Firestore = getFirestore(app);
 const _storage: FirebaseStorage = getStorage(app);
 
