@@ -4,12 +4,13 @@ import { getFirestore, Firestore } from 'firebase/firestore';
 import { getStorage, FirebaseStorage } from 'firebase/storage';
 
 const firebaseConfig = {
-	apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-	authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
-	projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
-	storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
-	messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
-	appId: import.meta.env.VITE_FIREBASE_APP_ID,
+	apiKey: 'AIzaSyC36OmlCWgka02qmDsiGYSiuoZMMSnU_UI',
+	authDomain: 'igis-web.firebaseapp.com',
+	projectId: 'igis-web',
+	storageBucket: 'igis-web.appspot.com',
+	messagingSenderId: '456189682289',
+	appId: '1:456189682289:web:c08b149a08a3ead85cb1d0',
+	measurementId: 'G-E2KQWWQG06',
 };
 
 function getFirebaseApp() {
