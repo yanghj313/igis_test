@@ -500,7 +500,7 @@
 			"title": {
 				"station": "DFOS STATION",
 				"stream": "DFOS STREAMING VIEWER",
-				"panorama": "PANORAMA",
+				"panorama": "DFOS PANORAMA",
 				"pilot": "DFOS PILOT PRO",
 				"ims": "DFOS IMS",
 				"viewer": "DFOS WEATHER",
@@ -509,7 +509,7 @@
 			"tabs": {
 				"station": "DFOS STATION",
 				"stream": "DFOS STREAMING VIEWER",
-				"panorama": "Panorama",
+				"panorama": "DFOS PANORAMA",
 				"pilot": "DFOS PILOT PRO",
 				"ims": "DFOS IMS",
 				"viewer": "DFOS WEATHER"

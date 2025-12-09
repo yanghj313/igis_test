@@ -427,7 +427,7 @@
 			"locationLabel": "드론 솔루션",
 			"title": {
 				"station": "DFOS STATION",
-				"panorama": "PANORAMA",
+				"panorama": "DFOS PANORAMA",
 				"pilot": "DFOS PILOT PRO",
 				"ims": "DFOS IMS",
 				"viewer": "DFOS WEATHER",
@@ -436,7 +436,7 @@
 			},
 			"tabs": {
 				"station": "DFOS STATION",
-				"panorama": "Panorama",
+				"panorama": "DFOS PANORAMA",
 				"pilot": "DFOS PILOT PRO",
 				"ims": "DFOS IMS",
 				"stream": "DFOS STREAMING VIEWER",
