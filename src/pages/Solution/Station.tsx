@@ -1,7 +1,9 @@
 // src/pages/Solution/Station.tsx
 import React from 'react';
+import { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import type { Swiper as SwiperType } from 'swiper';
 import { Pagination } from 'swiper/modules';
 
 import 'swiper/css';
@@ -26,11 +28,35 @@ const STATION_TAG_IDS: StationTagId[] = ['djiDock1', 'djiDock2', 'djiDock3', 'ma
 
 const Station: React.FC = () => {
 	const { t } = useTranslation();
+	const sliderRef = useRef<HTMLDivElement | null>(null);
+	const swiperRef = useRef<SwiperType | null>(null);
+	const handleWheel = (e: WheelEvent): void => {
+		const swiper = swiperRef.current;
+		if (!swiper) return;
+
+		if (Math.abs(e.deltaY) < 8) return;
+
+		e.preventDefault();
+		e.stopPropagation();
+
+		if (e.deltaY > 0) swiper.slideNext();
+		else swiper.slidePrev();
+	};
+
+	useEffect(() => {
+		const el = sliderRef.current;
+		if (!el) return;
+
+		el.addEventListener('wheel', handleWheel, { passive: false });
+
+		return () => {
+			el.removeEventListener('wheel', handleWheel);
+		};
+	}, []);
 
 	return (
 		<section className="station-section">
 			<div className="station-inner">
-				{/* ---------------- 헤더 ---------------- */}
 				<header className="station-header">
 					<div className="station-header-left">
 						<h2 className="station-title">{t('station_page.title_main', 'DFOS STATION')}</h2>
@@ -63,8 +89,12 @@ const Station: React.FC = () => {
 				</header>
 
 				{/* ---------------- 슬라이더 ---------------- */}
-				<div className="station-slider">
+
+				<div className="station-slider" ref={sliderRef}>
 					<Swiper
+						onSwiper={swiper => {
+							swiperRef.current = swiper;
+						}}
 						modules={[Pagination]}
 						loop={true}
 						centeredSlides={true}
@@ -73,19 +103,9 @@ const Station: React.FC = () => {
 						pagination={{ clickable: true }}
 						className="station-swiper"
 						breakpoints={{
-							0: {
-								slidesPerView: 1,
-								centeredSlides: false,
-							},
-							768: {
-								slidesPerView: 1.4,
-								centeredSlides: true,
-							},
-							1200: {
-								slidesPerView: 1.8,
-								centeredSlides: true,
-								spaceBetween: 10,
-							},
+							0: { slidesPerView: 1, centeredSlides: false },
+							768: { slidesPerView: 1.4, centeredSlides: true },
+							1200: { slidesPerView: 1.8, centeredSlides: true, spaceBetween: 10 },
 						}}
 					>
 						{STATION_SLIDES.map(slide => {

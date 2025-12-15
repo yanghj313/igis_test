@@ -43,7 +43,6 @@
 }
 
 .biz-diff-item {
-	cursor: pointer;
 	width: 10%;
 	transition: width 0.6s ease;
 	position: relative;

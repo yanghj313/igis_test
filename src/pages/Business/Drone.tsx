@@ -5,10 +5,10 @@ import '../../assets/css/business.css';
 
 interface DiffItem {
 	id: number;
-	stepKey: string; // 예: 'drone_diff.items.1.step'
+	stepKey: string;
 	titleKey: string;
-	leadKey: string; // 예: 'drone_diff.items.1.lead'
-	bodyKey: string; // 예: 'drone_diff.items.1.body'
+	leadKey: string;
+	bodyKey: string;
 	img: string;
 }
 

@@ -188,199 +188,132 @@
 			"13": { "title": "DFOS Solution trademark registration" }
 		}
 	},
-	"drone_page": {
-		"eyebrow": "C. Business Area · Drone",
-		"title_before": "A convenient",
-		"title_highlight": "Drone System",
-		"title_after": "for everyone",
-		"description": "IGIS provides total drone solutions that cover the entire process, from hardware supply and consulting to subscription services, shooting, training, and after-sales support.",
-		"mainCard": {
-			"label": "System Sales",
-			"text": "According to the user’s needs, each system can be purchased separately. Various application solutions such as DFOS Pilot, DFOS Viewer, and DFOS Control System are provided together."
-		},
-		"cards": {
-			"system": {
-				"title": "System Sales",
-				"desc": "We propose and supply field-oriented drone solutions such as DFOS Pilot, DFOS Viewer, and DFOS Control System, tailored to each customer environment."
-			},
-			"service": {
-				"title": "Service & Proposal Projects",
-				"desc": "Based on our technology and solutions, we participate in public and private proposal projects and support customers in strengthening their expertise and capabilities."
-			},
-			"subscription": {
-				"title": "Monthly Plan (Private Market)",
-				"desc": "Drone devices and web-based control systems are offered as a monthly subscription, enabling use without large upfront purchase costs."
-			},
-			"shooting": {
-				"title": "Drone Shooting",
-				"desc": "We support the acquisition of realistic data through various drone shooting services such as DB building, data processing and analysis, and panorama imagery."
-			},
-			"edu": {
-				"title": "Flight Training & A/S",
-				"desc": "We provide training and stable maintenance services required to operate drone solutions, helping customers run their systems efficiently."
-			}
-		}
-	},
-
-	"gis_page": {
-		"eyebrow": "C. Business Area · GIS System",
-		"title_before": "High-level,",
-		"title_highlight": "tailored GIS services",
-		"title_after": "from IGIS",
-		"description": "We build GIS systems optimized for each customer’s business environment and provide services for geospatial data processing and analysis.",
-		"mainCard": {
-			"label": "System Sales",
-			"text": "We aim to understand customer needs and deliver optimal GIS systems that fit their environment and workflow."
-		},
-		"cards": {
-			"system": {
-				"title": "System Sales",
-				"desc": "We provide GIS platforms that can integrate and manage various geospatial data such as vector, imagery, and 3D layers."
-			},
-			"edu": {
-				"title": "System Training & A/S",
-				"desc": "Through hands-on training and stable maintenance, we support customers so their systems can be operated reliably after initial deployment."
-			},
-			"build": {
-				"title": "Business-unit System Development",
-				"desc": "We analyze business characteristics and design GIS systems optimized for each task unit."
-			},
-			"data": {
-				"title": "Geospatial Data Processing & Analysis",
-				"desc": "We provide geospatial data processing, analysis, and visualization services that support business decision-making."
-			},
-			"subscription": {
-				"title": "Monthly Plan (Private Market)",
-				"desc": "A subscription-based GIS service that lets customers select and use only the functions they need, reducing initial adoption costs."
-			}
-		}
-	},
 	"drone_diff": {
-		"title_before": "Convenient for everyone",
-		"title_highlight": "Drone System",
+		"title_before": "Anyone can easily use",
+		"title_highlight": "Drone Integrated Solution",
 		"title_after": "",
-		"description": "IGIS provides a total solution that covers the entire drone utilization process, including drone equipment supply,\n consulting, monthly subscription services, shooting, training, and after-sales service.",
+		"description": "IGIS provides a one-stop service that covers the entire process of drone utilization, from equipment supply to training, shooting, A/S, and monthly subscription services.",
 		"items": {
 			"1": {
 				"step": "System Sales",
 				"title": "",
-				"lead": "Users can purchase each system individually according to their needs",
-				"body": "· DFOS Pilot : An operational app that intuitively controls drone photo, video shooting, and route flight\n· DFOS Viewer : A monitoring app that allows multiple users to share the DFOS Pilot screen simultaneously\n· DFOS Control System : A control system that integrates and manages video, photo, and sensor data obtained from drones\n· DFOS Streaming Viewer : A streaming viewer that can stably play multiple videos\n· DFOS IMS : An image management system that supports automatic orthophoto production and registration, management, and analysis of drone videos"
+				"lead": "We provide individual systems tailored to the user's needs, and the main components are as follows.",
+				"body": "· DFOS Station : Drone/station remote control and integrated video/sensor data control\n· DFOS Pilot : Drone flight app that intuitively controls photo/video shooting and route flight\n· DFOS Viewer : Shares control screens with multiple users for simultaneous monitoring\n· DFOS IMS : Automatic orthophoto production and video registration, management, and analysis system"
 			},
 			"2": {
-				"step": "Contract and Proposal Business",
+				"step": "Service and Proposal Projects",
 				"title": "",
-				"lead": "",
-				"body": "We apply our technologies and solutions to contract and proposal businesses, enhancing customer expertise and capabilities."
+				"lead": "We carry out various projects in the public and private sectors based on drone platforms and operational technologies.",
+				"body": "We propose customized solutions such as shooting, data processing, and system construction according to business objectives, and provide consulting throughout the entire project execution process to enhance the expertise and work capabilities of our clients."
 			},
 			"3": {
 				"step": "Monthly Subscription Service",
 				"title": "",
 				"lead": "",
-				"body": "· Drone app monthly plan and drone web control system monthly plan\n· For private market users, instead of a one-time purchase with a high cost burden, it is possible to pay monthly or annually"
+				"body": "· We offer subscription services that allow the use of drone operation apps and web control systems on a monthly or yearly basis to reduce initial introduction costs.\n· Regular updates and technical support are provided together to ensure business continuity through continuous services."
 			},
 			"4": {
-				"step": "Drone Shooting Service",
+				"step": "Drone Filming Service",
 				"title": "",
 				"lead": "",
-				"body": "· DB building / data processing and analysis\n· We support processing drone-captured images into orthophotos, panorama images, etc., and assist in collecting and processing AI training data."
+				"body": "· Based on precise drone filming, we provide various forms of data services such as database construction, video processing and analysis, orthophoto and panorama production.\n· We also support the collection, refinement, and processing of data for AI training, enabling the acquisition of high-quality video data necessary for data-driven service development and research."
 			},
 			"5": {
-				"step": "Flight Training & After-Service",
+				"step": "Flight Training and A/S",
 				"title": "",
 				"lead": "",
-				"body": "We provide training and stable maintenance services required to operate drone solutions, helping customers run their systems efficiently."
+				"body": "· We provide drone operation training to enhance the ability to utilize equipment, apps, and control systems, with a practical curriculum that can be applied immediately in the field.\n· Through technical support (A/S) by professional engineers, we help maintain a stable and efficient equipment operation environment by supporting inspection, troubleshooting, and function improvement."
 			}
 		}
 	},
 	"gis_diff": {
-		"title_before": "Providing",
-		"title_highlight": "high-level tailored GIS services",
+		"title_before": "Optimized for Industry Characteristics",
+		"title_highlight": "Integrated GIS Service",
 		"title_after": "",
-		"description": "From system sales and training to data processing, analysis,\nand subscription-based policies, IGIS delivers end-to-end GIS solutions\noptimized for each customer’s workflow.",
+		"description": "IGIS provides integrated GIS solutions that cover the entire process, from system sales, training, maintenance, data processing and analysis, and subscription services, to support spatial information-based tasks required in diverse industries.\nBy building customized systems that reflect the customer's work environment and industrial characteristics,\nwe support efficient data utilization and advanced work systems.",
 		"items": {
 			"1": {
 				"step": "System Sales",
 				"title": "",
-				"lead": "Proposing the optimal GIS system for your needs",
-				"body": "We analyze your business requirements and operating environment to propose the most suitable GIS system.\nOur proposals consider scalability, maintenance, and long-term operation from the very beginning."
+				"lead": "We comprehensively analyze customer needs, budget, and operating environment to design and propose the most suitable GIS system.",
+				"body": "· Functions tailored to business purposes Providing a user experience tailored to various platforms (web, mobile, desktop)\n· Integrated configuration including scalability, maintenance costs, and technical support system considering long-term operating environment\n· Building a stable system based on various project experiences in the public and private sectors"
 			},
 			"2": {
-				"step": "System Training & After-Service",
+				"step": "System Training and A/S",
 				"title": "",
-				"lead": "Hands-on training and stable system operation",
-				"body": "We provide training so that users can quickly learn how to use GIS in real projects.\nProfessional engineers support you with troubleshooting, feature improvements, and regular maintenance."
+				"lead": "We provide practical training to ensure users can fully utilize GIS in their actual work.",
+				"body": "· Providing customized training from basic functions to advanced analysis\n· Enhancing on-site applicability through practice based on work scenarios\n· Support for troubleshooting, function improvement, regular inspection, and environment optimization by professional engineers\n· Continuous management support to ensure stable system operation and improve user satisfaction"
 			},
 			"3": {
-				"step": "Business-unit System Implementation",
+				"step": "System Construction by Work Unit",
 				"title": "",
-				"lead": "GIS systems tailored to each business process",
-				"body": "We design and implement GIS systems based on the actual business units and workflows of the customer.\nCustom screens and processes per department improve usability and on-site productivity."
+				"lead": "We design GIS focused on functions needed in the field by subdividing the customer's work processes.",
+				"body": "· Defining screen configuration and workflow according to department and work purpose\n· Optimized for various work types such as inspection, facility management, civil complaint handling, planning, and spatial analysis\n· Integrated structure design considering linkage with existing systems\n· High field applicability secured through UI/UX configuration tailored to actual work flow"
 			},
 			"4": {
-				"step": "Spatial Data Processing & Analysis",
+				"step": "Geospatial Data Processing and Analysis",
 				"title": "",
-				"lead": "Turning location data into business insight",
-				"body": "We collect, process, and restructure spatial data into a form that best fits your business.\nUsing GIS analysis such as spatial statistics, time-series analysis, and visibility analysis, we support data-driven decision making."
+				"lead": "Based on professional GIS analysis technology, we collect, refine, and process various spatial data to provide information necessary for customer decision-making.",
+				"body": "· Providing specialized analysis such as time series change analysis, spatial statistics, grid analysis, viewshed analysis, and proximity analysis\n· Capable of integrating and analyzing field information, facility information, drone images, and external data (public data, etc.)\n· Providing analysis results as map-based visualizations to enhance intuitive understanding and policy/work utilization"
 			},
 			"5": {
-				"step": "Subscription Policy (for private sector)",
+				"step": "Subscription Policy (Applied to Private Market)",
 				"title": "",
-				"lead": "Flexible subscription model instead of one-off purchase",
-				"body": "For private-sector customers, we offer subscription-based pricing instead of a large one-time license purchase.\nYou can pay monthly or annually, while receiving continuous updates and technical support."
+				"lead": "We offer a subscription service available on a monthly or annual basis to reduce the initial adoption burden.",
+				"body": "Includes regular updates, technical support, and server maintenance to continuously ensure the latest features and a stable operating environment.\nThis service model is suitable for companies with small project scales or customers who find adoption costs burdensome."
 			}
 		}
 	},
 	"fms_diff": {
-		"title_before": "Efficient field management tool,",
-		"title_highlight": "FMS that boosts productivity",
+		"title_before": "Mobile GIS-based Work App ",
+		"title_highlight": "Immediately Usable in the Field",
 		"title_after": "",
-		"description": "IGIS FMS supports various on-site workflows based on geospatial data,\nhelping organizations improve work speed, accuracy, and management efficiency.",
-		"description_02": "IGIS FMS supports various on-site workflows based on geospatial data, helping organizations improve work speed, accuracy, and management efficiency.",
+		"description": "IGIS's mobile GIS solution, FMS, can be installed on tablets and used directly in the field.\nDesigned around tasks with high mobility such as inspection, facility management, and civil complaint handling based on GIS, it helps quickly and accurately process work processes from preparation before field visits to field records, inspection result registration, and post-reporting.",
+		"description_02": "IGIS FMS supports various field tasks based on geographic information, enhancing work processing speed and accuracy, and maximizing management efficiency.",
 		"items": {
 			"1": {
-				"step": "SYSTEM SALES",
+				"step": "System Sales",
 				"title": "",
-				"lead": "FMS applications that support field operations",
-				"body": "We provide FMS systems that manage on-site tasks intuitively using map-based screens and location information.\nThey can be applied to inspections, civil complaints, facility management, and more, improving productivity with standardized workflows."
+				"lead": "We provide a GIS-based, field-specific mobile app that allows you to intuitively grasp the on-site situation using a map-based UI and GPS location information.",
+				"body": "Minimize work gaps and errors by supporting a variety of scenarios, including automated inspection items, on-site photo registration, facility search, and history management, through standardized processes.\nAlso designed to operate reliably in both online and offline environments, enhancing flexibility and convenience in field operations."
 			},
 			"2": {
-				"step": "SYSTEM TRAINING & AFTER-SERVICE",
+				"step": "System Training and After-Sales Service",
 				"title": "",
-				"lead": "Hands-on training and stable system operation",
-				"body": "We offer training programs based on real field workflows so users can quickly learn and utilize the system.\nProfessional engineers provide technical support for incidents, feature improvements, and version upgrades to ensure stable operation."
+				"lead": "We provide practical training reflecting field workflows and actual usage environments to help users quickly learn the tablet-based FMS and utilize it immediately in the field.",
+				"body": "We ensure system stability and continuity through after-sales service by professional engineers, including troubleshooting, feature improvements, version updates, and new device setup.\nWe also provide training materials and standard manuals tailored to each task."
 			},
 			"3": {
-				"step": "BUSINESS-UNIT FMS IMPLEMENTATION",
+				"step": "System Construction by Work Unit",
 				"title": "",
-				"lead": "Customized FMS designed for each task type",
-				"body": "We define the required functions and data for each task type—such as inspections, patrols, complaints, and facility management—\nand design screens and processes that are optimized for field use."
+				"lead": "Define the necessary functions and data for each work type, and design a mobile-centric screen layout, input methods, and workflows to maximize operational efficiency.",
+				"body": "Configure customer-specific features such as shooting functions, location display, checklist automation, and on-site reporting templates to provide solutions optimized for actual work that can be used immediately in the field."
 			},
 			"4": {
-				"step": "SUBSCRIPTION POLICY (FOR PRIVATE SECTOR)",
+				"step": "Subscription Policy (Applied to Private Market)",
 				"title": "",
-				"lead": "Subscription model that reduces initial cost burden",
-				"body": "For private-sector users, we provide subscription-based pricing instead of a one-time large initial payment.\nYou can pay monthly or annually while receiving continuous technical support and system upgrades during the service period."
+				"lead": "We offer a subscription service available on a monthly or annual basis to reduce the initial adoption burden.",
+				"body": "Includes regular updates, technical support, and server maintenance to continuously ensure the latest features and a stable operating environment.\nThis service model is suitable for companies with small project scales or customers who find adoption costs burdensome."
 			}
 		}
 	},
 	"rnd_diff": {
-		"title_before": "Continuous Research & Development",
-		"title_highlight": "R&D and Service",
-		"title_after": "Business",
-		"description": "Based on accumulated technology and project experience, IGIS carries out various R&D projects and service contracts,\nhelping our clients strengthen their business competitiveness.",
+		"title_before": "Technology-based Research and Development and",
+		"title_highlight": "Data·System-centered Business",
+		"title_after": "Execution",
+		"description": "IGIS is conducting various R&D projects and service projects centered on drone control and station technology, spatial information-based platforms, and digital twin construction capabilities.\nBased on collected and refined data and field experience, we develop technologies applicable across industries, including construction, facility management, urban safety, and disaster management, aiming to achieve digital transformation outcomes for our customers.",
 		"items": {
 			"1": {
-				"step": "R&D Projects",
+				"step": "Project Business",
 				"title": "",
-				"lead": "Planning and executing R&D / non-R&D projects",
-				"body": "- National and private R&D / non-R&D projects\n- Various projects designed to enhance corporate capability and increase sales"
+				"lead": "Strengthening R&D capabilities based on drone and station control technology and digital twin technology",
+				"body": "· Conducting full-cycle R&D and non-R&D projects from planning, development, demonstration, to performance management\n· Participating in public, local government, and private projects focused on new technology development such as drone automation and remote control, station-based autonomous takeoff and landing, real-time video and sensor streaming\n· Researching technologies that support rapid situation awareness and response with minimal personnel through automated patrol technology based on drones and stations for real-time monitoring of high-risk areas in security, traffic, and facility management\n· Developing digital twin models and simulation technologies based on urban, facility, and field data for research and development in spatial data utilization areas such as digital safety management, facility management, and intelligent urban monitoring\n· Producing realistic and sustainable research outcomes that meet project goals based on accumulated demonstration experience\n· Operating field demonstration-centered projects based on user scenarios to secure practically applicable results"
 			},
 			"2": {
-				"step": "Service & Proposal Projects",
+				"step": "Services and Proposals",
 				"title": "",
-				"lead": "Tailored services based on IGIS technologies and solutions",
-				"body": "- Applying in-house technologies and solutions to service and proposal projects\n- Providing customized proposals and consulting to strengthen clients’ expertise and capability"
+				"lead": "Integrated proposal-based business implementation based on drones, GIS, and digital twins",
+				"body": "· We provide specialized customized proposals utilizing our own technologies (drone control systems, GIS, etc.)\n· Based on control systems and data platforms currently used in the field, we analyze work objectives, environments, and terrain conditions to propose optimal drone models and station configurations\n· Services based on real-time data collected using drones and stations (aerial photography, 3D modeling, real-time monitoring, orthophoto analysis, drone-based facility inspection, safety inspection)\n· Digital twin construction services at the city and facility level (terrain and facility 3D model production, spatial data integration and control screen design, simulation and decision support function development)\n· Integrated project proposals combining GIS, drones, and stations (establishing a unified environment from data collection to analysis, control, and reporting)\n· Providing practical consulting tailored to customer objectives, budgets, and operational methods; performing integrated services considering operation, updates, and scalability rather than one-off projects"
 			}
 		}
 	},
@@ -485,34 +418,34 @@
 			"locationLabel": "GIS Solutions",
 			"title": {
 				"igis": "IGIS",
-				"forest": "IGIS Forest System",
+				"forest": "IGIS Forest",
 				"fms": "FMS",
 				"default": "GIS SOLUTION"
 			},
 			"tabs": {
 				"igis": "IGIS",
-				"forest": "IGIS Forest System",
+				"forest": "IGIS Forest",
 				"fms": "FMS"
 			}
 		},
 		"solutionDrone": {
 			"locationLabel": "Drone Solutions",
 			"title": {
-				"station": "DFOS STATION",
-				"stream": "DFOS STREAMING VIEWER",
-				"panorama": "DFOS PANORAMA",
-				"pilot": "DFOS PILOT PRO",
-				"ims": "DFOS IMS",
-				"viewer": "DFOS WEATHER",
+				"station": "STATION",
+				"stream": "STREAMING VIEWER",
+				"panorama": "PANORAMA",
+				"pilot": "PILOT PRO",
+				"ims": "IMS",
+				"viewer": "WEATHER",
 				"default": "DRONE SOLUTION"
 			},
 			"tabs": {
-				"station": "DFOS STATION",
-				"stream": "DFOS STREAMING VIEWER",
-				"panorama": "DFOS PANORAMA",
-				"pilot": "DFOS PILOT PRO",
-				"ims": "DFOS IMS",
-				"viewer": "DFOS WEATHER"
+				"station": "STATION",
+				"stream": "STREAMING VIEWER",
+				"panorama": "PANORAMA",
+				"pilot": "PILOT PRO",
+				"ims": "IMS",
+				"viewer": "WEATHER"
 			}
 		},
 		"community": {
@@ -898,10 +831,10 @@
 		}
 	},
 	"forest_page": {
-		"eyebrow": "DFOS Forest",
-		"title_main": "DFOS Forest",
+		"eyebrow": "IGIS Forest",
+		"title_main": "IGIS Forest",
 		"description": "A specialized forest GIS solution optimized for forestry tasks,\nallowing editing, analysis, and 3D modeling of forest spatial information.",
-		"tag_title": "Key Features of DFOS Forest",
+		"tag_title": "Key Features of IGIS Forest",
 		"tags": {
 			"forest": "Provides forest-specific analysis functions",
 			"automatic": "Automated eco-friendly logging design",
@@ -937,10 +870,10 @@
 		}
 	},
 	"fms_page": {
-		"eyebrow": "DFOS FMS",
-		"title_main": "DFOS FMS",
+		"eyebrow": "FMS",
+		"title_main": "FMS",
 		"description": " FMS is a GIS map–based mobile app that supports location-based field investigation, data editing, and spatial verification in real time.",
-		"tag_title": "Key Features of DFOS FMS",
+		"tag_title": "Key Features of FMS",
 		"tags": {
 			"where": " Provide Real-Time, Field-Centric Location-Based Capabilities",
 			"layer": "Layer and map data management capabilities",

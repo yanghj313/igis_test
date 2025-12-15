@@ -121,6 +121,7 @@
 
 .station-slider {
 	margin-top: 160px;
+	overscroll-behavior: contain;
 }
 .stream-slider-title {
 	margin: 100px auto 0;
