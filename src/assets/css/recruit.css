@@ -64,6 +64,7 @@
 	border-bottom: 1px solid #e5e5e5;
 	display: block;
 	color: #333;
+	word-break: keep-all;
 }
 .recruit-title.close {
 	color: #999999;
