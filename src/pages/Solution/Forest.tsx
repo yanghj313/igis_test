@@ -1,6 +1,8 @@
 import React from 'react';
+import { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import type { Swiper as SwiperType } from 'swiper';
 import { Pagination } from 'swiper/modules';
 
 import 'swiper/css';
@@ -8,10 +10,10 @@ import 'swiper/css/pagination';
 import '../../assets/css/solution.css';
 
 const FOREST_SLIDES = [
-	{ id: 1, key: 'forest', img: '/assets/images/solution/igis/forest/forest.png' },
-	{ id: 2, key: 'place', img: '/assets/images/solution/igis/forest/forest_02.png' },
-	{ id: 3, key: 'automatic', img: '/assets/images/solution/igis/forest/forest_03.png' },
-	{ id: 4, key: 'construction', img: '/assets/images/solution/igis/forest/kind.png' },
+	{ id: 1, key: 'forest', img: '/assets/images/solution/igis/forest/main.png' },
+	{ id: 2, key: 'place', img: '/assets/images/solution/igis/forest/map.png' },
+	{ id: 3, key: 'automatic', img: '/assets/images/solution/igis/forest/search.png' },
+	{ id: 4, key: 'construction', img: '/assets/images/solution/igis/forest/vertical.png' },
 ];
 
 type ForestTagId = 'forest' | 'automatic' | 'construction' | 'feature' | 'link' | 'custom';
@@ -22,6 +24,30 @@ const Forest: React.FC = () => {
 	const { t } = useTranslation();
 	const rawSlides = FOREST_SLIDES;
 	const loopSlides = rawSlides.length < 5 ? [...rawSlides, ...rawSlides] : rawSlides;
+	const sliderRef = useRef<HTMLDivElement | null>(null);
+	const swiperRef = useRef<SwiperType | null>(null);
+	const handleWheel = (e: WheelEvent): void => {
+		const swiper = swiperRef.current;
+		if (!swiper) return;
+
+		if (Math.abs(e.deltaY) < 8) return;
+
+		e.preventDefault();
+		e.stopPropagation();
+
+		if (e.deltaY > 0) swiper.slideNext();
+		else swiper.slidePrev();
+	};
+	useEffect(() => {
+		const el = sliderRef.current;
+		if (!el) return;
+
+		el.addEventListener('wheel', handleWheel, { passive: false });
+
+		return () => {
+			el.removeEventListener('wheel', handleWheel);
+		};
+	}, []);
 
 	return (
 		<section className="station-section">
@@ -53,8 +79,11 @@ const Forest: React.FC = () => {
 				</header>
 
 				{/* ---------------- 슬라이더 ---------------- */}
-				<div className="station-slider">
+				<div className="station-slider" ref={sliderRef}>
 					<Swiper
+						onSwiper={swiper => {
+							swiperRef.current = swiper;
+						}}
 						modules={[Pagination]}
 						loop={true}
 						centeredSlides={true}
@@ -87,12 +116,6 @@ const Forest: React.FC = () => {
 							return (
 								<SwiperSlide key={`${slide.id}-${idx}`} className="station-swiper-slide">
 									<div className="station-slide-inner">
-										{/* 왼쪽 이미지 */}
-										<div className="station-slide-image">
-											<img src={slide.img} alt={t(titleKey)} className="station-slide-img" loading="lazy" />
-										</div>
-
-										{/* 오른쪽 텍스트 */}
 										<div className="station-slide-text">
 											<h3 className="station-slide-title">{t(titleKey)}</h3>
 											<ul className="station-slide-list">
@@ -103,6 +126,9 @@ const Forest: React.FC = () => {
 													</li>
 												))}
 											</ul>
+										</div>
+										<div className="station-slide-image">
+											<img src={slide.img} alt={t(titleKey)} className="station-slide-img" loading="lazy" />
 										</div>
 									</div>
 								</SwiperSlide>

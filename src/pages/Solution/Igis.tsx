@@ -1,6 +1,8 @@
 import React from 'react';
+import { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import type { Swiper as SwiperType } from 'swiper';
 import { Pagination } from 'swiper/modules';
 
 import 'swiper/css';
@@ -8,12 +10,12 @@ import 'swiper/css/pagination';
 import '../../assets/css/solution.css';
 
 const IGIS_SLIDES = [
-	{ id: 1, key: 'gis', img: '/assets/images/solution/igis/igis/g_01.png' },
-	{ id: 2, key: 'data', img: '/assets/images/solution/igis/igis/g_02.png' },
-	{ id: 3, key: 'edit', img: '/assets/images/solution/igis/igis/g_03.png' },
-	{ id: 4, key: 'option', img: '/assets/images/solution/igis/igis/g_04.png' },
-	{ id: 5, key: 'cad', img: '/assets/images/solution/igis/igis/g_05.png' },
-	{ id: 6, key: 'format', img: '/assets/images/solution/igis/igis/g_06.png' },
+	{ id: 1, key: 'gis', img: '/assets/images/solution/igis/igis/main.png' },
+	{ id: 2, key: 'data', img: '/assets/images/solution/igis/igis/table.png' },
+	{ id: 3, key: 'edit', img: '/assets/images/solution/igis/igis/edit.png' },
+	{ id: 4, key: 'option', img: '/assets/images/solution/igis/igis/layout.png' },
+	{ id: 5, key: 'cad', img: '/assets/images/solution/igis/igis/layer.png' },
+	{ id: 6, key: 'format', img: '/assets/images/solution/igis/igis/map.png' },
 ];
 
 type IgisTagId = 'interface' | 'edit' | 'data' | 'option' | 'cad' | 'format';
@@ -22,6 +24,31 @@ const IGIS_TAG_IDS: IgisTagId[] = ['interface', 'edit', 'data', 'option', 'cad',
 
 const Igis: React.FC = () => {
 	const { t } = useTranslation();
+	const sliderRef = useRef<HTMLDivElement | null>(null);
+	const swiperRef = useRef<SwiperType | null>(null);
+	const handleWheel = (e: WheelEvent): void => {
+		const swiper = swiperRef.current;
+		if (!swiper) return;
+
+		if (Math.abs(e.deltaY) < 8) return;
+
+		e.preventDefault();
+		e.stopPropagation();
+
+		if (e.deltaY > 0) swiper.slideNext();
+		else swiper.slidePrev();
+	};
+
+	useEffect(() => {
+		const el = sliderRef.current;
+		if (!el) return;
+
+		el.addEventListener('wheel', handleWheel, { passive: false });
+
+		return () => {
+			el.removeEventListener('wheel', handleWheel);
+		};
+	}, []);
 
 	return (
 		<section className="station-section">
@@ -55,8 +82,11 @@ const Igis: React.FC = () => {
 				</header>
 
 				{/* ---------------- 슬라이더 ---------------- */}
-				<div className="station-slider">
+				<div className="station-slider" ref={sliderRef}>
 					<Swiper
+						onSwiper={swiper => {
+							swiperRef.current = swiper;
+						}}
 						modules={[Pagination]}
 						loop={true}
 						centeredSlides={true}
@@ -89,12 +119,6 @@ const Igis: React.FC = () => {
 							return (
 								<SwiperSlide key={slide.id} className="station-swiper-slide">
 									<div className="station-slide-inner">
-										{/* 왼쪽 이미지 */}
-										<div className="station-slide-image">
-											<img src={slide.img} alt={t(titleKey)} className="station-slide-img" loading="lazy" />
-										</div>
-
-										{/* 오른쪽 텍스트 */}
 										<div className="station-slide-text">
 											<h3 className="station-slide-title">{t(titleKey)}</h3>
 											<ul className="station-slide-list">
@@ -105,6 +129,9 @@ const Igis: React.FC = () => {
 													</li>
 												))}
 											</ul>
+										</div>
+										<div className="station-slide-image">
+											<img src={slide.img} alt={t(titleKey)} className="station-slide-img" loading="lazy" />
 										</div>
 									</div>
 								</SwiperSlide>

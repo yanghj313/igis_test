@@ -418,13 +418,13 @@
 			"locationLabel": "GIS 솔루션",
 			"title": {
 				"igis": "IGIS",
-				"forest": "IGIS 산림 시스템",
+				"forest": "IGIS Forest",
 				"fms": "FMS",
 				"default": "GIS SOLUTION"
 			},
 			"tabs": {
 				"igis": "IGIS",
-				"forest": "IGIS 산림 시스템",
+				"forest": "IGIS Forest",
 				"fms": "FMS"
 			}
 		},
@@ -570,10 +570,10 @@
 		}
 	},
 	"pilot_page": {
-		"eyebrow": "DFOS PILOT",
-		"title_main": "DFOS PILOT",
+		"eyebrow": "DFOS PILOT PRO",
+		"title_main": "DFOS PILOT PRO",
 		"description": "드론의 사진, 동영상, 촬영 및 경로 비행을 사용자가 편리하게 컨트롤 할 수 있는 APP",
-		"tag_title": "DFOS Pilot 적용 장비",
+		"tag_title": "DFOS Pilot PRO 적용 장비",
 		"tags": {
 			"matrice300": "DJI Matricve 300 시리즈",
 			"matrice400": "DJI Matricve 400 시리즈",
@@ -676,17 +676,15 @@
 		}
 	},
 	"stream_page": {
-		"title_main": "DFOS STATION Lite",
-		"description": "드론 스테이션을 통합 관제하기 위한 웹 소프트웨어로 드론, 스테이션을 관리하고\n사용자의 권한 관리가 가능하며, 미션 생성과 스케줄 생성을 통한 주기적인 비행이 가능함.\n촬영된 영상과 데이터의 실시간 확인과 수집한 데이터의 관리와 분석을 지원",
-		"tag_title": "DFOS STATION Lite 주요기능",
+		"title_main": "DFOS STREAMING VIEWER",
+		"description": "여러 개의 드론 영상 소스를 편리하게 재생할 수 있는 멀티 스트리밍 뷰어",
+		"tag_title": "DFOS STREAMING VIEWER 주요기능",
 		"tags": {
-			"managing": "미션 관리 & 스케줄 관리",
-			"monthly": "통계(일간, 주간, 월간)",
-			"mediam": "미디어 관리",
-			"onestop": "스테이션 원격제어",
-			"cctv": "스트리밍 (드론, CCTV)"
+			"managing": "스트리밍 재생",
+			"monthly": "드론 정보 및 드론 리스트 표시",
+			"mediam": "화면 분할 및 화질"
 		},
-		"slider_title": "DFOS MULTI STREAMING VIEWER",
+		"slider_title": "DFOS STREAMING VIEWER",
 		"slider_description": "여러 개의 드론 영상 소스를 편리하게 재생할 수 있는 멀티 스트리밍 뷰어",
 		"slides": {
 			"now": {
@@ -703,15 +701,17 @@
 			},
 			"optimize": {
 				"title": "최적화된 영상 지원",
-				"items": ["다수의 스트리밍 영상을 안정적으로 재생하며, 전체화면 모드와 분할 화면 모드 전환 기능을 통해 다양한 표시 방식에 대응. 종합 상황실, 정보센터 등 통합 관제 센터 환경에 효과적으로 활용"]
+				"items": [
+					"다수의 스트리밍 영상을 안정적으로 재생하며, 전체화면 모드와 분할 화면 모드 전환 기능을 통해 다양한 표시 방식에 대응.\n종합 상황실, 정보센터 등 통합 관제 센터 환경에 효과적으로 활용"
+				]
 			}
 		}
 	},
 	"igis_page": {
 		"eyebrow": "IGIS",
-		"title_main": "DFOS IGIS",
+		"title_main": "IGIS",
 		"description": "사용자 환경에 최적화된 기능을 탑재하고 사용하기 쉽게 공간 데이터에 대한 편집, 분석등을 구축하는 전문 GIS Solution",
-		"tag_title": "DFOS IGIS 주요 기능",
+		"tag_title": "IGIS 주요 기능",
 		"tags": {
 			"interface": "직관적이고 쉬운 사용자 인터페이스",
 			"edit": "강력한 공간 데이터 편집 및 분석 기능",

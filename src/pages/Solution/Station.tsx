@@ -13,12 +13,12 @@ import '../../assets/css/solution.css';
 const STATION_SLIDES = [
 	{ id: 1, key: 'dashboard', img: '/assets/images/solution/drone/dfosstation/dashboard.png' },
 	{ id: 2, key: 'mission', img: '/assets/images/solution/drone/dfosstation/mission.png' },
-	{ id: 3, key: 'stats', img: '/assets/images/solution/drone/dfosstation/granph.png' },
-	{ id: 4, key: 'droneInfo', img: '/assets/images/solution/drone/dfosstation/drone.png' },
-	{ id: 5, key: 'tracking', img: '/assets/images/solution/drone/dfosstation/cock.png' },
-	{ id: 6, key: 'stream', img: '/assets/images/solution/drone/dfosstation/streaming.png' },
-	{ id: 7, key: 'map', img: '/assets/images/solution/drone/dfosstation/map.png' },
-	{ id: 8, key: 'remote', img: '/assets/images/solution/drone/dfosstation/onestop.png' },
+	{ id: 3, key: 'stats', img: '/assets/images/solution/drone/dfosstation/graph.png' },
+	{ id: 4, key: 'droneInfo', img: '/assets/images/solution/drone/dfosstation/station_drone.png' },
+	{ id: 5, key: 'tracking', img: '/assets/images/solution/drone/dfosstation/cock_01.png' },
+	{ id: 6, key: 'stream', img: '/assets/images/solution/drone/dfosstation/cock_02.png' },
+	{ id: 7, key: 'map', img: '/assets/images/solution/drone/dfosstation/real_film_01.png' },
+	{ id: 8, key: 'remote', img: '/assets/images/solution/drone/dfosstation/real_film_02.png' },
 ];
 
 // 헤더 오른쪽 장비 태그
@@ -117,12 +117,6 @@ const Station: React.FC = () => {
 							return (
 								<SwiperSlide key={slide.id} className="station-swiper-slide">
 									<div className="station-slide-inner">
-										{/* 왼쪽 이미지 */}
-										<div className="station-slide-image">
-											<img src={slide.img} alt={t(titleKey)} className="station-slide-img" loading="lazy" />
-										</div>
-
-										{/* 오른쪽 텍스트 */}
 										<div className="station-slide-text">
 											<h3 className="station-slide-title">{t(titleKey)}</h3>
 											<ul className="station-slide-list">
@@ -133,6 +127,9 @@ const Station: React.FC = () => {
 													</li>
 												))}
 											</ul>
+										</div>
+										<div className="station-slide-image">
+											<img src={slide.img} alt={t(titleKey)} className="station-slide-img" loading="lazy" />
 										</div>
 									</div>
 								</SwiperSlide>

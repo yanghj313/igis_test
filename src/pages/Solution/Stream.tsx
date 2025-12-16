@@ -1,7 +1,8 @@
-// src/pages/Solution/Station.tsx
 import React from 'react';
+import { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import type { Swiper as SwiperType } from 'swiper';
 import { Pagination } from 'swiper/modules';
 
 import 'swiper/css';
@@ -9,20 +10,45 @@ import 'swiper/css/pagination';
 import '../../assets/css/solution.css';
 
 const STREAM_SLIDES = [
-	{ id: 1, key: 'now', img: '/assets/images/solution/drone/streaming/stream_01.png' },
-	{ id: 2, key: 'mark', img: '/assets/images/solution/drone/streaming/stream_02.png' },
-	{ id: 3, key: 'various', img: '/assets/images/solution/drone/streaming/stream_03.png' },
-	{ id: 4, key: 'optimize', img: '/assets/images/solution/drone/streaming/stream_04.png' },
+	{ id: 1, key: 'now', img: '/assets/images/solution/drone/streaming/real.png' },
+	{ id: 2, key: 'mark', img: '/assets/images/solution/drone/streaming/stream.png' },
+	{ id: 3, key: 'various', img: '/assets/images/solution/drone/streaming/kind.png' },
+	{ id: 4, key: 'optimize', img: '/assets/images/solution/drone/streaming/outfit.png' },
 ];
 
-type StreamTagId = 'managing' | 'monthly' | 'mediam' | 'onestop' | 'cctv';
+type StreamTagId = 'managing' | 'monthly' | 'mediam';
 
-const STREAM_TAG_IDS: StreamTagId[] = ['managing', 'monthly', 'mediam', 'onestop', 'cctv'];
+const STREAM_TAG_IDS: StreamTagId[] = ['managing', 'monthly', 'mediam'];
 
 const Stream: React.FC = () => {
 	const { t } = useTranslation();
+	const sliderRef = useRef<HTMLDivElement | null>(null);
+	const swiperRef = useRef<SwiperType | null>(null);
 	const rawSlides = STREAM_SLIDES;
 	const loopSlides = rawSlides.length < 5 ? [...rawSlides, ...rawSlides] : rawSlides;
+
+	const handleWheel = (e: WheelEvent): void => {
+		const swiper = swiperRef.current;
+		if (!swiper) return;
+
+		if (Math.abs(e.deltaY) < 8) return;
+
+		e.preventDefault();
+		e.stopPropagation();
+
+		if (e.deltaY > 0) swiper.slideNext();
+		else swiper.slidePrev();
+	};
+	useEffect(() => {
+		const el = sliderRef.current;
+		if (!el) return;
+
+		el.addEventListener('wheel', handleWheel, { passive: false });
+
+		return () => {
+			el.removeEventListener('wheel', handleWheel);
+		};
+	}, []);
 	return (
 		<section className="station-section">
 			<div className="station-inner">
@@ -53,12 +79,11 @@ const Stream: React.FC = () => {
 				</header>
 
 				{/* ---------------- 슬라이더 ---------------- */}
-				<div className="stream-slider-title">
-					<h2 className="station-title">{t('stream_page.slider_title', 'DFOS STREAM 멀티뷰어')}</h2>
-					<p className="station-desc">{t('stream_page.slider_description', '멀티뷰어 설명')}</p>
-				</div>
-				<div className="station-slider stream-slider">
+				<div className="station-slider" ref={sliderRef}>
 					<Swiper
+						onSwiper={swiper => {
+							swiperRef.current = swiper;
+						}}
 						modules={[Pagination]}
 						loop={true}
 						centeredSlides={true}
@@ -91,12 +116,6 @@ const Stream: React.FC = () => {
 							return (
 								<SwiperSlide key={`${slide.id}-${idx}`} className="station-swiper-slide">
 									<div className="station-slide-inner">
-										{/* 왼쪽 이미지 */}
-										<div className="station-slide-image">
-											<img src={slide.img} alt={t(titleKey)} className="station-slide-img" loading="lazy" />
-										</div>
-
-										{/* 오른쪽 텍스트 */}
 										<div className="station-slide-text">
 											<h3 className="station-slide-title">{t(titleKey)}</h3>
 											<ul className="station-slide-list">
@@ -107,6 +126,9 @@ const Stream: React.FC = () => {
 													</li>
 												))}
 											</ul>
+										</div>
+										<div className="station-slide-image">
+											<img src={slide.img} alt={t(titleKey)} className="station-slide-img" loading="lazy" />
 										</div>
 									</div>
 								</SwiperSlide>

@@ -186,8 +186,7 @@
 	width: 1000px;
 	max-width: 100%;
 	height: 460px;
-	display: flex;
-	background: #fff;
+	background: #121212;
 	border-radius: 24px;
 	box-shadow: 2px 20px 40px rgba(0, 0, 0, 0.2);
 	overflow: hidden;
@@ -232,7 +231,8 @@
 .viewer-swiper .swiper-slide-active .station-slide-inner,
 .stream-swiper .swiper-slide-active .station-slide-inner,
 .stream-swiper .swiper-slide .station-slide-inner {
-	background: #fff;
+	background: #121212;
+	position: relative;
 }
 
 .station-swiper .swiper-slide-next,
@@ -252,8 +252,8 @@
 }
 /* 왼쪽 이미지 영역 */
 .station-slide-image {
-	flex: 0 0 50%;
 	height: 100%;
+	position: relative;
 }
 
 .station-slide-img {
@@ -262,12 +262,27 @@
 	object-fit: cover;
 }
 
-.station-slide-text {
-	flex: 0 0 50%;
+.station-slide-inner:hover .station-slide-image::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.7);
+}
+.station-slide-inner:hover .station-slide-text {
+	opacity: 1;
+	transition: opacity 0.5s ease 0.3s;
+}
+.station-slide-inner .station-slide-text {
 	padding: 32px 40px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	position: absolute;
+	z-index: 1;
+	opacity: 0;
 }
 .station-slide-icon {
 	display: inline-block;
@@ -283,7 +298,7 @@
 .station-slide-title {
 	font-size: 24px;
 	font-weight: 700;
-	color: #244079;
+	color: #fff;
 	margin-bottom: 18px;
 	line-height: 140%;
 	word-break: keep-all;
@@ -301,7 +316,7 @@
 	gap: 8px;
 	font-size: 18px;
 	line-height: 1.6;
-	color: #555;
+	color: #fff;
 	margin-bottom: 6px;
 	white-space: pre-line;
 	word-break: keep-all;
@@ -660,8 +675,8 @@
 
 	.station-slide-inner {
 		flex-direction: column;
-		height: auto;
 		box-shadow: none;
+		height: 360px;
 		border: 1px solid #dadada;
 	}
 	.station-slide-image,
@@ -670,7 +685,11 @@
 		width: 100%;
 	}
 	.station-slide-image {
-		height: auto;
+		height: 100%;
+	}
+
+	.station-slide-img {
+		object-fit: contain;
 	}
 	.station-slide-text {
 		padding: 16px 20px 24px;
@@ -692,7 +711,7 @@
 		margin-top: 18px;
 	}
 	.swiper-slide-active .station-slide-inner {
-		height: auto;
+		height: 360px;
 	}
 	.igis-section .station-slider {
 		flex-direction: column;

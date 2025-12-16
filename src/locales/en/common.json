@@ -607,10 +607,10 @@
 		}
 	},
 	"pilot_page": {
-		"eyebrow": "DFOS PILOT",
-		"title_main": "DFOS PILOT",
+		"eyebrow": "DFOS PILOT PRO",
+		"title_main": "DFOS PILOT PRO",
 		"description": "An app that allows users to conveniently control drone photos, videos, shooting, and route flights",
-		"tag_title": "DFOS Pilot Supported Devices",
+		"tag_title": "DFOS Pilot PRO Supported Devices",
 		"tags": {
 			"matrice300": "DJI Matrice 300 Series",
 			"matrice400": "DJI Matrice 400 Series",
@@ -722,15 +722,13 @@
 	},
 
 	"stream_page": {
-		"title_main": "DFOS STATION Lite",
+		"title_main": "DFOS STREAMING VIEWER",
 		"description": "Web software for integrated control of drone stations, managing drones and stations,\nallowing user permission management, mission creation, and periodic flights through schedule creation.\nSupports real-time monitoring of captured videos and data, as well as management and analysis of collected data.",
-		"tag_title": "Key Features of DFOS STATION Lite",
+		"tag_title": "Key Features of DFOS STREAMING VIEWER",
 		"tags": {
-			"managing": "Mission Management & Schedule Management",
-			"monthly": "Statistics (Daily, Weekly, Monthly)",
-			"mediam": "Media Management",
-			"onestop": "Station Remote Control",
-			"cctv": "Streaming (Drone, CCTV)"
+			"managing": "Streaming Playback",
+			"monthly": "Display Drone Information and Drone List",
+			"mediam": "Screen Splitting and Image Quality"
 		},
 		"slider_title": "DFOS MULTI STREAMING VIEWER",
 		"slider_description": "A multi-streaming viewer that allows convenient playback of multiple drone video sources",
@@ -760,10 +758,10 @@
 		}
 	},
 	"igis_page": {
-		"eyebrow": "DFOS IGIS",
-		"title_main": "DFOS IGIS",
+		"eyebrow": "IGIS",
+		"title_main": "IGIS",
 		"description": "A professional GIS solution optimized for user environments, equipped with features for easy editing and analysis of spatial data.",
-		"tag_title": "Key Features of DFOS IGIS",
+		"tag_title": "Key Features of IGIS",
 		"tags": {
 			"interface": "Intuitive and easy-to-use user interface",
 			"edit": "Powerful spatial data editing and analysis capabilities",

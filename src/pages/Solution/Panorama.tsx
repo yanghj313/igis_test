@@ -1,6 +1,8 @@
 import React from 'react';
+import { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import type { Swiper as SwiperType } from 'swiper';
 import { Pagination } from 'swiper/modules';
 
 import 'swiper/css';
@@ -8,11 +10,11 @@ import 'swiper/css/pagination';
 import '../../assets/css/solution.css';
 
 const PANORAMA_SLIDES = [
-	{ id: 1, key: 'media', img: '/assets/images/solution/drone/panorama/p_01.png' },
-	{ id: 2, key: 'made', img: '/assets/images/solution/drone/panorama/p_02.png' },
-	{ id: 3, key: 'place', img: '/assets/images/solution/drone/panorama/p_03.png' },
-	{ id: 4, key: 'realease', img: '/assets/images/solution/drone/panorama/p_04.png' },
-	{ id: 5, key: 'open', img: '/assets/images/solution/drone/panorama/p_05.png' },
+	{ id: 1, key: 'media', img: '/assets/images/solution/drone/panorama/place_using.png' },
+	{ id: 2, key: 'made', img: '/assets/images/solution/drone/panorama/control.png' },
+	{ id: 3, key: 'place', img: '/assets/images/solution/drone/panorama/place_using_02.png' },
+	{ id: 4, key: 'realease', img: '/assets/images/solution/drone/panorama/symbol.png' },
+	{ id: 5, key: 'open', img: '/assets/images/solution/drone/panorama/compare.png' },
 ];
 
 // 헤더 오른쪽 장비 태그
@@ -22,9 +24,32 @@ const PANORAMA_TAG_IDS: PanoramaTagId[] = ['made', 'place', 'manage', 'device', 
 
 const Panorama: React.FC = () => {
 	const { t } = useTranslation();
+	const sliderRef = useRef<HTMLDivElement | null>(null);
+	const swiperRef = useRef<SwiperType | null>(null);
+	const handleWheel = (e: WheelEvent): void => {
+		const swiper = swiperRef.current;
+		if (!swiper) return;
 
+		if (Math.abs(e.deltaY) < 8) return;
+
+		e.preventDefault();
+		e.stopPropagation();
+
+		if (e.deltaY > 0) swiper.slideNext();
+		else swiper.slidePrev();
+	};
 	const rawSlides = PANORAMA_SLIDES;
 	const loopSlides = rawSlides.length < 4 ? [...rawSlides, ...rawSlides] : rawSlides;
+	useEffect(() => {
+		const el = sliderRef.current;
+		if (!el) return;
+
+		el.addEventListener('wheel', handleWheel, { passive: false });
+
+		return () => {
+			el.removeEventListener('wheel', handleWheel);
+		};
+	}, []);
 
 	return (
 		<section className="station-section">
@@ -55,8 +80,11 @@ const Panorama: React.FC = () => {
 					</div>
 				</header>
 
-				<div className="station-slider">
+				<div className="station-slider" ref={sliderRef}>
 					<Swiper
+						onSwiper={swiper => {
+							swiperRef.current = swiper;
+						}}
 						modules={[Pagination]}
 						loop={true}
 						centeredSlides={true}
@@ -89,12 +117,6 @@ const Panorama: React.FC = () => {
 							return (
 								<SwiperSlide key={`${slide.id}-${idx}`} className="station-swiper-slide">
 									<div className="station-slide-inner">
-										{/* 왼쪽 이미지 */}
-										<div className="station-slide-image">
-											<img src={slide.img} alt={t(titleKey)} className="station-slide-img" loading="lazy" />
-										</div>
-
-										{/* 오른쪽 텍스트 */}
 										<div className="station-slide-text">
 											<h3 className="station-slide-title">{t(titleKey)}</h3>
 											<ul className="station-slide-list">
@@ -105,6 +127,9 @@ const Panorama: React.FC = () => {
 													</li>
 												))}
 											</ul>
+										</div>
+										<div className="station-slide-image">
+											<img src={slide.img} alt={t(titleKey)} className="station-slide-img" loading="lazy" />
 										</div>
 									</div>
 								</SwiperSlide>

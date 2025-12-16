@@ -1,7 +1,9 @@
 // src/pages/Solution/Station.tsx
 import React from 'react';
+import { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import type { Swiper as SwiperType } from 'swiper';
 import { Pagination } from 'swiper/modules';
 
 import 'swiper/css';
@@ -9,12 +11,12 @@ import 'swiper/css/pagination';
 import '../../assets/css/solution.css';
 
 const PILOT_SLIDES = [
-	{ id: 1, key: 'mission', img: '/assets/images/solution/drone/pilot/p_01.png' },
-	{ id: 2, key: 'setting', img: '/assets/images/solution/drone/pilot/p_02.png' },
-	{ id: 3, key: 'camera', img: '/assets/images/solution/drone/pilot/p_03.png' },
-	{ id: 4, key: 'system', img: '/assets/images/solution/drone/pilot/p_04.png' },
-	{ id: 5, key: 'flight', img: '/assets/images/solution/drone/pilot/p_05.png' },
-	{ id: 6, key: 'media', img: '/assets/images/solution/drone/pilot/p_06.png' },
+	{ id: 1, key: 'mission', img: '/assets/images/solution/drone/pilot/main.png' },
+	{ id: 2, key: 'setting', img: '/assets/images/solution/drone/pilot/setting.png' },
+	{ id: 3, key: 'camera', img: '/assets/images/solution/drone/pilot/panorama.png' },
+	{ id: 4, key: 'system', img: '/assets/images/solution/drone/pilot/3d_01.png' },
+	{ id: 5, key: 'flight', img: '/assets/images/solution/drone/pilot/compus.png' },
+	{ id: 6, key: 'media', img: '/assets/images/solution/drone/pilot/heat.png' },
 ];
 
 // 헤더 오른쪽 장비 태그
@@ -26,6 +28,33 @@ const Pilot: React.FC = () => {
 	const { t } = useTranslation();
 	const rawSlides = PILOT_SLIDES;
 	const loopSlides = rawSlides.length < 5 ? [...rawSlides, ...rawSlides] : rawSlides;
+
+	const sliderRef = useRef<HTMLDivElement | null>(null);
+	const swiperRef = useRef<SwiperType | null>(null);
+	const handleWheel = (e: WheelEvent): void => {
+		const swiper = swiperRef.current;
+		if (!swiper) return;
+
+		if (Math.abs(e.deltaY) < 8) return;
+
+		e.preventDefault();
+		e.stopPropagation();
+
+		if (e.deltaY > 0) swiper.slideNext();
+		else swiper.slidePrev();
+	};
+
+	useEffect(() => {
+		const el = sliderRef.current;
+		if (!el) return;
+
+		el.addEventListener('wheel', handleWheel, { passive: false });
+
+		return () => {
+			el.removeEventListener('wheel', handleWheel);
+		};
+	}, []);
+
 	return (
 		<section className="station-section">
 			<div className="station-inner">
@@ -56,8 +85,11 @@ const Pilot: React.FC = () => {
 				</header>
 
 				{/* ---------------- 슬라이더 ---------------- */}
-				<div className="station-slider">
+				<div className="station-slider" ref={sliderRef}>
 					<Swiper
+						onSwiper={swiper => {
+							swiperRef.current = swiper;
+						}}
 						modules={[Pagination]}
 						loop={true}
 						centeredSlides={true}
@@ -90,11 +122,6 @@ const Pilot: React.FC = () => {
 							return (
 								<SwiperSlide key={`${slide.id}-${idx}`} className="station-swiper-slide">
 									<div className="station-slide-inner">
-										{/* 왼쪽 이미지 */}
-										<div className="station-slide-image">
-											<img src={slide.img} alt={t(titleKey)} className="station-slide-img" loading="lazy" />
-										</div>
-
 										{/* 오른쪽 텍스트 */}
 										<div className="station-slide-text">
 											<h3 className="station-slide-title">{t(titleKey)}</h3>
@@ -106,6 +133,10 @@ const Pilot: React.FC = () => {
 													</li>
 												))}
 											</ul>
+										</div>
+
+										<div className="station-slide-image">
+											<img src={slide.img} alt={t(titleKey)} className="station-slide-img" loading="lazy" />
 										</div>
 									</div>
 								</SwiperSlide>
