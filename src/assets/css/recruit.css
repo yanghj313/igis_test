@@ -65,7 +65,7 @@
 	display: block;
 	color: #333;
 	word-break: keep-all;
-	line-height: 1.4;
+	line-height: 160%;
 }
 .recruit-title.close {
 	color: #999999;
