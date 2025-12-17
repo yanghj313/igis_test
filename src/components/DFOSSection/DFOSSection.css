@@ -71,7 +71,7 @@
 	position: relative;
 	border-radius: 20px;
 	overflow: hidden;
-	max-width: 340px;
+	max-width: 380px;
 	padding: 24px;
 	background: #fff;
 	box-shadow: 0 0 0 rgba(0, 0, 0, 0);
@@ -101,7 +101,7 @@
 }
 
 .dfos-item .tit {
-	font-size: 36px;
+	font-size: 34px;
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 700;
 	color: #666;

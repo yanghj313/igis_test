@@ -248,6 +248,7 @@
 
 	.hero-message {
 		font-size: 48px;
+		line-height: 160%;
 	}
 }
 @media (max-width: 580px) {

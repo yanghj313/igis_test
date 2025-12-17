@@ -34,7 +34,7 @@ const DFOSSection: React.FC = () => {
 			tags: [t('dfos_tag_panorama_1'), t('dfos_tag_panorama_2'), t('dfos_tag_panorama_3')],
 		},
 		{
-			title: 'PILOT',
+			title: 'PILOT PRO',
 			desc: t('dfos_pilot_desc'),
 			img: '/assets/images/dfos_03.png',
 			tags: [t('dfos_tag_pilot_1'), t('dfos_tag_pilot_2')],

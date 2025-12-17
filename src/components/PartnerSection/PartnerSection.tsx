@@ -13,6 +13,9 @@ const logos = [
 	'/assets/partners_logo/logo_08.png',
 	'/assets/partners_logo/logo_09.png',
 	'/assets/partners_logo/logo_10.png',
+];
+
+const logs = [
 	'/assets/partners_logo/logo_11.png',
 	'/assets/partners_logo/logo_12.png',
 	'/assets/partners_logo/logo_13.png',
@@ -56,11 +59,11 @@ const PartnerSection: React.FC = () => {
 				{/* 두 번째 마키 (반대 방향) */}
 				<div className="logo-marquee marquee-right">
 					<div className="logo-track">
-						{logos.map((logo, i) => (
-							<img key={`row2-${i}`} src={logo} alt={`partner2-${i}`} />
+						{logs.map((log, i) => (
+							<img key={`row2-${i}`} src={log} alt={`partner2-${i}`} />
 						))}
-						{logos.map((logo, i) => (
-							<img key={`row2-clone-${i}`} src={logo} alt={`partner2-clone-${i}`} />
+						{logs.map((log, i) => (
+							<img key={`row2-clone-${i}`} src={log} alt={`partner2-clone-${i}`} />
 						))}
 					</div>
 				</div>
