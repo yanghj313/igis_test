@@ -122,6 +122,9 @@
 .station-slider {
 	margin-top: 160px;
 	overscroll-behavior: contain;
+	cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAZlBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////+Vn2moAAAAInRSTlMAmXaIPiMyCDUdElI4jJCJbUhDBJR+YVxNGnIOg2ZWLRcoBr06qQAAAUlJREFUSMflztmSgjAQheFzACXEIMq+uL7/Sw5RKIhCMX05Nd9NKqn+q4OXkjU27fNCY3Qi+cRcGFRlFWTO05FM9KzgDjOdT+sSYpLF7JtupUDLt5Oz5kIy1mPhPYO0dz436D04sgPR7Xaw1GvS71DScbRDO44iIIzp8FDQtftMNF0+9u/zkh97OUt8JkiPid9LvIKWAhR7BRBaGb6SiTcUQ3PFZCW5DoVl2Gu2koY9g4EiveUtjfsvNd0iEy4nt256DU0Eh5tMirrBJps44qsKhYl1CrQwsapMnDDW4oStPGEER5ZtJwpzKfNyt5UEmFG04oP+fXLgwEtDYWLVgSSZbCd7eYJanuAuT/DwhYnVyhPU8gRGnuARixNkrTCxKnkCI08QxeIE2qj9N2U0/h6TeEv8O1aduSz4H4lZSe5YV+WJ/ynJD7B+AB2wESSel3HpAAAAAElFTkSuQmCC')
+			25 25,
+		auto;
 }
 .stream-slider-title {
 	margin: 100px auto 0;
