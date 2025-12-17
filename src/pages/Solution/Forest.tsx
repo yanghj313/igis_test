@@ -11,9 +11,9 @@ import '../../assets/css/solution.css';
 
 const FOREST_SLIDES = [
 	{ id: 1, key: 'forest', img: '/assets/images/solution/igis/forest/main.png' },
-	{ id: 2, key: 'place', img: '/assets/images/solution/igis/forest/map.png' },
+	{ id: 2, key: 'place', img: '/assets/images/solution/igis/forest/vertical.png' },
 	{ id: 3, key: 'automatic', img: '/assets/images/solution/igis/forest/search.png' },
-	{ id: 4, key: 'construction', img: '/assets/images/solution/igis/forest/vertical.png' },
+	{ id: 4, key: 'construction', img: '/assets/images/solution/igis/forest/eco.png' },
 ];
 
 type ForestTagId = 'forest' | 'automatic' | 'construction' | 'feature' | 'link' | 'custom';

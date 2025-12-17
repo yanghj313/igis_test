@@ -11,7 +11,7 @@ import 'swiper/css/pagination';
 import '../../assets/css/solution.css';
 
 const PILOT_SLIDES = [
-	{ id: 1, key: 'mission', img: '/assets/images/solution/drone/pilot/main.png' },
+	{ id: 1, key: 'mission', img: '/assets/images/solution/drone/pilot/m_flight.png' },
 	{ id: 2, key: 'setting', img: '/assets/images/solution/drone/pilot/setting.png' },
 	{ id: 3, key: 'camera', img: '/assets/images/solution/drone/pilot/panorama.png' },
 	{ id: 4, key: 'system', img: '/assets/images/solution/drone/pilot/3d_01.png' },
