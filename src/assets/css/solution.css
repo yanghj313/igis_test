@@ -189,8 +189,7 @@
 	width: 1000px;
 	max-width: 100%;
 	height: 460px;
-	background: #121212;
-	border-radius: 24px;
+	border-radius: 10px;
 	box-shadow: 2px 20px 40px rgba(0, 0, 0, 0.2);
 	overflow: hidden;
 }
@@ -234,7 +233,6 @@
 .viewer-swiper .swiper-slide-active .station-slide-inner,
 .stream-swiper .swiper-slide-active .station-slide-inner,
 .stream-swiper .swiper-slide .station-slide-inner {
-	background: #121212;
 	position: relative;
 }
 
@@ -674,6 +672,16 @@
 	}
 	.stream-slider {
 		margin-top: 20px;
+	}
+
+	.station-swiper .swiper-slide-active .station-slide-inner,
+	.panorama-swiper .swiper-slide-active .station-slide-inner,
+	.pilot-swiper .swiper-slide-active .station-slide-inner,
+	.ims-swiper .swiper-slide-active .station-slide-inner,
+	.viewer-swiper .swiper-slide-active .station-slide-inner,
+	.stream-swiper .swiper-slide-active .station-slide-inner,
+	.stream-swiper .swiper-slide .station-slide-inner {
+		background: #121212;
 	}
 
 	.station-slide-inner {
