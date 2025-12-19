@@ -251,13 +251,13 @@
 				"body": "· Defining screen configuration and workflow according to department and work purpose\n· Optimized for various work types such as inspection, facility management, civil complaint handling, planning, and spatial analysis\n· Integrated structure design considering linkage with existing systems\n· High field applicability secured through UI/UX configuration tailored to actual work flow"
 			},
 			"4": {
-				"step": "Geospatial Data Processing and Analysis",
+				"step": "Geospatial Data Processing\nand Analysis",
 				"title": "",
 				"lead": "Based on professional GIS analysis technology, we collect, refine, and process various spatial data to provide information necessary for customer decision-making.",
 				"body": "· Providing specialized analysis such as time series change analysis, spatial statistics, grid analysis, viewshed analysis, and proximity analysis\n· Capable of integrating and analyzing field information, facility information, drone images, and external data (public data, etc.)\n· Providing analysis results as map-based visualizations to enhance intuitive understanding and policy/work utilization"
 			},
 			"5": {
-				"step": "Subscription Policy (Applied to Private Market)",
+				"step": "Subscription Policy\n(Applied to Private Market)",
 				"title": "",
 				"lead": "We offer a subscription service available on a monthly or annual basis to reduce the initial adoption burden.",
 				"body": "Includes regular updates, technical support, and server maintenance to continuously ensure the latest features and a stable operating environment.\nThis service model is suitable for companies with small project scales or customers who find adoption costs burdensome."
@@ -278,7 +278,7 @@
 				"body": "Minimize work gaps and errors by supporting a variety of scenarios, including automated inspection items, on-site photo registration, facility search, and history management, through standardized processes.\nAlso designed to operate reliably in both online and offline environments, enhancing flexibility and convenience in field operations."
 			},
 			"2": {
-				"step": "System Training and After-Sales Service",
+				"step": "System Training\nand After-Sales Service",
 				"title": "",
 				"lead": "We provide practical training reflecting field workflows and actual usage environments to help users quickly learn the tablet-based FMS and utilize it immediately in the field.",
 				"body": "We ensure system stability and continuity through after-sales service by professional engineers, including troubleshooting, feature improvements, version updates, and new device setup.\nWe also provide training materials and standard manuals tailored to each task."
@@ -290,7 +290,7 @@
 				"body": "Configure customer-specific features such as shooting functions, location display, checklist automation, and on-site reporting templates to provide solutions optimized for actual work that can be used immediately in the field."
 			},
 			"4": {
-				"step": "Subscription Policy (Applied to Private Market)",
+				"step": "Subscription Policy\n(Applied to Private Market)",
 				"title": "",
 				"lead": "We offer a subscription service available on a monthly or annual basis to reduce the initial adoption burden.",
 				"body": "Includes regular updates, technical support, and server maintenance to continuously ensure the latest features and a stable operating environment.\nThis service model is suitable for companies with small project scales or customers who find adoption costs burdensome."
