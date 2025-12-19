@@ -1,8 +1,16 @@
 {
   "projects": {
     "default": "igis-test-web",
-    "staging": "igis-test-web"
+    "staging": "igis-web"
   },
-  "targets": {},
+  "targets": {
+    "igis-web": {
+      "hosting": {
+        "igistest": [
+          "igistest"
+        ]
+      }
+    }
+  },
   "etags": {}
 }
