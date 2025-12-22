@@ -117,7 +117,7 @@ const ContactForm: React.FC = () => {
 			const { company, email, manager, phone, rank, selectedButton, selectedProductButton, text, use, isAgree } = form;
 			const firestore = db();
 
-			await addDoc(collection(firestore, 'contact_detail'), {
+			await addDoc(collection(firestore, 'contact'), {
 				company,
 				email,
 				manager,
@@ -135,7 +135,6 @@ const ContactForm: React.FC = () => {
 			setDone(true);
 			setForm(initialForm);
 		} catch (error) {
-			console.error('CONTACT SUBMIT ERROR:', error);
 			setErr(error instanceof Error ? error.message : String(error));
 		} finally {
 			setSubmitting(false);
