@@ -65,11 +65,8 @@ const NewsContainer: React.FC = () => {
 		const unsubscribe = onSnapshot(
 			q,
 			snapshot => {
-				console.log('📦 총 문서 수:', snapshot.size);
-
 				const rows: NewsData[] = snapshot.docs.map((doc: QueryDocumentSnapshot<DocumentData>): NewsData => {
 					const data = doc.data() as NewsRow;
-					console.log('🔥 news doc:', doc.id, data);
 
 					const { timestamp, ...rest } = data;
 

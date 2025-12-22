@@ -135,6 +135,7 @@ const ContactForm: React.FC = () => {
 			setDone(true);
 			setForm(initialForm);
 		} catch (error) {
+			console.error('CONTACT SUBMIT ERROR:', error);
 			setErr(error instanceof Error ? error.message : String(error));
 		} finally {
 			setSubmitting(false);
