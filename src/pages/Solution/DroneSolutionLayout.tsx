@@ -3,7 +3,14 @@ import React from 'react';
 import { Outlet, useLocation, Navigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import SubLayout from '@/components/layout/SubLayout';
+import { Helmet } from 'react-helmet-async';
 
+<Helmet>
+	<title>솔루션 | IGIS</title>
+	<meta name="description" content="IGIS 솔루션 페이지입니다." />
+	<meta property="og:title" content="솔루션 | IGIS" />
+	<meta property="og:description" content="IGIS 솔루션 페이지입니다." />
+</Helmet>;
 const DroneSolutionLayout: React.FC = () => {
 	const { pathname } = useLocation();
 	const { t } = useTranslation();

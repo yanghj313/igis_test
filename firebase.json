@@ -1,26 +1,24 @@
 {
-  "hosting": {
-    "public": "dist",
-    "cleanUrls": true,
+	"hosting": {
+		"public": "dist",
+		"cleanUrls": true,
 
-    "headers": [
-      {
-        "source": "/admin/**",
-        "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }]
-      },
-      {
-        "source": "**/*.@(png|jpg|jpeg|gif|webp|svg)",
-        "headers": [
-          { "key": "Cache-Control", "value": "public,max-age=31536000,immutable" }
-        ]
-      }
-    ],
+		"headers": [
+			{
+				"source": "**",
+				"headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }]
+			},
+			{
+				"source": "**/*.@(png|jpg|jpeg|gif|webp|svg)",
+				"headers": [{ "key": "Cache-Control", "value": "public,max-age=31536000,immutable" }]
+			}
+		],
 
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
-    ]
-  }
+		"rewrites": [
+			{
+				"source": "**",
+				"destination": "/index.html"
+			}
+		]
+	}
 }

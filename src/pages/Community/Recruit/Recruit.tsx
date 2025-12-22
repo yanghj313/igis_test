@@ -6,7 +6,14 @@ import { collection, onSnapshot, orderBy, query } from 'firebase/firestore';
 import type { RecruitDoc } from '@/types/recruit';
 import { useTranslation } from 'react-i18next';
 import '../../../assets/css/recruit.css';
+import { Helmet } from 'react-helmet-async';
 
+<Helmet>
+	<title>채용 | IGIS</title>
+	<meta name="description" content="IGIS 채용 페이지입니다." />
+	<meta property="og:title" content="채용 | IGIS" />
+	<meta property="og:description" content="IGIS 채용 페이지입니다." />
+</Helmet>;
 const formatDate = (ms?: number) => (typeof ms === 'number' ? new Date(ms).toLocaleDateString() : '');
 
 type Period = { start?: number; finish?: number } | undefined;

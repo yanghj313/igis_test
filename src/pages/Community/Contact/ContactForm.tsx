@@ -5,6 +5,14 @@ import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { db, storage } from '@config/firebase';
 import { useTranslation } from 'react-i18next';
 import '../../../assets/css/contact.css';
+import { Helmet } from 'react-helmet-async';
+
+<Helmet>
+	<title>문의하기 | IGIS</title>
+	<meta name="description" content="IGIS 문의 및 제휴 상담 페이지입니다." />
+	<meta property="og:title" content="문의하기 | IGIS" />
+	<meta property="og:description" content="IGIS 문의 및 제휴 상담" />
+</Helmet>;
 
 type FileMeta = { name: string; url: string; size: number; type: string };
 

@@ -2,7 +2,14 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import '../../assets/css/business.css';
+import { Helmet } from 'react-helmet-async';
 
+<Helmet>
+	<title>사업분야 | IGIS</title>
+	<meta name="description" content="IGIS 사업분야 페이지입니다." />
+	<meta property="og:title" content="사업분야 | IGIS" />
+	<meta property="og:description" content="IGIS 사업분야 페이지입니다." />
+</Helmet>;
 interface DiffItem {
 	id: number;
 	stepKey: string;
