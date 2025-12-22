@@ -3,6 +3,7 @@
     "public": "dist",
     "cleanUrls": true,
 
+<<<<<<< HEAD
     "headers": [
       {
         "source": "/admin/**",
@@ -23,4 +24,24 @@
       }
     ]
   }
+=======
+		"headers": [
+			{
+				"source": "/admin/**",
+				"headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }]
+			},
+			{
+				"source": "**/*.@(png|jpg|jpeg|gif|webp|svg)",
+				"headers": [{ "key": "Cache-Control", "value": "public,max-age=31536000,immutable" }]
+			}
+		],
+
+		"rewrites": [
+			{
+				"source": "**",
+				"destination": "/index.html"
+			}
+		]
+	}
+>>>>>>> f6ef0db330fdd5d0a2f328253784768899faf45a
 }
