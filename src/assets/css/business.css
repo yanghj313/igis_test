@@ -111,6 +111,8 @@
 	font-size: 15px;
 	font-weight: 700;
 	margin-bottom: 20px;
+	word-break: keep-all;
+	white-space: pre-line;
 }
 
 .biz-diff-heading {
@@ -324,6 +326,9 @@
 
 	.biz-diff-step {
 		margin-bottom: 12px;
+		padding: 10px 16px;
+		line-height: normal;
+		height: 46px;
 	}
 
 	.biz-diff-heading {

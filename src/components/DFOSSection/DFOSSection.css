@@ -423,7 +423,8 @@
 	}
 
 	.sec_dfos .inner {
-		max-width: 96%;
+		max-width: 100%;
+		padding: 0 20px;
 		flex-direction: column;
 		gap: 0;
 	}

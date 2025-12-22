@@ -1,5 +1,6 @@
 {
 	"hosting": {
+		"target": "igistest",
 		"public": "dist",
 		"cleanUrls": true,
 
